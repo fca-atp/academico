@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Módulo 5 | Acompañamiento Académico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+:root {
+    --guinda: #7a1f35;
+    --guinda-oscuro: #551425;
+    --guinda-claro: #a44760;
+
+    --dorado: #d2a84a;
+    --dorado-claro: #f4e7c5;
+
+    --blanco: #ffffff;
+    --crema: #faf8f5;
+    --gris-claro: #f3f4f6;
+    --gris: #667085;
+    --grafito: #26272b;
+
+    --sombra: 0 10px 30px rgba(45,32,37,.10);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--grafito);
+    background: var(--blanco);
+    line-height: 1.65;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid #e6e6e6;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--guinda);
+    font-weight: 800;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+
+    background: var(--guinda);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand small {
+    display: block;
+    font-size: 10px;
+    color: var(--gris);
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--guinda);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 12%, rgba(210,168,74,.24), transparent 23%),
+        linear-gradient(135deg, #ffffff, #fbf6f7);
+
+    border-bottom: 1px solid #eee5e7;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 24px;
+}
+
+.module-label {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 30px;
+
+    background: var(--dorado-claro);
+    color: #765816;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px,6vw,62px);
+
+    color: var(--guinda-oscuro);
+
+    max-width: 900px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 780px;
+    color: var(--gris);
+    font-size: 18px;
+}
+
+
+/* =========================
+   RUTA
+========================= */
+
+.route {
+    margin-top: 35px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.route-item {
+    background: white;
+    border: 1px solid #e6dadd;
+
+    padding: 9px 14px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--guinda);
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+    padding: 70px 0;
+}
+
+.section-alt {
+    background: var(--crema);
+}
+
+.section-label {
+    color: var(--guinda);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    font-size: 34px;
+    color: var(--guinda-oscuro);
+    margin-bottom: 18px;
+}
+
+.section-intro {
+    max-width: 800px;
+    color: var(--gris);
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   OBJETIVO
+========================= */
+
+.objective {
+    background: var(--guinda);
+    color: white;
+
+    border-radius: 20px;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 20px;
+
+    align-items: center;
+    box-shadow: var(--sombra);
+}
+
+.objective-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.objective h3 {
+    margin-bottom: 6px;
+}
+
+.objective p {
+    color: rgba(255,255,255,.85);
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ece5e7;
+
+    border-radius: 17px;
+    padding: 25px;
+
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+
+    background: #f6edef;
+    color: var(--guinda);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    color: var(--guinda);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+
+/* =========================
+   CICLO DE ACOMPAÑAMIENTO
+========================= */
+
+.cycle {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+}
+
+.cycle-step {
+    background: white;
+    border: 1px solid #ece5e7;
+
+    border-radius: 18px;
+    padding: 25px 18px;
+
+    text-align: center;
+}
+
+.cycle-number {
+    width: 40px;
+    height: 40px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 50%;
+
+    background: var(--guinda);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.cycle-step h3 {
+    color: var(--guinda);
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.cycle-step p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* =========================
+   PRINCIPIOS
+========================= */
+
+.principles {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+}
+
+.principle {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+
+    background: white;
+    border: 1px solid #ece5e7;
+
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.principle-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+
+    border-radius: 50%;
+
+    background: var(--dorado-claro);
+    color: #866415;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principle h3 {
+    color: var(--guinda);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.principle p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* =========================
+   DIFERENCIA CONTROL / ACOMPAÑAMIENTO
+========================= */
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.compare-card {
+    border-radius: 18px;
+    padding: 28px;
+    background: white;
+    border: 1px solid #ece5e7;
+}
+
+.compare-card.control {
+    border-top: 6px solid #b8b8b8;
+}
+
+.compare-card.support {
+    border-top: 6px solid var(--guinda);
+}
+
+.compare-card h3 {
+    color: var(--guinda-oscuro);
+    margin-bottom: 15px;
+}
+
+.compare-card ul {
+    padding-left: 20px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.compare-card li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   ACUERDOS
+========================= */
+
+.agreement-box {
+    background:
+        linear-gradient(135deg, #3e1622, #7a1f35);
+
+    color: white;
+
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.agreement-box h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.agreement-box p {
+    color: rgba(255,255,255,.84);
+    max-width: 850px;
+}
+
+.agreement-items {
+    margin-top: 22px;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+}
+
+.agreement-item {
+    padding: 18px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.agreement-item strong {
+    display: block;
+    color: var(--dorado-claro);
+    margin-bottom: 5px;
+}
+
+.agreement-item p {
+    font-size: 13px;
+}
+
+
+/* =========================
+   RECURSOS
+========================= */
+
+.resource {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    padding: 25px;
+    border-radius: 16px;
+
+    background: white;
+    border: 1px dashed #cbb9be;
+
+    margin-bottom: 15px;
+}
+
+.resource-icon {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+
+    border-radius: 13px;
+
+    background: var(--guinda);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.resource h3 {
+    font-size: 16px;
+    color: var(--guinda);
+}
+
+.resource p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* =========================
+   CIERRE
+========================= */
+
+.closing-box {
+    text-align: center;
+
+    background: #fffaf0;
+    border: 1px solid #f0dfb8;
+
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.closing-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--dorado-claro);
+    color: #866415;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+.closing-box h3 {
+    color: var(--guinda-oscuro);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.closing-box p {
+    color: var(--gris);
+    max-width: 760px;
+    margin: auto;
+}
+
+
+/* =========================
+   NAVEGACIÓN INFERIOR
+========================= */
+
+.module-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 13px 20px;
+    border-radius: 11px;
+
+    font-weight: 700;
+}
+
+.btn-outline {
+    border: 1px solid #dbcdd1;
+    color: var(--guinda);
+}
+
+.btn-primary {
+    background: var(--guinda);
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #321019;
+    color: white;
+
+    padding: 35px 24px;
+    text-align: center;
+}
+
+footer p {
+    color: rgba(255,255,255,.65);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px) {
+
+    .cards,
+    .cycle,
+    .principles,
+    .compare-grid,
+    .agreement-items {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .objective {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVEGACIÓN
+========================= -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            FCA · UACH
+            <small>FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO</small>
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="#funciones">Funciones</a>
+
+        <a href="#acompanamiento">Acompañamiento</a>
+
+        <a href="#recursos">Recursos</a>
+
+        <a href="#cierre">Cierre</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="module-label">
+        MÓDULO 05
+    </div>
+
+    <h1>
+        El Presidente de Academia como Acompañante Académico
+    </h1>
+
+    <p>
+        Liderazgo colegiado, seguimiento docente, construcción de acuerdos
+        y acompañamiento orientado a fortalecer la calidad académica
+        y la mejora continua.
+    </p>
+
+
+    <div class="route">
+
+        <span class="route-item">Liderazgo académico</span>
+
+        <span class="route-item">Trabajo colegiado</span>
+
+        <span class="route-item">Seguimiento</span>
+
+        <span class="route-item">Retroalimentación</span>
+
+        <span class="route-item">Mejora continua</span>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     OBJETIVO
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="objective">
+
+        <div class="objective-icon">
+            <i class="fa-solid fa-bullseye"></i>
+        </div>
+
+        <div>
+
+            <h3>Objetivo del módulo</h3>
+
+            <p>
+                Reconocer el papel del Presidente de Academia como figura
+                de acompañamiento académico y aplicar estrategias de seguimiento,
+                diálogo, retroalimentación y construcción de acuerdos que
+                fortalezcan el trabajo colegiado.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FUNCIONES
+========================= -->
+
+<section class="section section-alt" id="funciones">
+
+<div class="container">
+
+    <div class="section-label">
+        Función académica
+    </div>
+
+    <h2>Más que coordinar reuniones</h2>
+
+    <p class="section-intro">
+        El Presidente de Academia puede desempeñar un papel estratégico
+        en la articulación del trabajo docente, la revisión de prácticas
+        y la construcción de acuerdos orientados al aprendizaje.
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <h3>Promover trabajo colegiado</h3>
+
+            <p>
+                Facilitar espacios de diálogo donde los docentes analicen
+                problemas, prácticas y decisiones académicas comunes.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+
+            <h3>Dar seguimiento</h3>
+
+            <p>
+                Identificar avances, dificultades y necesidades relacionadas
+                con programas, syllabus, evaluación y desarrollo de cursos.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <h3>Facilitar diálogo</h3>
+
+            <p>
+                Generar conversaciones académicas centradas en evidencias,
+                necesidades y posibilidades de mejora.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+
+            <h3>Construir acuerdos</h3>
+
+            <p>
+                Promover criterios comunes sin eliminar la autonomía
+                y diversidad de las prácticas docentes.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+
+            <h3>Impulsar mejora</h3>
+
+            <p>
+                Convertir hallazgos y necesidades en acciones concretas,
+                viables y evaluables.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-bridge"></i>
+            </div>
+
+            <h3>Articular</h3>
+
+            <p>
+                Vincular al docente, la academia, los programas,
+                los lineamientos institucionales y las necesidades formativas.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ACOMPAÑAMIENTO
+========================= -->
+
+<section class="section" id="acompanamiento">
+
+<div class="container">
+
+    <div class="section-label">
+        Ruta de acompañamiento
+    </div>
+
+    <h2>Un proceso continuo</h2>
+
+    <p class="section-intro">
+        El acompañamiento académico no debe limitarse a atender problemas
+        cuando ya se han presentado. Puede organizarse como un ciclo
+        permanente de observación, diálogo, acuerdo y seguimiento.
+    </p>
+
+
+    <div class="cycle">
+
+
+        <div class="cycle-step">
+
+            <div class="cycle-number">1</div>
+
+            <h3>Identificar</h3>
+
+            <p>
+                Reconocer necesidades, dificultades, prácticas
+                o situaciones que requieren atención.
+            </p>
+
+        </div>
+
+
+        <div class="cycle-step">
+
+            <div class="cycle-number">2</div>
+
+            <h3>Dialogar</h3>
+
+            <p>
+                Analizar la situación con los docentes y comprender
+                sus causas y contexto.
+            </p>
+
+        </div>
+
+
+        <div class="cycle-step">
+
+            <div class="cycle-number">3</div>
+
+            <h3>Acordar</h3>
+
+            <p>
+                Definir acciones concretas, responsables
+                y criterios de seguimiento.
+            </p>
+
+        </div>
+
+
+        <div class="cycle-step">
+
+            <div class="cycle-number">4</div>
+
+            <h3>Dar seguimiento</h3>
+
+            <p>
+                Revisar avances, dificultades y ajustes necesarios
+                para consolidar la mejora.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PRINCIPIOS
+========================= -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+    <div class="section-label">
+        Principios
+    </div>
+
+    <h2>¿Cómo acompañar?</h2>
+
+    <p class="section-intro">
+        El acompañamiento académico requiere condiciones de confianza,
+        claridad, respeto profesional y orientación hacia la mejora.
+    </p>
+
+
+    <div class="principles">
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                <i class="fa-solid fa-ear-listen"></i>
+            </div>
+
+            <div>
+
+                <h3>Escucha</h3>
+
+                <p>
+                    Comprender las situaciones y necesidades antes
+                    de plantear soluciones o emitir juicios.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+
+                <h3>Objetividad</h3>
+
+                <p>
+                    Sustentar la retroalimentación en evidencias,
+                    criterios académicos y acuerdos institucionales.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <div>
+
+                <h3>Diálogo</h3>
+
+                <p>
+                    Favorecer una comunicación horizontal que permita
+                    analizar y construir alternativas conjuntamente.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+
+            <div>
+
+                <h3>Mejora</h3>
+
+                <p>
+                    Orientar la conversación hacia acciones posibles
+                    y no únicamente hacia la detección de errores.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div>
+
+                <h3>Respeto profesional</h3>
+
+                <p>
+                    Reconocer la experiencia, autonomía y responsabilidad
+                    académica de cada docente.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                <i class="fa-solid fa-repeat"></i>
+            </div>
+
+            <div>
+
+                <h3>Continuidad</h3>
+
+                <p>
+                    Dar seguimiento a los acuerdos para evitar que
+                    las decisiones colegiadas queden únicamente en actas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTROL VS ACOMPAÑAMIENTO
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="section-label">
+        Cambio de enfoque
+    </div>
+
+    <h2>Supervisión o acompañamiento</h2>
+
+    <p class="section-intro">
+        El seguimiento académico pierde valor cuando se percibe únicamente
+        como vigilancia o cumplimiento administrativo.
+    </p>
+
+
+    <div class="compare-grid">
+
+
+        <div class="compare-card control">
+
+            <h3>
+                <i class="fa-solid fa-clipboard"></i>
+                Enfoque de control
+            </h3>
+
+            <ul>
+                <li>Busca principalmente verificar cumplimiento.</li>
+
+                <li>Se concentra en errores o faltantes.</li>
+
+                <li>La comunicación suele ser unilateral.</li>
+
+                <li>La revisión termina cuando se entrega el documento.</li>
+
+                <li>Puede generar una respuesta defensiva.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="compare-card support">
+
+            <h3>
+                <i class="fa-solid fa-people-arrows"></i>
+                Enfoque de acompañamiento
+            </h3>
+
+            <ul>
+                <li>Busca comprender y fortalecer la práctica.</li>
+
+                <li>Identifica fortalezas y áreas de mejora.</li>
+
+                <li>Promueve diálogo y construcción conjunta.</li>
+
+                <li>Establece acuerdos y seguimiento.</li>
+
+                <li>Fortalece el aprendizaje organizacional.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ACUERDOS
+========================= -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+    <div class="agreement-box">
+
+        <h3>
+            <i class="fa-solid fa-clipboard-check"></i>
+            Un buen acuerdo académico debe ser verificable
+        </h3>
+
+        <p>
+            Las reuniones de academia adquieren mayor utilidad cuando
+            las decisiones se traducen en compromisos concretos que
+            posteriormente pueden revisarse.
+        </p>
+
+
+        <div class="agreement-items">
+
+
+            <div class="agreement-item">
+
+                <strong>¿Qué?</strong>
+
+                <p>
+                    Definir claramente la acción o mejora acordada.
+                </p>
+
+            </div>
+
+
+            <div class="agreement-item">
+
+                <strong>¿Quién?</strong>
+
+                <p>
+                    Establecer responsables o participantes.
+                </p>
+
+            </div>
+
+
+            <div class="agreement-item">
+
+                <strong>¿Cuándo?</strong>
+
+                <p>
+                    Determinar un momento para revisar avances.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     RECURSOS
+========================= -->
+
+<section class="section" id="recursos">
+
+<div class="container">
+
+    <div class="section-label">
+        Recursos del módulo
+    </div>
+
+    <h2>Herramientas para el acompañamiento</h2>
+
+    <p class="section-intro">
+        En esta sección se incorporarán recursos que puedan utilizarse
+        directamente durante el trabajo de las academias.
+    </p>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+            <i class="fa-solid fa-file-powerpoint"></i>
+        </div>
+
+        <div>
+
+            <h3>Presentación del Módulo 5</h3>
+
+            <p>
+                Material de apoyo sobre liderazgo académico,
+                seguimiento y acompañamiento docente.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+            <i class="fa-solid fa-list-check"></i>
+        </div>
+
+        <div>
+
+            <h3>Guía de acompañamiento académico</h3>
+
+            <p>
+                Espacio para una guía breve con preguntas de diagnóstico,
+                retroalimentación y seguimiento.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+            <i class="fa-solid fa-file-signature"></i>
+        </div>
+
+        <div>
+
+            <h3>Formato de acuerdos y seguimiento</h3>
+
+            <p>
+                Herramienta para registrar acciones, responsables,
+                fechas y resultados de los acuerdos de academia.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CIERRE
+========================= -->
+
+<section class="section section-alt" id="cierre">
+
+<div class="container">
+
+    <div class="closing-box">
+
+        <div class="closing-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <h3>Del modelo a la mejora académica</h3>
+
+        <p>
+            Los cinco módulos convergen en una misma tarea:
+            lograr que los principios institucionales se traduzcan
+            en programas pertinentes, syllabus coherentes, materiales
+            útiles, prácticas docentes consistentes y trabajo colegiado
+            orientado al aprendizaje.
+        </p>
+
+    </div>
+
+
+    <div class="module-navigation">
+
+        <a href="modulo4.html" class="btn btn-outline">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Módulo 4
+
+        </a>
+
+
+        <a href="index.html" class="btn btn-primary">
+
+            Volver al inicio
+
+            <i class="fa-solid fa-house"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+    <strong>
+        Facultad de Contaduría y Administración
+    </strong>
+
+    <p>
+        Universidad Autónoma de Chihuahua ·
+        Formación y acompañamiento académico
+    </p>
+
+</footer>
+
+
+</body>
+</html>
