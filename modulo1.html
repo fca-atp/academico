@@ -11,42 +11,52 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
       rel="stylesheet">
 
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-
 <style>
 
-/* ========================================
-   VARIABLES
-======================================== */
+/* ==========================================================
+   IDENTIDAD VISUAL
+   Inspirada en morado, amarillo y blanco
+========================================================== */
 
 :root {
 
-    --guinda: #7a1f35;
-    --guinda-oscuro: #551425;
-    --guinda-claro: #a44760;
+    --morado: #6f2c91;
+    --morado-oscuro: #4d1768;
+    --morado-profundo: #38104d;
+    --morado-medio: #8250a0;
 
-    --dorado: #d2a84a;
-    --dorado-claro: #f4e7c5;
+    --lavanda: #f4eef8;
+    --lavanda-2: #ebe0f2;
+
+    --amarillo: #f5b51b;
+    --amarillo-claro: #fff3cf;
+    --amarillo-palido: #fff9e9;
 
     --blanco: #ffffff;
-    --crema: #faf8f5;
-    --gris-claro: #f3f4f6;
-    --gris: #667085;
-    --grafito: #26272b;
 
-    --sombra: 0 10px 30px rgba(45,32,37,.10);
+    --gris-fondo: #fafafa;
+    --gris-claro: #f3f3f5;
+    --gris-borde: #e6e2e8;
+    --gris: #667085;
+
+    --texto: #292532;
+    --texto-secundario: #5d5864;
+
+    --sombra:
+        0 10px 30px rgba(67,35,80,.09);
 
 }
 
 
-/* ========================================
+/* ==========================================================
    GENERAL
-======================================== */
+========================================================== */
 
 * {
     box-sizing: border-box;
@@ -62,7 +72,7 @@ body {
 
     font-family: "Inter", Arial, sans-serif;
 
-    color: var(--grafito);
+    color: var(--texto);
     background: var(--blanco);
 
     line-height: 1.65;
@@ -74,18 +84,15 @@ a {
     color: inherit;
 }
 
-.container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
-/* ========================================
-   NAVEGACIÓN GENERAL DEL SITIO
-======================================== */
+/* ==========================================================
+   MENÚ SUPERIOR
+========================================================== */
 
 .navbar {
 
@@ -93,25 +100,29 @@ a {
 
     top: 0;
 
-    z-index: 1000;
+    z-index: 1200;
 
-    background: rgba(255,255,255,.97);
+    background:
+        rgba(255,255,255,.97);
 
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom:
+        1px solid var(--gris-borde);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(12px);
 
 }
 
 .nav-container {
 
-    max-width: 1250px;
+    max-width: 1320px;
+
+    min-height: 72px;
 
     margin: auto;
 
-    min-height: 70px;
-
-    padding: 0 24px;
+    padding:
+        0 28px;
 
     display: flex;
 
@@ -119,9 +130,12 @@ a {
 
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 30px;
 
 }
+
+
+/* MARCA */
 
 .brand {
 
@@ -129,46 +143,122 @@ a {
 
     align-items: center;
 
-    gap: 11px;
-
-    color: var(--guinda);
-
-    font-weight: 800;
+    gap: 13px;
 
     white-space: nowrap;
 
 }
 
-.brand-icon {
+.brand-symbol {
 
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
 
-    border-radius: 11px;
+    position: relative;
 
-    background: var(--guinda);
-
-    color: white;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+    flex:
+        0 0 45px;
 
 }
 
-.brand small {
+
+/* símbolo geométrico inspirado en la gama institucional */
+
+.brand-symbol .purple-v {
+
+    position: absolute;
+
+    width: 14px;
+    height: 39px;
+
+    left: 16px;
+    top: 1px;
+
+    background:
+        var(--morado);
+
+}
+
+.brand-symbol .purple-h {
+
+    position: absolute;
+
+    width: 39px;
+    height: 14px;
+
+    left: 4px;
+    top: 14px;
+
+    background:
+        var(--morado);
+
+}
+
+.brand-symbol .yellow-v {
+
+    position: absolute;
+
+    width: 10px;
+    height: 28px;
+
+    left: 18px;
+    top: 15px;
+
+    background:
+        var(--amarillo);
+
+    z-index: 2;
+
+}
+
+.brand-symbol .yellow-h {
+
+    position: absolute;
+
+    width: 29px;
+    height: 10px;
+
+    left: 2px;
+    top: 15px;
+
+    background:
+        var(--amarillo);
+
+    z-index: 3;
+
+}
+
+.brand-text {
+
+    color:
+        var(--morado-oscuro);
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+}
+
+.brand-text small {
 
     display: block;
+
+    margin-top: 3px;
+
+    color: var(--gris);
 
     font-size: 9px;
 
     font-weight: 500;
 
-    color: var(--gris);
+    letter-spacing: .15px;
 
 }
+
+
+/* navegación */
 
 .nav-links {
 
@@ -176,7 +266,9 @@ a {
 
     align-items: center;
 
-    gap: 8px;
+    justify-content: flex-end;
+
+    gap: 5px;
 
     flex-wrap: wrap;
 
@@ -184,160 +276,248 @@ a {
 
 .nav-links a {
 
-    padding: 8px 10px;
+    padding:
+        8px 11px;
 
-    border-radius: 8px;
+    border-radius: 9px;
+
+    color: #514b59;
 
     font-size: 12px;
 
     font-weight: 700;
 
-    color: #555;
-
-    transition: .2s;
+    transition:
+        .2s ease;
 
 }
 
 .nav-links a:hover {
 
-    background: #f7eef0;
+    background:
+        var(--lavanda);
 
-    color: var(--guinda);
+    color:
+        var(--morado);
 
 }
 
 .nav-links a.active {
 
-    background: var(--guinda);
+    background:
+        var(--amarillo);
 
-    color: white;
+    color:
+        var(--morado-profundo);
 
 }
 
 
-/* ========================================
+/* ==========================================================
    HERO
-======================================== */
+========================================================== */
 
 .hero {
 
+    position: relative;
+
+    overflow: hidden;
+
     background:
-        radial-gradient(
-            circle at 86% 12%,
-            rgba(210,168,74,.27),
-            transparent 23%
-        ),
         linear-gradient(
-            135deg,
-            #ffffff,
-            #fbf5f7
+            120deg,
+            #ffffff 0%,
+            #ffffff 63%,
+            #faf6fc 100%
         );
 
-    border-bottom: 1px solid #eee5e7;
+    border-bottom:
+        1px solid var(--gris-borde);
+
+}
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -120px;
+    top: -170px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(111,44,145,.055);
 
 }
 
 .hero-content {
 
-    max-width: 1100px;
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1130px;
 
     margin: auto;
 
-    padding: 75px 24px 65px;
+    padding:
+        72px 24px 68px;
 
 }
 
+
+/* decoración superior */
+
+.hero-decoration {
+
+    position: absolute;
+
+    right: 40px;
+    top: 40px;
+
+    width: 130px;
+    height: 130px;
+
+    opacity: .9;
+
+}
+
+.deco-purple {
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    right: 0;
+    top: 0;
+
+    background:
+        var(--morado);
+
+    border-radius:
+        12px 0 12px 12px;
+
+}
+
+.deco-yellow {
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    right: 38px;
+    top: 38px;
+
+    background:
+        var(--amarillo);
+
+    border-radius:
+        0 14px 14px 14px;
+
+}
+
+
 .module-label {
 
-    display: inline-block;
+    display: inline-flex;
 
-    padding: 7px 14px;
+    align-items: center;
 
-    margin-bottom: 20px;
+    gap: 8px;
 
-    border-radius: 30px;
+    margin-bottom: 16px;
 
-    background: var(--dorado-claro);
+    color:
+        var(--morado);
 
-    color: #755713;
-
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: 800;
 
-    letter-spacing: 1px;
+}
+
+.module-label::before {
+
+    content: "";
+
+    width: 32px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background:
+        var(--amarillo);
 
 }
 
 .hero h1 {
 
-    max-width: 900px;
+    max-width: 800px;
 
-    font-family: "Playfair Display", serif;
+    margin-bottom: 15px;
 
-    font-size: clamp(40px,6vw,64px);
+    color:
+        var(--morado-oscuro);
 
-    line-height: 1.08;
+    font-family:
+        "Playfair Display", serif;
 
-    color: var(--guinda-oscuro);
+    font-size:
+        clamp(42px,6vw,67px);
 
-    margin-bottom: 20px;
+    font-weight: 800;
+
+    line-height: 1.05;
 
 }
 
 .hero p {
 
-    max-width: 820px;
+    max-width: 760px;
+
+    color:
+        var(--texto-secundario);
 
     font-size: 18px;
 
-    color: var(--gris);
-
-}
-
-.hero-note {
-
-    margin-top: 28px;
-
-    max-width: 820px;
-
-    padding: 17px 19px;
-
-    border-left: 4px solid var(--dorado);
-
-    background: rgba(255,255,255,.80);
-
-    color: #555;
-
-    font-size: 14px;
+    line-height: 1.65;
 
 }
 
 
-/* ========================================
-   ESTRUCTURA DEL MÓDULO
-======================================== */
+/* ==========================================================
+   DISEÑO GENERAL DEL MÓDULO
+========================================================== */
 
 .module-layout {
 
-    max-width: 1350px;
+    max-width: 1360px;
 
     margin: auto;
 
-    padding: 0 24px;
+    padding:
+        0 28px;
 
     display: grid;
 
-    grid-template-columns: 245px minmax(0,1fr);
+    grid-template-columns:
+        250px minmax(0, 1fr);
 
-    gap: 38px;
+    gap: 42px;
 
 }
 
 
-/* ========================================
+/* ==========================================================
    PANEL LATERAL
-======================================== */
+========================================================== */
 
 .side-nav {
 
@@ -349,25 +529,23 @@ a {
 
     position: sticky;
 
-    top: 92px;
+    top: 94px;
 
-    margin-top: 45px;
-
+    margin-top: 42px;
     margin-bottom: 45px;
 
-    padding: 20px 13px;
+    overflow: hidden;
 
-    border-radius: 18px;
+    border:
+        1px solid var(--gris-borde);
+
+    border-radius: 17px;
 
     background:
-        linear-gradient(
-            160deg,
-            var(--guinda-oscuro),
-            #3f101d
-        );
+        var(--blanco);
 
     box-shadow:
-        0 12px 30px rgba(45,32,37,.16);
+        var(--sombra);
 
 }
 
@@ -377,24 +555,45 @@ a {
 
     align-items: center;
 
-    gap: 9px;
+    gap: 10px;
 
-    padding: 0 9px 15px;
+    padding:
+        17px 17px;
 
-    margin-bottom: 7px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--morado),
+            var(--morado-oscuro)
+        );
 
-    border-bottom:
-        1px solid rgba(255,255,255,.14);
+    color:
+        white;
 
-    color: white;
-
-    font-size: 11px;
+    font-size: 12px;
 
     font-weight: 800;
 
-    letter-spacing: .8px;
+    letter-spacing: .4px;
 
     text-transform: uppercase;
+
+}
+
+.side-nav-title i {
+
+    color:
+        var(--amarillo);
+
+}
+
+
+/* enlaces */
+
+.side-nav-links {
+
+    padding:
+        8px 8px 12px;
 
 }
 
@@ -406,21 +605,25 @@ a {
 
     gap: 10px;
 
-    padding: 10px 10px;
+    padding:
+        10px 11px;
 
-    margin: 3px 0;
+    margin:
+        2px 0;
 
     border-radius: 9px;
 
-    color: rgba(255,255,255,.76);
+    color:
+        #625d68;
 
-    font-size: 12px;
+    font-size: 11.5px;
 
     font-weight: 600;
 
-    line-height: 1.3;
+    line-height: 1.35;
 
-    transition: .2s;
+    transition:
+        .18s ease;
 
 }
 
@@ -428,45 +631,122 @@ a {
 
     width: 18px;
 
-    flex: 0 0 18px;
+    flex:
+        0 0 18px;
 
     text-align: center;
 
-    color: var(--dorado);
+    color:
+        var(--morado);
+
+    font-size: 13px;
 
 }
 
 .side-nav a:hover {
 
-    background: rgba(255,255,255,.10);
+    background:
+        var(--lavanda);
 
-    color: white;
-
-    transform: translateX(3px);
+    color:
+        var(--morado-oscuro);
 
 }
 
 
-/* sección activa */
+/* sección visible */
 
 .side-nav a.active-section {
 
-    background: white;
+    background:
+        linear-gradient(
+            90deg,
+            var(--amarillo-claro),
+            #fff9e9
+        );
 
-    color: var(--guinda-oscuro);
+    color:
+        var(--morado-profundo);
+
+    font-weight: 800;
 
 }
 
 .side-nav a.active-section i {
 
-    color: var(--guinda);
+    color:
+        var(--morado);
 
 }
 
 
-/* ========================================
-   CONTENIDO PRINCIPAL
-======================================== */
+/* referencia rápida */
+
+.sidebar-note {
+
+    margin:
+        8px 12px 15px;
+
+    padding:
+        18px;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--lavanda);
+
+}
+
+.sidebar-note blockquote {
+
+    color:
+        var(--morado-oscuro);
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+}
+
+.sidebar-note-line {
+
+    width: 34px;
+    height: 4px;
+
+    margin:
+        13px 0 9px;
+
+    border-radius:
+        3px;
+
+    background:
+        var(--amarillo);
+
+}
+
+.sidebar-note small {
+
+    color:
+        var(--gris);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ==========================================================
+   CONTENIDO
+========================================================== */
 
 .module-content {
 
@@ -474,1161 +754,1700 @@ a {
 
 }
 
-.module-content .container {
-
-    max-width: none;
-
-    padding-left: 0;
-
-    padding-right: 0;
-
-}
-
-
-/* ========================================
-   SECCIONES
-======================================== */
-
 .section {
 
-    padding: 70px 0;
+    padding:
+        67px 0;
 
-    scroll-margin-top: 90px;
+    scroll-margin-top:
+        95px;
+
+    border-bottom:
+        1px solid #eeeaf0;
 
 }
 
-.section-alt {
+.section:last-child {
 
-    position: relative;
-
-}
-
-.section-alt::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    bottom: 0;
-
-    left: -35px;
-    right: -35px;
-
-    background: var(--crema);
-
-    z-index: -1;
+    border-bottom: none;
 
 }
 
 .section-label {
 
-    color: var(--guinda);
+    display: flex;
 
-    font-size: 12px;
+    align-items: center;
 
-    font-weight: 800;
+    gap: 10px;
 
-    letter-spacing: 1.2px;
+    margin-bottom:
+        7px;
 
-    text-transform: uppercase;
+    color:
+        #716b77;
 
-    margin-bottom: 8px;
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+}
+
+.section-label::before {
+
+    content: "";
+
+    width: 28px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background:
+        var(--amarillo);
 
 }
 
 .section h2 {
 
-    max-width: 850px;
+    max-width: 830px;
 
-    font-size: 34px;
+    margin-bottom:
+        9px;
 
-    line-height: 1.2;
+    color:
+        var(--morado-oscuro);
 
-    color: var(--guinda-oscuro);
+    font-size:
+        clamp(27px,3vw,36px);
 
-    margin-bottom: 18px;
+    line-height:
+        1.2;
+
+}
+
+.section-subtitle {
+
+    max-width:
+        830px;
+
+    margin-bottom:
+        20px;
+
+    color:
+        #4d4853;
+
+    font-size:
+        18px;
+
+    font-weight:
+        500;
 
 }
 
 .section-intro {
 
-    max-width: 830px;
+    max-width:
+        850px;
 
-    color: var(--gris);
+    margin-bottom:
+        29px;
 
-    margin-bottom: 35px;
+    color:
+        var(--texto-secundario);
 
-}
-
-
-/* ========================================
-   OBJETIVO
-======================================== */
-
-.objective {
-
-    display: grid;
-
-    grid-template-columns: 65px 1fr;
-
-    gap: 20px;
-
-    align-items: center;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--guinda),
-            var(--guinda-oscuro)
-        );
-
-    color: white;
-
-    box-shadow: var(--sombra);
-
-}
-
-.objective-icon {
-
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.14);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 24px;
-
-}
-
-.objective h3 {
-
-    margin-bottom: 6px;
-
-}
-
-.objective p {
-
-    color: rgba(255,255,255,.87);
+    font-size:
+        14.5px;
 
 }
 
 
-/* ========================================
-   TRES MODELOS
-======================================== */
+/* ==========================================================
+   INTRODUCCIÓN
+========================================================== */
 
-.model-grid {
+.intro-text {
+
+    max-width:
+        860px;
+
+}
+
+.intro-text p {
+
+    margin-bottom:
+        16px;
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        14.5px;
+
+}
+
+.intro-text strong {
+
+    color:
+        var(--morado-oscuro);
+
+}
+
+
+/* bloque 2024 */
+
+.year-box {
 
     display: grid;
 
     grid-template-columns:
+        60px 1fr;
+
+    gap:
+        20px;
+
+    align-items:
+        center;
+
+    margin-top:
+        28px;
+
+    padding:
+        24px 27px;
+
+    border-left:
+        5px solid var(--amarillo);
+
+    border-radius:
+        0 16px 16px 0;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--amarillo-palido),
+            #fffdfa
+        );
+
+}
+
+.year-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--amarillo);
+
+    color:
+        var(--morado-profundo);
+
+    font-size:
+        22px;
+
+}
+
+.year-box h3 {
+
+    margin-bottom:
+        4px;
+
+    color:
+        var(--morado-oscuro);
+
+    font-size:
+        17px;
+
+}
+
+.year-box p {
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        13.5px;
+
+}
+
+
+/* ==========================================================
+   MODELOS
+========================================================== */
+
+.model-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
         repeat(3,1fr);
 
-    gap: 18px;
+    gap:
+        18px;
 
 }
 
 .model-card {
 
-    padding: 25px;
+    position:
+        relative;
 
-    background: white;
+    min-height:
+        235px;
+
+    padding:
+        26px 24px;
+
+    overflow:
+        hidden;
 
     border:
-        1px solid #ece5e7;
+        1px solid var(--gris-borde);
 
-    border-radius: 18px;
+    border-radius:
+        17px;
+
+    background:
+        var(--blanco);
 
 }
 
-.model-number {
+.model-card:nth-child(1),
+.model-card:nth-child(3) {
 
-    width: 42px;
-    height: 42px;
+    background:
+        linear-gradient(
+            150deg,
+            #ffffff,
+            var(--lavanda)
+        );
 
-    display: flex;
+}
 
-    align-items: center;
+.model-card:nth-child(2) {
 
-    justify-content: center;
+    background:
+        linear-gradient(
+            150deg,
+            #ffffff,
+            var(--amarillo-claro)
+        );
 
-    border-radius: 50%;
+}
 
-    background: var(--guinda);
+.model-icon {
 
-    color: white;
+    width:
+        47px;
 
-    font-weight: 800;
+    height:
+        47px;
 
-    margin-bottom: 16px;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(111,44,145,.09);
+
+    color:
+        var(--morado);
+
+    font-size:
+        21px;
+
+}
+
+.model-card:nth-child(2)
+.model-icon {
+
+    background:
+        rgba(245,181,27,.18);
+
+    color:
+        #bb7f00;
 
 }
 
 .model-card h3 {
 
-    color: var(--guinda);
+    margin-bottom:
+        4px;
 
-    margin-bottom: 6px;
+    color:
+        var(--morado-oscuro);
+
+    font-size:
+        17px;
 
 }
 
 .model-question {
 
-    color: var(--grafito);
+    margin-bottom:
+        11px;
 
-    font-weight: 700;
+    color:
+        #47414d;
 
-    margin-bottom: 10px;
+    font-size:
+        13px;
+
+    font-weight:
+        700;
 
 }
 
 .model-card p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
 }
 
 
-/* ========================================
-   CUADRO APLICADO
-======================================== */
+/* ==========================================================
+   CAJA DE IDEA CLAVE
+========================================================== */
 
-.applied-box {
+.key-box {
 
-    margin-top: 30px;
+    display:
+        grid;
 
-    padding: 27px;
+    grid-template-columns:
+        55px 1fr;
 
-    border-radius: 18px;
+    gap:
+        18px;
 
-    background: #fffaf0;
+    align-items:
+        center;
+
+    margin-top:
+        25px;
+
+    padding:
+        22px 25px;
 
     border-left:
-        6px solid var(--dorado);
+        5px solid var(--amarillo);
+
+    border-radius:
+        0 15px 15px 0;
+
+    background:
+        var(--amarillo-palido);
 
 }
 
-.applied-box h3 {
+.key-icon {
 
-    color: var(--guinda);
+    color:
+        var(--amarillo);
 
-    margin-bottom: 8px;
+    font-size:
+        35px;
+
+    text-align:
+        center;
 
 }
 
-.applied-box p {
+.key-box h3 {
 
-    color: #595959;
+    margin-bottom:
+        4px;
+
+    color:
+        var(--morado-oscuro);
+
+    font-size:
+        15px;
+
+}
+
+.key-box p {
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        13.5px;
 
 }
 
 
-/* ========================================
-   MODELO GLOCAL
-======================================== */
+/* ==========================================================
+   GLOCAL
+========================================================== */
 
-.glocal-grid {
+.two-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 20px;
+    gap:
+        19px;
 
 }
 
-.glocal-card {
+.info-card {
 
-    padding: 28px;
-
-    border-radius: 18px;
-
-    background: white;
+    padding:
+        27px;
 
     border:
-        1px solid #ece5e7;
+        1px solid var(--gris-borde);
+
+    border-radius:
+        17px;
+
+    background:
+        white;
+
+    box-shadow:
+        0 4px 16px rgba(68,47,75,.04);
 
 }
 
-.glocal-icon {
+.info-card-icon {
 
-    width: 50px;
-    height: 50px;
+    width:
+        48px;
 
-    display: flex;
+    height:
+        48px;
 
-    align-items: center;
+    display:
+        flex;
 
-    justify-content: center;
+    align-items:
+        center;
 
-    border-radius: 14px;
+    justify-content:
+        center;
 
-    background: #f6edef;
+    margin-bottom:
+        15px;
 
-    color: var(--guinda);
+    border-radius:
+        13px;
 
-    font-size: 20px;
+    background:
+        var(--lavanda);
 
-    margin-bottom: 15px;
+    color:
+        var(--morado);
 
-}
-
-.glocal-card h3 {
-
-    color: var(--guinda);
-
-    margin-bottom: 9px;
-
-}
-
-.glocal-card p {
-
-    color: var(--gris);
-
-    font-size: 14px;
+    font-size:
+        20px;
 
 }
 
+.info-card h3 {
 
-/* ========================================
+    margin-bottom:
+        8px;
+
+    color:
+        var(--morado-oscuro);
+
+    font-size:
+        17px;
+
+}
+
+.info-card p {
+
+    color:
+        var(--gris);
+
+    font-size:
+        13.5px;
+
+}
+
+
+/* ==========================================================
    SABER ACTUAR SER
-======================================== */
+========================================================== */
 
 .sas-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 18px;
+    gap:
+        18px;
 
 }
 
 .sas-card {
 
-    padding: 27px;
+    padding:
+        26px;
 
-    border-radius: 20px;
-
-    background: white;
+    border:
+        1px solid var(--gris-borde);
 
     border-top:
-        6px solid var(--guinda);
+        5px solid var(--morado);
 
-    box-shadow:
-        0 7px 25px rgba(60,35,44,.08);
+    border-radius:
+        15px;
+
+    background:
+        white;
 
 }
 
 .sas-card:nth-child(2) {
 
     border-top-color:
-        var(--dorado);
+        var(--amarillo);
 
 }
 
 .sas-card:nth-child(3) {
 
     border-top-color:
-        #7d8797;
+        var(--morado-medio);
 
 }
 
 .sas-word {
 
-    font-size: 27px;
+    margin-bottom:
+        5px;
 
-    font-weight: 800;
+    color:
+        var(--morado-oscuro);
 
-    color: var(--guinda-oscuro);
+    font-size:
+        25px;
 
-    margin-bottom: 8px;
+    font-weight:
+        800;
 
 }
 
 .sas-question {
 
-    font-weight: 700;
+    margin-bottom:
+        10px;
 
-    margin-bottom: 12px;
+    color:
+        #4f4955;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
 
 }
 
 .sas-card p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
 }
 
 .example-small {
 
-    margin-top: 15px;
+    margin-top:
+        15px;
 
-    padding-top: 13px;
+    padding-top:
+        13px;
 
-    border-top: 1px solid #eee;
+    border-top:
+        1px solid #eee;
 
-    font-size: 13px;
+    color:
+        #56505c;
+
+    font-size:
+        12.5px;
 
 }
 
 
-/* ========================================
-   TARJETAS
-======================================== */
+/* ==========================================================
+   TARJETAS PRINCIPIOS
+========================================================== */
 
 .cards {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 18px;
+    gap:
+        17px;
 
 }
 
 .card {
 
-    padding: 25px;
-
-    background: white;
+    padding:
+        25px;
 
     border:
-        1px solid #ece5e7;
+        1px solid var(--gris-borde);
 
-    border-radius: 17px;
+    border-radius:
+        16px;
 
-    transition: .25s;
+    background:
+        white;
+
+    transition:
+        .2s ease;
 
 }
 
 .card:hover {
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-3px);
 
-    box-shadow: var(--sombra);
+    box-shadow:
+        var(--sombra);
 
 }
 
 .card-icon {
 
-    width: 45px;
-    height: 45px;
+    width:
+        44px;
 
-    border-radius: 13px;
+    height:
+        44px;
 
-    background: #f6edef;
+    display:
+        flex;
 
-    color: var(--guinda);
+    align-items:
+        center;
 
-    display: flex;
+    justify-content:
+        center;
 
-    align-items: center;
+    margin-bottom:
+        14px;
 
-    justify-content: center;
+    border-radius:
+        12px;
 
-    margin-bottom: 15px;
+    background:
+        var(--lavanda);
+
+    color:
+        var(--morado);
 
 }
 
 .card h3 {
 
-    color: var(--guinda);
+    margin-bottom:
+        7px;
 
-    margin-bottom: 7px;
+    color:
+        var(--morado-oscuro);
 
-    font-size: 17px;
+    font-size:
+        16px;
 
 }
 
 .card p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
 }
 
 .card .practice {
 
-    margin-top: 13px;
+    margin-top:
+        13px;
 
-    padding-top: 12px;
+    padding-top:
+        11px;
 
-    border-top: 1px solid #eee;
+    border-top:
+        1px solid #eee;
 
-    color: #4d4d4d;
+    color:
+        #514b57;
 
 }
 
 
-/* ========================================
+/* ==========================================================
    AUTO SOCIO ECO
-======================================== */
+========================================================== */
 
 .ase-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 18px;
+    gap:
+        18px;
 
 }
 
 .ase-card {
 
-    text-align: center;
+    padding:
+        26px 22px;
 
-    padding: 30px 22px;
-
-    border-radius: 18px;
-
-    background: white;
+    text-align:
+        center;
 
     border:
-        1px solid #ece5e7;
+        1px solid var(--gris-borde);
+
+    border-radius:
+        17px;
+
+    background:
+        white;
 
 }
 
 .ase-circle {
 
-    width: 70px;
-    height: 70px;
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     margin:
-        0 auto 16px;
+        0 auto 15px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: var(--guinda);
+    background:
+        var(--morado);
 
-    color: white;
+    color:
+        white;
 
-    display: flex;
+    font-size:
+        14px;
 
-    align-items: center;
-
-    justify-content: center;
-
-    font-weight: 800;
-
-    font-size: 17px;
+    font-weight:
+        800;
 
 }
 
 .ase-card:nth-child(2)
 .ase-circle {
 
-    background: #9f6e26;
+    background:
+        var(--amarillo);
+
+    color:
+        var(--morado-profundo);
 
 }
 
 .ase-card:nth-child(3)
 .ase-circle {
 
-    background: #596675;
+    background:
+        var(--morado-medio);
 
 }
 
 .ase-card h3 {
 
-    color: var(--guinda);
+    margin-bottom:
+        7px;
 
-    margin-bottom: 8px;
+    color:
+        var(--morado-oscuro);
 
 }
 
 .ase-card p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
 }
 
 
-/* ========================================
-   EJES
-======================================== */
+/* ==========================================================
+   EJES TRANSVERSALES
+========================================================== */
 
 .tags {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 10px;
+    gap:
+        9px;
 
     margin:
-        25px 0 30px;
+        22px 0 28px;
 
 }
 
 .tag {
 
-    padding: 10px 15px;
+    padding:
+        9px 14px;
 
-    border-radius: 30px;
+    border:
+        1px solid var(--lavanda-2);
 
-    background: #f7eef0;
+    border-radius:
+        30px;
 
-    color: var(--guinda);
+    background:
+        var(--lavanda);
 
-    font-size: 13px;
+    color:
+        var(--morado-oscuro);
 
-    font-weight: 700;
+    font-size:
+        12px;
+
+    font-weight:
+        700;
 
 }
 
-
-/* ========================================
-   TRANSVERSALIZACIÓN
-======================================== */
-
 .compare-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 20px;
+    gap:
+        18px;
 
 }
 
 .compare-card {
 
-    padding: 27px;
-
-    background: white;
-
-    border-radius: 18px;
+    padding:
+        25px;
 
     border:
-        1px solid #ece5e7;
+        1px solid var(--gris-borde);
+
+    border-radius:
+        16px;
+
+    background:
+        white;
 
 }
 
 .compare-card.bad {
 
     border-top:
-        6px solid #aaa;
+        5px solid #aaa;
 
 }
 
 .compare-card.good {
 
     border-top:
-        6px solid var(--guinda);
+        5px solid var(--amarillo);
 
 }
 
 .compare-card h3 {
 
-    color: var(--guinda-oscuro);
+    margin-bottom:
+        10px;
 
-    margin-bottom: 12px;
+    color:
+        var(--morado-oscuro);
+
+    font-size:
+        16px;
 
 }
 
 .compare-card p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
 }
 
 
-/* ========================================
+/* ==========================================================
    AMBIENTES
-======================================== */
+========================================================== */
 
 .environment-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap: 14px;
+    gap:
+        13px;
 
 }
 
 .environment-item {
 
-    text-align: center;
+    padding:
+        22px 12px;
 
-    background: white;
+    text-align:
+        center;
 
     border:
-        1px solid #ece5e7;
+        1px solid var(--gris-borde);
 
-    border-radius: 16px;
+    border-radius:
+        15px;
 
-    padding: 24px 12px;
+    background:
+        white;
 
 }
 
 .environment-item i {
 
-    font-size: 24px;
+    margin-bottom:
+        10px;
 
-    color: var(--guinda);
+    color:
+        var(--morado);
 
-    margin-bottom: 10px;
+    font-size:
+        22px;
 
 }
 
 .environment-item strong {
 
-    display: block;
+    display:
+        block;
 
-    font-size: 13px;
+    color:
+        var(--morado-oscuro);
 
-    color: var(--guinda-oscuro);
+    font-size:
+        12px;
 
 }
 
 
-/* ========================================
-   EJEMPLO COMPLETO
-======================================== */
+/* ==========================================================
+   APLICACIÓN DOCENTE
+========================================================== */
 
 .case-box {
 
-    padding: 32px;
+    padding:
+        30px;
 
-    border-radius: 22px;
+    border-radius:
+        20px;
 
     background:
         linear-gradient(
             135deg,
-            #40131f,
-            #7a1f35
+            var(--morado-profundo),
+            var(--morado)
         );
 
-    color: white;
+    color:
+        white;
 
 }
 
-.case-box h3 {
+.case-box > h3 {
 
-    font-size: 24px;
+    margin-bottom:
+        7px;
 
-    margin-bottom: 8px;
+    font-size:
+        23px;
 
 }
 
 .case-intro {
 
+    margin-bottom:
+        22px;
+
     color:
         rgba(255,255,255,.78);
 
-    margin-bottom: 25px;
+    font-size:
+        13.5px;
 
 }
 
 .case-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 13px;
+    gap:
+        12px;
 
 }
 
 .case-item {
 
-    padding: 18px;
-
-    border-radius: 14px;
-
-    background:
-        rgba(255,255,255,.10);
+    padding:
+        17px;
 
     border:
-        1px solid rgba(255,255,255,.13);
+        1px solid rgba(255,255,255,.14);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255,255,255,.08);
 
 }
 
 .case-item strong {
 
-    display: block;
+    display:
+        block;
 
-    color: var(--dorado-claro);
+    margin-bottom:
+        4px;
 
-    margin-bottom: 5px;
+    color:
+        var(--amarillo);
+
+    font-size:
+        13px;
 
 }
 
 .case-item p {
 
-    font-size: 13px;
-
     color:
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.83);
+
+    font-size:
+        12.5px;
 
 }
 
 
-/* ========================================
+/* ==========================================================
    RESUMEN
-======================================== */
-
-.summary-box {
-
-    padding: 35px;
-
-    border-radius: 22px;
-
-    background: white;
-
-    box-shadow: var(--sombra);
-
-}
-
-.summary-box h3 {
-
-    color: var(--guinda-oscuro);
-
-    font-size: 24px;
-
-    margin-bottom: 20px;
-
-}
+========================================================== */
 
 .summary-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 12px;
+    gap:
+        11px;
 
 }
 
 .summary-item {
 
-    padding: 16px;
+    padding:
+        14px 15px;
 
-    border-radius: 12px;
+    border-left:
+        4px solid var(--amarillo);
 
-    background: var(--gris-claro);
+    border-radius:
+        8px;
 
-    color: #50545b;
+    background:
+        var(--lavanda);
 
-    font-size: 13px;
+    color:
+        var(--morado-oscuro);
 
-    font-weight: 600;
+    font-size:
+        12px;
+
+    font-weight:
+        700;
 
 }
 
 
-/* ========================================
+/* ==========================================================
    RECURSOS
-======================================== */
+========================================================== */
 
 .resource {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 20px;
+    gap:
+        17px;
 
-    padding: 23px;
+    margin-bottom:
+        13px;
 
-    margin-bottom: 15px;
-
-    background: white;
+    padding:
+        20px;
 
     border:
-        1px dashed #cbb9be;
+        1px solid var(--gris-borde);
 
-    border-radius: 16px;
+    border-radius:
+        14px;
+
+    background:
+        white;
 
 }
 
 .resource-icon {
 
-    width: 50px;
-    height: 50px;
+    width:
+        48px;
 
-    flex: 0 0 50px;
+    height:
+        48px;
 
-    display: flex;
+    flex:
+        0 0 48px;
 
-    align-items: center;
+    display:
+        flex;
 
-    justify-content: center;
+    align-items:
+        center;
 
-    border-radius: 13px;
+    justify-content:
+        center;
 
-    background: var(--guinda);
+    border-radius:
+        12px;
 
-    color: white;
+    background:
+        var(--morado);
 
-    font-size: 20px;
+    color:
+        var(--amarillo);
+
+    font-size:
+        18px;
 
 }
 
 .resource h3 {
 
-    color: var(--guinda);
+    margin-bottom:
+        2px;
 
-    font-size: 16px;
+    color:
+        var(--morado-oscuro);
+
+    font-size:
+        15px;
 
 }
 
 .resource p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-size: 13px;
+    font-size:
+        12.5px;
 
 }
 
 
-/* ========================================
-   NAVEGACIÓN INFERIOR
-======================================== */
+/* ==========================================================
+   NAVEGACIÓN FINAL
+========================================================== */
 
 .module-navigation {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    align-items:
+        center;
 
-    gap: 15px;
+    justify-content:
+        space-between;
 
-    margin-top: 45px;
+    gap:
+        15px;
+
+    margin-top:
+        38px;
 
 }
 
 .btn {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 9px;
+    justify-content:
+        center;
 
-    padding: 13px 20px;
+    gap:
+        9px;
 
-    border-radius: 11px;
+    padding:
+        12px 18px;
 
-    font-weight: 700;
+    border-radius:
+        10px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        .2s ease;
 
 }
 
 .btn-outline {
 
     border:
-        1px solid #dbcdd1;
+        1px solid var(--gris-borde);
 
-    color: var(--guinda);
+    background:
+        white;
+
+    color:
+        var(--morado);
+
+}
+
+.btn-outline:hover {
+
+    background:
+        var(--lavanda);
 
 }
 
 .btn-primary {
 
-    background: var(--guinda);
+    background:
+        var(--amarillo);
 
-    color: white;
+    color:
+        var(--morado-profundo);
+
+}
+
+.btn-primary:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(245,181,27,.28);
 
 }
 
 
-/* ========================================
+/* ==========================================================
    FOOTER
-======================================== */
+========================================================== */
 
 footer {
 
-    padding: 35px 24px;
+    margin-top:
+        10px;
 
-    text-align: center;
+    background:
+        linear-gradient(
+            120deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
 
-    background: #321019;
-
-    color: white;
+    color:
+        white;
 
 }
 
-footer p {
+.footer-inner {
 
-    margin-top: 5px;
+    max-width:
+        1300px;
 
-    font-size: 12px;
+    margin:
+        auto;
+
+    padding:
+        28px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+}
+
+.footer-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+.footer-icon {
+
+    color:
+        var(--amarillo);
+
+    font-size:
+        27px;
+
+}
+
+.footer-brand strong {
+
+    display:
+        block;
+
+    font-size:
+        13px;
+
+}
+
+.footer-brand small {
 
     color:
         rgba(255,255,255,.65);
 
+    font-size:
+        9px;
+
+}
+
+.footer-info {
+
+    text-align:
+        right;
+
+    color:
+        rgba(255,255,255,.76);
+
+    font-size:
+        10px;
+
 }
 
 
-/* ========================================
+/* ==========================================================
    RESPONSIVE
-======================================== */
+========================================================== */
 
 @media(max-width: 980px) {
 
     .module-layout {
 
-        display: block;
+        display:
+            block;
 
-        padding: 0;
+        padding:
+            0;
 
     }
-
 
     .side-nav {
 
-        position: sticky;
+        position:
+            sticky;
 
-        top: 70px;
+        top:
+            70px;
 
-        z-index: 900;
+        z-index:
+            900;
 
         background:
-            var(--guinda-oscuro);
+            white;
+
+        border-bottom:
+            1px solid var(--gris-borde);
 
     }
-
 
     .side-nav-inner {
 
-        position: static;
+        position:
+            static;
 
-        margin: 0;
+        display:
+            flex;
 
-        padding: 10px 20px;
+        align-items:
+            center;
 
-        border-radius: 0;
+        margin:
+            0;
 
-        display: flex;
+        padding:
+            8px 16px;
 
-        align-items: center;
+        overflow-x:
+            auto;
 
-        gap: 7px;
+        border:
+            none;
 
-        overflow-x: auto;
-
-        white-space: nowrap;
+        border-radius:
+            0;
 
         box-shadow:
-            0 5px 15px rgba(0,0,0,.10);
+            0 4px 12px rgba(0,0,0,.06);
 
     }
 
+    .side-nav-title,
+    .sidebar-note {
 
-    .side-nav-title {
-
-        display: none;
+        display:
+            none;
 
     }
 
+    .side-nav-links {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            6px;
+
+        padding:
+            0;
+
+        white-space:
+            nowrap;
+
+    }
 
     .side-nav a {
 
-        flex: 0 0 auto;
+        flex:
+            0 0 auto;
 
-        margin: 0;
+        margin:
+            0;
 
-        padding: 8px 11px;
-
-        background:
-            rgba(255,255,255,.07);
+        padding:
+            8px 10px;
 
         border:
-            1px solid rgba(255,255,255,.10);
+            1px solid var(--gris-borde);
 
-        border-radius: 25px;
+        border-radius:
+            25px;
 
-    }
-
-
-    .side-nav a:hover {
-
-        transform: none;
+        background:
+            white;
 
     }
-
 
     .side-nav a.active-section {
 
-        background: white;
+        border-color:
+            var(--amarillo);
 
-        color: var(--guinda);
+        background:
+            var(--amarillo-claro);
 
     }
-
 
     .module-content {
 
         padding:
-            0 24px;
-
-    }
-
-
-    .section-alt::before {
-
-        left: -24px;
-
-        right: -24px;
+            0 25px;
 
     }
 
 }
 
 
-@media(max-width: 850px) {
+@media(max-width: 860px) {
+
+    .nav-container {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        padding-top:
+            11px;
+
+        padding-bottom:
+            11px;
+
+    }
+
+    .nav-links {
+
+        width:
+            100%;
+
+    }
+
+    .hero-decoration {
+
+        opacity:
+            .25;
+
+        right:
+            10px;
+
+    }
 
     .model-grid,
     .sas-grid,
     .ase-grid,
     .summary-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
-
+    .two-grid,
     .cards,
-    .glocal-grid,
     .compare-grid,
     .case-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
-
 
     .environment-grid {
 
@@ -1637,73 +2456,75 @@ footer p {
 
     }
 
+    .footer-inner {
 
-    .nav-container {
+        flex-direction:
+            column;
 
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        padding-top: 12px;
-
-        padding-bottom: 12px;
+        align-items:
+            flex-start;
 
     }
 
+    .footer-info {
 
-    .nav-links {
-
-        width: 100%;
-
-    }
-
-
-    .objective {
-
-        grid-template-columns: 1fr;
+        text-align:
+            left;
 
     }
 
 }
 
 
-@media(max-width: 550px) {
-
-    .environment-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .nav-links a {
-
-        font-size: 11px;
-
-        padding: 6px 7px;
-
-    }
-
-
-    .module-navigation {
-
-        flex-direction: column;
-
-    }
-
+@media(max-width: 560px) {
 
     .hero-content {
 
-        padding-top: 55px;
-
-        padding-bottom: 50px;
+        padding:
+            52px 22px 47px;
 
     }
 
+    .hero h1 {
 
-    .section h2 {
+        font-size:
+            39px;
 
-        font-size: 29px;
+    }
+
+    .hero p {
+
+        font-size:
+            16px;
+
+    }
+
+    .environment-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .year-box,
+    .key-box {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .module-navigation {
+
+        flex-direction:
+            column;
+
+    }
+
+    .btn {
+
+        width:
+            100%;
 
     }
 
@@ -1714,29 +2535,34 @@ footer p {
 </head>
 
 
-
 <body>
 
 
-
-<!-- ========================================
-     MENÚ GENERAL DEL SITIO
-======================================== -->
+<!-- ========================================================
+     MENÚ SUPERIOR
+======================================================== -->
 
 <header class="navbar">
 
 <div class="nav-container">
 
+
     <a href="index.html"
        class="brand">
 
-        <div class="brand-icon">
 
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="brand-symbol">
+
+            <span class="purple-v"></span>
+            <span class="purple-h"></span>
+
+            <span class="yellow-v"></span>
+            <span class="yellow-h"></span>
 
         </div>
 
-        <div>
+
+        <div class="brand-text">
 
             FCA · UACH
 
@@ -1745,6 +2571,7 @@ footer p {
             </small>
 
         </div>
+
 
     </a>
 
@@ -1778,56 +2605,49 @@ footer p {
 
     </nav>
 
+
 </div>
 
 </header>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      HERO
-======================================== -->
+======================================================== -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-    <div class="module-label">
 
-        MÓDULO 01
+    <div class="hero-decoration">
+
+        <div class="deco-purple"></div>
+
+        <div class="deco-yellow"></div>
 
     </div>
 
 
+    <div class="module-label">
+        Módulo 1
+    </div>
+
+
     <h1>
-
         Modelo Educativo UACH
-
     </h1>
 
 
     <p>
 
-        Una introducción aplicada para comprender cómo los principios,
-        dimensiones y orientaciones del Modelo Educativo de la Universidad
-        Autónoma de Chihuahua se relacionan con el diseño de asignaturas,
-        experiencias de aprendizaje y práctica docente.
+        Una base común para comprender la formación universitaria
+        y orientar el diseño de asignaturas, experiencias de aprendizaje
+        y práctica docente en la Universidad Autónoma de Chihuahua.
 
     </p>
 
-
-    <div class="hero-note">
-
-        <strong>
-            Este módulo funciona también como espacio permanente de consulta.
-        </strong>
-
-        Puede regresar cuando encuentre conceptos como
-        Saber–Actuar–Ser, transversalización, glocalidad,
-        Auto-Socio-Ecoformación o ambientes de aprendizaje
-        en otros módulos del sitio.
-
-    </div>
 
 </div>
 
@@ -1835,17 +2655,17 @@ footer p {
 
 
 
-<!-- ========================================
-     ESTRUCTURA PRINCIPAL
-======================================== -->
+<!-- ========================================================
+     ESTRUCTURA GENERAL
+======================================================== -->
 
 <div class="module-layout">
 
 
 
-<!-- ========================================
+<!-- ========================================================
      PANEL LATERAL
-======================================== -->
+======================================================== -->
 
 <aside class="side-nav">
 
@@ -1861,85 +2681,136 @@ footer p {
     </div>
 
 
-    <a href="#modelos">
-
-        <i class="fa-solid fa-layer-group"></i>
-
-        Modelos UACH
-
-    </a>
+    <div class="side-nav-links">
 
 
-    <a href="#modelo-glocal">
+        <a href="#introduccion">
 
-        <i class="fa-solid fa-earth-americas"></i>
+            <i class="fa-solid fa-house"></i>
 
-        Modelo Glocal
+            Introducción
 
-    </a>
-
-
-    <a href="#saber-actuar-ser">
-
-        <i class="fa-solid fa-puzzle-piece"></i>
-
-        Saber · Actuar · Ser
-
-    </a>
+        </a>
 
 
-    <a href="#principios">
+        <a href="#modelos">
 
-        <i class="fa-solid fa-compass"></i>
+            <i class="fa-solid fa-layer-group"></i>
 
-        Principios filosóficos
+            Modelos UACH
 
-    </a>
-
-
-    <a href="#principios-formacion">
-
-        <i class="fa-solid fa-graduation-cap"></i>
-
-        Formación universitaria
-
-    </a>
+        </a>
 
 
-    <a href="#auto-socio-ecoformacion">
+        <a href="#modelo-glocal">
 
-        <i class="fa-solid fa-people-arrows"></i>
+            <i class="fa-solid fa-earth-americas"></i>
 
-        Auto-Socio-Ecoformación
+            Modelo Glocal
 
-    </a>
-
-
-    <a href="#ejes-transversales">
-
-        <i class="fa-solid fa-arrows-to-circle"></i>
-
-        Ejes transversales
-
-    </a>
+        </a>
 
 
-    <a href="#ambientes">
+        <a href="#saber-actuar-ser">
 
-        <i class="fa-solid fa-laptop"></i>
+            <i class="fa-solid fa-puzzle-piece"></i>
 
-        Ambientes de aprendizaje
+            Saber · Actuar · Ser
 
-    </a>
+        </a>
 
 
-    <a href="#aplicacion">
+        <a href="#principios">
 
-        <i class="fa-solid fa-chalkboard-user"></i>
+            <i class="fa-solid fa-leaf"></i>
 
-        Aplicación docente
+            Principios filosóficos
 
-    </a>
+        </a>
+
+
+        <a href="#principios-formacion">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            Formación universitaria
+
+        </a>
+
+
+        <a href="#auto-socio-ecoformacion">
+
+            <i class="fa-solid fa-arrows-rotate"></i>
+
+            Auto-Socio-Ecoformación
+
+        </a>
+
+
+        <a href="#ejes-transversales">
+
+            <i class="fa-solid fa-share-nodes"></i>
+
+            Ejes transversales
+
+        </a>
+
+
+        <a href="#ambientes">
+
+            <i class="fa-solid fa-desktop"></i>
+
+            Ambientes de aprendizaje
+
+        </a>
+
+
+        <a href="#aplicacion">
+
+            <i class="fa-regular fa-lightbulb"></i>
+
+            Aplicación docente
+
+        </a>
+
+
+        <a href="#resumen">
+
+            <i class="fa-regular fa-rectangle-list"></i>
+
+            Resumen
+
+        </a>
+
+
+        <a href="#recursos">
+
+            <i class="fa-regular fa-folder-open"></i>
+
+            Recursos
+
+        </a>
+
+
+    </div>
+
+
+    <div class="sidebar-note">
+
+        <blockquote>
+
+            Formación integral para comprender
+            y transformar nuestro entorno.
+
+        </blockquote>
+
+        <div class="sidebar-note-line"></div>
+
+        <small>
+            UACH
+        </small>
+
+    </div>
 
 
 </div>
@@ -1948,27 +2819,104 @@ footer p {
 
 
 
-<!-- ========================================
+<!-- ========================================================
      CONTENIDO
-======================================== -->
+======================================================== -->
 
 <main class="module-content">
 
 
 
-<!-- ========================================
-     PROPÓSITO
-======================================== -->
+<!-- ========================================================
+     INTRODUCCIÓN
+======================================================== -->
 
-<section class="section">
+<section class="section"
+         id="introduccion">
 
-<div class="container">
 
-    <div class="objective">
+    <div class="section-label">
+        Sección 1
+    </div>
 
-        <div class="objective-icon">
 
-            <i class="fa-solid fa-bullseye"></i>
+    <h2>
+        Introducción
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        El Modelo Educativo de la Universidad Autónoma de Chihuahua
+
+    </div>
+
+
+    <div class="intro-text">
+
+
+        <p>
+
+            El <strong>Modelo Educativo de la Universidad Autónoma
+            de Chihuahua</strong> constituye el marco que expresa
+            la identidad, los principios y la visión institucional
+            que orientan la formación universitaria. A partir de él
+            se establece el sentido de la educación que ofrece la UACH
+            y se proporciona una referencia común para las distintas
+            funciones académicas.
+
+        </p>
+
+
+        <p>
+
+            La versión que se toma como referencia en este espacio
+            corresponde al <strong>Modelo Educativo UACH 2024</strong>.
+            Esta formulación no debe entenderse como un punto de partida
+            aislado, sino como parte de la trayectoria de la propia
+            Universidad y de su adaptación a las condiciones
+            contemporáneas de la educación superior.
+
+        </p>
+
+
+        <p>
+
+            El Modelo UACH 2024 concibe a la Universidad como un sistema
+            complejo, multidimensional y relacionado permanentemente
+            con su entorno. Por ello, reconoce que la formación
+            universitaria ocurre en interacción con realidades
+            <strong>locales, regionales, nacionales e internacionales</strong>,
+            y que los problemas que enfrentan los futuros profesionistas
+            requieren cada vez más una mirada integral.
+
+        </p>
+
+
+        <p>
+
+            Para el docente, conocer el Modelo Educativo permite
+            comprender el fundamento de conceptos que aparecen
+            posteriormente en planes de estudio, programas académicos,
+            syllabus y experiencias de aprendizaje. Su utilidad no se limita,
+            por tanto, al conocimiento institucional: constituye una base
+            para tomar decisiones coherentes sobre qué enseñar,
+            cómo propiciar el aprendizaje y qué tipo de formación
+            se pretende favorecer.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="year-box">
+
+
+        <div class="year-icon">
+
+            <i class="fa-regular fa-calendar"></i>
 
         </div>
 
@@ -1976,54 +2924,61 @@ footer p {
         <div>
 
             <h3>
-                Propósito del módulo
+                ¿Por qué hablamos del Modelo UACH 2024?
             </h3>
 
             <p>
 
-                Comprender los principales elementos del Modelo Educativo UACH
-                y reconocer cómo sus principios, dimensiones y orientaciones
-                pueden traducirse en decisiones relacionadas con la enseñanza,
-                el aprendizaje y el diseño de asignaturas.
+                En este sitio se utiliza como referencia el Modelo Educativo
+                UACH 2024, que recupera la trayectoria institucional
+                y sitúa la formación universitaria frente a un contexto
+                contemporáneo caracterizado por la interacción entre
+                lo local y lo global, la transformación tecnológica
+                y nuevos desafíos sociales y profesionales.
 
             </p>
 
         </div>
 
+
     </div>
 
-</div>
 
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      MODELOS UACH
-======================================== -->
+======================================================== -->
 
-<section class="section section-alt"
+<section class="section"
          id="modelos">
-
-<div class="container">
 
 
     <div class="section-label">
-        Punto de partida
+        Sección 2
     </div>
 
 
     <h2>
-        Modelo Educativo, Académico y Pedagógico
+        Modelos que se complementan
     </h2>
+
+
+    <div class="section-subtitle">
+
+        Educativo, Académico y Pedagógico
+
+    </div>
 
 
     <p class="section-intro">
 
-        Los tres están relacionados, pero responden a preguntas distintas.
-        Comprender esta diferencia ayuda a ubicar de dónde provienen las
-        decisiones que posteriormente aparecen en programas, syllabus,
-        actividades y procesos de evaluación.
+        El Modelo Educativo proporciona el horizonte general,
+        pero su concreción requiere organización curricular
+        y decisiones pedagógicas. Por ello conviene distinguir
+        tres niveles relacionados entre sí.
 
     </p>
 
@@ -2034,24 +2989,34 @@ footer p {
 
         <div class="model-card">
 
-            <div class="model-number">
-                1
+
+            <div class="model-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
             </div>
+
 
             <h3>
                 Modelo Educativo
             </h3>
 
+
             <div class="model-question">
+
                 ¿Qué formación buscamos?
+
             </div>
+
 
             <p>
 
-                Expresa la filosofía, principios, valores y horizonte
-                formativo de la Universidad.
+                Define identidad, filosofía, principios,
+                valores y horizonte formativo de la Universidad.
+                Orienta el sentido general de la formación.
 
             </p>
+
 
         </div>
 
@@ -2059,24 +3024,35 @@ footer p {
 
         <div class="model-card">
 
-            <div class="model-number">
-                2
+
+            <div class="model-icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
             </div>
+
 
             <h3>
                 Modelo Académico
             </h3>
 
+
             <div class="model-question">
+
                 ¿Cómo organizamos esa formación?
+
             </div>
+
 
             <p>
 
-                Traduce el Modelo Educativo a la organización curricular,
-                la flexibilidad y los diferentes ambientes educativos.
+                Traduce el Modelo Educativo a la estructura
+                curricular. Organiza ciclos, flexibilidad,
+                ambientes y otros elementos de los programas
+                académicos.
 
             </p>
+
 
         </div>
 
@@ -2084,22 +3060,67 @@ footer p {
 
         <div class="model-card">
 
-            <div class="model-number">
-                3
+
+            <div class="model-icon">
+
+                <i class="fa-solid fa-people-group"></i>
+
             </div>
+
 
             <h3>
                 Modelo Pedagógico
             </h3>
 
+
             <div class="model-question">
-                ¿Cómo enseñamos y aprendemos?
+
+                ¿Cómo lo llevamos a la práctica?
+
             </div>
+
 
             <p>
 
-                Orienta la manera en que la formación se concreta mediante
-                experiencias, actividades, interacción y evaluación.
+                Orienta la forma en que la formación se concreta
+                mediante experiencias de aprendizaje,
+                interacción, actividades, acompañamiento
+                y evaluación.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Una idea clave
+            </h3>
+
+            <p>
+
+                Los tres modelos trabajan de manera articulada:
+                el <strong>Modelo Educativo</strong> proporciona
+                sentido y dirección; el <strong>Modelo Académico</strong>
+                organiza curricularmente esa formación; y el
+                <strong>Modelo Pedagógico</strong> permite concretarla
+                en las experiencias de enseñanza y aprendizaje.
 
             </p>
 
@@ -2109,109 +3130,134 @@ footer p {
     </div>
 
 
-
-    <div class="applied-box">
-
-        <h3>
-
-            <i class="fa-solid fa-lightbulb"></i>
-
-            Un ejemplo sencillo
-
-        </h3>
-
-        <p>
-
-            Si la responsabilidad social forma parte del horizonte de formación
-            de la Universidad, no basta con mencionarla en un documento.
-            El currículo debe incorporarla y el docente puede concretarla
-            mediante actividades donde los estudiantes analicen las consecuencias
-            sociales de decisiones profesionales.
-
-        </p>
-
-    </div>
-
-
-</div>
-
 </section>
 
 
 
-<!-- ========================================
-     GLOCAL
-======================================== -->
+<!-- ========================================================
+     MODELO GLOCAL
+======================================================== -->
 
 <section class="section"
          id="modelo-glocal">
 
-<div class="container">
-
 
     <div class="section-label">
-        Modelo Glocal y Transdisciplinario
+        Sección 3
     </div>
 
 
     <h2>
-        Comprender lo local en relación con un mundo interconectado
+        Una formación Glocal y Transdisciplinaria
     </h2>
+
+
+    <div class="section-subtitle">
+
+        Comprender nuestro entorno sin perder de vista el mundo
+
+    </div>
 
 
     <p class="section-intro">
 
-        La formación glocal busca relacionar los problemas y contextos
-        cercanos al estudiante con fenómenos, conocimientos y transformaciones
-        que ocurren en contextos más amplios.
+        La realidad profesional no está dividida en asignaturas.
+        Los problemas económicos, empresariales, sociales
+        y tecnológicos interactúan entre sí y se encuentran
+        conectados con procesos que ocurren en diferentes escalas.
 
     </p>
 
 
 
-    <div class="glocal-grid">
+    <div class="two-grid">
 
 
-        <div class="glocal-card">
+        <div class="info-card">
 
-            <div class="glocal-icon">
+
+            <div class="info-card-icon">
 
                 <i class="fa-solid fa-earth-americas"></i>
 
             </div>
 
+
             <h3>
                 Glocalidad
             </h3>
 
+
             <p>
 
-                Implica analizar la realidad local considerando su relación
-                con procesos regionales, nacionales y globales, y reconocer
-                cómo estos niveles se influyen mutuamente.
+                Implica comprender los problemas y fenómenos
+                del contexto cercano considerando su relación
+                con procesos regionales, nacionales y globales.
 
             </p>
+
 
         </div>
 
 
 
-        <div class="glocal-card">
+        <div class="info-card">
 
-            <div class="glocal-icon">
+
+            <div class="info-card-icon">
 
                 <i class="fa-solid fa-diagram-project"></i>
 
             </div>
 
+
             <h3>
                 Transdisciplinariedad
             </h3>
 
+
             <p>
 
-                Permite abordar problemas complejos que no pueden comprenderse
-                completamente desde una sola disciplina o campo de conocimiento.
+                Supone reconocer que determinados problemas
+                no pueden comprenderse suficientemente
+                desde una sola disciplina y requieren
+                articular diferentes conocimientos,
+                perspectivas y contextos.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Ejemplo aplicado en FCA
+            </h3>
+
+            <p>
+
+                En una asignatura de Negocios Internacionales,
+                el estudiante puede analizar cómo una modificación
+                arancelaria internacional afecta a una empresa
+                ubicada en Chihuahua. Así se relacionan
+                un fenómeno global, una realidad local
+                y conocimientos propios de la profesión.
 
             </p>
 
@@ -2221,43 +3267,20 @@ footer p {
     </div>
 
 
-
-    <div class="applied-box">
-
-        <h3>
-            ¿Cómo puede verse en una asignatura?
-        </h3>
-
-        <p>
-
-            En Negocios Internacionales, por ejemplo, un estudiante puede analizar
-            cómo una modificación arancelaria internacional afecta a una empresa
-            ubicada en Chihuahua. El problema conecta conocimiento disciplinario,
-            contexto local y dinámicas globales.
-
-        </p>
-
-    </div>
-
-
-</div>
-
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      SABER ACTUAR SER
-======================================== -->
+======================================================== -->
 
-<section class="section section-alt"
+<section class="section"
          id="saber-actuar-ser">
-
-<div class="container">
 
 
     <div class="section-label">
-        Dimensiones de la formación
+        Sección 4
     </div>
 
 
@@ -2266,12 +3289,20 @@ footer p {
     </h2>
 
 
+    <div class="section-subtitle">
+
+        Tres dimensiones que se articulan en la formación
+
+    </div>
+
+
     <p class="section-intro">
 
-        La formación no se limita a adquirir información.
-        El currículo articula conocimientos, capacidad de actuación
-        y dimensiones relacionadas con la identidad, los valores
-        y la responsabilidad.
+        La formación universitaria no consiste únicamente
+        en transmitir conocimientos. El Modelo busca relacionar
+        aquello que el estudiante comprende, lo que es capaz
+        de hacer y la manera en que actúa como persona
+        y futuro profesional.
 
     </p>
 
@@ -2282,61 +3313,75 @@ footer p {
 
         <div class="sas-card">
 
+
             <div class="sas-word">
                 Saber
             </div>
 
+
             <div class="sas-question">
+
                 ¿Qué necesita comprender?
+
             </div>
+
 
             <p>
 
-                Conceptos, teorías, información, métodos y conocimientos
-                disciplinares necesarios para comprender una realidad
+                Conceptos, teorías, información,
+                métodos y conocimientos disciplinares
+                que permiten comprender una situación
                 o problema.
 
             </p>
 
+
             <div class="example-small">
 
                 <strong>Ejemplo:</strong>
-
                 comprender la estructura y función
                 de los estados financieros.
 
             </div>
 
+
         </div>
 
 
 
         <div class="sas-card">
+
 
             <div class="sas-word">
                 Actuar
             </div>
 
+
             <div class="sas-question">
+
                 ¿Qué debe ser capaz de hacer?
+
             </div>
+
 
             <p>
 
-                Aplicar, analizar, resolver, argumentar, decidir,
-                diseñar, crear o intervenir utilizando los conocimientos
-                adquiridos.
+                Aplicar, analizar, interpretar, resolver,
+                diseñar, argumentar, decidir o crear utilizando
+                los conocimientos que ha desarrollado.
 
             </p>
+
 
             <div class="example-small">
 
                 <strong>Ejemplo:</strong>
-
-                interpretar información financiera para diagnosticar
-                la situación de una organización.
+                interpretar información financiera
+                para diagnosticar la situación
+                de una organización.
 
             </div>
+
 
         </div>
 
@@ -2344,30 +3389,37 @@ footer p {
 
         <div class="sas-card">
 
+
             <div class="sas-word">
                 Ser
             </div>
 
+
             <div class="sas-question">
+
                 ¿Cómo se posiciona frente a lo que hace?
+
             </div>
+
 
             <p>
 
-                Valores, responsabilidad, identidad profesional,
-                compromiso, actitudes y dimensiones humanas
-                vinculadas con la actuación.
+                Comprende valores, responsabilidad,
+                identidad profesional, compromiso
+                y dimensiones humanas vinculadas
+                con la actuación.
 
             </p>
+
 
             <div class="example-small">
 
                 <strong>Ejemplo:</strong>
-
                 emitir un análisis responsable,
                 objetivo y profesional.
 
             </div>
+
 
         </div>
 
@@ -2376,56 +3428,72 @@ footer p {
 
 
 
-    <div class="applied-box">
+    <div class="key-box">
 
-        <h3>
-            Para el diseño docente
-        </h3>
 
-        <p>
+        <div class="key-icon">
 
-            Al planear una actividad puede preguntarse:
-            <strong>
-                ¿qué debe saber el estudiante?,
-                ¿qué hará con ese conocimiento?
-                y ¿qué dimensión del ser interviene en esa actuación?
-            </strong>
+            <i class="fa-regular fa-lightbulb"></i>
 
-        </p>
+        </div>
+
+
+        <div>
+
+            <h3>
+                Para diseñar una experiencia de aprendizaje
+            </h3>
+
+            <p>
+
+                Conviene preguntarse:
+                <strong>¿qué necesita saber el estudiante?,
+                ¿qué hará con ese conocimiento? y
+                ¿qué dimensiones del ser intervienen
+                en esa actuación?</strong>
+
+            </p>
+
+        </div>
+
 
     </div>
 
-
-</div>
 
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      PRINCIPIOS FILOSÓFICOS
-======================================== -->
+======================================================== -->
 
 <section class="section"
          id="principios">
 
-<div class="container">
-
 
     <div class="section-label">
-        Principios filosóficos
+        Sección 5
     </div>
 
 
     <h2>
-        La orientación humana de la formación
+        Principios filosóficos
     </h2>
+
+
+    <div class="section-subtitle">
+
+        La orientación humana de la formación universitaria
+
+    </div>
 
 
     <p class="section-intro">
 
-        Los principios filosóficos orientan la concepción de persona,
-        sociedad y formación que sustenta el Modelo Educativo.
+        Estos principios expresan referentes que orientan
+        la forma en que la Universidad comprende a la persona,
+        la sociedad, la convivencia y la formación.
 
     </p>
 
@@ -2435,6 +3503,7 @@ footer p {
 
 
         <div class="card">
+
 
             <div class="card-icon">
 
@@ -2442,32 +3511,36 @@ footer p {
 
             </div>
 
+
             <h3>
                 Humanismo
             </h3>
 
+
             <p>
 
-                Reconoce a la persona y su formación integral
-                como referencia fundamental del proceso educativo.
+                Sitúa a la persona y su formación integral
+                como referencia central del proceso educativo.
 
             </p>
+
 
             <p class="practice">
 
                 <strong>En la práctica:</strong>
-
-                considerar al estudiante más allá de la adquisición
-                de contenidos y favorecer autonomía, participación
-                y desarrollo integral.
+                implica ir más allá de la transmisión
+                de contenidos y considerar autonomía,
+                participación y desarrollo integral.
 
             </p>
+
 
         </div>
 
 
 
         <div class="card">
+
 
             <div class="card-icon">
 
@@ -2475,32 +3548,36 @@ footer p {
 
             </div>
 
+
             <h3>
                 Interculturalidades
             </h3>
 
+
             <p>
 
                 Reconoce la diversidad de culturas,
-                conocimientos, perspectivas y formas
-                de comprender la realidad.
+                perspectivas, conocimientos y maneras
+                de interpretar la realidad.
 
             </p>
+
 
             <p class="practice">
 
                 <strong>En la práctica:</strong>
-
-                incorporar diferentes perspectivas y evitar considerar
-                una sola experiencia cultural como universal.
+                favorece la incorporación de perspectivas
+                diferentes y el diálogo entre ellas.
 
             </p>
+
 
         </div>
 
 
 
         <div class="card">
+
 
             <div class="card-icon">
 
@@ -2508,25 +3585,30 @@ footer p {
 
             </div>
 
+
             <h3>
                 Inclusión, equidad social y de género
             </h3>
 
+
             <p>
 
-                Promueve condiciones educativas que reconozcan diferencias
-                y disminuyan barreras para la participación y el aprendizaje.
+                Busca reconocer diferencias y disminuir
+                barreras que pueden limitar la participación
+                y el aprendizaje.
 
             </p>
+
 
             <p class="practice">
 
                 <strong>En la práctica:</strong>
-
-                revisar actividades, materiales y evaluación para evitar
-                barreras innecesarias o exclusiones.
+                requiere revisar actividades, materiales,
+                interacción y evaluación para favorecer
+                condiciones más equitativas.
 
             </p>
+
 
         </div>
 
@@ -2534,31 +3616,37 @@ footer p {
 
         <div class="card">
 
+
             <div class="card-icon">
 
                 <i class="fa-solid fa-seedling"></i>
 
             </div>
 
+
             <h3>
                 Buen vivir
             </h3>
 
+
             <p>
 
-                Orienta la formación hacia relaciones responsables
-                entre las personas, la sociedad y su entorno.
+                Orienta la formación hacia relaciones
+                responsables entre las personas,
+                la sociedad y el entorno.
 
             </p>
+
 
             <p class="practice">
 
                 <strong>En la práctica:</strong>
-
-                considerar las consecuencias humanas, sociales
-                y ambientales de las decisiones profesionales.
+                invita a considerar consecuencias humanas,
+                sociales y ambientales de las decisiones
+                profesionales.
 
             </p>
+
 
         </div>
 
@@ -2566,37 +3654,40 @@ footer p {
     </div>
 
 
-</div>
-
 </section>
 
 
 
-<!-- ========================================
-     PRINCIPIOS FORMACIÓN UNIVERSITARIA
-======================================== -->
+<!-- ========================================================
+     FORMACIÓN UNIVERSITARIA
+======================================================== -->
 
-<section class="section section-alt"
+<section class="section"
          id="principios-formacion">
-
-<div class="container">
 
 
     <div class="section-label">
-        Formación universitaria
+        Sección 6
     </div>
 
 
     <h2>
-        Principios que orientan la experiencia formativa
+        Principios de la formación universitaria
     </h2>
+
+
+    <div class="section-subtitle">
+
+        La formación profesional frente a los desafíos contemporáneos
+
+    </div>
 
 
     <p class="section-intro">
 
-        Estos principios ayudan a conectar la formación profesional
-        con los desafíos actuales del entorno, la innovación
-        y la transformación social.
+        Estos principios conectan la formación universitaria
+        con problemáticas, transformaciones y oportunidades
+        propias del entorno actual.
 
     </p>
 
@@ -2607,28 +3698,34 @@ footer p {
 
         <div class="card">
 
+
             <div class="card-icon">
 
                 <i class="fa-solid fa-hand-holding-heart"></i>
 
             </div>
 
+
             <h3>
                 Responsabilidad social y sostenibilidad
             </h3>
 
+
             <p>
 
-                Considerar los efectos sociales, económicos
-                y ambientales de la actuación profesional.
+                Considera los efectos sociales, económicos
+                y ambientales de la actuación profesional
+                y de las decisiones que se toman.
 
             </p>
+
 
         </div>
 
 
 
         <div class="card">
+
 
             <div class="card-icon">
 
@@ -2636,23 +3733,28 @@ footer p {
 
             </div>
 
+
             <h3>
                 Inter y transdisciplinariedad
             </h3>
 
+
             <p>
 
-                Comprender problemas desde diferentes campos
-                y articular perspectivas cuando una sola disciplina
-                no es suficiente.
+                Favorece la comprensión de problemas
+                desde distintos campos y la articulación
+                de perspectivas cuando una sola disciplina
+                resulta insuficiente.
 
             </p>
+
 
         </div>
 
 
 
         <div class="card">
+
 
             <div class="card-icon">
 
@@ -2660,22 +3762,27 @@ footer p {
 
             </div>
 
+
             <h3>
                 Emprendimiento
             </h3>
 
+
             <p>
 
-                Favorecer iniciativa, identificación de oportunidades,
-                generación de propuestas y creación de valor.
+                Favorece la iniciativa, identificación
+                de oportunidades, generación de propuestas
+                y creación de valor.
 
             </p>
+
 
         </div>
 
 
 
         <div class="card">
+
 
             <div class="card-icon">
 
@@ -2683,16 +3790,20 @@ footer p {
 
             </div>
 
+
             <h3>
                 Innovación
             </h3>
 
+
             <p>
 
-                Promover nuevas maneras de analizar,
-                resolver y responder a problemas y necesidades.
+                Promueve nuevas maneras de analizar,
+                resolver y responder a problemas,
+                necesidades y oportunidades.
 
             </p>
+
 
         </div>
 
@@ -2700,32 +3811,37 @@ footer p {
 
         <div class="card">
 
+
             <div class="card-icon">
 
                 <i class="fa-solid fa-laptop-code"></i>
 
             </div>
 
+
             <h3>
                 Transformación digital
             </h3>
 
+
             <p>
 
-                Integrar críticamente tecnologías
-                y herramientas digitales relevantes para
-                el aprendizaje y la práctica profesional.
+                Incorpora críticamente tecnologías
+                y herramientas digitales relevantes
+                para el aprendizaje y la práctica profesional.
 
             </p>
 
+
             <p class="practice">
 
-                No equivale únicamente a utilizar una plataforma.
-                Puede incluir análisis de datos, simuladores,
+                <strong>No equivale sólo a usar una plataforma:</strong>
+                puede implicar análisis de datos, simuladores,
                 inteligencia artificial, colaboración digital
                 y herramientas profesionales.
 
             </p>
+
 
         </div>
 
@@ -2733,24 +3849,20 @@ footer p {
     </div>
 
 
-</div>
-
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      AUTO SOCIO ECO
-======================================== -->
+======================================================== -->
 
 <section class="section"
          id="auto-socio-ecoformacion">
 
-<div class="container">
-
 
     <div class="section-label">
-        Eje estructural
+        Sección 7
     </div>
 
 
@@ -2759,12 +3871,19 @@ footer p {
     </h2>
 
 
+    <div class="section-subtitle">
+
+        Aprender desde la persona, con los otros y en relación con el entorno
+
+    </div>
+
+
     <p class="section-intro">
 
-        El aprendizaje puede comprenderse como un proceso
-        en el que la persona se forma a sí misma,
-        aprende con otras personas y se relaciona
-        con el entorno en el que participa.
+        La formación puede entenderse como un proceso
+        que articula la autonomía del estudiante,
+        la interacción social y la relación con los contextos
+        en los que ocurre el aprendizaje.
 
     </p>
 
@@ -2775,43 +3894,51 @@ footer p {
 
         <div class="ase-card">
 
+
             <div class="ase-circle">
                 AUTO
             </div>
+
 
             <h3>
                 Autoformación
             </h3>
 
+
             <p>
 
-                El estudiante asume un papel activo
-                y desarrolla autonomía, reflexión
+                El estudiante asume un papel activo,
+                desarrolla autonomía, reflexión
                 y responsabilidad sobre su propio aprendizaje.
 
             </p>
+
 
         </div>
 
 
 
         <div class="ase-card">
+
 
             <div class="ase-circle">
                 SOCIO
             </div>
 
+
             <h3>
                 Socioformación
             </h3>
 
+
             <p>
 
-                El aprendizaje se construye también mediante
-                interacción, colaboración, diálogo y participación
-                con otras personas.
+                El aprendizaje se construye también
+                mediante interacción, colaboración,
+                diálogo y participación con otras personas.
 
             </p>
+
 
         </div>
 
@@ -2819,19 +3946,57 @@ footer p {
 
         <div class="ase-card">
 
+
             <div class="ase-circle">
                 ECO
             </div>
+
 
             <h3>
                 Ecoformación
             </h3>
 
+
             <p>
 
-                La formación se relaciona con el contexto,
-                el entorno, los problemas y las condiciones reales
-                en las que se desarrolla la persona.
+                La formación se relaciona con el entorno,
+                las situaciones, los problemas
+                y las condiciones reales del contexto.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-arrows-rotate"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Ejemplo integrado
+            </h3>
+
+            <p>
+
+                Un estudiante investiga individualmente
+                una problemática empresarial,
+                contrasta sus hallazgos con sus compañeros
+                y posteriormente propone una solución
+                considerando las características económicas
+                y sociales del contexto.
 
             </p>
 
@@ -2841,44 +4006,20 @@ footer p {
     </div>
 
 
-
-    <div class="applied-box">
-
-        <h3>
-            Ejemplo integrado
-        </h3>
-
-        <p>
-
-            Un estudiante investiga individualmente una problemática empresarial,
-            contrasta sus hallazgos con sus compañeros y posteriormente desarrolla
-            una propuesta considerando las condiciones económicas y sociales
-            del entorno. En una misma experiencia pueden articularse las
-            dimensiones auto, socio y eco.
-
-        </p>
-
-    </div>
-
-
-</div>
-
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      EJES TRANSVERSALES
-======================================== -->
+======================================================== -->
 
-<section class="section section-alt"
+<section class="section"
          id="ejes-transversales">
-
-<div class="container">
 
 
     <div class="section-label">
-        Formación integral
+        Sección 8
     </div>
 
 
@@ -2887,19 +4028,25 @@ footer p {
     </h2>
 
 
+    <div class="section-subtitle">
+
+        Orientaciones que atraviesan la experiencia formativa
+
+    </div>
+
+
     <p class="section-intro">
 
-        La transversalización implica que determinadas orientaciones
-        formativas atraviesen las experiencias de aprendizaje
-        y no se reduzcan necesariamente a un tema independiente
-        dentro del curso.
+        Un eje transversal no necesariamente debe convertirse
+        en una unidad temática independiente. Su sentido
+        consiste en estar presente en decisiones, actividades,
+        problemas, experiencias y procesos formativos.
 
     </p>
 
 
 
     <div class="tags">
-
 
         <span class="tag">
             Responsabilidad social
@@ -2929,7 +4076,6 @@ footer p {
             Interculturalidad
         </span>
 
-
     </div>
 
 
@@ -2939,6 +4085,7 @@ footer p {
 
         <div class="compare-card bad">
 
+
             <h3>
 
                 <i class="fa-solid fa-circle-xmark"></i>
@@ -2947,19 +4094,23 @@ footer p {
 
             </h3>
 
+
             <p>
 
-                Añadir una unidad llamada “Responsabilidad Social”
-                no garantiza por sí mismo que el eje esté transversalizado
-                en la experiencia formativa.
+                Agregar una unidad titulada
+                “Responsabilidad social” no garantiza
+                por sí mismo que el principio esté presente
+                de manera transversal en la asignatura.
 
             </p>
+
 
         </div>
 
 
 
         <div class="compare-card good">
+
 
             <h3>
 
@@ -2969,13 +4120,16 @@ footer p {
 
             </h3>
 
+
             <p>
 
-                En distintas actividades del curso,
-                el estudiante analiza las consecuencias sociales,
-                económicas o ambientales de las decisiones que estudia.
+                A lo largo del curso, diferentes actividades
+                pueden requerir que el estudiante considere
+                las consecuencias sociales, económicas
+                o ambientales de sus decisiones.
 
             </p>
+
 
         </div>
 
@@ -2983,24 +4137,20 @@ footer p {
     </div>
 
 
-</div>
-
 </section>
 
 
 
-<!-- ========================================
-     AMBIENTES
-======================================== -->
+<!-- ========================================================
+     AMBIENTES DE APRENDIZAJE
+======================================================== -->
 
 <section class="section"
          id="ambientes">
 
-<div class="container">
-
 
     <div class="section-label">
-        Ejes estructurales
+        Sección 9
     </div>
 
 
@@ -3009,11 +4159,19 @@ footer p {
     </h2>
 
 
+    <div class="section-subtitle">
+
+        Aprender no ocurre únicamente dentro del aula
+
+    </div>
+
+
     <p class="section-intro">
 
-        La experiencia de aprendizaje no se limita al aula física.
-        Puede desarrollarse en diferentes espacios, contextos,
-        modalidades y mediante diversas tecnologías.
+        El aprendizaje puede desarrollarse en diferentes
+        espacios, contextos y modalidades. Cada ambiente
+        puede aportar experiencias distintas y complementarias
+        a la formación del estudiante.
 
     </p>
 
@@ -3033,7 +4191,6 @@ footer p {
         </div>
 
 
-
         <div class="environment-item">
 
             <i class="fa-solid fa-laptop"></i>
@@ -3045,17 +4202,15 @@ footer p {
         </div>
 
 
-
         <div class="environment-item">
 
             <i class="fa-solid fa-building"></i>
 
             <strong>
-                Organizaciones y empresas
+                Organizaciones
             </strong>
 
         </div>
-
 
 
         <div class="environment-item">
@@ -3069,7 +4224,6 @@ footer p {
         </div>
 
 
-
         <div class="environment-item">
 
             <i class="fa-solid fa-user"></i>
@@ -3079,7 +4233,6 @@ footer p {
             </strong>
 
         </div>
-
 
 
         <div class="environment-item">
@@ -3093,7 +4246,6 @@ footer p {
         </div>
 
 
-
         <div class="environment-item">
 
             <i class="fa-solid fa-vr-cardboard"></i>
@@ -3105,10 +4257,9 @@ footer p {
         </div>
 
 
-
         <div class="environment-item">
 
-            <i class="fa-solid fa-globe"></i>
+            <i class="fa-solid fa-location-dot"></i>
 
             <strong>
                 Contextos reales
@@ -3120,24 +4271,20 @@ footer p {
     </div>
 
 
-</div>
-
 </section>
 
 
 
-<!-- ========================================
-     APLICACIÓN
-======================================== -->
+<!-- ========================================================
+     APLICACIÓN DOCENTE
+======================================================== -->
 
-<section class="section section-alt"
+<section class="section"
          id="aplicacion">
-
-<div class="container">
 
 
     <div class="section-label">
-        Aplicación docente
+        Sección 10
     </div>
 
 
@@ -3146,11 +4293,20 @@ footer p {
     </h2>
 
 
+    <div class="section-subtitle">
+
+        De los principios institucionales a una experiencia concreta
+
+    </div>
+
+
     <p class="section-intro">
 
-        El Modelo adquiere sentido cuando sus principios se reflejan
-        en decisiones concretas sobre qué aprender, qué hacer,
-        qué situaciones analizar y cómo demostrar el aprendizaje.
+        Los elementos del Modelo adquieren sentido
+        cuando influyen en las decisiones docentes
+        sobre qué aprender, qué hacer con el conocimiento,
+        qué situaciones analizar y cómo demostrar
+        los aprendizajes.
 
     </p>
 
@@ -3166,8 +4322,9 @@ footer p {
 
         <p class="case-intro">
 
-            Una misma temática puede diseñarse como una experiencia
-            que articule diferentes elementos del Modelo Educativo.
+            Una temática de una asignatura de Economía
+            puede convertirse en una experiencia que articule
+            diferentes componentes del Modelo.
 
         </p>
 
@@ -3184,8 +4341,8 @@ footer p {
 
                 <p>
 
-                    Comprender conceptos, causas y efectos
-                    relacionados con la inflación.
+                    Comprender conceptos, causas
+                    y efectos de la inflación.
 
                 </p>
 
@@ -3202,7 +4359,7 @@ footer p {
                 <p>
 
                     Interpretar información económica
-                    y comparar diferentes escenarios.
+                    y comparar distintos escenarios.
 
                 </p>
 
@@ -3219,8 +4376,8 @@ footer p {
                 <p>
 
                     Reconocer que los efectos económicos
-                    pueden ser diferentes entre hogares,
-                    empresas y grupos sociales.
+                    pueden distribuirse de manera diferente
+                    entre hogares y grupos sociales.
 
                 </p>
 
@@ -3236,9 +4393,9 @@ footer p {
 
                 <p>
 
-                    Relacionar acontecimientos internacionales
-                    y nacionales con efectos observables
-                    en el contexto de Chihuahua.
+                    Relacionar fenómenos nacionales
+                    e internacionales con efectos
+                    observables en Chihuahua.
 
                 </p>
 
@@ -3254,8 +4411,9 @@ footer p {
 
                 <p>
 
-                    Consultar, organizar e interpretar datos
-                    provenientes de fuentes digitales.
+                    Consultar, procesar e interpretar
+                    información mediante fuentes
+                    y herramientas digitales.
 
                 </p>
 
@@ -3271,9 +4429,10 @@ footer p {
 
                 <p>
 
-                    Comparar información económica
-                    y argumentar cómo determinados cambios de precios
-                    afectan a distintos hogares o empresas.
+                    Analizar información real y argumentar
+                    cómo determinados cambios de precios
+                    afectan a diferentes hogares
+                    o empresas.
 
                 </p>
 
@@ -3286,23 +4445,20 @@ footer p {
     </div>
 
 
-</div>
-
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      RESUMEN
-======================================== -->
+======================================================== -->
 
-<section class="section">
-
-<div class="container">
+<section class="section"
+         id="resumen">
 
 
     <div class="section-label">
-        Para volver a consultar
+        Sección 11
     </div>
 
 
@@ -3311,113 +4467,125 @@ footer p {
     </h2>
 
 
+    <div class="section-subtitle">
+
+        Conceptos que conviene conservar como referencia
+
+    </div>
+
+
     <p class="section-intro">
 
-        Estos conceptos constituyen una base para comprender
-        las referencias que aparecerán posteriormente
-        al diseñar materiales, programas, syllabus
-        y procesos de acompañamiento académico.
+        Estos conceptos constituyen una base común
+        para comprender posteriormente el diseño de materiales,
+        programas académicos, syllabus y procesos
+        de acompañamiento académico.
 
     </p>
 
 
 
-    <div class="summary-box">
+    <div class="summary-grid">
 
 
-        <h3>
-            Conceptos centrales
-        </h3>
+        <div class="summary-item">
+            Modelo Educativo
+        </div>
 
 
-        <div class="summary-grid">
+        <div class="summary-item">
+            Modelo Académico
+        </div>
 
 
-            <div class="summary-item">
-                Modelo Educativo
-            </div>
-
-            <div class="summary-item">
-                Modelo Académico
-            </div>
-
-            <div class="summary-item">
-                Modelo Pedagógico
-            </div>
-
-            <div class="summary-item">
-                Glocalidad
-            </div>
-
-            <div class="summary-item">
-                Transdisciplinariedad
-            </div>
-
-            <div class="summary-item">
-                Saber · Actuar · Ser
-            </div>
-
-            <div class="summary-item">
-                Principios filosóficos
-            </div>
-
-            <div class="summary-item">
-                Formación universitaria
-            </div>
-
-            <div class="summary-item">
-                Auto-Socio-Ecoformación
-            </div>
-
-            <div class="summary-item">
-                Ejes estructurales
-            </div>
-
-            <div class="summary-item">
-                Ejes transversales
-            </div>
-
-            <div class="summary-item">
-                Ambientes de aprendizaje
-            </div>
+        <div class="summary-item">
+            Modelo Pedagógico
+        </div>
 
 
+        <div class="summary-item">
+            Glocalidad
+        </div>
+
+
+        <div class="summary-item">
+            Transdisciplinariedad
+        </div>
+
+
+        <div class="summary-item">
+            Saber · Actuar · Ser
+        </div>
+
+
+        <div class="summary-item">
+            Principios filosóficos
+        </div>
+
+
+        <div class="summary-item">
+            Formación universitaria
+        </div>
+
+
+        <div class="summary-item">
+            Auto-Socio-Ecoformación
+        </div>
+
+
+        <div class="summary-item">
+            Ejes estructurales
+        </div>
+
+
+        <div class="summary-item">
+            Ejes transversales
+        </div>
+
+
+        <div class="summary-item">
+            Ambientes de aprendizaje
         </div>
 
 
     </div>
 
 
-</div>
-
 </section>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      RECURSOS
-======================================== -->
+======================================================== -->
 
-<section class="section section-alt">
-
-<div class="container">
+<section class="section"
+         id="recursos">
 
 
     <div class="section-label">
-        Para profundizar
+        Sección 12
     </div>
 
 
     <h2>
-        Documentos y materiales de consulta
+        Recursos para profundizar
     </h2>
+
+
+    <div class="section-subtitle">
+
+        Documentos y materiales institucionales de consulta
+
+    </div>
 
 
     <p class="section-intro">
 
-        Estos recursos permiten profundizar en los elementos
-        institucionales presentados de manera sintética
-        en este módulo.
+        Esta sección puede concentrar los documentos
+        y materiales que permitan al docente profundizar
+        en los conceptos presentados de manera sintética
+        a lo largo del módulo.
 
     </p>
 
@@ -3425,11 +4593,13 @@ footer p {
 
     <div class="resource">
 
+
         <div class="resource-icon">
 
             <i class="fa-solid fa-file-powerpoint"></i>
 
         </div>
+
 
         <div>
 
@@ -3439,18 +4609,20 @@ footer p {
 
             <p>
 
-                Síntesis visual del Modelo Educativo
-                y su relación con la práctica docente.
+                Síntesis visual del Modelo Educativo UACH
+                y su aplicación en la práctica docente.
 
             </p>
 
         </div>
+
 
     </div>
 
 
 
     <div class="resource">
+
 
         <div class="resource-icon">
 
@@ -3458,21 +4630,23 @@ footer p {
 
         </div>
 
+
         <div>
 
             <h3>
-                Modelo Educativo y Pedagógico UACH
+                Modelo Educativo UACH 2024
             </h3>
 
             <p>
 
-                Documentos institucionales de referencia
-                para profundizar en la estructura
-                y fundamentos del Modelo.
+                Documento institucional de referencia
+                para profundizar en principios, dimensiones,
+                estructura y fundamentos del Modelo.
 
             </p>
 
         </div>
+
 
     </div>
 
@@ -3480,11 +4654,13 @@ footer p {
 
     <div class="resource">
 
+
         <div class="resource-icon">
 
             <i class="fa-solid fa-people-group"></i>
 
         </div>
+
 
         <div>
 
@@ -3502,33 +4678,37 @@ footer p {
 
         </div>
 
+
     </div>
 
 
 
     <div class="resource">
 
+
         <div class="resource-icon">
 
-            <i class="fa-solid fa-arrows-to-circle"></i>
+            <i class="fa-solid fa-share-nodes"></i>
 
         </div>
+
 
         <div>
 
             <h3>
-                Material sobre transversalización
+                Transversalización de la docencia
             </h3>
 
             <p>
 
-                Recurso para profundizar en la incorporación
-                de ejes y principios dentro de las experiencias
-                de aprendizaje.
+                Material para profundizar en la incorporación
+                de principios y ejes transversales
+                dentro de experiencias de aprendizaje.
 
             </p>
 
         </div>
+
 
     </div>
 
@@ -3540,7 +4720,7 @@ footer p {
         <a href="index.html"
            class="btn btn-outline">
 
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-arrow-left"></i>
 
             Volver al inicio
 
@@ -3550,7 +4730,7 @@ footer p {
         <a href="modulo2.html"
            class="btn btn-primary">
 
-            Módulo 2
+            Continuar al Módulo 2
 
             <i class="fa-solid fa-arrow-right"></i>
 
@@ -3559,8 +4739,6 @@ footer p {
 
     </div>
 
-
-</div>
 
 </section>
 
@@ -3572,103 +4750,164 @@ footer p {
 
 
 
-<!-- ========================================
+<!-- ========================================================
      FOOTER
-======================================== -->
+======================================================== -->
 
 <footer>
 
-    <strong>
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+
+        <div class="footer-icon">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                FCA · UACH
+            </strong>
+
+            <small>
+                Formación y Acompañamiento Académico
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-info">
+
+        Universidad Autónoma de Chihuahua<br>
+
         Facultad de Contaduría y Administración
-    </strong>
 
-    <p>
+    </div>
 
-        Universidad Autónoma de Chihuahua ·
-        Formación y acompañamiento académico
 
-    </p>
+</div>
 
 </footer>
 
 
 
-<!-- ========================================
+<!-- ========================================================
      JAVASCRIPT
-     RESALTA LA SECCIÓN ACTIVA
-======================================== -->
+     RESALTA LA SECCIÓN ACTIVA DEL PANEL
+======================================================== -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    const sections =
-        document.querySelectorAll(
-            ".module-content section[id]"
-        );
-
-    const navLinks =
-        document.querySelectorAll(
-            ".side-nav a[href^='#']"
-        );
-
-
-    function updateActiveSection() {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop;
-
-            if (
-                window.scrollY >=
-                sectionTop - 180
-            ) {
-
-                current =
-                    section.getAttribute("id");
-
-            }
-
-        });
-
-
-        navLinks.forEach(link => {
-
-            link.classList.remove(
-                "active-section"
+        const sections =
+            document.querySelectorAll(
+                ".module-content section[id]"
             );
 
-            if (
-                link.getAttribute("href") ===
-                "#" + current
-            ) {
+        const navLinks =
+            document.querySelectorAll(
+                ".side-nav a[href^='#']"
+            );
 
-                link.classList.add(
-                    "active-section"
+
+        function updateActiveSection() {
+
+            let current = "";
+
+            sections.forEach(
+                section => {
+
+                    const rect =
+                        section.getBoundingClientRect();
+
+                    if (
+                        rect.top <= 190
+                    ) {
+
+                        current =
+                            section.getAttribute("id");
+
+                    }
+
+                }
+            );
+
+
+            navLinks.forEach(
+                link => {
+
+                    link.classList.remove(
+                        "active-section"
+                    );
+
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + current
+                    ) {
+
+                        link.classList.add(
+                            "active-section"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateActiveSection,
+            { passive: true }
+        );
+
+
+        updateActiveSection();
+
+
+        navLinks.forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.forEach(
+                            item =>
+                                item.classList.remove(
+                                    "active-section"
+                                )
+                        );
+
+                        this.classList.add(
+                            "active-section"
+                        );
+
+                    }
                 );
 
             }
-
-        });
+        );
 
     }
-
-
-    window.addEventListener(
-        "scroll",
-        updateActiveSection
-    );
-
-
-    updateActiveSection();
-
-});
+);
 
 </script>
-
 
 
 </body>
