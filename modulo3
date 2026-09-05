@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Módulo 3 | Diseño y Revisión de Programas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<style>
+
+:root {
+    --guinda: #7a1f35;
+    --guinda-oscuro: #551425;
+    --guinda-claro: #a44760;
+
+    --dorado: #d2a84a;
+    --dorado-claro: #f4e7c5;
+
+    --blanco: #ffffff;
+    --crema: #faf8f5;
+    --gris-claro: #f3f4f6;
+    --gris: #667085;
+    --grafito: #26272b;
+
+    --sombra: 0 10px 30px rgba(45,32,37,.10);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--grafito);
+    background: var(--blanco);
+    line-height: 1.65;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid #e6e6e6;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--guinda);
+    font-weight: 800;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: var(--guinda);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand small {
+    display: block;
+    font-size: 10px;
+    color: var(--gris);
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--guinda);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 12%, rgba(210,168,74,.24), transparent 23%),
+        linear-gradient(135deg, #ffffff, #fbf6f7);
+
+    border-bottom: 1px solid #eee5e7;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 24px;
+}
+
+.module-label {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 30px;
+
+    background: var(--dorado-claro);
+    color: #765816;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px,6vw,62px);
+    color: var(--guinda-oscuro);
+    max-width: 850px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 760px;
+    color: var(--gris);
+    font-size: 18px;
+}
+
+
+/* =========================
+   RUTA
+========================= */
+
+.route {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.route-item {
+    background: white;
+    border: 1px solid #e6dadd;
+    padding: 9px 14px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--guinda);
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+    padding: 70px 0;
+}
+
+.section-alt {
+    background: var(--crema);
+}
+
+.section-label {
+    color: var(--guinda);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    font-size: 34px;
+    color: var(--guinda-oscuro);
+    margin-bottom: 18px;
+}
+
+.section-intro {
+    max-width: 800px;
+    color: var(--gris);
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   OBJETIVO
+========================= */
+
+.objective {
+    background: var(--guinda);
+    color: white;
+
+    border-radius: 20px;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 20px;
+    align-items: center;
+
+    box-shadow: var(--sombra);
+}
+
+.objective-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.objective h3 {
+    margin-bottom: 6px;
+}
+
+.objective p {
+    color: rgba(255,255,255,.85);
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ece5e7;
+    border-radius: 17px;
+    padding: 25px;
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+
+    background: #f6edef;
+    color: var(--guinda);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    color: var(--guinda);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+
+/* =========================
+   MAPA MACRO-MESO-MICRO
+========================= */
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.level {
+    padding: 28px 22px;
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+}
+
+.level:nth-child(1) {
+    background: #f6edef;
+}
+
+.level:nth-child(2) {
+    background: var(--dorado-claro);
+}
+
+.level:nth-child(3) {
+    background: #eef2f3;
+}
+
+.level-label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--guinda);
+    margin-bottom: 8px;
+}
+
+.level h3 {
+    color: var(--guinda-oscuro);
+    margin-bottom: 7px;
+}
+
+.level p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+}
+
+.check-item {
+    background: white;
+    border: 1px solid #ece5e7;
+    border-radius: 16px;
+    padding: 22px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.check-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+
+    border-radius: 50%;
+    background: var(--dorado-claro);
+    color: #866415;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-item h3 {
+    color: var(--guinda);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.check-item p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* =========================
+   ALERTA
+========================= */
+
+.warning-box {
+    background: #fff8e8;
+    border-left: 6px solid var(--dorado);
+    padding: 25px 28px;
+    border-radius: 10px;
+}
+
+.warning-box h3 {
+    color: var(--guinda);
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   RECURSOS
+========================= */
+
+.resource {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    padding: 25px;
+    border-radius: 16px;
+
+    background: white;
+    border: 1px dashed #cbb9be;
+
+    margin-bottom: 15px;
+}
+
+.resource-icon {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+
+    border-radius: 13px;
+    background: var(--guinda);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.resource h3 {
+    font-size: 16px;
+    color: var(--guinda);
+}
+
+.resource p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* =========================
+   REFLEXIÓN
+========================= */
+
+.reflection {
+    border-left: 6px solid var(--dorado);
+    background: #fffaf0;
+    padding: 25px 28px;
+    border-radius: 10px;
+}
+
+.reflection h3 {
+    color: var(--guinda);
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   NAVEGACIÓN INFERIOR
+========================= */
+
+.module-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 20px;
+    border-radius: 11px;
+    font-weight: 700;
+}
+
+.btn-outline {
+    border: 1px solid #dbcdd1;
+    color: var(--guinda);
+}
+
+.btn-primary {
+    background: var(--guinda);
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #321019;
+    color: white;
+    padding: 35px 24px;
+    text-align: center;
+}
+
+footer p {
+    color: rgba(255,255,255,.65);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px) {
+
+    .cards,
+    .levels,
+    .checklist {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .objective {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVEGACIÓN
+========================= -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            FCA · UACH
+            <small>FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO</small>
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="#contenidos">Contenidos</a>
+
+        <a href="#revision">Revisión</a>
+
+        <a href="#recursos">Recursos</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="module-label">
+        MÓDULO 03
+    </div>
+
+    <h1>
+        Diseño y Revisión de Programas
+    </h1>
+
+    <p>
+        Criterios para analizar la congruencia de los programas académicos
+        con el Modelo Educativo, el perfil de egreso, los resultados de aprendizaje,
+        los contenidos, las actividades y la evaluación.
+    </p>
+
+
+    <div class="route">
+
+        <span class="route-item">Modelo Educativo</span>
+
+        <span class="route-item">Programa Académico</span>
+
+        <span class="route-item">Resultados de Aprendizaje</span>
+
+        <span class="route-item">Contenidos</span>
+
+        <span class="route-item">Evaluación</span>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     OBJETIVO
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="objective">
+
+        <div class="objective-icon">
+            <i class="fa-solid fa-bullseye"></i>
+        </div>
+
+        <div>
+
+            <h3>Objetivo del módulo</h3>
+
+            <p>
+                Analizar los elementos que conforman un programa académico
+                y aplicar criterios de revisión colegiada que permitan identificar
+                su congruencia con el Modelo Educativo, el perfil de egreso
+                y los aprendizajes esperados.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTENIDOS
+========================= -->
+
+<section class="section section-alt" id="contenidos">
+
+<div class="container">
+
+    <div class="section-label">
+        Contenidos
+    </div>
+
+    <h2>¿Qué debe revisar una academia?</h2>
+
+    <p class="section-intro">
+        El programa académico no es un documento aislado. Debe mantener
+        coherencia con el proyecto educativo institucional y traducirse
+        posteriormente en experiencias concretas de enseñanza y aprendizaje.
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
+
+            <h3>Propósito de la asignatura</h3>
+
+            <p>
+                Debe expresar con claridad la contribución del curso
+                a la formación del estudiante.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <h3>Resultados de aprendizaje</h3>
+
+            <p>
+                Deben indicar qué se espera que el estudiante logre,
+                demuestre o sea capaz de realizar.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-list"></i>
+            </div>
+
+            <h3>Contenidos</h3>
+
+            <p>
+                Deben ser pertinentes, suficientes, actualizados
+                y organizados en una secuencia lógica.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-people-arrows"></i>
+            </div>
+
+            <h3>Estrategias de aprendizaje</h3>
+
+            <p>
+                Deben favorecer la participación activa y el desarrollo
+                de los aprendizajes previstos.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+
+            <h3>Evaluación</h3>
+
+            <p>
+                Las evidencias y criterios deben corresponder con aquello
+                que el programa declara que el estudiante aprenderá.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-book"></i>
+            </div>
+
+            <h3>Bibliografía y recursos</h3>
+
+            <p>
+                Deben ser suficientes, pertinentes y actualizados
+                para apoyar el desarrollo del curso.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     NIVELES
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="section-label">
+        Alineación curricular
+    </div>
+
+    <h2>Del modelo institucional a la experiencia de aprendizaje</h2>
+
+    <p class="section-intro">
+        La revisión colegiada puede comprenderse como una relación entre
+        distintos niveles: el modelo institucional, el programa académico
+        y la práctica concreta del docente.
+    </p>
+
+
+    <div class="levels">
+
+        <div class="level">
+
+            <div class="level-label">
+                NIVEL MACRO
+            </div>
+
+            <h3>Modelo Educativo</h3>
+
+            <p>
+                Define principios, identidad, orientación institucional
+                y ejes formativos.
+            </p>
+
+        </div>
+
+
+        <div class="level">
+
+            <div class="level-label">
+                NIVEL MESO
+            </div>
+
+            <h3>Programa Académico</h3>
+
+            <p>
+                Traduce los principios institucionales en propósitos,
+                contenidos, resultados y criterios curriculares.
+            </p>
+
+        </div>
+
+
+        <div class="level">
+
+            <div class="level-label">
+                NIVEL MICRO
+            </div>
+
+            <h3>Práctica Docente</h3>
+
+            <p>
+                Se concreta en actividades, estrategias, recursos,
+                evaluación y experiencias de aprendizaje.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     REVISIÓN
+========================= -->
+
+<section class="section section-alt" id="revision">
+
+<div class="container">
+
+    <div class="section-label">
+        Revisión colegiada
+    </div>
+
+    <h2>Preguntas clave para revisar un programa</h2>
+
+    <p class="section-intro">
+        Una revisión útil debe ir más allá del formato y analizar
+        la coherencia académica interna del programa.
+    </p>
+
+
+    <div class="checklist">
+
+
+        <div class="check-item">
+
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <h3>Congruencia institucional</h3>
+                <p>
+                    ¿El programa refleja los principios y orientaciones
+                    del Modelo Educativo y Pedagógico UACH?
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="check-item">
+
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <h3>Contribución al perfil de egreso</h3>
+                <p>
+                    ¿Es clara la contribución de la asignatura
+                    a la formación profesional del estudiante?
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="check-item">
+
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <h3>Resultados claros</h3>
+                <p>
+                    ¿Los resultados de aprendizaje pueden observarse
+                    y evaluarse mediante evidencias concretas?
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="check-item">
+
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <h3>Secuencia de contenidos</h3>
+                <p>
+                    ¿Existe una progresión lógica y suficiente entre
+                    los distintos temas del programa?
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="check-item">
+
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <h3>Alineación de evaluación</h3>
+                <p>
+                    ¿Los instrumentos y evidencias realmente permiten
+                    valorar los aprendizajes declarados?
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="check-item">
+
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <h3>Actualización</h3>
+                <p>
+                    ¿Los contenidos, fuentes, ejemplos y recursos
+                    corresponden con el contexto actual de la disciplina?
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ALERTA
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="warning-box">
+
+        <h3>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Evitar una revisión únicamente administrativa
+        </h3>
+
+        <p>
+            Verificar que todos los apartados estén llenos es necesario,
+            pero no suficiente. La revisión académica debe analizar si
+            existe congruencia entre lo que el programa declara,
+            lo que se enseña y lo que finalmente se evalúa.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     RECURSOS
+========================= -->
+
+<section class="section section-alt" id="recursos">
+
+<div class="container">
+
+    <div class="section-label">
+        Recursos del módulo
+    </div>
+
+    <h2>Material para la revisión de programas</h2>
+
+    <p class="section-intro">
+        En esta sección se incorporarán formatos institucionales,
+        ejemplos y herramientas para apoyar el trabajo de las academias.
+    </p>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+            <i class="fa-solid fa-file-powerpoint"></i>
+        </div>
+
+        <div>
+
+            <h3>Presentación del Módulo 3</h3>
+
+            <p>
+                Espacio reservado para la presentación sobre diseño
+                y revisión de programas académicos.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+            <i class="fa-solid fa-file-lines"></i>
+        </div>
+
+        <div>
+
+            <h3>Formato institucional de programa</h3>
+
+            <p>
+                Espacio para incorporar el formato vigente utilizado
+                por la Universidad o la Facultad.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+            <i class="fa-solid fa-list-check"></i>
+        </div>
+
+        <div>
+
+            <h3>Lista de cotejo</h3>
+
+            <p>
+                Espacio para una herramienta de revisión colegiada
+                de programas académicos.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     REFLEXIÓN
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="section-label">
+        Para reflexionar
+    </div>
+
+    <h2>¿El programa realmente orienta la enseñanza?</h2>
+
+
+    <div class="reflection">
+
+        <h3>
+            <i class="fa-regular fa-lightbulb"></i>
+            Pregunta orientadora
+        </h3>
+
+        <p>
+            Seleccione una asignatura de su academia. Si compara su propósito,
+            resultados de aprendizaje, contenidos y sistema de evaluación,
+            ¿encuentra una relación clara entre estos elementos o existen
+            aspectos que requieren ser revisados?
+        </p>
+
+    </div>
+
+
+    <div class="module-navigation">
+
+        <a href="modulo2.html" class="btn btn-outline">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Módulo 2
+
+        </a>
+
+
+        <a href="modulo4.html" class="btn btn-primary">
+
+            Módulo 4
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+    <strong>
+        Facultad de Contaduría y Administración
+    </strong>
+
+    <p>
+        Universidad Autónoma de Chihuahua ·
+        Formación y acompañamiento académico
+    </p>
+
+</footer>
+
+
+</body>
+</html>
