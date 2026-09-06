@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
       rel="stylesheet">
 
 <link rel="stylesheet"
@@ -19,22 +19,47 @@
 
 <style>
 
-:root {
-    --guinda: #7a1f35;
-    --guinda-oscuro: #551425;
-    --guinda-claro: #a44760;
+/* ==========================================================
+   IDENTIDAD VISUAL
+========================================================== */
 
-    --dorado: #d2a84a;
-    --dorado-claro: #f4e7c5;
+:root {
+
+    --morado: #71358f;
+    --morado-oscuro: #52216b;
+    --morado-profundo: #3b154d;
+    --morado-medio: #8a58a4;
+
+    --lavanda: #f5f0f8;
+    --lavanda-2: #e9def0;
+
+    --amarillo: #f6b719;
+    --amarillo-claro: #fff2c8;
+    --amarillo-palido: #fff9e8;
 
     --blanco: #ffffff;
-    --crema: #faf8f5;
-    --gris-claro: #f3f4f6;
-    --gris: #667085;
-    --grafito: #26272b;
 
-    --sombra: 0 10px 30px rgba(45,32,37,.10);
+    --gris-fondo: #fafafa;
+    --gris-claro: #f3f3f5;
+    --gris-borde: #e6e2e8;
+    --gris: #667085;
+
+    --texto: #292532;
+    --texto-secundario: #5d5864;
+
+    --verde: #25855a;
+    --verde-claro: #edf8f2;
+
+    --rojo: #b84a4a;
+    --rojo-claro: #fff1f1;
+
+    --sombra: 0 10px 30px rgba(67,35,80,.09);
 }
+
+
+/* ==========================================================
+   GENERAL
+========================================================== */
 
 * {
     box-sizing: border-box;
@@ -48,7 +73,7 @@ html {
 
 body {
     font-family: "Inter", Arial, sans-serif;
-    color: var(--grafito);
+    color: var(--texto);
     background: var(--blanco);
     line-height: 1.65;
 }
@@ -58,637 +83,1952 @@ a {
     color: inherit;
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding-left: 24px;
-    padding-right: 24px;
-}
 
-
-/* =========================
-   NAVEGACIÓN
-========================= */
+/* ==========================================================
+   MENÚ SUPERIOR
+========================================================== */
 
 .navbar {
+
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1200;
 
-    background: rgba(255,255,255,.96);
-    border-bottom: 1px solid #e6e6e6;
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.97);
+
+    border-bottom: 1px solid var(--gris-borde);
+
+    backdrop-filter: blur(12px);
 }
+
 
 .nav-container {
-    max-width: 1200px;
+
+    max-width: 1320px;
+    min-height: 76px;
+
     margin: auto;
-    padding: 0 24px;
-    height: 70px;
+    padding: 0 28px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
+    gap: 30px;
 }
+
 
 .brand {
+
     display: flex;
     align-items: center;
-    gap: 12px;
 
-    color: var(--guinda);
+    gap: 13px;
+
+    white-space: nowrap;
+}
+
+
+.brand-logo {
+
+    width: 50px;
+    height: 50px;
+
+    flex: 0 0 50px;
+
+    object-fit: contain;
+
+    border-radius: 9px;
+}
+
+
+.brand-text {
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
     font-weight: 800;
+
+    line-height: 1.15;
 }
 
-.brand-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 11px;
 
-    background: var(--guinda);
-    color: white;
+.brand-text small {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.brand small {
     display: block;
-    font-size: 10px;
+
+    margin-top: 3px;
+
     color: var(--gris);
+
+    font-size: 9px;
     font-weight: 500;
 }
 
+
 .nav-links {
+
     display: flex;
-    gap: 22px;
-    font-size: 14px;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+}
+
+
+.nav-links a {
+
+    padding: 8px 11px;
+
+    border-radius: 9px;
+
+    color: #514b59;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+
+.nav-links a:hover {
+
+    background: var(--lavanda);
+
+    color: var(--morado);
+}
+
+
+.nav-links a.active {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--gris-borde);
+
+    background:
+
+        radial-gradient(
+            circle at 86% 15%,
+            rgba(246,183,25,.14),
+            transparent 22%
+        ),
+
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #ffffff 62%,
+            #faf6fc 100%
+        );
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -120px;
+    top: -170px;
+
+    border-radius: 50%;
+
+    background: rgba(113,53,143,.055);
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1130px;
+
+    margin: auto;
+
+    padding: 68px 24px 65px;
+}
+
+
+.hero-institution {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 25px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+}
+
+
+.hero-institution img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+}
+
+
+.hero-institution-text {
+    line-height: 1.35;
+}
+
+
+.hero-institution-text span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 9px;
     font-weight: 600;
 }
 
-.nav-links a:hover {
-    color: var(--guinda);
+
+.hero-decoration {
+
+    position: absolute;
+
+    right: 45px;
+    top: 50px;
+
+    width: 130px;
+    height: 130px;
+
+    opacity: .8;
 }
 
 
-/* =========================
-   HERO
-========================= */
+.deco-purple {
 
-.hero {
-    background:
-        radial-gradient(circle at 85% 10%, rgba(210,168,74,.25), transparent 24%),
-        linear-gradient(135deg, #ffffff, #fbf6f7);
+    position: absolute;
 
-    border-bottom: 1px solid #eee5e7;
+    width: 55px;
+    height: 55px;
+
+    right: 0;
+    top: 0;
+
+    background: var(--morado);
+
+    border-radius: 12px 0 12px 12px;
 }
 
-.hero-content {
-    max-width: 1100px;
-    margin: auto;
-    padding: 75px 24px;
+
+.deco-yellow {
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    right: 38px;
+    top: 38px;
+
+    background: var(--amarillo);
+
+    border-radius: 0 14px 14px 14px;
 }
+
 
 .module-label {
-    display: inline-block;
-    padding: 7px 14px;
-    border-radius: 30px;
 
-    background: var(--dorado-claro);
-    color: #765816;
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    color: var(--morado);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.module-label::before {
+
+    content: "";
+
+    width: 32px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+}
+
+
+.hero h1 {
+
+    max-width: 900px;
+
+    margin-bottom: 15px;
+
+    color: var(--morado-oscuro);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,6vw,65px);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+}
+
+
+.hero p {
+
+    max-width: 820px;
+
+    color: var(--texto-secundario);
+
+    font-size: 18px;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   ESTRUCTURA
+========================================================== */
+
+.module-layout {
+
+    max-width: 1360px;
+
+    margin: auto;
+
+    padding: 0 28px;
+
+    display: grid;
+
+    grid-template-columns: 250px minmax(0,1fr);
+
+    gap: 42px;
+}
+
+
+.module-content {
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN LATERAL
+========================================================== */
+
+.side-nav {
+    position: relative;
+}
+
+
+.side-nav-inner {
+
+    position: sticky;
+
+    top: 98px;
+
+    margin-top: 42px;
+    margin-bottom: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+
+    box-shadow: var(--sombra);
+}
+
+
+.side-nav-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 17px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--morado),
+            var(--morado-oscuro)
+        );
+
+    color: white;
 
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 1px;
 
-    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-.hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(38px,6vw,62px);
-    color: var(--guinda-oscuro);
 
-    max-width: 850px;
-    line-height: 1.08;
-    margin-bottom: 20px;
+.side-nav-title i {
+    color: var(--amarillo);
 }
 
-.hero p {
-    max-width: 760px;
+
+.side-nav-links {
+
+    padding: 8px 8px 12px;
+}
+
+
+.side-nav a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 11px;
+
+    margin: 2px 0;
+
+    border-radius: 9px;
+
+    color: #625d68;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    transition: .18s ease;
+}
+
+
+.side-nav a i {
+
+    width: 18px;
+
+    flex: 0 0 18px;
+
+    text-align: center;
+
+    color: var(--morado);
+
+    font-size: 13px;
+}
+
+
+.side-nav a:hover {
+
+    background: var(--lavanda);
+
+    color: var(--morado-oscuro);
+}
+
+
+.side-nav a.active-section {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--amarillo-claro),
+            #fff9e9
+        );
+
+    color: var(--morado-profundo);
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   SECCIONES
+========================================================== */
+
+.section {
+
+    padding: 67px 0;
+
+    scroll-margin-top: 95px;
+
+    border-bottom: 1px solid #eeeaf0;
+}
+
+
+.section:last-child {
+    border-bottom: none;
+}
+
+
+.section-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+
+    color: #716b77;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.section-label::before {
+
+    content: "";
+
+    width: 28px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+}
+
+
+.section h2 {
+
+    max-width: 900px;
+
+    margin-bottom: 9px;
+
+    color: var(--morado-oscuro);
+
+    font-size: clamp(27px,3vw,36px);
+
+    line-height: 1.2;
+}
+
+
+.section-subtitle {
+
+    max-width: 880px;
+
+    margin-bottom: 20px;
+
+    color: #4d4853;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.section-intro {
+
+    max-width: 880px;
+
+    margin-bottom: 29px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14.5px;
+}
+
+
+/* ==========================================================
+   CAJA CLAVE
+========================================================== */
+
+.key-box {
+
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 18px;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding: 22px 25px;
+
+    border-left: 5px solid var(--amarillo);
+
+    border-radius: 0 15px 15px 0;
+
+    background: var(--amarillo-palido);
+}
+
+
+.key-icon {
+
+    color: var(--amarillo);
+
+    font-size: 34px;
+
+    text-align: center;
+}
+
+
+.key-box h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
+}
+
+
+.key-box p {
+
+    color: var(--texto-secundario);
+
+    font-size: 13.5px;
+}
+
+
+/* ==========================================================
+   PROGRAMA VS SYLLABUS
+========================================================== */
+
+.compare-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 80px 1fr;
+
+    gap: 15px;
+
+    align-items: stretch;
+}
+
+
+.compare-card {
+
+    padding: 25px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+}
+
+
+.compare-card i {
+
+    margin-bottom: 15px;
+
+    color: var(--morado);
+
+    font-size: 25px;
+}
+
+
+.compare-card h3 {
+
+    margin-bottom: 7px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 17px;
+}
+
+
+.compare-card p {
+
     color: var(--gris);
+
+    font-size: 13px;
+}
+
+
+.compare-arrow {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--amarillo);
+
+    font-size: 28px;
+}
+
+
+/* ==========================================================
+   COMPONENTES
+========================================================== */
+
+.component-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+}
+
+
+.component-card {
+
+    position: relative;
+
+    padding: 24px 21px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 16px;
+
+    background: white;
+}
+
+
+.component-number {
+
+    position: absolute;
+
+    right: 14px;
+    top: 7px;
+
+    color: var(--lavanda-2);
+
+    font-size: 38px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.component-card i {
+
+    margin-bottom: 13px;
+
+    color: var(--morado);
+
+    font-size: 22px;
+}
+
+
+.component-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 5px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 14px;
+}
+
+
+.component-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--gris);
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   CADENA DEL SYLLABUS
+========================================================== */
+
+.logic-box {
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 19px;
+
+    background: white;
+}
+
+
+.logic-header {
+
+    padding: 23px 25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+
+.logic-header h3 {
+
+    margin-bottom: 4px;
+
     font-size: 18px;
 }
 
 
-/* =========================
-   RUTA
-========================= */
+.logic-header p {
 
-.route {
-    margin-top: 35px;
+    color: rgba(255,255,255,.78);
+
+    font-size: 12.5px;
+}
+
+
+.logic-flow {
 
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
 
-.route-item {
-    background: white;
-    border: 1px solid #e6dadd;
+    align-items: stretch;
 
-    padding: 9px 14px;
-    border-radius: 30px;
+    padding: 25px 18px;
 
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--guinda);
+    overflow-x: auto;
 }
 
 
-/* =========================
-   SECCIONES
-========================= */
+.logic-item {
 
-.section {
-    padding: 70px 0;
-}
+    min-width: 135px;
 
-.section-alt {
-    background: var(--crema);
-}
+    flex: 1;
 
-.section-label {
-    color: var(--guinda);
+    padding: 17px 10px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 12px;
+
+    background: var(--lavanda);
+
+    color: var(--morado-oscuro);
+
+    text-align: center;
+
+    font-size: 11px;
     font-weight: 800;
-    font-size: 12px;
-
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-
-    margin-bottom: 8px;
-}
-
-.section h2 {
-    font-size: 34px;
-    color: var(--guinda-oscuro);
-    margin-bottom: 18px;
-}
-
-.section-intro {
-    max-width: 800px;
-    color: var(--gris);
-    margin-bottom: 35px;
 }
 
 
-/* =========================
-   OBJETIVO
-========================= */
+.logic-arrow {
 
-.objective {
-    background: var(--guinda);
-    color: white;
+    flex: 0 0 30px;
 
-    border-radius: 20px;
-    padding: 30px;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--amarillo);
+}
+
+
+/* ==========================================================
+   PASOS
+========================================================== */
+
+.steps {
+    margin-top: 20px;
+}
+
+
+.step {
 
     display: grid;
-    grid-template-columns: 65px 1fr;
 
-    gap: 20px;
-    align-items: center;
+    grid-template-columns: 60px 1fr;
 
-    box-shadow: var(--sombra);
+    gap: 19px;
+
+    margin-bottom: 16px;
+
+    padding: 22px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 16px;
+
+    background: white;
 }
 
-.objective-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
 
-    background: rgba(255,255,255,.15);
+.step-number {
+
+    width: 54px;
+    height: 54px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--morado),
+            var(--morado-oscuro)
+        );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.step h3 {
+
+    margin-bottom: 5px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+}
+
+
+.step p {
+
+    color: var(--gris);
+
+    font-size: 13px;
+}
+
+
+.step-tip {
+
+    margin-top: 9px;
+
+    color: #4f4955;
+
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   TABLA / SESIÓN
+========================================================== */
+
+.session-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 15px;
+}
+
+
+.session-card {
+
+    padding: 22px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 15px;
+
+    background: white;
+}
+
+
+.session-card i {
+
+    margin-bottom: 11px;
+
+    color: var(--morado);
+
+    font-size: 21px;
+}
+
+
+.session-card h3 {
+
+    margin-bottom: 5px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 14px;
+}
+
+
+.session-card p {
+
+    color: var(--gris);
+
+    font-size: 12.5px;
+}
+
+
+/* ==========================================================
+   EJEMPLO
+========================================================== */
+
+.example-box {
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 18px;
+
+    background: white;
+}
+
+
+.example-header {
+
+    padding: 20px 24px;
+
+    background: var(--lavanda);
+}
+
+
+.example-header strong {
+
+    display: block;
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+}
+
+
+.example-header span {
+
+    color: var(--gris);
+
+    font-size: 12px;
+}
+
+
+.example-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.example-item {
+
+    padding: 20px 23px;
+
+    border-top: 1px solid var(--gris-borde);
+}
+
+
+.example-item:nth-child(odd) {
+
+    border-right: 1px solid var(--gris-borde);
+}
+
+
+.example-item strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--morado);
+
+    font-size: 12px;
+}
+
+
+.example-item p {
+
+    color: var(--texto-secundario);
+
+    font-size: 12.5px;
+}
+
+
+/* ==========================================================
+   AJUSTES RAZONABLES
+========================================================== */
+
+.adjust-box {
+
+    overflow: hidden;
+
+    border-radius: 19px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+
+.adjust-header {
+
+    padding: 26px 27px 18px;
+}
+
+
+.adjust-header i {
+
+    margin-bottom: 12px;
+
+    color: var(--amarillo);
+
+    font-size: 25px;
+}
+
+
+.adjust-header h3 {
+
+    margin-bottom: 5px;
+
+    font-size: 20px;
+}
+
+
+.adjust-header p {
+
+    max-width: 780px;
+
+    color: rgba(255,255,255,.80);
+
+    font-size: 13px;
+}
+
+
+.adjust-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 1px;
+
+    background: rgba(255,255,255,.13);
+}
+
+
+.adjust-item {
+
+    padding: 19px 21px;
+
+    background: rgba(255,255,255,.06);
+}
+
+
+.adjust-item strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--amarillo);
+
+    font-size: 12px;
+}
+
+
+.adjust-item p {
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 11.5px;
+}
+
+
+/* ==========================================================
+   ERRORES
+========================================================== */
+
+.error-list {
+
+    display: grid;
+
+    gap: 11px;
+}
+
+
+.error-item {
+
+    display: grid;
+
+    grid-template-columns: 42px 1fr;
+
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    border: 1px solid #f0dcdc;
+
+    border-radius: 14px;
+
+    background: var(--rojo-claro);
+}
+
+
+.error-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: var(--rojo);
+}
+
+
+.error-item strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #843535;
+
+    font-size: 13px;
+}
+
+
+.error-item p {
+
+    color: #6b5757;
+
+    font-size: 12.5px;
+}
+
+
+/* ==========================================================
+   CHECKLIST
+========================================================== */
+
+.checklist-box {
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 18px;
+
+    background: white;
+}
+
+
+.checklist-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 25px;
+
+    background: var(--lavanda);
+}
+
+
+.checklist-header h3 {
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+}
+
+
+.progress {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: var(--morado);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.check-items {
+
+    padding: 12px 22px 20px;
+}
+
+
+.check-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 13px 3px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.check-item:last-child {
+    border-bottom: none;
+}
+
+
+.check-item input {
+
+    width: 18px;
+    height: 18px;
+
+    margin-top: 2px;
+
+    accent-color: var(--morado);
+}
+
+
+.check-item label {
+
+    cursor: pointer;
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+
+.check-result {
+
+    margin: 0 22px 22px;
+
+    padding: 15px 17px;
+
+    border-radius: 12px;
+
+    background: var(--amarillo-palido);
+
+    color: var(--morado-oscuro);
+
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   DESCARGA
+========================================================== */
+
+.download-card {
+
+    display: grid;
+
+    grid-template-columns: 60px 1fr auto;
+
+    gap: 18px;
+
+    align-items: center;
+
+    padding: 24px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+}
+
+
+.download-icon {
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--lavanda);
+
+    color: var(--morado);
 
     font-size: 24px;
 }
 
-.objective h3 {
-    margin-bottom: 6px;
+
+.download-card h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
 }
 
-.objective p {
-    color: rgba(255,255,255,.85);
-}
 
+.download-card p {
 
-/* =========================
-   DIFERENCIA PROGRAMA / SYLLABUS
-========================= */
-
-.compare-grid {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 24px;
-}
-
-.compare-card {
-    padding: 28px;
-    border-radius: 20px;
-    border: 1px solid #ece5e7;
-    background: white;
-}
-
-.compare-card:first-child {
-    border-top: 6px solid var(--guinda);
-}
-
-.compare-card:last-child {
-    border-top: 6px solid var(--dorado);
-}
-
-.compare-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 13px;
-
-    background: #f6edef;
-    color: var(--guinda);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 20px;
-    margin-bottom: 17px;
-}
-
-.compare-card:last-child .compare-icon {
-    background: var(--dorado-claro);
-    color: #866415;
-}
-
-.compare-card h3 {
-    color: var(--guinda-oscuro);
-    margin-bottom: 10px;
-}
-
-.compare-card p {
     color: var(--gris);
-    font-size: 14px;
-}
 
-.compare-card ul {
-    margin-top: 15px;
-    padding-left: 20px;
-    color: var(--gris);
-    font-size: 13px;
-}
-
-.compare-card li {
-    margin-bottom: 7px;
-}
-
-
-/* =========================
-   TARJETAS
-========================= */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border: 1px solid #ece5e7;
-
-    border-radius: 17px;
-    padding: 25px;
-
-    transition: .25s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--sombra);
-}
-
-.card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 13px;
-
-    background: #f6edef;
-    color: var(--guinda);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 20px;
-    margin-bottom: 16px;
-}
-
-.card h3 {
-    color: var(--guinda);
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: var(--gris);
-    font-size: 14px;
-}
-
-
-/* =========================
-   ALINEACIÓN
-========================= */
-
-.alignment {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 12px;
-    align-items: stretch;
-}
-
-.align-step {
-    background: white;
-    border-radius: 16px;
-    padding: 22px 14px;
-
-    border: 1px solid #ece5e7;
-
-    text-align: center;
-}
-
-.align-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-
-    margin: 0 auto 12px;
-
-    background: var(--guinda);
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.align-step h3 {
-    color: var(--guinda);
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.align-step p {
-    color: var(--gris);
     font-size: 12px;
 }
 
 
-/* =========================
-   CHECKLIST
-========================= */
+.download-btn {
 
-.checklist {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 18px;
-}
+    display: inline-flex;
 
-.check-item {
-    background: white;
-    border: 1px solid #ece5e7;
-
-    border-radius: 16px;
-    padding: 22px;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.check-icon {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-
-    border-radius: 50%;
-    background: var(--dorado-claro);
-    color: #866415;
-
-    display: flex;
     align-items: center;
+
     justify-content: center;
-}
 
-.check-item h3 {
-    color: var(--guinda);
-    font-size: 16px;
-    margin-bottom: 5px;
-}
+    gap: 8px;
 
-.check-item p {
-    color: var(--gris);
-    font-size: 13px;
-}
+    padding: 12px 16px;
 
+    border-radius: 10px;
 
-/* =========================
-   EJEMPLO DE CONGRUENCIA
-========================= */
+    background: var(--amarillo);
 
-.example-box {
-    background:
-        linear-gradient(135deg, #3e1622, #7a1f35);
+    color: var(--morado-profundo);
 
-    color: white;
-    border-radius: 20px;
-    padding: 30px;
-}
+    font-size: 11px;
+    font-weight: 800;
 
-.example-box h3 {
-    font-size: 22px;
-    margin-bottom: 18px;
-}
-
-.example-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 14px;
-}
-
-.example-item {
-    background: rgba(255,255,255,.10);
-    border: 1px solid rgba(255,255,255,.15);
-
-    border-radius: 14px;
-    padding: 18px;
-}
-
-.example-item strong {
-    display: block;
-    color: var(--dorado-claro);
-    margin-bottom: 5px;
-}
-
-.example-item p {
-    color: rgba(255,255,255,.82);
-    font-size: 13px;
+    transition: .2s ease;
 }
 
 
-/* =========================
+.download-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(246,183,25,.25);
+}
+
+
+/* ==========================================================
    RECURSOS
-========================= */
+========================================================== */
 
 .resource {
+
     display: flex;
-    gap: 20px;
+
     align-items: center;
 
-    padding: 25px;
-    border-radius: 16px;
+    gap: 17px;
+
+    margin-bottom: 13px;
+
+    padding: 20px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 14px;
 
     background: white;
-    border: 1px dashed #cbb9be;
-
-    margin-bottom: 15px;
 }
+
 
 .resource-icon {
-    width: 50px;
-    height: 50px;
-    flex: 0 0 50px;
 
-    border-radius: 13px;
-    background: var(--guinda);
-    color: white;
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    font-size: 20px;
+    border-radius: 12px;
+
+    background: var(--morado);
+
+    color: var(--amarillo);
+
+    font-size: 18px;
 }
+
 
 .resource h3 {
-    font-size: 16px;
-    color: var(--guinda);
+
+    margin-bottom: 2px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
 }
+
 
 .resource p {
+
     color: var(--gris);
-    font-size: 13px;
+
+    font-size: 12.5px;
 }
 
 
-/* =========================
-   REFLEXIÓN
-========================= */
+.resource a {
 
-.reflection {
-    border-left: 6px solid var(--dorado);
-    background: #fffaf0;
+    color: var(--morado);
 
-    padding: 25px 28px;
-    border-radius: 10px;
-}
-
-.reflection h3 {
-    color: var(--guinda);
-    margin-bottom: 8px;
+    font-weight: 800;
 }
 
 
-/* =========================
-   NAVEGACIÓN INFERIOR
-========================= */
+/* ==========================================================
+   NAVEGACIÓN FINAL
+========================================================== */
 
 .module-navigation {
+
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 
-    gap: 20px;
-    margin-top: 50px;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 38px;
 }
+
 
 .btn {
+
     display: inline-flex;
+
     align-items: center;
+
+    justify-content: center;
+
     gap: 9px;
 
-    padding: 13px 20px;
-    border-radius: 11px;
+    padding: 12px 18px;
 
-    font-weight: 700;
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .2s ease;
 }
+
 
 .btn-outline {
-    border: 1px solid #dbcdd1;
-    color: var(--guinda);
+
+    border: 1px solid var(--gris-borde);
+
+    background: white;
+
+    color: var(--morado);
 }
+
+
+.btn-outline:hover {
+    background: var(--lavanda);
+}
+
 
 .btn-primary {
-    background: var(--guinda);
-    color: white;
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
 }
 
 
-/* =========================
+/* ==========================================================
    FOOTER
-========================= */
+========================================================== */
 
 footer {
-    background: #321019;
+
+    margin-top: 10px;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
     color: white;
-
-    padding: 35px 24px;
-    text-align: center;
-}
-
-footer p {
-    color: rgba(255,255,255,.65);
-    font-size: 12px;
-    margin-top: 5px;
 }
 
 
-/* =========================
+.footer-inner {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 30px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.footer-logo-box {
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 4px;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+.footer-logo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+}
+
+
+.footer-brand strong {
+
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.footer-brand small {
+
+    display: block;
+
+    color: rgba(255,255,255,.70);
+
+    font-size: 10px;
+}
+
+
+.footer-info {
+
+    text-align: right;
+
+    color: rgba(255,255,255,.76);
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
    RESPONSIVE
-========================= */
+========================================================== */
 
-@media(max-width:850px) {
+@media(max-width: 980px) {
 
-    .compare-grid,
-    .cards,
-    .checklist,
-    .example-grid {
-        grid-template-columns: 1fr;
+    .module-layout {
+
+        display: block;
+
+        padding: 0;
     }
 
-    .alignment {
-        grid-template-columns: 1fr;
+    .side-nav {
+
+        position: sticky;
+
+        top: 76px;
+
+        z-index: 900;
+
+        background: white;
+
+        border-bottom: 1px solid var(--gris-borde);
     }
 
-    .nav-links {
+    .side-nav-inner {
+
+        position: static;
+
+        display: flex;
+
+        margin: 0;
+
+        padding: 8px 16px;
+
+        overflow-x: auto;
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow: 0 4px 12px rgba(0,0,0,.06);
+    }
+
+    .side-nav-title {
         display: none;
     }
 
-    .objective {
+    .side-nav-links {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 0;
+
+        white-space: nowrap;
+    }
+
+    .side-nav a {
+
+        flex: 0 0 auto;
+
+        margin: 0;
+
+        padding: 8px 10px;
+
+        border: 1px solid var(--gris-borde);
+
+        border-radius: 25px;
+
+        background: white;
+    }
+
+    .module-content {
+
+        padding: 0 25px;
+    }
+}
+
+
+@media(max-width: 860px) {
+
+    .nav-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-top: 11px;
+
+        padding-bottom: 11px;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+
+    .component-grid,
+    .adjust-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .compare-grid {
+
         grid-template-columns: 1fr;
     }
 
+    .compare-arrow {
+
+        transform: rotate(90deg);
+    }
+
+    .session-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .example-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .example-item:nth-child(odd) {
+
+        border-right: none;
+    }
+
+    .download-card {
+
+        grid-template-columns: 60px 1fr;
+    }
+
+    .download-btn {
+
+        grid-column: 1 / -1;
+    }
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+}
+
+
+@media(max-width: 560px) {
+
+    .brand-logo {
+
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+    .hero-content {
+
+        padding: 45px 22px 47px;
+    }
+
+    .hero h1 {
+
+        font-size: 38px;
+    }
+
+    .hero p {
+
+        font-size: 16px;
+    }
+
+    .component-grid,
+    .adjust-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .step,
+    .key-box {
+
+        grid-template-columns: 1fr;
+    }
+
+    .checklist-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .module-navigation {
+
+        flex-direction: column;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
 }
 
 </style>
@@ -699,23 +2039,31 @@ footer p {
 <body>
 
 
-<!-- =========================
-     NAVEGACIÓN
-========================= -->
+<!-- ========================================================
+     MENÚ SUPERIOR
+======================================================== -->
 
 <header class="navbar">
 
 <div class="nav-container">
 
-    <a href="index.html" class="brand">
+    <a href="index.html"
+       class="brand">
 
-        <div class="brand-icon">
-            <i class="fa-solid fa-graduation-cap"></i>
-        </div>
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo de la Facultad de Contaduría y Administración"
+            class="brand-logo"
+        >
 
-        <div>
+        <div class="brand-text">
+
             FCA · UACH
-            <small>FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO</small>
+
+            <small>
+                FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO
+            </small>
+
         </div>
 
     </a>
@@ -723,15 +2071,30 @@ footer p {
 
     <nav class="nav-links">
 
-        <a href="index.html">Inicio</a>
+        <a href="index.html">
+            Inicio
+        </a>
 
-        <a href="#diferencia">Programa vs Syllabus</a>
+        <a href="modulo1.html">
+            Módulo 1
+        </a>
 
-        <a href="#componentes">Componentes</a>
+        <a href="modulo2.html">
+            Módulo 2
+        </a>
 
-        <a href="#revision">Revisión</a>
+        <a href="modulo3.html">
+            Módulo 3
+        </a>
 
-        <a href="#recursos">Recursos</a>
+        <a href="modulo4.html"
+           class="active">
+            Módulo 4
+        </a>
+
+        <a href="modulo5.html">
+            Módulo 5
+        </a>
 
     </nav>
 
@@ -741,102 +2104,250 @@ footer p {
 
 
 
-<!-- =========================
+<!-- ========================================================
      HERO
-========================= -->
+======================================================== -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-    <div class="module-label">
-        MÓDULO 04
+    <div class="hero-decoration">
+
+        <div class="deco-purple"></div>
+
+        <div class="deco-yellow"></div>
+
     </div>
+
+
+    <div class="hero-institution">
+
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo FCA"
+        >
+
+        <div class="hero-institution-text">
+
+            Facultad de Contaduría y Administración
+
+            <span>
+                Universidad Autónoma de Chihuahua
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="module-label">
+        Módulo 4
+    </div>
+
 
     <h1>
         Diseño y Revisión del Syllabus
     </h1>
 
+
     <p>
-        Del programa académico a una planeación clara, organizada y
-        comunicable que oriente el desarrollo de la asignatura durante
-        el semestre.
+
+        Guía práctica para convertir el programa analítico
+        en una planeación concreta del curso, organizando
+        sesiones, contenidos, actividades, recursos,
+        evidencias y evaluación.
+
     </p>
 
-
-    <div class="route">
-
-        <span class="route-item">Programa</span>
-
-        <span class="route-item">Planeación</span>
-
-        <span class="route-item">Calendarización</span>
-
-        <span class="route-item">Actividades</span>
-
-        <span class="route-item">Evaluación</span>
-
-    </div>
-
 </div>
 
 </section>
 
 
 
-<!-- =========================
-     OBJETIVO
-========================= -->
+<!-- ========================================================
+     ESTRUCTURA
+======================================================== -->
 
-<section class="section">
+<div class="module-layout">
 
-<div class="container">
 
-    <div class="objective">
 
-        <div class="objective-icon">
-            <i class="fa-solid fa-bullseye"></i>
-        </div>
+<!-- ========================================================
+     PANEL LATERAL
+======================================================== -->
 
-        <div>
+<aside class="side-nav">
 
-            <h3>Objetivo del módulo</h3>
+<div class="side-nav-inner">
 
-            <p>
-                Identificar los componentes esenciales de un syllabus
-                y aplicar criterios para revisar su congruencia con el
-                programa académico, los resultados de aprendizaje,
-                las actividades y el sistema de evaluación.
-            </p>
+    <div class="side-nav-title">
 
-        </div>
+        <i class="fa-solid fa-calendar-days"></i>
+
+        Construcción del syllabus
+
+    </div>
+
+
+    <div class="side-nav-links">
+
+        <a href="#que-es">
+
+            <i class="fa-regular fa-circle-question"></i>
+
+            Qué es
+
+        </a>
+
+
+        <a href="#antes">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            Antes de comenzar
+
+        </a>
+
+
+        <a href="#componentes">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            Componentes
+
+        </a>
+
+
+        <a href="#logica">
+
+            <i class="fa-solid fa-link"></i>
+
+            Lógica del syllabus
+
+        </a>
+
+
+        <a href="#pasos">
+
+            <i class="fa-solid fa-list-ol"></i>
+
+            Paso a paso
+
+        </a>
+
+
+        <a href="#sesion">
+
+            <i class="fa-solid fa-table-columns"></i>
+
+            Planeación por sesión
+
+        </a>
+
+
+        <a href="#ejemplo">
+
+            <i class="fa-regular fa-lightbulb"></i>
+
+            Ejemplo
+
+        </a>
+
+
+        <a href="#ajustes">
+
+            <i class="fa-solid fa-universal-access"></i>
+
+            Ajustes razonables
+
+        </a>
+
+
+        <a href="#errores">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            Errores frecuentes
+
+        </a>
+
+
+        <a href="#lista">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            Lista de cotejo
+
+        </a>
+
+
+        <a href="#formato">
+
+            <i class="fa-solid fa-download"></i>
+
+            Formato
+
+        </a>
+
+
+        <a href="#recursos">
+
+            <i class="fa-solid fa-book"></i>
+
+            Recursos
+
+        </a>
 
     </div>
 
 </div>
 
-</section>
+</aside>
 
 
 
-<!-- =========================
-     DIFERENCIA
-========================= -->
+<!-- ========================================================
+     CONTENIDO
+======================================================== -->
 
-<section class="section section-alt" id="diferencia">
+<main class="module-content">
 
-<div class="container">
+
+
+<!-- ========================================================
+     SECCIÓN 1
+======================================================== -->
+
+<section class="section"
+         id="que-es">
 
     <div class="section-label">
-        Concepto clave
+        Sección 1
     </div>
 
-    <h2>Programa académico y syllabus no son lo mismo</h2>
+
+    <h2>
+        ¿Qué es el syllabus?
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        La concreción del programa analítico en la planeación del curso
+
+    </div>
+
 
     <p class="section-intro">
-        Ambos documentos están relacionados, pero cumplen funciones distintas.
-        El programa establece el marco académico de la asignatura; el syllabus
-        concreta cómo se desarrollará ese marco durante un periodo escolar.
+
+        El syllabus organiza cómo se desarrollará una unidad
+        de aprendizaje durante un ciclo escolar determinado.
+        Traduce los elementos del programa analítico en una
+        secuencia concreta de sesiones, actividades,
+        recursos, evidencias y evaluación.
+
     </p>
 
 
@@ -845,354 +2356,999 @@ footer p {
 
         <div class="compare-card">
 
-            <div class="compare-icon">
-                <i class="fa-solid fa-file-lines"></i>
-            </div>
+            <i class="fa-solid fa-file-lines"></i>
 
-            <h3>Programa Académico</h3>
+            <h3>
+                Programa analítico
+            </h3>
 
             <p>
-                Documento que establece los elementos académicos fundamentales
-                de la asignatura.
+
+                Define el marco académico de la asignatura:
+                propósito, referentes formativos, resultados,
+                contenidos, estrategias, evidencias y evaluación.
+
             </p>
 
-            <ul>
-                <li>Propósito de la asignatura.</li>
-                <li>Resultados de aprendizaje.</li>
-                <li>Contenidos.</li>
-                <li>Orientaciones metodológicas.</li>
-                <li>Criterios generales de evaluación.</li>
-            </ul>
+        </div>
+
+
+        <div class="compare-arrow">
+
+            <i class="fa-solid fa-arrow-right"></i>
 
         </div>
 
 
         <div class="compare-card">
 
-            <div class="compare-icon">
-                <i class="fa-solid fa-calendar-days"></i>
-            </div>
+            <i class="fa-solid fa-calendar-check"></i>
 
-            <h3>Syllabus</h3>
+            <h3>
+                Syllabus
+            </h3>
 
             <p>
-                Planeación concreta que comunica cómo se desarrollará
-                la asignatura durante el semestre.
+
+                Distribuye y concreta ese marco durante
+                el semestre, indicando qué ocurrirá
+                en cada sesión y cómo se desarrollará
+                y evaluará el aprendizaje.
+
             </p>
 
-            <ul>
-                <li>Calendarización.</li>
-                <li>Actividades específicas.</li>
-                <li>Evidencias de aprendizaje.</li>
-                <li>Ponderaciones.</li>
-                <li>Políticas y acuerdos del curso.</li>
-            </ul>
+        </div>
+
+
+    </div>
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Criterio central
+            </h3>
+
+            <p>
+
+                El syllabus no debe crear un curso distinto
+                al programa analítico. Debe
+                <strong>hacer operativo aquello que el programa establece.</strong>
+
+            </p>
 
         </div>
 
     </div>
 
-</div>
-
 </section>
 
 
 
-<!-- =========================
-     COMPONENTES
-========================= -->
+<!-- ========================================================
+     SECCIÓN 2
+======================================================== -->
 
-<section class="section" id="componentes">
-
-<div class="container">
+<section class="section"
+         id="antes">
 
     <div class="section-label">
-        Componentes
+        Sección 2
     </div>
 
-    <h2>¿Qué debe contener un syllabus?</h2>
 
-    <p class="section-intro">
-        Su estructura puede variar según el formato institucional,
-        pero debe permitir que el estudiante comprenda qué aprenderá,
-        cómo trabajará y cómo será evaluado.
-    </p>
+    <h2>
+        Antes de comenzar
+    </h2>
 
 
-    <div class="cards">
+    <div class="section-subtitle">
 
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-circle-info"></i>
-            </div>
-
-            <h3>Información del curso</h3>
-
-            <p>
-                Nombre de la asignatura, docente, periodo, modalidad,
-                horarios y datos generales.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-bullseye"></i>
-            </div>
-
-            <h3>Propósito y resultados</h3>
-
-            <p>
-                Qué se espera que el estudiante desarrolle o logre
-                durante la asignatura.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-list-ol"></i>
-            </div>
-
-            <h3>Contenidos</h3>
-
-            <p>
-                Organización de los temas y unidades que se desarrollarán
-                durante el semestre.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-calendar-check"></i>
-            </div>
-
-            <h3>Calendarización</h3>
-
-            <p>
-                Distribución temporal de contenidos, actividades,
-                evaluaciones y entregables.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-person-chalkboard"></i>
-            </div>
-
-            <h3>Actividades de aprendizaje</h3>
-
-            <p>
-                Estrategias y experiencias que permitirán al estudiante
-                desarrollar los aprendizajes previstos.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-percent"></i>
-            </div>
-
-            <h3>Sistema de evaluación</h3>
-
-            <p>
-                Evidencias, ponderaciones, criterios y condiciones
-                mediante las cuales se valorará el aprendizaje.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-scale-balanced"></i>
-            </div>
-
-            <h3>Políticas del curso</h3>
-
-            <p>
-                Criterios de asistencia, entregas, participación,
-                integridad académica y comunicación.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
-
-            <h3>Recursos y bibliografía</h3>
-
-            <p>
-                Fuentes, herramientas y materiales necesarios
-                para el desarrollo de la asignatura.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                <i class="fa-solid fa-comments"></i>
-            </div>
-
-            <h3>Comunicación</h3>
-
-            <p>
-                Canales, tiempos y mecanismos mediante los cuales
-                docente y estudiantes mantendrán comunicación.
-            </p>
-
-        </div>
+        No llenes el formato hasta conocer las condiciones reales del curso
 
     </div>
 
-</div>
+
+    <div class="session-grid">
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <h3>
+                Programa analítico vigente
+            </h3>
+
+            <p>
+
+                Será la principal referencia para recuperar
+                propósito, resultados de aprendizaje,
+                contenidos y criterios de evaluación.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-calendar"></i>
+
+            <h3>
+                Calendario escolar
+            </h3>
+
+            <p>
+
+                Identifica inicio y término del ciclo,
+                días inhábiles, periodos de evaluación
+                y semanas efectivas de trabajo.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>
+                Horas reales disponibles
+            </h3>
+
+            <p>
+
+                Verifica horas por semana, distribución
+                entre teoría, práctica o laboratorio
+                y duración de cada sesión.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>
+                Características del grupo
+            </h3>
+
+            <p>
+
+                Considera modalidad, tamaño del grupo,
+                recursos disponibles y necesidades
+                educativas que puedan requerir ajustes.
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
 
-<!-- =========================
-     ALINEACIÓN
-========================= -->
+<!-- ========================================================
+     SECCIÓN 3
+======================================================== -->
 
-<section class="section section-alt">
-
-<div class="container">
+<section class="section"
+         id="componentes">
 
     <div class="section-label">
-        Alineación
+        Sección 3
     </div>
 
-    <h2>La lógica interna del syllabus</h2>
 
-    <p class="section-intro">
-        Un syllabus consistente mantiene una relación clara entre
-        lo que se pretende aprender y la manera en que ese aprendizaje
-        será desarrollado y evaluado.
-    </p>
+    <h2>
+        ¿Qué contiene el formato?
+    </h2>
 
 
-    <div class="alignment">
+    <div class="section-subtitle">
 
-
-        <div class="align-step">
-
-            <div class="align-icon">
-                <i class="fa-solid fa-file-lines"></i>
-            </div>
-
-            <h3>Programa</h3>
-
-            <p>
-                Define el marco académico.
-            </p>
-
-        </div>
-
-
-        <div class="align-step">
-
-            <div class="align-icon">
-                <i class="fa-solid fa-bullseye"></i>
-            </div>
-
-            <h3>Resultados</h3>
-
-            <p>
-                Indican qué debe lograr el estudiante.
-            </p>
-
-        </div>
-
-
-        <div class="align-step">
-
-            <div class="align-icon">
-                <i class="fa-solid fa-person-running"></i>
-            </div>
-
-            <h3>Actividades</h3>
-
-            <p>
-                Generan oportunidades para aprender.
-            </p>
-
-        </div>
-
-
-        <div class="align-step">
-
-            <div class="align-icon">
-                <i class="fa-solid fa-file-circle-check"></i>
-            </div>
-
-            <h3>Evidencias</h3>
-
-            <p>
-                Permiten demostrar el aprendizaje.
-            </p>
-
-        </div>
-
-
-        <div class="align-step">
-
-            <div class="align-icon">
-                <i class="fa-solid fa-chart-column"></i>
-            </div>
-
-            <h3>Evaluación</h3>
-
-            <p>
-                Valora el nivel de logro alcanzado.
-            </p>
-
-        </div>
+        Identifica cada apartado antes de comenzar a llenarlo
 
     </div>
 
-</div>
+
+    <div class="component-grid">
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                01
+            </span>
+
+            <i class="fa-solid fa-address-card"></i>
+
+            <h3>
+                Datos generales
+            </h3>
+
+            <p>
+
+                Unidad académica, asignatura,
+                ciclo, programa, clave, semestre,
+                grupo, fechas y distribución de horas.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                02
+            </span>
+
+            <i class="fa-solid fa-align-left"></i>
+
+            <h3>
+                Descripción
+            </h3>
+
+            <p>
+
+                Propósito de la asignatura,
+                relevancia en el plan de estudios
+                y relación con el perfil de egreso.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                03
+            </span>
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            <h3>
+                Resultados de aprendizaje
+            </h3>
+
+            <p>
+
+                Aprendizajes esperados al finalizar
+                la unidad de aprendizaje.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                04
+            </span>
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h3>
+                Programa por sesión
+            </h3>
+
+            <p>
+
+                Organización de objetos de estudio,
+                sesiones, horas y contenidos.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                05
+            </span>
+
+            <i class="fa-solid fa-person-chalkboard"></i>
+
+            <h3>
+                Actividades y recursos
+            </h3>
+
+            <p>
+
+                Qué realizará el estudiante
+                o docente y qué recursos
+                se utilizarán.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                06
+            </span>
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <h3>
+                Evidencia y evaluación
+            </h3>
+
+            <p>
+
+                Producto o desempeño esperado,
+                instrumento de evaluación
+                y ponderación correspondiente.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                07
+            </span>
+
+            <i class="fa-solid fa-universal-access"></i>
+
+            <h3>
+                Ajustes razonables
+            </h3>
+
+            <p>
+
+                Adaptaciones requeridas para favorecer
+                acceso, participación y aprendizaje
+                cuando corresponda.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                08
+            </span>
+
+            <i class="fa-solid fa-book"></i>
+
+            <h3>
+                Recursos bibliográficos
+            </h3>
+
+            <p>
+
+                Referencias utilizadas para cada
+                objeto de estudio.
+
+            </p>
+
+        </div>
+
+
+        <div class="component-card">
+
+            <span class="component-number">
+                09
+            </span>
+
+            <i class="fa-solid fa-signature"></i>
+
+            <h3>
+                Responsables
+            </h3>
+
+            <p>
+
+                Responsable de la unidad,
+                fecha de entrega
+                y autoridad educativa.
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
 
-<!-- =========================
-     EJEMPLO
-========================= -->
+<!-- ========================================================
+     SECCIÓN 4
+======================================================== -->
 
-<section class="section">
+<section class="section"
+         id="logica">
 
-<div class="container">
+    <div class="section-label">
+        Sección 4
+    </div>
+
+
+    <h2>
+        La lógica del syllabus
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Cada sesión debe conectar lo que se enseña, lo que se hace y lo que se evalúa
+
+    </div>
+
+
+    <div class="logic-box">
+
+
+        <div class="logic-header">
+
+            <h3>
+                Secuencia de planeación
+            </h3>
+
+            <p>
+
+                Utiliza esta relación para comprobar
+                la congruencia de cada sesión.
+
+            </p>
+
+        </div>
+
+
+        <div class="logic-flow">
+
+
+            <div class="logic-item">
+                Resultado de<br>aprendizaje
+            </div>
+
+
+            <div class="logic-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="logic-item">
+                Contenido
+            </div>
+
+
+            <div class="logic-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="logic-item">
+                Actividad
+            </div>
+
+
+            <div class="logic-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="logic-item">
+                Recurso
+            </div>
+
+
+            <div class="logic-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="logic-item">
+                Evidencia
+            </div>
+
+
+            <div class="logic-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="logic-item">
+                Evaluación
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Pregunta de revisión
+            </h3>
+
+            <p>
+
+                Si el estudiante realiza la actividad
+                propuesta y genera la evidencia indicada,
+                <strong>¿estará demostrando el aprendizaje
+                que pretendemos desarrollar?</strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 5
+======================================================== -->
+
+<section class="section"
+         id="pasos">
+
+    <div class="section-label">
+        Sección 5
+    </div>
+
+
+    <h2>
+        Elaboración paso a paso
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Del programa analítico al calendario real del semestre
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <div>
+
+                <h3>
+                    Completa los datos generales
+                </h3>
+
+                <p>
+
+                    Registra la información oficial
+                    de la asignatura y del ciclo escolar.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <div>
+
+                <h3>
+                    Recupera la descripción y resultados
+                </h3>
+
+                <p>
+
+                    Utiliza el programa analítico como referencia.
+                    Evita modificar de manera unilateral
+                    los resultados establecidos.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <div>
+
+                <h3>
+                    Distribuye los objetos de estudio
+                </h3>
+
+                <p>
+
+                    Determina cuántas sesiones y horas
+                    requiere cada bloque considerando
+                    su complejidad y relevancia.
+
+                </p>
+
+                <div class="step-tip">
+
+                    No distribuyas automáticamente el mismo
+                    número de sesiones a todos los temas.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                4
+            </div>
+
+            <div>
+
+                <h3>
+                    Define el contenido de cada sesión
+                </h3>
+
+                <p>
+
+                    Especifica el tema o subtema
+                    que se abordará sin intentar
+                    reproducir todo el programa en una sola fila.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                5
+            </div>
+
+            <div>
+
+                <h3>
+                    Diseña la actividad
+                </h3>
+
+                <p>
+
+                    Describe qué realizará el estudiante
+                    o el docente utilizando acciones concretas:
+                    analizar, resolver, discutir, comparar,
+                    diseñar, argumentar o practicar.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                6
+            </div>
+
+            <div>
+
+                <h3>
+                    Selecciona los recursos
+                </h3>
+
+                <p>
+
+                    Indica únicamente los materiales
+                    necesarios para desarrollar la actividad:
+                    artículos, presentaciones, videos,
+                    bases de datos, casos u otros recursos.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                7
+            </div>
+
+            <div>
+
+                <h3>
+                    Define evidencia y evaluación
+                </h3>
+
+                <p>
+
+                    Especifica qué producto o actuación
+                    permitirá demostrar el aprendizaje
+                    y mediante qué instrumento será valorado.
+
+                </p>
+
+                <div class="step-tip">
+
+                    Si una actividad no aporta calificación,
+                    indícalo expresamente como
+                    “sin ponderación”.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                8
+            </div>
+
+            <div>
+
+                <h3>
+                    Realiza una revisión integral
+                </h3>
+
+                <p>
+
+                    Comprueba carga de trabajo,
+                    distribución del tiempo,
+                    congruencia y suma de las ponderaciones.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 6
+======================================================== -->
+
+<section class="section"
+         id="sesion">
+
+    <div class="section-label">
+        Sección 6
+    </div>
+
+
+    <h2>
+        ¿Qué escribir en cada columna?
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Utiliza cada espacio del formato con una función específica
+
+    </div>
+
+
+    <div class="session-grid">
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-hashtag"></i>
+
+            <h3>
+                Sesión y horas
+            </h3>
+
+            <p>
+
+                Indica el número consecutivo
+                y el tiempo asignado a esa sesión.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <h3>
+                Contenido
+            </h3>
+
+            <p>
+
+                Registra el tema, subtema
+                o contenido específico
+                que se abordará.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-person-running"></i>
+
+            <h3>
+                Actividad
+            </h3>
+
+            <p>
+
+                Describe la acción de enseñanza-aprendizaje.
+                Prioriza verbos que permitan comprender
+                qué ocurrirá en la sesión.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-laptop-file"></i>
+
+            <h3>
+                Recursos educativos
+            </h3>
+
+            <p>
+
+                Señala materiales, medios
+                o recursos necesarios para desarrollar
+                la actividad.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <h3>
+                Evidencia de aprendizaje
+            </h3>
+
+            <p>
+
+                Indica el producto o desempeño
+                que permitirá demostrar el aprendizaje.
+
+            </p>
+
+        </div>
+
+
+        <div class="session-card">
+
+            <i class="fa-solid fa-scale-balanced"></i>
+
+            <h3>
+                Evaluación
+            </h3>
+
+            <p>
+
+                Registra el instrumento utilizado
+                y la ponderación correspondiente,
+                cuando aplique.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 7
+======================================================== -->
+
+<section class="section"
+         id="ejemplo">
+
+    <div class="section-label">
+        Sección 7
+    </div>
+
+
+    <h2>
+        Ejemplo aplicado
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Una sesión de Economía organizada con la lógica del formato
+
+    </div>
+
 
     <div class="example-box">
 
-        <h3>
-            <i class="fa-solid fa-link"></i>
-            Ejemplo de congruencia
-        </h3>
+
+        <div class="example-header">
+
+            <strong>
+                Objeto de estudio: Política fiscal
+            </strong>
+
+            <span>
+                Sesión 3 · 2 horas
+            </span>
+
+        </div>
 
 
         <div class="example-grid">
@@ -1200,11 +3356,13 @@ footer p {
 
             <div class="example-item">
 
-                <strong>Resultado</strong>
+                <strong>
+                    Contenido
+                </strong>
 
                 <p>
-                    Analizar información económica para sustentar
-                    una decisión.
+                    Política fiscal expansiva
+                    y sus principales efectos macroeconómicos.
                 </p>
 
             </div>
@@ -1212,11 +3370,14 @@ footer p {
 
             <div class="example-item">
 
-                <strong>Actividad</strong>
+                <strong>
+                    Actividad
+                </strong>
 
                 <p>
-                    Análisis de un caso con datos reales y formulación
-                    de alternativas.
+                    Análisis grupal de un caso
+                    de una economía en recesión
+                    y propuesta argumentada de intervención fiscal.
                 </p>
 
             </div>
@@ -1224,228 +3385,799 @@ footer p {
 
             <div class="example-item">
 
-                <strong>Evaluación</strong>
+                <strong>
+                    Recursos
+                </strong>
 
                 <p>
-                    Informe argumentado valorado mediante una rúbrica
-                    de análisis y toma de decisiones.
+                    Caso breve, datos macroeconómicos,
+                    presentación de apoyo
+                    y lecturas previamente asignadas.
                 </p>
 
             </div>
 
+
+            <div class="example-item">
+
+                <strong>
+                    Evidencia
+                </strong>
+
+                <p>
+                    Reporte breve con diagnóstico,
+                    propuesta de política fiscal
+                    y efectos esperados.
+                </p>
+
+            </div>
+
+
+            <div class="example-item">
+
+                <strong>
+                    Evaluación
+                </strong>
+
+                <p>
+                    Rúbrica de análisis económico
+                    y argumentación · 10%.
+                </p>
+
+            </div>
+
+
+            <div class="example-item">
+
+                <strong>
+                    Congruencia
+                </strong>
+
+                <p>
+                    La actividad permite aplicar conceptos,
+                    la evidencia hace observable el análisis
+                    y la rúbrica valora el desempeño solicitado.
+                </p>
+
+            </div>
+
+
         </div>
 
-    </div>
 
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- =========================
-     REVISIÓN
-========================= -->
+<!-- ========================================================
+     SECCIÓN 8
+======================================================== -->
 
-<section class="section section-alt" id="revision">
-
-<div class="container">
-
-    <div class="section-label">
-        Revisión colegiada
-    </div>
-
-    <h2>Preguntas para revisar un syllabus</h2>
-
-    <p class="section-intro">
-        La revisión debe centrarse en la coherencia académica y en la
-        claridad con la que el documento comunica el desarrollo del curso.
-    </p>
-
-
-    <div class="checklist">
-
-
-        <div class="check-item">
-
-            <div class="check-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <div>
-
-                <h3>Congruencia con el programa</h3>
-
-                <p>
-                    ¿Los contenidos, resultados y criterios de evaluación
-                    corresponden con el programa académico?
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="check-item">
-
-            <div class="check-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <div>
-
-                <h3>Calendarización realista</h3>
-
-                <p>
-                    ¿La distribución de temas y actividades es viable
-                    dentro del periodo escolar?
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="check-item">
-
-            <div class="check-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <div>
-
-                <h3>Actividades pertinentes</h3>
-
-                <p>
-                    ¿Las actividades realmente contribuyen al desarrollo
-                    de los resultados de aprendizaje?
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="check-item">
-
-            <div class="check-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <div>
-
-                <h3>Evaluación coherente</h3>
-
-                <p>
-                    ¿Las evidencias y ponderaciones permiten valorar
-                    los aprendizajes declarados?
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="check-item">
-
-            <div class="check-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <div>
-
-                <h3>Información clara</h3>
-
-                <p>
-                    ¿Un estudiante puede comprender fácilmente qué
-                    debe hacer y cómo será evaluado?
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="check-item">
-
-            <div class="check-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <div>
-
-                <h3>Políticas consistentes</h3>
-
-                <p>
-                    ¿Las reglas del curso son claras, pertinentes
-                    y compatibles con la normativa institucional?
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     RECURSOS
-========================= -->
-
-<section class="section" id="recursos">
-
-<div class="container">
+<section class="section"
+         id="ajustes">
 
     <div class="section-label">
-        Recursos del módulo
+        Sección 8
     </div>
 
-    <h2>Material para elaborar y revisar syllabus</h2>
 
-    <p class="section-intro">
-        Aquí se incorporarán formatos, ejemplos y herramientas de apoyo
-        para el trabajo de las academias.
-    </p>
+    <h2>
+        Ajustes razonables
+    </h2>
 
 
-    <div class="resource">
+    <div class="section-subtitle">
 
-        <div class="resource-icon">
-            <i class="fa-solid fa-file-powerpoint"></i>
+        Planea las adaptaciones necesarias sin reducir los resultados de aprendizaje
+
+    </div>
+
+
+    <div class="adjust-box">
+
+
+        <div class="adjust-header">
+
+            <i class="fa-solid fa-universal-access"></i>
+
+            <h3>
+                ¿Qué debe registrarse?
+            </h3>
+
+            <p>
+
+                El formato permite documentar ajustes destinados
+                a favorecer el acceso, participación y aprendizaje,
+                manteniendo la confidencialidad del estudiante.
+
+            </p>
+
+        </div>
+
+
+        <div class="adjust-grid">
+
+
+            <div class="adjust-item">
+
+                <strong>
+                    Condición funcional
+                </strong>
+
+                <p>
+                    Describe únicamente la condición
+                    relacionada con el acceso al aprendizaje.
+                </p>
+
+            </div>
+
+
+            <div class="adjust-item">
+
+                <strong>
+                    Necesidad educativa
+                </strong>
+
+                <p>
+                    Identifica qué requiere el estudiante
+                    para participar y aprender.
+                </p>
+
+            </div>
+
+
+            <div class="adjust-item">
+
+                <strong>
+                    Ajuste en actividad
+                </strong>
+
+                <p>
+                    Registra la modificación necesaria
+                    en estrategias, recursos o actividades.
+                </p>
+
+            </div>
+
+
+            <div class="adjust-item">
+
+                <strong>
+                    Ajuste en evaluación
+                </strong>
+
+                <p>
+                    Especifica adaptaciones en tiempo,
+                    formato o forma de respuesta cuando proceda.
+                </p>
+
+            </div>
+
+
+            <div class="adjust-item">
+
+                <strong>
+                    Seguimiento
+                </strong>
+
+                <p>
+                    Documenta acuerdos
+                    y la forma en que serán revisados.
+                </p>
+
+            </div>
+
+
+            <div class="adjust-item">
+
+                <strong>
+                    Periodo de aplicación
+                </strong>
+
+                <p>
+                    Indica sesiones o periodo
+                    durante el cual se aplicará el ajuste.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
         </div>
 
         <div>
 
-            <h3>Presentación del Módulo 4</h3>
+            <h3>
+                Protege la información del estudiante
+            </h3>
 
             <p>
-                Espacio reservado para la presentación sobre diseño
-                y revisión del syllabus.
+
+                Registra únicamente la información
+                necesaria para orientar el ajuste.
+                <strong>Evita diagnósticos clínicos
+                y datos personales innecesarios.</strong>
+
             </p>
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="resource">
 
-        <div class="resource-icon">
+
+<!-- ========================================================
+     SECCIÓN 9
+======================================================== -->
+
+<section class="section"
+         id="errores">
+
+    <div class="section-label">
+        Sección 9
+    </div>
+
+
+    <h2>
+        Errores frecuentes
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Problemas que convierten el syllabus en un trámite y no en una herramienta de planeación
+
+    </div>
+
+
+    <div class="error-list">
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Copiar el programa sin distribuirlo realmente
+                </strong>
+
+                <p>
+
+                    El syllabus debe traducir los contenidos
+                    a sesiones concretas y no únicamente
+                    reproducir el programa analítico.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Describir actividades demasiado generales
+                </strong>
+
+                <p>
+
+                    Expresiones como “ver tema” o “explicar capítulo”
+                    no permiten comprender qué realizará
+                    el estudiante.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Confundir actividad con evidencia
+                </strong>
+
+                <p>
+
+                    La actividad describe lo que se realiza;
+                    la evidencia es aquello que permite
+                    demostrar el aprendizaje alcanzado.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Asignar porcentajes sin revisar la carga
+                </strong>
+
+                <p>
+
+                    La ponderación debe corresponder
+                    a la relevancia y complejidad
+                    de la evidencia solicitada.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Planear más contenido del que realmente cabe
+                </strong>
+
+                <p>
+
+                    El calendario debe considerar
+                    horas efectivas, evaluaciones,
+                    retroalimentación y posibles ajustes.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 10
+======================================================== -->
+
+<section class="section"
+         id="lista">
+
+    <div class="section-label">
+        Sección 10
+    </div>
+
+
+    <h2>
+        Lista rápida de revisión
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Antes de entregar tu syllabus, verifica estos elementos
+
+    </div>
+
+
+    <div class="checklist-box">
+
+
+        <div class="checklist-header">
+
+            <h3>
+                Revisión final
+            </h3>
+
+            <div class="progress"
+                 id="progress">
+
+                0 de 12 criterios
+
+            </div>
+
+        </div>
+
+
+        <div class="check-items">
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c1"
+                       class="check">
+
+                <label for="c1">
+
+                    Los datos generales corresponden
+                    al ciclo escolar y asignatura.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c2"
+                       class="check">
+
+                <label for="c2">
+
+                    La descripción y resultados
+                    son congruentes con el programa analítico.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c3"
+                       class="check">
+
+                <label for="c3">
+
+                    Todos los objetos de estudio
+                    fueron distribuidos en sesiones.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c4"
+                       class="check">
+
+                <label for="c4">
+
+                    Las horas planeadas corresponden
+                    a las horas disponibles.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c5"
+                       class="check">
+
+                <label for="c5">
+
+                    Cada sesión identifica claramente
+                    el contenido que se abordará.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c6"
+                       class="check">
+
+                <label for="c6">
+
+                    Las actividades describen acciones
+                    concretas de enseñanza y aprendizaje.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c7"
+                       class="check">
+
+                <label for="c7">
+
+                    Los recursos educativos
+                    son pertinentes para las actividades.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c8"
+                       class="check">
+
+                <label for="c8">
+
+                    Las evidencias permiten demostrar
+                    los aprendizajes previstos.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c9"
+                       class="check">
+
+                <label for="c9">
+
+                    La evaluación indica instrumento
+                    y ponderación cuando corresponde.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c10"
+                       class="check">
+
+                <label for="c10">
+
+                    Las ponderaciones son congruentes
+                    y fueron revisadas en conjunto.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c11"
+                       class="check">
+
+                <label for="c11">
+
+                    Se consideraron ajustes razonables
+                    cuando resultan necesarios.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c12"
+                       class="check">
+
+                <label for="c12">
+
+                    Las referencias bibliográficas
+                    están vinculadas con los objetos
+                    de estudio y fueron revisadas.
+
+                </label>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="check-result"
+             id="check-result">
+
+            Marca los criterios conforme revises el syllabus.
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 11
+======================================================== -->
+
+<section class="section"
+         id="formato">
+
+    <div class="section-label">
+        Sección 11
+    </div>
+
+
+    <h2>
+        Formato institucional
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Descarga el documento base para elaborar el syllabus
+
+    </div>
+
+
+    <div class="download-card">
+
+
+        <div class="download-icon">
+
             <i class="fa-solid fa-file-word"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Formato de Syllabus UACH
+            </h3>
+
+            <p>
+
+                Documento editable con datos generales,
+                planeación por sesión, ajustes razonables,
+                recursos bibliográficos y apartados de validación.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://docs.google.com/document/d/1-MTVQ2vG6O9-5P42h9dlb5bJ9BMFKCW0/edit?usp=sharing&ouid=114601054376319115689&rtpof=true&sd=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="download-btn"
+        >
+
+            <i class="fa-solid fa-download"></i>
+
+            Descargar formato
+
+        </a>
+
+
+    </div>
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-circle-info"></i>
+
         </div>
 
         <div>
 
-            <h3>Formato institucional de syllabus</h3>
+            <h3>
+                Antes de entregar
+            </h3>
 
             <p>
-                Espacio para incorporar el formato vigente utilizado
-                por la Facultad o la Universidad.
+
+                Sustituye todas las indicaciones contenidas
+                entre corchetes por la información correspondiente
+                y elimina los textos de apoyo del formato.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 12
+======================================================== -->
+
+<section class="section"
+         id="recursos">
+
+    <div class="section-label">
+        Sección 12
+    </div>
+
+
+    <h2>
+        Recursos para profundizar
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Consulta los módulos relacionados cuando necesites revisar la congruencia del syllabus
+
+    </div>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Programa analítico
+            </h3>
+
+            <p>
+
+                Si detectas inconsistencias en resultados,
+                contenidos o evaluación, consulta el
+                <a href="modulo3.html">Módulo 3</a>
+                antes de modificar el syllabus.
+
             </p>
 
         </div>
@@ -1456,97 +4188,322 @@ footer p {
     <div class="resource">
 
         <div class="resource-icon">
-            <i class="fa-solid fa-list-check"></i>
+
+            <i class="fa-solid fa-pen-ruler"></i>
+
         </div>
 
         <div>
 
-            <h3>Lista de cotejo</h3>
+            <h3>
+                Material didáctico
+            </h3>
 
             <p>
-                Herramienta para apoyar la revisión colegiada de syllabus.
+
+                Para seleccionar o diseñar los recursos
+                educativos de cada sesión, consulta
+                el <a href="modulo2.html">Módulo 2</a>.
+
             </p>
 
         </div>
 
     </div>
 
-</div>
 
-</section>
+    <div class="resource">
 
+        <div class="resource-icon">
 
+            <i class="fa-solid fa-cubes"></i>
 
-<!-- =========================
-     REFLEXIÓN
-========================= -->
+        </div>
 
-<section class="section section-alt">
+        <div>
 
-<div class="container">
+            <h3>
+                Modelo Educativo UACH
+            </h3>
 
-    <div class="section-label">
-        Para reflexionar
-    </div>
+            <p>
 
-    <h2>¿El syllabus comunica realmente el curso?</h2>
+                Para recuperar los fundamentos institucionales
+                relacionados con formación, ambientes
+                y aprendizaje, consulta el
+                <a href="modulo1.html">Módulo 1</a>.
 
+            </p>
 
-    <div class="reflection">
-
-        <h3>
-            <i class="fa-regular fa-lightbulb"></i>
-            Pregunta orientadora
-        </h3>
-
-        <p>
-            Si un estudiante leyera únicamente el syllabus de una
-            asignatura de su academia, ¿podría comprender con claridad
-            qué aprenderá, qué actividades realizará y cómo será evaluado?
-        </p>
+        </div>
 
     </div>
 
 
     <div class="module-navigation">
 
-        <a href="modulo3.html" class="btn btn-outline">
+
+        <a href="modulo3.html"
+           class="btn btn-outline">
 
             <i class="fa-solid fa-arrow-left"></i>
 
-            Módulo 3
+            Volver al Módulo 3
 
         </a>
 
 
-        <a href="modulo5.html" class="btn btn-primary">
+        <a href="modulo5.html"
+           class="btn btn-primary">
 
-            Módulo 5
+            Continuar al Módulo 5
 
             <i class="fa-solid fa-arrow-right"></i>
 
         </a>
 
-    </div>
 
-</div>
+    </div>
 
 </section>
 
 
 
+</main>
+
+</div>
+
+
+
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+
 <footer>
 
-    <strong>
-        Facultad de Contaduría y Administración
-    </strong>
+<div class="footer-inner">
 
-    <p>
-        Universidad Autónoma de Chihuahua ·
-        Formación y acompañamiento académico
-    </p>
+
+    <div class="footer-brand">
+
+
+        <div class="footer-logo-box">
+
+            <img
+                src="assets/logofca.jpeg"
+                alt="Logotipo de la Facultad de Contaduría y Administración"
+                class="footer-logo"
+            >
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Facultad de Contaduría y Administración
+            </strong>
+
+            <small>
+                Universidad Autónoma de Chihuahua
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-info">
+
+        Formación y Acompañamiento Académico<br>
+
+        Asesoría Técnica Pedagógica · FCA-UACH
+
+    </div>
+
+
+</div>
 
 </footer>
+
+
+
+<!-- ========================================================
+     JAVASCRIPT
+======================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* ==================================================
+           NAVEGACIÓN LATERAL
+        ================================================== */
+
+        const sections =
+            document.querySelectorAll(
+                ".module-content section[id]"
+            );
+
+
+        const navLinks =
+            document.querySelectorAll(
+                ".side-nav a[href^='#']"
+            );
+
+
+        function updateActiveSection() {
+
+            let current = "";
+
+
+            sections.forEach(
+                function (section) {
+
+                    const rect =
+                        section.getBoundingClientRect();
+
+
+                    if (rect.top <= 190) {
+
+                        current =
+                            section.getAttribute("id");
+
+                    }
+
+                }
+            );
+
+
+            navLinks.forEach(
+                function (link) {
+
+                    link.classList.remove(
+                        "active-section"
+                    );
+
+
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + current
+                    ) {
+
+                        link.classList.add(
+                            "active-section"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateActiveSection,
+            { passive: true }
+        );
+
+
+        updateActiveSection();
+
+
+
+        /* ==================================================
+           LISTA DE COTEJO
+        ================================================== */
+
+        const checks =
+            document.querySelectorAll(".check");
+
+
+        const progress =
+            document.getElementById("progress");
+
+
+        const result =
+            document.getElementById("check-result");
+
+
+        function updateChecklist() {
+
+            const total =
+                checks.length;
+
+
+            const checked =
+                document.querySelectorAll(
+                    ".check:checked"
+                ).length;
+
+
+            progress.textContent =
+                checked +
+                " de " +
+                total +
+                " criterios";
+
+
+            if (checked === 0) {
+
+                result.textContent =
+                    "Marca los criterios conforme revises el syllabus.";
+
+            }
+
+            else if (checked <= 6) {
+
+                result.textContent =
+                    "La revisión está en proceso. Verifica especialmente la congruencia entre actividades, evidencias y evaluación.";
+
+            }
+
+            else if (checked <= 10) {
+
+                result.textContent =
+                    "El syllabus presenta una estructura avanzada. Revisa los criterios pendientes antes de entregarlo.";
+
+            }
+
+            else if (checked === 11) {
+
+                result.textContent =
+                    "La revisión está prácticamente completa. Verifica el criterio pendiente.";
+
+            }
+
+            else {
+
+                result.textContent =
+                    "Se han revisado los criterios básicos del syllabus. Realiza una lectura final del documento antes de entregarlo.";
+
+            }
+
+        }
+
+
+        checks.forEach(
+            function (check) {
+
+                check.addEventListener(
+                    "change",
+                    updateChecklist
+                );
+
+            }
+        );
+
+
+    }
+);
+
+</script>
 
 
 </body>
