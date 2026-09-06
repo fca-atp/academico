@@ -1,189 +1,3537 @@
-e7e3abc3-cd2c-45a3-96b8-dd31125cc352.png
-Imagen
-incorpora este logo
-mié, 26 ago a las 7:40 p.m.
-Curso transversalización .pdf
-PDF
-Formación de formadores para la transformación humana integral.pdf
-PDF
-analiza estas presentaciones y dime (considerando posibles ajustes, en que parte del curso pueden ir)
+<!DOCTYPE html>
+<html lang="es">
 
-Sí. Revisando ambas presentaciones, sí son aprovechables para el curso que estamos armando, pero no las pondría completas tal como están. Fueron diseñadas con propósitos distintos y conviene extraer, reorganizar y ajustar algunas diapositivas para presidentes de academia.
+<head>
 
-Mi distribución sería esta:
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Presentación	Módulo	Uso recomendado	Ajuste
-Formación de formadores para la transformación humana integral	1. Modelo educativo y estilos de enseñanza	Material base	Medio
-Curso transversalización	1. Modelo educativo y estilos de enseñanza	Complemento sobre transversalización	Medio
-Curso transversalización	2. Diseño de material didáctico	Ejemplos de diseño de experiencias + IA	Alto
-Ambas	3. Diseño y revisión de programas	Fundamento para revisar alineación con el modelo	Medio
-Ambas	4. Syllabus	Solo algunos conceptos transferibles	Alto
-Curso transversalización	5. Acompañamiento académico	Muy pertinente para trabajo colegiado	Medio
-1. Modelo educativo y estilos de enseñanza
+<title>Módulo 1 | Modelo Educativo UACH</title>
 
-Aquí colocaría principalmente “Formación de formadores para la transformación humana integral”.
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-La presentación parte de una cuestión muy apropiada para presidentes de academia: qué implica que una universidad adopte un modelo educativo. Señala que esto supone comprometerse con un paradigma que repercute en docencia, investigación, extensión, vinculación y servicios.
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet">
 
-Después introduce directamente el Modelo Glocal y Transdisciplinario de la UACH y desarrolla bastante bien el concepto de glocalidad. Particularmente útil es el esquema en el que el currículo articula actuar, saber y ser en un ambiente donde convergen lo local/global y virtual/real.
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-También tiene sentido conservar la parte de las competencias esperadas: resolución de problemas, adaptación, selección de información, aprendizaje ante el cambio y conexión entre disciplinas.
+<style>
 
-Ajuste que haría: cambiaría el énfasis de “formación de formadores” hacia:
+/* ==========================================================
+   IDENTIDAD VISUAL
+========================================================== */
 
-Del Modelo Educativo UACH a la práctica docente
+:root {
 
-Y agregaría al final unas 2–3 diapositivas que respondan explícitamente:
+    --morado: #71358f;
+    --morado-oscuro: #52216b;
+    --morado-profundo: #3b154d;
+    --morado-medio: #8a58a4;
 
-Modelo educativo → ¿qué implica para el profesor? → ¿qué debe observar el presidente de academia?
+    --lavanda: #f5f0f8;
+    --lavanda-2: #e9def0;
 
-Porque ese último puente todavía no está suficientemente desarrollado.
+    --amarillo: #f6b719;
+    --amarillo-claro: #fff2c8;
+    --amarillo-palido: #fff9e8;
 
-2. Diseño de material didáctico
+    --blanco: #ffffff;
 
-Aquí utilizaría una parte de “Curso transversalización”, pero no como presentación central.
+    --gris-fondo: #fafafa;
+    --gris-claro: #f3f3f5;
+    --gris-borde: #e6e2e8;
+    --gris: #667085;
 
-El documento tiene elementos interesantes sobre IA aplicada a la docencia: propone utilizar ChatGPT, Canva AI, Perplexity, Copilot, etc. para creación de recursos, evaluación y acompañamiento.
+    --texto: #292532;
+    --texto-secundario: #5d5864;
 
-Además, maneja una idea que encaja muy bien con nuestro curso: la IA como asistente de diseño pedagógico, no simplemente como generador automático de contenido.
+    --sombra:
+        0 10px 30px rgba(67,35,80,.09);
+}
 
-Aquí haría una presentación nueva y más corta:
 
-“Diseño de materiales didácticos pertinentes”
+/* ==========================================================
+   GENERAL
+========================================================== */
 
-con tres partes:
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-Propósito de aprendizaje → Selección/diseño del recurso → Revisión de su pertinencia
+html {
+    scroll-behavior: smooth;
+}
 
-Y posteriormente una sección breve:
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+    line-height: 1.65;
+}
 
-IA como apoyo para diseñar materiales.
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-No trasladaría toda la discusión sobre transversalización a este módulo porque desviaría el objetivo.
 
-3. Diseño y revisión de programas
+/* ==========================================================
+   MENÚ SUPERIOR
+========================================================== */
 
-Aquí veo una oportunidad bastante buena de combinar las dos presentaciones.
+.navbar {
 
-La primera ya vincula el proyecto educativo con misión, visión, valores, perfil de ingreso, perfil de egreso, malla curricular y programas analíticos. Eso permite explicar que un programa no debería revisarse aisladamente.
+    position: sticky;
+    top: 0;
+    z-index: 1200;
 
-Y la segunda aporta una idea todavía más útil para presidentes de academia: diferencia los niveles macro, meso y micro. En el nivel macro están los principios rectores del modelo; en el meso, su incorporación en los programas educativos; y en el micro, las experiencias formativas concretas.
+    background: rgba(255,255,255,.97);
 
-Ese esquema puede convertirse prácticamente en el eje del módulo:
+    border-bottom: 1px solid var(--gris-borde);
 
-Modelo educativo (macro)
-↓
-Programa educativo / programa de asignatura (meso)
-↓
-Syllabus, actividades y evaluación (micro)
+    backdrop-filter: blur(12px);
+}
 
-Además, la transversalización se presenta como algo deliberado que modifica cómo se enseña, cómo se aprende y cómo se evalúa, en lugar de agregar temas artificialmente.
+.nav-container {
 
-Para presidentes de academia esto es particularmente útil porque permite formular la pregunta:
+    max-width: 1320px;
+    min-height: 76px;
 
-¿Cómo sabemos que el Modelo Educativo UACH realmente está presente en nuestros programas y no solamente declarado institucionalmente?
+    margin: auto;
 
-Este probablemente sería uno de los mejores usos de ambas presentaciones.
+    padding: 0 28px;
 
-4. Diseño y revisión del syllabus
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-Aquí ninguna de las dos presentaciones cubre suficientemente el tema.
+    gap: 30px;
+}
 
-Hay principios aprovechables sobre currículo, experiencias de aprendizaje, evaluación y transversalización, pero no encontré un desarrollo propiamente dicho de syllabus.
 
-Por tanto, mantendría este módulo como material nuevo.
+/* MARCA */
 
-Podemos utilizar lo anterior para construir una lógica:
+.brand {
 
-Programa → Syllabus → Actividades → Evidencias → Evaluación
+    display: flex;
+    align-items: center;
 
-y enseñar a los presidentes a detectar incongruencias.
+    gap: 13px;
 
-Por ejemplo:
+    white-space: nowrap;
+}
 
-Programa: desarrollar capacidad de análisis.
-Syllabus: 80 % examen memorístico.
-Problema: falta de alineación.
 
-Eso aterrizaría mucho más el contenido que simplemente enseñarles a llenar el formato.
+/* LOGOTIPO REAL FCA */
 
-5. Presidente de academia como acompañante académico
+.brand-logo {
 
-Aquí volvería a utilizar Curso transversalización, aunque reinterpretándolo.
+    width: 50px;
+    height: 50px;
 
-Hay una idea muy adecuada: la transformación no se concibe como una actividad individual. El documento plantea que compartir experiencias reduce resistencia y que la integración debe entenderse como un proceso colectivo.
+    flex: 0 0 50px;
 
-También me parece particularmente útil para este módulo la discusión sobre dos extremos: pensar que hay que cambiar todo el programa o pensar que no hay que modificar nada. La propuesta intermedia es identificar puntos concretos de entrada y realizar cambios intencionados y graduales.
+    object-fit: contain;
 
-Eso se adapta muy bien al papel del presidente:
+    border-radius: 9px;
+}
 
-No fiscalizar → acompañar.
-No imponer uniformidad → construir criterios comunes.
-No rehacer todo → detectar oportunidades concretas de mejora.
 
-Incluso la presentación Formación de formadores señala que la construcción curricular involucra docentes, estudiantes, administradores y diseñadores curriculares en ambientes colaborativos y dialógicos.
+.brand-text {
 
-Cómo las aprovecharía finalmente
+    color: var(--morado-oscuro);
 
-No subiría las dos presentaciones simplemente como “Material complementario”. Hay suficiente contenido bueno como para que formen parte estructural del curso.
+    font-size: 16px;
+    font-weight: 800;
 
-En particular, “Formación de formadores” puede convertirse, con relativamente pocos ajustes, en la presentación central del Módulo 1. En cambio, “Curso transversalización” funciona mejor como banco de contenidos y actividades del cual extraer diapositivas para los módulos 1, 2, 3 y 5.
+    line-height: 1.15;
+}
 
-Además, hay algo que modificaría del temario original que hicimos: la transversalización merece aparecer explícitamente en el Módulo 1 y volver a retomarse en el Módulo 3. Por el peso que tiene en estos materiales institucionales, dejarla implícita desperdiciaría una parte importante del contenido disponible. La propia presentación define la transversalización como el mecanismo para que los principios y ejes formativos no permanezcan únicamente en documentos, sino que lleguen a la práctica cotidiana.
+.brand-text small {
 
-Si quieres mantener el curso compacto, yo no agregaría un sexto módulo; integraría transversalización dentro de los cinco que ya tenemos.
+    display: block;
 
-Cap 2 Modelo UACH 2024 ATP (1).pptx
-Presentación
-MODELO PEDAGÓGICO .pptx
-Presentación
-modelo.pptx
-Presentación
-PRINCIPIOS UACH-SEAES.pptx
-Presentación
-AUTOFORMACION LICENCIATURA.pptx
-Presentación
-utiliza también este material de base, y haz la presentación que propones para el módulo 1 (por lo pronto solo hagamos ese)
+    margin-top: 3px;
 
-Listo: 
-descargar presentación del Módulo 1
+    color: var(--gris);
 
-Modulo_1_Modelo_Educativo_Estilos_Ensenanza.pptx
-Presentación
-que es esto? 
-ya lo hice, donde puedo ir viendo lo creado? 
+    font-size: 9px;
+    font-weight: 500;
 
+    letter-spacing: .15px;
+}
 
-que me falta? 
-así? 
 
-ajusta el módulo 1:
+/* NAVEGACIÓN */
 
-Eliminar la nota: **Este módulo funciona también como
-espacio permanente de consulta. **Puede regresar
-cuando encuentre conceptos como Saber–Actuar–Ser, transversalización,
-glocalidad, Auto-Socio-Ecoformación o ambientes de aprendizaje en otros módulos
-del sitio.
+.nav-links {
 
-En lugar del propósito del módulo, poner una introducción que diga que es el modelo educativo de la UACH (cómo y cuando surgió), usando como referencia el de 2024
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-Utiliza como base el color borado, amarillo y blanco(fondo) de la imagen adjunta, puedes usar mas colores acordes al diseño que consideres.
+    gap: 5px;
 
-Genera el xtml de la página completa
+    flex-wrap: wrap;
+}
 
-VOY EN EL PASO 5, YA LO SUBÍ 
-dame la imagen mas limpia del logotipo, sin fondo 
-hoy 8:41 p.m.
-este es el modelo, mejora el diagrama manteniendo todos los elementos pero con una mejor estructura visual, usa colores UACH
-Pasted text(20260906-034700).txt
-Documento
-en esta configuración de codigo, ajusta en modulo 1, donde dice El Modelo UACH en una mirada, mantén el titulo, pero en vez dle texto, utiliza la fuente assets/modelo_cubo.jpeg
+.nav-links a {
 
-Sí. En tu código actual, la sección “El Modelo UACH en una mirada” contiene un subtítulo, un texto introductorio y después las tarjetas de resumen.
+    padding: 8px 11px;
 
-La ajustaría para que mantenga únicamente el título y muestre assets/modelo_cubo.jpeg como elemento central, sin repetir los conceptos en texto.
+    border-radius: 9px;
 
-En modulo1.html, sustituye toda la sección actual id="resumen" por esta:
+    color: #514b59;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+.nav-links a:hover {
+
+    background: var(--lavanda);
+    color: var(--morado);
+}
+
+.nav-links a.active {
+
+    background: var(--amarillo);
+    color: var(--morado-profundo);
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 86% 15%,
+            rgba(246,183,25,.13),
+            transparent 22%
+        ),
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #ffffff 63%,
+            #faf6fc 100%
+        );
+
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -120px;
+    top: -170px;
+
+    border-radius: 50%;
+
+    background: rgba(113,53,143,.055);
+}
+
+.hero-content {
+
+    position: relative;
+    z-index: 2;
+
+    max-width: 1130px;
+
+    margin: auto;
+
+    padding: 68px 24px 65px;
+}
+
+
+/* IDENTIFICACIÓN INSTITUCIONAL */
+
+.hero-institution {
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 25px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+}
+
+.hero-institution img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+}
+
+.hero-institution-text {
+
+    line-height: 1.35;
+}
+
+.hero-institution-text span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: .4px;
+}
+
+
+/* DECORACIÓN */
+
+.hero-decoration {
+
+    position: absolute;
+
+    right: 45px;
+    top: 50px;
+
+    width: 130px;
+    height: 130px;
+
+    opacity: .8;
+}
+
+.deco-purple {
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    right: 0;
+    top: 0;
+
+    background: var(--morado);
+
+    border-radius: 12px 0 12px 12px;
+}
+
+.deco-yellow {
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    right: 38px;
+    top: 38px;
+
+    background: var(--amarillo);
+
+    border-radius: 0 14px 14px 14px;
+}
+
+
+.module-label {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    color: var(--morado);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.module-label::before {
+
+    content: "";
+
+    width: 32px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+}
+
+
+.hero h1 {
+
+    max-width: 800px;
+
+    margin-bottom: 15px;
+
+    color: var(--morado-oscuro);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,6vw,67px);
+    font-weight: 800;
+
+    line-height: 1.05;
+}
+
+.hero p {
+
+    max-width: 760px;
+
+    color: var(--texto-secundario);
+
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   ESTRUCTURA GENERAL
+========================================================== */
+
+.module-layout {
+
+    max-width: 1360px;
+
+    margin: auto;
+
+    padding: 0 28px;
+
+    display: grid;
+
+    grid-template-columns: 250px minmax(0, 1fr);
+
+    gap: 42px;
+}
+
+
+/* ==========================================================
+   PANEL LATERAL
+========================================================== */
+
+.side-nav {
+    position: relative;
+}
+
+.side-nav-inner {
+
+    position: sticky;
+    top: 98px;
+
+    margin-top: 42px;
+    margin-bottom: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: var(--blanco);
+
+    box-shadow: var(--sombra);
+}
+
+.side-nav-title {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--morado),
+            var(--morado-oscuro)
+        );
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .4px;
+
+    text-transform: uppercase;
+}
+
+.side-nav-title i {
+    color: var(--amarillo);
+}
+
+.side-nav-links {
+
+    padding: 8px 8px 12px;
+}
+
+.side-nav a {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 11px;
+
+    margin: 2px 0;
+
+    border-radius: 9px;
+
+    color: #625d68;
+
+    font-size: 11.5px;
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    transition: .18s ease;
+}
+
+.side-nav a i {
+
+    width: 18px;
+
+    flex: 0 0 18px;
+
+    text-align: center;
+
+    color: var(--morado);
+
+    font-size: 13px;
+}
+
+.side-nav a:hover {
+
+    background: var(--lavanda);
+    color: var(--morado-oscuro);
+}
+
+.side-nav a.active-section {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--amarillo-claro),
+            #fff9e9
+        );
+
+    color: var(--morado-profundo);
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   CONTENIDO
+========================================================== */
+
+.module-content {
+    min-width: 0;
+}
+
+.section {
+
+    padding: 67px 0;
+
+    scroll-margin-top: 95px;
+
+    border-bottom: 1px solid #eeeaf0;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section-label {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+
+    color: #716b77;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.section-label::before {
+
+    content: "";
+
+    width: 28px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+}
+
+.section h2 {
+
+    max-width: 830px;
+
+    margin-bottom: 9px;
+
+    color: var(--morado-oscuro);
+
+    font-size: clamp(27px,3vw,36px);
+
+    line-height: 1.2;
+}
+
+.section-subtitle {
+
+    max-width: 830px;
+
+    margin-bottom: 20px;
+
+    color: #4d4853;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.section-intro {
+
+    max-width: 850px;
+
+    margin-bottom: 29px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14.5px;
+}
+
+
+/* ==========================================================
+   INTRODUCCIÓN
+========================================================== */
+
+.intro-text {
+
+    max-width: 860px;
+}
+
+.intro-text p {
+
+    margin-bottom: 16px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14.5px;
+}
+
+.intro-text strong {
+
+    color: var(--morado-oscuro);
+}
+
+
+.year-box {
+
+    display: grid;
+
+    grid-template-columns: 60px 1fr;
+
+    gap: 20px;
+
+    align-items: center;
+
+    margin-top: 28px;
+
+    padding: 24px 27px;
+
+    border-left: 5px solid var(--amarillo);
+
+    border-radius: 0 16px 16px 0;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--amarillo-palido),
+            #fffdfa
+        );
+}
+
+.year-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+
+    font-size: 22px;
+}
+
+.year-box h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 17px;
+}
+
+.year-box p {
+
+    color: var(--texto-secundario);
+
+    font-size: 13.5px;
+}
+
+
+/* ==========================================================
+   MODELOS
+========================================================== */
+
+.model-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.model-card {
+
+    min-height: 235px;
+
+    padding: 26px 24px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            150deg,
+            #ffffff,
+            var(--lavanda)
+        );
+}
+
+.model-card:nth-child(2) {
+
+    background:
+        linear-gradient(
+            150deg,
+            #ffffff,
+            var(--amarillo-claro)
+        );
+}
+
+.model-icon {
+
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 13px;
+
+    background: rgba(111,44,145,.09);
+
+    color: var(--morado);
+
+    font-size: 21px;
+}
+
+.model-card:nth-child(2) .model-icon {
+
+    background: rgba(245,181,27,.18);
+
+    color: #bb7f00;
+}
+
+.model-card h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 17px;
+}
+
+.model-question {
+
+    margin-bottom: 11px;
+
+    color: #47414d;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.model-card p {
+
+    color: var(--gris);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   CAJA CLAVE
+========================================================== */
+
+.key-box {
+
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 18px;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding: 22px 25px;
+
+    border-left: 5px solid var(--amarillo);
+
+    border-radius: 0 15px 15px 0;
+
+    background: var(--amarillo-palido);
+}
+
+.key-icon {
+
+    color: var(--amarillo);
+
+    font-size: 35px;
+
+    text-align: center;
+}
+
+.key-box h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
+}
+
+.key-box p {
+
+    color: var(--texto-secundario);
+
+    font-size: 13.5px;
+}
+
+
+/* ==========================================================
+   TARJETAS DE INFORMACIÓN
+========================================================== */
+
+.two-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 19px;
+}
+
+.info-card {
+
+    padding: 27px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+
+    box-shadow:
+        0 4px 16px rgba(68,47,75,.04);
+}
+
+.info-card-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 13px;
+
+    background: var(--lavanda);
+
+    color: var(--morado);
+
+    font-size: 20px;
+}
+
+.info-card h3 {
+
+    margin-bottom: 8px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 17px;
+}
+
+.info-card p {
+
+    color: var(--gris);
+
+    font-size: 13.5px;
+}
+
+
+/* ==========================================================
+   SABER ACTUAR SER
+========================================================== */
+
+.sas-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.sas-card {
+
+    padding: 26px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-top: 5px solid var(--morado);
+
+    border-radius: 15px;
+
+    background: white;
+}
+
+.sas-card:nth-child(2) {
+    border-top-color: var(--amarillo);
+}
+
+.sas-card:nth-child(3) {
+    border-top-color: var(--morado-medio);
+}
+
+.sas-word {
+
+    margin-bottom: 5px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.sas-question {
+
+    margin-bottom: 10px;
+
+    color: #4f4955;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.sas-card p {
+
+    color: var(--gris);
+
+    font-size: 13px;
+}
+
+.example-small {
+
+    margin-top: 15px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #eee;
+
+    color: #56505c;
+
+    font-size: 12.5px;
+}
+
+
+/* ==========================================================
+   TARJETAS
+========================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 17px;
+}
+
+.card {
+
+    padding: 25px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 16px;
+
+    background: white;
+
+    transition: .2s ease;
+}
+
+.card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--sombra);
+}
+
+.card-icon {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 12px;
+
+    background: var(--lavanda);
+
+    color: var(--morado);
+}
+
+.card h3 {
+
+    margin-bottom: 7px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+}
+
+.card p {
+
+    color: var(--gris);
+
+    font-size: 13px;
+}
+
+.card .practice {
+
+    margin-top: 13px;
+
+    padding-top: 11px;
+
+    border-top: 1px solid #eee;
+
+    color: #514b57;
+}
+
+
+/* ==========================================================
+   AUTO SOCIO ECO
+========================================================== */
+
+.ase-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.ase-card {
+
+    padding: 26px 22px;
+
+    text-align: center;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+}
+
+.ase-circle {
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--morado);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.ase-card:nth-child(2) .ase-circle {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+.ase-card:nth-child(3) .ase-circle {
+
+    background: var(--morado-medio);
+}
+
+.ase-card h3 {
+
+    margin-bottom: 7px;
+
+    color: var(--morado-oscuro);
+}
+
+.ase-card p {
+
+    color: var(--gris);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   EJES TRANSVERSALES
+========================================================== */
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin: 22px 0 28px;
+}
+
+.tag {
+
+    padding: 9px 14px;
+
+    border: 1px solid var(--lavanda-2);
+
+    border-radius: 30px;
+
+    background: var(--lavanda);
+
+    color: var(--morado-oscuro);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.compare-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 18px;
+}
+
+.compare-card {
+
+    padding: 25px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 16px;
+
+    background: white;
+}
+
+.compare-card.bad {
+    border-top: 5px solid #aaa;
+}
+
+.compare-card.good {
+    border-top: 5px solid var(--amarillo);
+}
+
+.compare-card h3 {
+
+    margin-bottom: 10px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+}
+
+.compare-card p {
+
+    color: var(--gris);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   AMBIENTES
+========================================================== */
+
+.environment-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 13px;
+}
+
+.environment-item {
+
+    padding: 22px 12px;
+
+    text-align: center;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 15px;
+
+    background: white;
+}
+
+.environment-item i {
+
+    margin-bottom: 10px;
+
+    color: var(--morado);
+
+    font-size: 22px;
+}
+
+.environment-item strong {
+
+    display: block;
+
+    color: var(--morado-oscuro);
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   APLICACIÓN
+========================================================== */
+
+.case-box {
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+.case-box > h3 {
+
+    margin-bottom: 7px;
+
+    font-size: 23px;
+}
+
+.case-intro {
+
+    margin-bottom: 22px;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 13.5px;
+}
+
+.case-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 12px;
+}
+
+.case-item {
+
+    padding: 17px;
+
+    border:
+        1px solid rgba(255,255,255,.14);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.case-item strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--amarillo);
+
+    font-size: 13px;
+}
+
+.case-item p {
+
+    color: rgba(255,255,255,.83);
+
+    font-size: 12.5px;
+}
+
+
+/* ==========================================================
+   RESUMEN
+========================================================== */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 11px;
+}
+
+.summary-item {
+
+    padding: 14px 15px;
+
+    border-left: 4px solid var(--amarillo);
+
+    border-radius: 8px;
+
+    background: var(--lavanda);
+
+    color: var(--morado-oscuro);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   RECURSOS
+========================================================== */
+
+.resource {
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 13px;
+
+    padding: 20px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 14px;
+
+    background: white;
+}
+
+.resource-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--morado);
+
+    color: var(--amarillo);
+
+    font-size: 18px;
+}
+
+.resource h3 {
+
+    margin-bottom: 2px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
+}
+
+.resource p {
+
+    color: var(--gris);
+
+    font-size: 12.5px;
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN FINAL
+========================================================== */
+
+.module-navigation {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 38px;
+}
+
+.btn {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .2s ease;
+}
+
+.btn-outline {
+
+    border: 1px solid var(--gris-borde);
+
+    background: white;
+
+    color: var(--morado);
+}
+
+.btn-outline:hover {
+    background: var(--lavanda);
+}
+
+.btn-primary {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(245,181,27,.28);
+}
+
+
+/* ==========================================================
+   FOOTER CON LOGOTIPO
+========================================================== */
+
+footer {
+
+    margin-top: 10px;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+.footer-inner {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 30px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.footer-brand {
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.footer-logo-box {
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+.footer-logo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+}
+
+.footer-brand strong {
+
+    display: block;
+
+    font-size: 14px;
+}
+
+.footer-brand small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: rgba(255,255,255,.70);
+
+    font-size: 10px;
+}
+
+.footer-info {
+
+    text-align: right;
+
+    color: rgba(255,255,255,.76);
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width: 980px) {
+
+    .module-layout {
+
+        display: block;
+
+        padding: 0;
+    }
+
+    .side-nav {
+
+        position: sticky;
+
+        top: 76px;
+
+        z-index: 900;
+
+        background: white;
+
+        border-bottom:
+            1px solid var(--gris-borde);
+    }
+
+    .side-nav-inner {
+
+        position: static;
+
+        display: flex;
+
+        align-items: center;
+
+        margin: 0;
+
+        padding: 8px 16px;
+
+        overflow-x: auto;
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow:
+            0 4px 12px rgba(0,0,0,.06);
+    }
+
+    .side-nav-title {
+        display: none;
+    }
+
+    .side-nav-links {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 0;
+
+        white-space: nowrap;
+    }
+
+    .side-nav a {
+
+        flex: 0 0 auto;
+
+        margin: 0;
+
+        padding: 8px 10px;
+
+        border:
+            1px solid var(--gris-borde);
+
+        border-radius: 25px;
+
+        background: white;
+    }
+
+    .side-nav a.active-section {
+
+        border-color: var(--amarillo);
+
+        background: var(--amarillo-claro);
+    }
+
+    .module-content {
+
+        padding: 0 25px;
+    }
+}
+
+
+@media(max-width: 860px) {
+
+    .nav-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+
+    .hero-decoration {
+
+        opacity: .18;
+
+        right: 10px;
+    }
+
+    .model-grid,
+    .sas-grid,
+    .ase-grid,
+    .summary-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .two-grid,
+    .cards,
+    .compare-grid,
+    .case-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .environment-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+}
+
+
+@media(max-width: 560px) {
+
+    .brand-logo {
+
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+    .hero-content {
+
+        padding: 45px 22px 47px;
+    }
+
+    .hero-institution {
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .environment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .year-box,
+    .key-box {
+        grid-template-columns: 1fr;
+    }
+
+    .module-navigation {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     MENÚ SUPERIOR
+======================================================== -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+
+    <a href="index.html"
+       class="brand">
+
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo de la Facultad de Contaduría y Administración"
+            class="brand-logo"
+        >
+
+        <div class="brand-text">
+
+            FCA · UACH
+
+            <small>
+                FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="modulo1.html"
+           class="active">
+            Módulo 1
+        </a>
+
+        <a href="modulo2.html">
+            Módulo 2
+        </a>
+
+        <a href="modulo3.html">
+            Módulo 3
+        </a>
+
+        <a href="modulo4.html">
+            Módulo 4
+        </a>
+
+        <a href="modulo5.html">
+            Módulo 5
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ========================================================
+     HERO
+======================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+
+    <div class="hero-decoration">
+
+        <div class="deco-purple"></div>
+        <div class="deco-yellow"></div>
+
+    </div>
+
+
+    <div class="hero-institution">
+
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo FCA"
+        >
+
+        <div class="hero-institution-text">
+
+            Facultad de Contaduría y Administración
+
+            <span>
+                Universidad Autónoma de Chihuahua
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="module-label">
+        Módulo 1
+    </div>
+
+
+    <h1>
+        Modelo Educativo UACH
+    </h1>
+
+
+    <p>
+
+        Una base común para comprender la formación universitaria
+        y orientar el diseño de asignaturas, experiencias de aprendizaje
+        y práctica docente en la Universidad Autónoma de Chihuahua.
+
+    </p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     ESTRUCTURA GENERAL
+======================================================== -->
+
+<div class="module-layout">
+
+
+
+<!-- ========================================================
+     PANEL LATERAL
+======================================================== -->
+
+<aside class="side-nav">
+
+<div class="side-nav-inner">
+
+
+    <div class="side-nav-title">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        Consulta del modelo
+
+    </div>
+
+
+    <div class="side-nav-links">
+
+
+        <a href="#introduccion">
+
+            <i class="fa-solid fa-house"></i>
+
+            Introducción
+
+        </a>
+
+
+        <a href="#modelos">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            Modelos UACH
+
+        </a>
+
+
+        <a href="#modelo-glocal">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            Modelo Glocal
+
+        </a>
+
+
+        <a href="#saber-actuar-ser">
+
+            <i class="fa-solid fa-puzzle-piece"></i>
+
+            Saber · Actuar · Ser
+
+        </a>
+
+
+        <a href="#principios">
+
+            <i class="fa-solid fa-leaf"></i>
+
+            Principios filosóficos
+
+        </a>
+
+
+        <a href="#principios-formacion">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            Formación universitaria
+
+        </a>
+
+
+        <a href="#auto-socio-ecoformacion">
+
+            <i class="fa-solid fa-arrows-rotate"></i>
+
+            Auto-Socio-Ecoformación
+
+        </a>
+
+
+        <a href="#ejes-transversales">
+
+            <i class="fa-solid fa-share-nodes"></i>
+
+            Ejes transversales
+
+        </a>
+
+
+        <a href="#ambientes">
+
+            <i class="fa-solid fa-desktop"></i>
+
+            Ambientes de aprendizaje
+
+        </a>
+
+
+        <a href="#aplicacion">
+
+            <i class="fa-regular fa-lightbulb"></i>
+
+            Aplicación docente
+
+        </a>
+
+
+        <a href="#resumen">
+
+            <i class="fa-regular fa-rectangle-list"></i>
+
+            Resumen
+
+        </a>
+
+
+        <a href="#recursos">
+
+            <i class="fa-regular fa-folder-open"></i>
+
+            Recursos
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+</aside>
+
+
+
+<!-- ========================================================
+     CONTENIDO
+======================================================== -->
+
+<main class="module-content">
+
+
+
+<!-- ========================================================
+     INTRODUCCIÓN
+======================================================== -->
+
+<section class="section"
+         id="introduccion">
+
+
+    <div class="section-label">
+        Sección 1
+    </div>
+
+
+    <h2>
+        Introducción
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        El Modelo Educativo de la Universidad Autónoma de Chihuahua
+
+    </div>
+
+
+    <div class="intro-text">
+
+
+        <p>
+
+            El <strong>Modelo Educativo de la Universidad Autónoma
+            de Chihuahua</strong> constituye el marco que expresa
+            la identidad, los principios y la visión institucional
+            que orientan la formación universitaria. A partir de él
+            se establece el sentido de la educación que ofrece la UACH
+            y se proporciona una referencia común para las distintas
+            funciones académicas.
+
+        </p>
+
+
+        <p>
+
+            La versión que se toma como referencia en este espacio
+            corresponde al <strong>Modelo Educativo UACH 2024</strong>.
+            Esta formulación debe comprenderse como parte de la trayectoria
+            de la propia Universidad y de su adaptación a las condiciones
+            contemporáneas de la educación superior.
+
+        </p>
+
+
+        <p>
+
+            El Modelo UACH 2024 concibe a la Universidad como un sistema
+            complejo, multidimensional y relacionado permanentemente
+            con su entorno. Por ello, reconoce que la formación
+            universitaria ocurre en interacción con realidades
+            <strong>locales, regionales, nacionales e internacionales</strong>,
+            y que los problemas que enfrentan los futuros profesionistas
+            requieren cada vez más una mirada integral.
+
+        </p>
+
+
+        <p>
+
+            Para el docente, conocer el Modelo Educativo permite
+            comprender el fundamento de conceptos que aparecen
+            posteriormente en planes de estudio, programas académicos,
+            syllabus y experiencias de aprendizaje. Su utilidad no se limita,
+            por tanto, al conocimiento institucional: constituye una base
+            para tomar decisiones coherentes sobre qué enseñar,
+            cómo propiciar el aprendizaje y qué tipo de formación
+            se pretende favorecer.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="year-box">
+
+
+        <div class="year-icon">
+
+            <i class="fa-regular fa-calendar"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Modelo Educativo UACH 2024
+            </h3>
+
+            <p>
+
+                En este sitio se utiliza como referencia el Modelo Educativo
+                UACH 2024, que recupera la trayectoria institucional
+                y sitúa la formación universitaria frente a un contexto
+                caracterizado por la interacción entre lo local y lo global,
+                la transformación tecnológica y nuevos desafíos sociales
+                y profesionales.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     MODELOS UACH
+======================================================== -->
+
+<section class="section"
+         id="modelos">
+
+
+    <div class="section-label">
+        Sección 2
+    </div>
+
+
+    <h2>
+        Modelos que se complementan
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Educativo, Académico y Pedagógico
+
+    </div>
+
+
+    <p class="section-intro">
+
+        El Modelo Educativo proporciona el horizonte general,
+        pero su concreción requiere organización curricular
+        y decisiones pedagógicas. Por ello conviene distinguir
+        tres niveles relacionados entre sí.
+
+    </p>
+
+
+
+    <div class="model-grid">
+
+
+        <div class="model-card">
+
+            <div class="model-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <h3>
+                Modelo Educativo
+            </h3>
+
+            <div class="model-question">
+                ¿Qué formación buscamos?
+            </div>
+
+            <p>
+
+                Define identidad, filosofía, principios,
+                valores y horizonte formativo de la Universidad.
+                Orienta el sentido general de la formación.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="model-card">
+
+            <div class="model-icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+            </div>
+
+            <h3>
+                Modelo Académico
+            </h3>
+
+            <div class="model-question">
+                ¿Cómo organizamos esa formación?
+            </div>
+
+            <p>
+
+                Traduce el Modelo Educativo a la estructura
+                curricular. Organiza ciclos, flexibilidad,
+                ambientes y otros elementos de los programas
+                académicos.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="model-card">
+
+            <div class="model-icon">
+
+                <i class="fa-solid fa-people-group"></i>
+
+            </div>
+
+            <h3>
+                Modelo Pedagógico
+            </h3>
+
+            <div class="model-question">
+                ¿Cómo lo llevamos a la práctica?
+            </div>
+
+            <p>
+
+                Orienta la forma en que la formación se concreta
+                mediante experiencias de aprendizaje,
+                interacción, actividades, acompañamiento
+                y evaluación.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Una idea clave
+            </h3>
+
+            <p>
+
+                Los tres modelos trabajan de manera articulada:
+                el <strong>Modelo Educativo</strong> proporciona
+                sentido y dirección; el <strong>Modelo Académico</strong>
+                organiza curricularmente esa formación; y el
+                <strong>Modelo Pedagógico</strong> permite concretarla
+                en las experiencias de enseñanza y aprendizaje.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     MODELO GLOCAL
+======================================================== -->
+
+<section class="section"
+         id="modelo-glocal">
+
+
+    <div class="section-label">
+        Sección 3
+    </div>
+
+
+    <h2>
+        Una formación Glocal y Transdisciplinaria
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Comprender nuestro entorno sin perder de vista el mundo
+
+    </div>
+
+
+    <p class="section-intro">
+
+        La realidad profesional no está dividida en asignaturas.
+        Los problemas económicos, empresariales, sociales
+        y tecnológicos interactúan entre sí y se encuentran
+        conectados con procesos que ocurren en diferentes escalas.
+
+    </p>
+
+
+
+    <div class="two-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-card-icon">
+
+                <i class="fa-solid fa-earth-americas"></i>
+
+            </div>
+
+            <h3>
+                Glocalidad
+            </h3>
+
+            <p>
+
+                Implica comprender los problemas y fenómenos
+                del contexto cercano considerando su relación
+                con procesos regionales, nacionales y globales.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="info-card">
+
+            <div class="info-card-icon">
+
+                <i class="fa-solid fa-diagram-project"></i>
+
+            </div>
+
+            <h3>
+                Transdisciplinariedad
+            </h3>
+
+            <p>
+
+                Supone reconocer que determinados problemas
+                no pueden comprenderse suficientemente
+                desde una sola disciplina y requieren
+                articular diferentes conocimientos,
+                perspectivas y contextos.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Ejemplo aplicado en FCA
+            </h3>
+
+            <p>
+
+                En una asignatura de Negocios Internacionales,
+                el estudiante puede analizar cómo una modificación
+                arancelaria internacional afecta a una empresa
+                ubicada en Chihuahua. Así se relacionan
+                un fenómeno global, una realidad local
+                y conocimientos propios de la profesión.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     SABER ACTUAR SER
+======================================================== -->
+
+<section class="section"
+         id="saber-actuar-ser">
+
+
+    <div class="section-label">
+        Sección 4
+    </div>
+
+
+    <h2>
+        Saber · Actuar · Ser
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Tres dimensiones que se articulan en la formación
+
+    </div>
+
+
+    <p class="section-intro">
+
+        La formación universitaria no consiste únicamente
+        en transmitir conocimientos. El Modelo busca relacionar
+        aquello que el estudiante comprende, lo que es capaz
+        de hacer y la manera en que actúa como persona
+        y futuro profesional.
+
+    </p>
+
+
+
+    <div class="sas-grid">
+
+
+        <div class="sas-card">
+
+            <div class="sas-word">
+                Saber
+            </div>
+
+            <div class="sas-question">
+                ¿Qué necesita comprender?
+            </div>
+
+            <p>
+
+                Conceptos, teorías, información,
+                métodos y conocimientos disciplinares
+                que permiten comprender una situación
+                o problema.
+
+            </p>
+
+            <div class="example-small">
+
+                <strong>Ejemplo:</strong>
+                comprender la estructura y función
+                de los estados financieros.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sas-card">
+
+            <div class="sas-word">
+                Actuar
+            </div>
+
+            <div class="sas-question">
+                ¿Qué debe ser capaz de hacer?
+            </div>
+
+            <p>
+
+                Aplicar, analizar, interpretar, resolver,
+                diseñar, argumentar, decidir o crear utilizando
+                los conocimientos que ha desarrollado.
+
+            </p>
+
+            <div class="example-small">
+
+                <strong>Ejemplo:</strong>
+                interpretar información financiera
+                para diagnosticar la situación
+                de una organización.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sas-card">
+
+            <div class="sas-word">
+                Ser
+            </div>
+
+            <div class="sas-question">
+                ¿Cómo se posiciona frente a lo que hace?
+            </div>
+
+            <p>
+
+                Comprende valores, responsabilidad,
+                identidad profesional, compromiso
+                y dimensiones humanas vinculadas
+                con la actuación.
+
+            </p>
+
+            <div class="example-small">
+
+                <strong>Ejemplo:</strong>
+                emitir un análisis responsable,
+                objetivo y profesional.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-regular fa-lightbulb"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Para diseñar una experiencia de aprendizaje
+            </h3>
+
+            <p>
+
+                Conviene preguntarse:
+                <strong>¿qué necesita saber el estudiante?,
+                ¿qué hará con ese conocimiento? y
+                ¿qué dimensiones del ser intervienen
+                en esa actuación?</strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     PRINCIPIOS FILOSÓFICOS
+======================================================== -->
+
+<section class="section"
+         id="principios">
+
+
+    <div class="section-label">
+        Sección 5
+    </div>
+
+
+    <h2>
+        Principios filosóficos
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        La orientación humana de la formación universitaria
+
+    </div>
+
+
+    <p class="section-intro">
+
+        Estos principios expresan referentes que orientan
+        la forma en que la Universidad comprende a la persona,
+        la sociedad, la convivencia y la formación.
+
+    </p>
+
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-person"></i>
+            </div>
+
+            <h3>
+                Humanismo
+            </h3>
+
+            <p>
+
+                Sitúa a la persona y su formación integral
+                como referencia central del proceso educativo.
+
+            </p>
+
+            <p class="practice">
+
+                <strong>En la práctica:</strong>
+                implica ir más allá de la transmisión
+                de contenidos y considerar autonomía,
+                participación y desarrollo integral.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <h3>
+                Interculturalidades
+            </h3>
+
+            <p>
+
+                Reconoce la diversidad de culturas,
+                perspectivas, conocimientos y maneras
+                de interpretar la realidad.
+
+            </p>
+
+            <p class="practice">
+
+                <strong>En la práctica:</strong>
+                favorece la incorporación de perspectivas
+                diferentes y el diálogo entre ellas.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <h3>
+                Inclusión, equidad social y de género
+            </h3>
+
+            <p>
+
+                Busca reconocer diferencias y disminuir
+                barreras que pueden limitar la participación
+                y el aprendizaje.
+
+            </p>
+
+            <p class="practice">
+
+                <strong>En la práctica:</strong>
+                requiere revisar actividades, materiales,
+                interacción y evaluación para favorecer
+                condiciones más equitativas.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <h3>
+                Buen vivir
+            </h3>
+
+            <p>
+
+                Orienta la formación hacia relaciones
+                responsables entre las personas,
+                la sociedad y el entorno.
+
+            </p>
+
+            <p class="practice">
+
+                <strong>En la práctica:</strong>
+                invita a considerar consecuencias humanas,
+                sociales y ambientales de las decisiones
+                profesionales.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     FORMACIÓN UNIVERSITARIA
+======================================================== -->
+
+<section class="section"
+         id="principios-formacion">
+
+
+    <div class="section-label">
+        Sección 6
+    </div>
+
+
+    <h2>
+        Principios de la formación universitaria
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        La formación profesional frente a los desafíos contemporáneos
+
+    </div>
+
+
+    <p class="section-intro">
+
+        Estos principios conectan la formación universitaria
+        con problemáticas, transformaciones y oportunidades
+        propias del entorno actual.
+
+    </p>
+
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+
+            <h3>
+                Responsabilidad social y sostenibilidad
+            </h3>
+
+            <p>
+
+                Considera los efectos sociales, económicos
+                y ambientales de la actuación profesional
+                y de las decisiones que se toman.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-diagram-project"></i>
+            </div>
+
+            <h3>
+                Inter y transdisciplinariedad
+            </h3>
+
+            <p>
+
+                Favorece la comprensión de problemas
+                desde distintos campos y la articulación
+                de perspectivas cuando una sola disciplina
+                resulta insuficiente.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+
+            <h3>
+                Emprendimiento
+            </h3>
+
+            <p>
+
+                Favorece la iniciativa, identificación
+                de oportunidades, generación de propuestas
+                y creación de valor.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-regular fa-lightbulb"></i>
+            </div>
+
+            <h3>
+                Innovación
+            </h3>
+
+            <p>
+
+                Promueve nuevas maneras de analizar,
+                resolver y responder a problemas,
+                necesidades y oportunidades.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+
+            <h3>
+                Transformación digital
+            </h3>
+
+            <p>
+
+                Incorpora críticamente tecnologías
+                y herramientas digitales relevantes
+                para el aprendizaje y la práctica profesional.
+
+            </p>
+
+            <p class="practice">
+
+                <strong>No equivale sólo a usar una plataforma:</strong>
+                puede implicar análisis de datos, simuladores,
+                inteligencia artificial, colaboración digital
+                y herramientas profesionales.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     AUTO SOCIO ECO
+======================================================== -->
+
+<section class="section"
+         id="auto-socio-ecoformacion">
+
+
+    <div class="section-label">
+        Sección 7
+    </div>
+
+
+    <h2>
+        Auto-Socio-Ecoformación
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Aprender desde la persona, con los otros y en relación con el entorno
+
+    </div>
+
+
+    <p class="section-intro">
+
+        La formación puede entenderse como un proceso
+        que articula la autonomía del estudiante,
+        la interacción social y la relación con los contextos
+        en los que ocurre el aprendizaje.
+
+    </p>
+
+
+
+    <div class="ase-grid">
+
+
+        <div class="ase-card">
+
+            <div class="ase-circle">
+                AUTO
+            </div>
+
+            <h3>
+                Autoformación
+            </h3>
+
+            <p>
+
+                El estudiante asume un papel activo,
+                desarrolla autonomía, reflexión
+                y responsabilidad sobre su propio aprendizaje.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="ase-card">
+
+            <div class="ase-circle">
+                SOCIO
+            </div>
+
+            <h3>
+                Socioformación
+            </h3>
+
+            <p>
+
+                El aprendizaje se construye también
+                mediante interacción, colaboración,
+                diálogo y participación con otras personas.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="ase-card">
+
+            <div class="ase-circle">
+                ECO
+            </div>
+
+            <h3>
+                Ecoformación
+            </h3>
+
+            <p>
+
+                La formación se relaciona con el entorno,
+                las situaciones, los problemas
+                y las condiciones reales del contexto.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+            <i class="fa-solid fa-arrows-rotate"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Ejemplo integrado
+            </h3>
+
+            <p>
+
+                Un estudiante investiga individualmente
+                una problemática empresarial,
+                contrasta sus hallazgos con sus compañeros
+                y posteriormente propone una solución
+                considerando las características económicas
+                y sociales del contexto.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     EJES TRANSVERSALES
+======================================================== -->
+
+<section class="section"
+         id="ejes-transversales">
+
+
+    <div class="section-label">
+        Sección 8
+    </div>
+
+
+    <h2>
+        Ejes transversales
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Orientaciones que atraviesan la experiencia formativa
+
+    </div>
+
+
+    <p class="section-intro">
+
+        Un eje transversal no necesariamente debe convertirse
+        en una unidad temática independiente. Su sentido
+        consiste en estar presente en decisiones, actividades,
+        problemas, experiencias y procesos formativos.
+
+    </p>
+
+
+
+    <div class="tags">
+
+        <span class="tag">Responsabilidad social</span>
+
+        <span class="tag">Equidad social y de género</span>
+
+        <span class="tag">Inclusión</span>
+
+        <span class="tag">Excelencia</span>
+
+        <span class="tag">Vanguardia</span>
+
+        <span class="tag">Innovación social</span>
+
+        <span class="tag">Interculturalidad</span>
+
+    </div>
+
+
+
+    <div class="compare-grid">
+
+
+        <div class="compare-card bad">
+
+            <h3>
+
+                <i class="fa-solid fa-circle-xmark"></i>
+
+                Incorporar un tema aislado
+
+            </h3>
+
+            <p>
+
+                Agregar una unidad titulada
+                “Responsabilidad social” no garantiza
+                por sí mismo que el principio esté presente
+                de manera transversal en la asignatura.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="compare-card good">
+
+            <h3>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Transversalizar
+
+            </h3>
+
+            <p>
+
+                A lo largo del curso, diferentes actividades
+                pueden requerir que el estudiante considere
+                las consecuencias sociales, económicas
+                o ambientales de sus decisiones.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     AMBIENTES
+======================================================== -->
+
+<section class="section"
+         id="ambientes">
+
+
+    <div class="section-label">
+        Sección 9
+    </div>
+
+
+    <h2>
+        Ambientes de aprendizaje y multimodalidad
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Aprender no ocurre únicamente dentro del aula
+
+    </div>
+
+
+    <p class="section-intro">
+
+        El aprendizaje puede desarrollarse en diferentes
+        espacios, contextos y modalidades. Cada ambiente
+        puede aportar experiencias distintas y complementarias
+        a la formación del estudiante.
+
+    </p>
+
+
+
+    <div class="environment-grid">
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+            <strong>Aula</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-laptop"></i>
+
+            <strong>Entornos digitales</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-building"></i>
+
+            <strong>Organizaciones</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-users"></i>
+
+            <strong>Comunidad</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-user"></i>
+
+            <strong>Trabajo autónomo</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-people-group"></i>
+
+            <strong>Trabajo colaborativo</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-vr-cardboard"></i>
+
+            <strong>Simulación</strong>
+
+        </div>
+
+
+        <div class="environment-item">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <strong>Contextos reales</strong>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     APLICACIÓN DOCENTE
+======================================================== -->
+
+<section class="section"
+         id="aplicacion">
+
+
+    <div class="section-label">
+        Sección 10
+    </div>
+
+
+    <h2>
+        ¿Cómo se traduce el Modelo en una clase?
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        De los principios institucionales a una experiencia concreta
+
+    </div>
+
+
+    <p class="section-intro">
+
+        Los elementos del Modelo adquieren sentido
+        cuando influyen en las decisiones docentes
+        sobre qué aprender, qué hacer con el conocimiento,
+        qué situaciones analizar y cómo demostrar
+        los aprendizajes.
+
+    </p>
+
+
+
+    <div class="case-box">
+
+
+        <h3>
+            Ejemplo: análisis de la inflación
+        </h3>
+
+
+        <p class="case-intro">
+
+            Una temática de una asignatura de Economía
+            puede convertirse en una experiencia que articule
+            diferentes componentes del Modelo.
+
+        </p>
+
+
+
+        <div class="case-grid">
+
+
+            <div class="case-item">
+
+                <strong>Saber</strong>
+
+                <p>
+
+                    Comprender conceptos, causas
+                    y efectos de la inflación.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="case-item">
+
+                <strong>Actuar</strong>
+
+                <p>
+
+                    Interpretar información económica
+                    y comparar distintos escenarios.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="case-item">
+
+                <strong>Ser</strong>
+
+                <p>
+
+                    Reconocer que los efectos económicos
+                    pueden distribuirse de manera diferente
+                    entre hogares y grupos sociales.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="case-item">
+
+                <strong>Glocalidad</strong>
+
+                <p>
+
+                    Relacionar fenómenos nacionales
+                    e internacionales con efectos
+                    observables en Chihuahua.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="case-item">
+
+                <strong>Transformación digital</strong>
+
+                <p>
+
+                    Consultar, procesar e interpretar
+                    información mediante fuentes
+                    y herramientas digitales.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="case-item">
+
+                <strong>Experiencia de aprendizaje</strong>
+
+                <p>
+
+                    Analizar información real y argumentar
+                    cómo determinados cambios de precios
+                    afectan a diferentes hogares
+                    o empresas.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
 
 <!-- ========================================================
      MODELO UACH EN UNA MIRADA
@@ -212,269 +3560,330 @@ En modulo1.html, sustituye toda la sección actual id="resumen" por esta:
 
 </section>
 
-Además, agrega este bloque dentro del <style> de tu página, preferentemente antes de la sección /* RECURSOS */:
-
-/* ==========================================================
-   MODELO UACH EN UNA MIRADA
-========================================================== */
-
-.modelo-cubo-container {
-
-    width: 100%;
-
-    margin-top: 28px;
-
-    padding: 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid var(--gris-borde);
-
-    border-radius: 18px;
-
-    background: #ffffff;
-
-    box-shadow:
-        0 8px 28px rgba(67,35,80,.07);
-
-    overflow: hidden;
-}
-
-
-.modelo-cubo-img {
-
-    display: block;
-
-    width: 100%;
-    max-width: 1050px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 10px;
-}
-
-
-/* Ajuste para dispositivos móviles */
-
-@media(max-width: 560px) {
-
-    .modelo-cubo-container {
-
-        margin-top: 20px;
-
-        padding: 8px;
-
-        border-radius: 12px;
-    }
-
-    .modelo-cubo-img {
-
-        border-radius: 6px;
-    }
-}
-
-Con esto la página buscará exactamente:
-
-academico/
-├── assets/
-│   ├── logofca.jpeg
-│   └── modelo_cubo.jpeg
-├── index.html
-├── modulo1.html
-...
-
-Y visualmente quedará:
-
-Sección 11
-
-El Modelo UACH en una mirada
-
-[ imagen completa modelo_cubo.jpeg ]
-
-Después continuará directamente “Recursos para profundizar”.
-
-No conservaría “Conceptos que conviene conservar como referencia” ni las 12 tarjetas actuales, porque la imagen ahora cumple precisamente la función de síntesis visual.
-
-dame todo el módulo 1 completo, ya con esa imagen 
-Creación de imagen detenida
-
-dame modulo1.html completa
-
-Creación de imagen detenida
-en html, no imagen
-
-Sí. Ya integré el ajuste sobre tu versión actual completa de modulo1.html: mantuve el título “El Modelo UACH en una mirada” y sustituí el subtítulo, texto y tarjetas que estaban debajo por la imagen assets/modelo_cubo.jpeg.
-
-El archivo conserva todo lo demás: logotipo FCA, menú superior, panel lateral fijo, introducción, modelos UACH, glocalidad, Saber–Actuar–Ser, principios, Auto-Socio-Ecoformación, ejes, ambientes, aplicación docente, recursos, footer y navegación responsive.
-
-Descargar modulo1.html completo
-
-La nueva sección quedó incorporada así:
-
-<!-- ========================================================
-     MODELO UACH EN UNA MIRADA
-======================================================== -->
-
-<section class="section" id="resumen">
-
-    <div class="section-label">
-        Sección 11
-    </div>
-
-    <h2>
-        El Modelo UACH en una mirada
-    </h2>
-
-    <div class="modelo-cubo-container">
-
-        <img
-            src="assets/modelo_cubo.jpeg"
-            alt="Modelo tridimensional UACH: Ejes Estructurales de los Currículos"
-            class="modelo-cubo-img"
-        >
-
-    </div>
 
 </section>
 
-En GitHub puedes abrir modulo1.html, seleccionar todo el código actual, pegar el contenido del archivo que te dejo arriba y hacer Commit changes. La imagen aparecerá mientras esté exactamente en assets/modelo_cubo.jpeg.
-
-modulo1.html
-HTML
-
-Biblioteca
-/
-modulo1.html
-9999
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-<!DOCTYPE html>
-<html lang="es">
 
 
-<head>
+<!-- ========================================================
+     RECURSOS
+======================================================== -->
+
+<section class="section"
+         id="recursos">
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="section-label">
+        Sección 12
+    </div>
 
 
-<title>Módulo 1 | Modelo Educativo UACH</title>
+    <h2>
+        Recursos para profundizar
+    </h2>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <div class="section-subtitle">
+
+        Documentos y materiales institucionales de consulta
+
+    </div>
 
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
-      rel="stylesheet">
+    <p class="section-intro">
 
+        Esta sección concentra materiales que permiten
+        profundizar en los conceptos presentados de manera
+        sintética a lo largo del módulo.
 
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-
-<style>
-
-
-/* ==========================================================
-   IDENTIDAD VISUAL
-========================================================== */
-
-
-:root {
-
-
-    --morado: #71358f;
-    --morado-oscuro: #52216b;
-    --morado-profundo: #3b154d;
-    --morado-medio: #8a58a4;
-
-
-    --lavanda: #f5f0f8;
-    --lavanda-2: #e9def0;
-
-
-    --amarillo: #f6b719;
-    --amarillo-claro: #fff2c8;
-    --amarillo-palido: #fff9e8;
-
-
-    --blanco: #ffffff;
-
-
-    --gris-fondo: #fafafa;
-    --gris-claro: #f3f3f5;
-    --gris-borde: #e6e2e8;
-    --gris: #667085;
-
-
-    --texto: #292532;
-    --texto-secundario: #5d5864;
-
-
-    --sombra:
-        0 10px 30px rgba(67,35,80,.09);
-}
+    </p>
 
 
 
+    <div class="resource">
 
-/* ==========================================================
+        <div class="resource-icon">
+
+            <i class="fa-solid fa-file-powerpoint"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Presentación del Módulo 1
+            </h3>
+
+            <p>
+
+                Síntesis visual del Modelo Educativo UACH
+                y su aplicación en la práctica docente.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+
+            <i class="fa-solid fa-book"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Modelo Educativo UACH 2024
+            </h3>
+
+            <p>
+
+                Documento institucional de referencia
+                para profundizar en principios, dimensiones,
+                estructura y fundamentos del Modelo.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+
+            <i class="fa-solid fa-people-group"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Formación de formadores
+            </h3>
+
+            <p>
+
+                Material complementario sobre currículo glocal,
+                formación integral y transformación
+                de la práctica educativa.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+
+            <i class="fa-solid fa-share-nodes"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Transversalización de la docencia
+            </h3>
+
+            <p>
+
+                Material para profundizar en la incorporación
+                de principios y ejes transversales
+                dentro de experiencias de aprendizaje.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="module-navigation">
+
+
+        <a href="index.html"
+           class="btn btn-outline">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Volver al inicio
+
+        </a>
+
+
+        <a href="modulo2.html"
+           class="btn btn-primary">
+
+            Continuar al Módulo 2
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+</main>
+
+</div>
+
+
+
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+
+        <div class="footer-logo-box">
+
+            <img
+                src="assets/logofca.jpeg"
+                alt="Logotipo de la Facultad de Contaduría y Administración"
+                class="footer-logo"
+            >
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Facultad de Contaduría y Administración
+            </strong>
+
+            <small>
+                Universidad Autónoma de Chihuahua
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-info">
+
+        Formación y Acompañamiento Académico<br>
+
+        Asesoría Técnica Pedagógica · FCA-UACH
+
+    </div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- ========================================================
+     JAVASCRIPT
+     RESALTA LA SECCIÓN ACTIVA
+======================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const sections =
+            document.querySelectorAll(
+                ".module-content section[id]"
+            );
+
+        const navLinks =
+            document.querySelectorAll(
+                ".side-nav a[href^='#']"
+            );
+
+
+        function updateActiveSection() {
+
+            let current = "";
+
+            sections.forEach(
+                section => {
+
+                    const rect =
+                        section.getBoundingClientRect();
+
+                    if (rect.top <= 190) {
+
+                        current =
+                            section.getAttribute("id");
+
+                    }
+
+                }
+            );
+
+
+            navLinks.forEach(
+                link => {
+
+                    link.classList.remove(
+                        "active-section"
+                    );
+
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + current
+                    ) {
+
+                        link.classList.add(
+                            "active-section"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateActiveSection,
+            { passive: true }
+        );
+
+
+        updateActiveSection();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
