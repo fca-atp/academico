@@ -99,80 +99,124 @@ input {
 ========================================================== */
 
 .navbar {
+
     position: sticky;
     top: 0;
     z-index: 1200;
+
     background: rgba(255,255,255,.97);
+
     border-bottom: 1px solid var(--gris-borde);
+
     backdrop-filter: blur(12px);
 }
 
+
 .nav-container {
+
     max-width: 1320px;
     min-height: 76px;
+
     margin: auto;
     padding: 0 28px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     gap: 30px;
 }
 
+
 .brand {
+
     display: flex;
     align-items: center;
+
     gap: 13px;
+
     white-space: nowrap;
 }
 
+
 .brand-logo {
+
     width: 50px;
     height: 50px;
+
     flex: 0 0 50px;
+
     object-fit: contain;
+
     border-radius: 9px;
 }
 
+
 .brand-text {
+
     color: var(--morado-oscuro);
+
     font-size: 16px;
     font-weight: 800;
+
     line-height: 1.15;
 }
 
+
 .brand-text small {
+
     display: block;
+
     margin-top: 3px;
+
     color: var(--gris);
+
     font-size: 9px;
     font-weight: 500;
 }
 
+
 .nav-links {
+
     display: flex;
+
     align-items: center;
     justify-content: flex-end;
+
     gap: 5px;
+
     flex-wrap: wrap;
 }
 
+
 .nav-links a {
+
     padding: 8px 11px;
+
     border-radius: 9px;
+
     color: #514b59;
+
     font-size: 12px;
     font-weight: 700;
+
     transition: .2s ease;
 }
 
+
 .nav-links a:hover {
+
     background: var(--lavanda);
+
     color: var(--morado);
 }
 
+
 .nav-links a.active {
+
     background: var(--amarillo);
+
     color: var(--morado-profundo);
 }
 
@@ -182,16 +226,21 @@ input {
 ========================================================== */
 
 .hero {
+
     position: relative;
+
     overflow: hidden;
+
     border-bottom: 1px solid var(--gris-borde);
 
     background:
+
         radial-gradient(
             circle at 86% 15%,
             rgba(246,183,25,.14),
             transparent 22%
         ),
+
         linear-gradient(
             120deg,
             #ffffff 0%,
@@ -200,119 +249,189 @@ input {
         );
 }
 
+
 .hero::after {
+
     content: "";
+
     position: absolute;
+
     width: 380px;
     height: 380px;
+
     right: -120px;
     top: -170px;
+
     border-radius: 50%;
+
     background: rgba(113,53,143,.055);
 }
 
+
 .hero-content {
+
     position: relative;
+
     z-index: 2;
+
     max-width: 1130px;
+
     margin: auto;
+
     padding: 68px 24px 65px;
 }
 
+
 .hero-institution {
+
     display: flex;
+
     align-items: center;
+
     gap: 11px;
+
     margin-bottom: 25px;
 
     color: var(--morado-oscuro);
+
     font-size: 11px;
     font-weight: 700;
+
     letter-spacing: .7px;
+
     text-transform: uppercase;
 }
 
+
 .hero-institution img {
+
     width: 42px;
     height: 42px;
+
     object-fit: contain;
+
     border-radius: 7px;
 }
+
 
 .hero-institution-text {
     line-height: 1.35;
 }
 
+
 .hero-institution-text span {
+
     display: block;
+
     color: var(--gris);
+
     font-size: 9px;
     font-weight: 600;
 }
 
+
 .hero-decoration {
+
     position: absolute;
+
     right: 45px;
     top: 50px;
+
     width: 130px;
     height: 130px;
+
     opacity: .8;
 }
 
+
 .deco-purple {
+
     position: absolute;
+
     width: 55px;
     height: 55px;
+
     right: 0;
     top: 0;
+
     background: var(--morado);
+
     border-radius: 12px 0 12px 12px;
 }
 
+
 .deco-yellow {
+
     position: absolute;
+
     width: 70px;
     height: 70px;
+
     right: 38px;
     top: 38px;
+
     background: var(--amarillo);
+
     border-radius: 0 14px 14px 14px;
 }
 
+
 .module-label {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
+
     margin-bottom: 14px;
 
     color: var(--morado);
+
     font-size: 14px;
     font-weight: 800;
 }
 
+
 .module-label::before {
+
     content: "";
+
     width: 32px;
     height: 4px;
+
     border-radius: 10px;
+
     background: var(--amarillo);
 }
 
+
 .hero h1 {
+
     max-width: 900px;
+
     margin-bottom: 15px;
 
     color: var(--morado-oscuro);
+
     font-family: "Playfair Display", serif;
+
     font-size: clamp(42px,6vw,65px);
+
     font-weight: 800;
+
     line-height: 1.05;
 }
 
+
 .hero p {
+
     max-width: 810px;
+
     color: var(--texto-secundario);
+
     font-size: 18px;
+
     line-height: 1.65;
 }
 
@@ -322,14 +441,20 @@ input {
 ========================================================== */
 
 .module-layout {
+
     max-width: 1360px;
+
     margin: auto;
+
     padding: 0 28px;
 
     display: grid;
+
     grid-template-columns: 250px minmax(0,1fr);
+
     gap: 42px;
 }
+
 
 .module-content {
     min-width: 0;
@@ -344,28 +469,40 @@ input {
     position: relative;
 }
 
+
 .side-nav-inner {
+
     position: sticky;
+
     top: 98px;
+
     margin-top: 42px;
     margin-bottom: 45px;
 
     overflow: hidden;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 17px;
+
     background: white;
+
     box-shadow: var(--sombra);
 }
 
+
 .side-nav-title {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     padding: 17px;
 
     background:
+
         linear-gradient(
             135deg,
             var(--morado),
@@ -373,52 +510,76 @@ input {
         );
 
     color: white;
+
     font-size: 12px;
     font-weight: 800;
+
     text-transform: uppercase;
 }
+
 
 .side-nav-title i {
     color: var(--amarillo);
 }
 
+
 .side-nav-links {
+
     padding: 8px 8px 12px;
 }
 
+
 .side-nav a {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     padding: 9px 11px;
+
     margin: 2px 0;
 
     border-radius: 9px;
 
     color: #625d68;
+
     font-size: 11px;
     font-weight: 600;
+
     line-height: 1.3;
 
     transition: .18s ease;
 }
 
+
 .side-nav a i {
+
     width: 18px;
+
     flex: 0 0 18px;
+
     text-align: center;
+
     color: var(--morado);
+
     font-size: 13px;
 }
 
+
 .side-nav a:hover {
+
     background: var(--lavanda);
+
     color: var(--morado-oscuro);
 }
 
+
 .side-nav a.active-section {
+
     background:
+
         linear-gradient(
             90deg,
             var(--amarillo-claro),
@@ -426,6 +587,7 @@ input {
         );
 
     color: var(--morado-profundo);
+
     font-weight: 800;
 }
 
@@ -435,60 +597,89 @@ input {
 ========================================================== */
 
 .section {
+
     padding: 67px 0;
+
     scroll-margin-top: 95px;
+
     border-bottom: 1px solid #eeeaf0;
 }
+
 
 .section:last-child {
     border-bottom: none;
 }
 
+
 .section-label {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 7px;
 
     color: #716b77;
+
     font-size: 10px;
     font-weight: 800;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
+
 .section-label::before {
+
     content: "";
+
     width: 28px;
     height: 4px;
+
     border-radius: 10px;
+
     background: var(--amarillo);
 }
 
+
 .section h2 {
+
     max-width: 900px;
+
     margin-bottom: 9px;
 
     color: var(--morado-oscuro);
+
     font-size: clamp(27px,3vw,36px);
+
     line-height: 1.2;
 }
 
+
 .section-subtitle {
+
     max-width: 880px;
+
     margin-bottom: 20px;
 
     color: #4d4853;
+
     font-size: 18px;
     font-weight: 500;
 }
 
+
 .section-intro {
+
     max-width: 880px;
+
     margin-bottom: 29px;
 
     color: var(--texto-secundario);
+
     font-size: 14.5px;
 }
 
@@ -498,33 +689,51 @@ input {
 ========================================================== */
 
 .key-box {
+
     display: grid;
+
     grid-template-columns: 55px 1fr;
+
     gap: 18px;
+
     align-items: center;
 
     margin-top: 25px;
+
     padding: 22px 25px;
 
     border-left: 5px solid var(--amarillo);
+
     border-radius: 0 15px 15px 0;
+
     background: var(--amarillo-palido);
 }
 
+
 .key-icon {
+
     color: var(--amarillo);
+
     font-size: 35px;
+
     text-align: center;
 }
 
+
 .key-box h3 {
+
     margin-bottom: 4px;
+
     color: var(--morado-oscuro);
+
     font-size: 15px;
 }
 
+
 .key-box p {
+
     color: var(--texto-secundario);
+
     font-size: 13.5px;
 }
 
@@ -534,162 +743,236 @@ input {
 ========================================================== */
 
 .document-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2,1fr);
+
     gap: 15px;
 }
 
+
 .document-card {
+
     display: grid;
+
     grid-template-columns: 48px 1fr;
+
     gap: 15px;
+
     align-items: start;
 
     padding: 21px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 15px;
+
     background: white;
 }
 
+
 .document-icon {
+
     width: 46px;
     height: 46px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 12px;
 
     background: var(--lavanda);
+
     color: var(--morado);
+
     font-size: 18px;
 }
 
+
 .document-card:nth-child(even) .document-icon {
+
     background: var(--amarillo-claro);
+
     color: var(--morado-profundo);
 }
 
+
 .document-card strong {
+
     display: block;
+
     margin-bottom: 4px;
 
     color: var(--morado-oscuro);
+
     font-size: 14px;
 }
 
+
 .document-card p {
+
     color: var(--gris);
+
     font-size: 12.5px;
 }
 
 
 /* ==========================================================
-   ANATOMÍA DEL PROGRAMA
+   ANATOMÍA
 ========================================================== */
 
 .anatomy-grid {
+
     display: grid;
+
     grid-template-columns: repeat(3,1fr);
+
     gap: 15px;
 }
 
+
 .anatomy-card {
+
     position: relative;
+
     padding: 24px 21px 21px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 16px;
+
     background: white;
 
     overflow: hidden;
 }
 
+
 .anatomy-number {
+
     position: absolute;
+
     right: 14px;
     top: 7px;
 
     color: var(--lavanda-2);
+
     font-size: 40px;
     font-weight: 800;
+
     line-height: 1;
 }
 
+
 .anatomy-card i {
+
     margin-bottom: 14px;
+
     color: var(--morado);
+
     font-size: 22px;
 }
 
+
 .anatomy-card h3 {
+
     position: relative;
+
     z-index: 2;
 
     margin-bottom: 6px;
 
     color: var(--morado-oscuro);
+
     font-size: 14px;
 }
 
+
 .anatomy-card p {
+
     position: relative;
+
     z-index: 2;
 
     color: var(--gris);
+
     font-size: 12px;
 }
 
 
 /* ==========================================================
-   CADENA DE CONGRUENCIA
+   CONGRUENCIA
 ========================================================== */
 
 .congruence-box {
+
     overflow: hidden;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 19px;
+
     background: white;
 }
 
+
 .congruence-header {
+
     padding: 23px 25px;
+
     background:
+
         linear-gradient(
             135deg,
             var(--morado-profundo),
             var(--morado)
         );
+
     color: white;
 }
 
+
 .congruence-header h3 {
+
     margin-bottom: 4px;
+
     font-size: 18px;
 }
 
+
 .congruence-header p {
+
     color: rgba(255,255,255,.78);
+
     font-size: 12.5px;
 }
 
+
 .congruence-flow {
+
     display: flex;
+
     align-items: stretch;
+
     padding: 25px 18px;
+
     overflow-x: auto;
 }
 
+
 .flow-item {
+
     min-width: 125px;
+
     flex: 1;
 
     padding: 16px 10px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 12px;
 
     background: var(--lavanda);
@@ -697,15 +980,20 @@ input {
     color: var(--morado-oscuro);
 
     text-align: center;
+
     font-size: 11px;
     font-weight: 800;
 }
 
+
 .flow-arrow {
+
     flex: 0 0 30px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     color: var(--amarillo);
@@ -720,30 +1008,42 @@ input {
     margin-top: 20px;
 }
 
+
 .step {
+
     display: grid;
+
     grid-template-columns: 60px 1fr;
+
     gap: 19px;
 
     margin-bottom: 16px;
+
     padding: 22px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 16px;
+
     background: white;
 }
 
+
 .step-number {
+
     width: 54px;
     height: 54px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 15px;
 
     background:
+
         linear-gradient(
             135deg,
             var(--morado),
@@ -751,24 +1051,36 @@ input {
         );
 
     color: white;
+
     font-size: 18px;
     font-weight: 800;
 }
 
+
 .step h3 {
+
     margin-bottom: 5px;
+
     color: var(--morado-oscuro);
+
     font-size: 16px;
 }
 
+
 .step p {
+
     color: var(--gris);
+
     font-size: 13px;
 }
 
+
 .step-question {
+
     margin-top: 9px;
+
     color: #4f4955;
+
     font-size: 12.5px;
     font-weight: 700;
 }
@@ -779,13 +1091,19 @@ input {
 ========================================================== */
 
 .ra-formula {
+
     display: grid;
+
     grid-template-columns: repeat(4,1fr);
+
     gap: 12px;
+
     margin-bottom: 25px;
 }
 
+
 .ra-part {
+
     padding: 19px 15px;
 
     border-radius: 14px;
@@ -795,55 +1113,82 @@ input {
     text-align: center;
 }
 
+
 .ra-part:nth-child(even) {
     background: var(--amarillo-palido);
 }
 
+
 .ra-part strong {
+
     display: block;
+
     margin-bottom: 5px;
 
     color: var(--morado-oscuro);
+
     font-size: 13px;
 }
 
+
 .ra-part span {
+
     color: var(--gris);
+
     font-size: 11.5px;
 }
 
+
 .example-box {
+
     overflow: hidden;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 17px;
+
     background: white;
 }
 
+
 .example-header {
+
     padding: 19px 22px;
+
     background: var(--lavanda);
 }
 
+
 .example-header strong {
+
     color: var(--morado-oscuro);
+
     font-size: 14px;
 }
 
+
 .example-content {
+
     padding: 22px;
 }
 
+
 .example-content p {
+
     color: var(--texto-secundario);
+
     font-size: 13px;
 }
 
+
 .example-content .good {
+
     margin-top: 13px;
+
     padding: 14px 16px;
 
     border-left: 4px solid var(--verde);
+
     border-radius: 0 10px 10px 0;
 
     background: var(--verde-claro);
@@ -855,63 +1200,92 @@ input {
 ========================================================== */
 
 .review-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2,1fr);
+
     gap: 15px;
 }
 
+
 .review-card {
+
     padding: 23px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 15px;
+
     background: white;
 }
 
+
 .review-card i {
+
     margin-bottom: 12px;
+
     color: var(--morado);
+
     font-size: 22px;
 }
 
+
 .review-card h3 {
+
     margin-bottom: 7px;
+
     color: var(--morado-oscuro);
+
     font-size: 15px;
 }
 
+
 .review-card p {
+
     color: var(--gris);
+
     font-size: 12.5px;
 }
 
+
 .review-question {
+
     margin-top: 11px;
+
     padding-top: 10px;
 
     border-top: 1px solid var(--gris-borde);
 
     color: var(--morado);
+
     font-size: 11.5px;
     font-weight: 800;
 }
 
 
 /* ==========================================================
-   LISTA DE COTEJO INTERACTIVA
+   LISTA DE COTEJO
 ========================================================== */
 
 .instrument-intro {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 25px;
 
     margin-bottom: 22px;
+
     padding: 22px 24px;
 
     border-radius: 16px;
+
     background:
+
         linear-gradient(
             135deg,
             var(--morado-profundo),
@@ -921,18 +1295,27 @@ input {
     color: white;
 }
 
+
 .instrument-intro h3 {
+
     margin-bottom: 4px;
+
     font-size: 17px;
 }
 
+
 .instrument-intro p {
+
     max-width: 650px;
+
     color: rgba(255,255,255,.78);
+
     font-size: 12.5px;
 }
 
+
 .instrument-count {
+
     flex: 0 0 auto;
 
     padding: 8px 13px;
@@ -942,25 +1325,34 @@ input {
     background: var(--amarillo);
 
     color: var(--morado-profundo);
+
     font-size: 11px;
     font-weight: 800;
 }
 
+
 .check-group {
+
     margin-bottom: 14px;
 
     overflow: hidden;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 15px;
 
     background: white;
 }
 
+
 .check-group-title {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 15px;
 
     width: 100%;
@@ -968,6 +1360,7 @@ input {
     padding: 17px 20px;
 
     border: none;
+
     background: var(--lavanda);
 
     color: var(--morado-oscuro);
@@ -975,50 +1368,70 @@ input {
     cursor: pointer;
 
     text-align: left;
+
     font-size: 13px;
+
     font-weight: 800;
 }
 
+
 .check-group-title i {
+
     transition: transform .2s ease;
 }
 
+
 .check-group.closed .check-group-title i {
+
     transform: rotate(-90deg);
 }
 
+
 .check-group-content {
+
     padding: 7px 18px 16px;
 }
 
+
 .check-group.closed .check-group-content {
+
     display: none;
 }
 
+
 .criterion {
+
     padding: 17px 3px;
+
     border-bottom: 1px solid #eee;
 }
+
 
 .criterion:last-child {
     border-bottom: none;
 }
 
+
 .criterion-text {
+
     margin-bottom: 11px;
 
     color: var(--texto-secundario);
+
     font-size: 12.5px;
     font-weight: 600;
 }
 
+
 .criterion-number {
+
     display: inline-flex;
 
     width: 27px;
     height: 27px;
 
     align-items: center;
+
     justify-content: center;
 
     margin-right: 7px;
@@ -1028,75 +1441,106 @@ input {
     background: var(--morado);
 
     color: white;
+
     font-size: 10px;
     font-weight: 800;
 }
 
+
 .criterion-controls {
+
     display: grid;
+
     grid-template-columns: 210px 1fr;
+
     gap: 10px;
 }
 
+
 .criterion select,
 .criterion textarea {
+
     width: 100%;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 9px;
 
     background: white;
 
     color: var(--texto-secundario);
+
     font-size: 11.5px;
 
     outline: none;
 }
 
+
 .criterion select {
+
     height: 39px;
+
     padding: 0 10px;
 }
 
+
 .criterion textarea {
+
     min-height: 39px;
+
     padding: 9px 10px;
+
     resize: vertical;
 }
 
+
 .criterion select:focus,
 .criterion textarea:focus {
+
     border-color: var(--morado-medio);
 }
 
 
 /* ==========================================================
-   RESULTADOS DEL INSTRUMENTO
+   RESULTADOS
 ========================================================== */
 
 .results-panel {
+
     margin-top: 25px;
+
     padding: 25px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 18px;
 
     background: var(--gris-fondo);
 }
 
+
 .results-panel h3 {
+
     margin-bottom: 17px;
+
     color: var(--morado-oscuro);
+
     font-size: 17px;
 }
 
+
 .results-grid {
+
     display: grid;
+
     grid-template-columns: repeat(5,1fr);
+
     gap: 10px;
 }
 
+
 .result-card {
+
     padding: 16px 8px;
 
     border-radius: 12px;
@@ -1106,44 +1550,61 @@ input {
     text-align: center;
 }
 
+
 .result-card strong {
+
     display: block;
+
     color: var(--morado-oscuro);
+
     font-size: 23px;
 }
 
+
 .result-card span {
+
     color: var(--gris);
+
     font-size: 9.5px;
+
     font-weight: 700;
 }
+
 
 .result-card.good {
     background: var(--verde-claro);
 }
 
+
 .result-card.partial {
     background: var(--amarillo-palido);
 }
+
 
 .result-card.adjust {
     background: var(--rojo-claro);
 }
 
+
 .result-card.na {
     background: var(--gris-claro);
 }
 
+
 .result-message {
+
     margin-top: 15px;
+
     padding: 15px 17px;
 
     border-left: 4px solid var(--amarillo);
+
     border-radius: 0 10px 10px 0;
 
     background: white;
 
     color: var(--texto-secundario);
+
     font-size: 12.5px;
 }
 
@@ -1153,110 +1614,158 @@ input {
 ========================================================== */
 
 .verdict-box {
+
     margin-top: 25px;
+
     overflow: hidden;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 17px;
 
     background: white;
 }
 
+
 .verdict-header {
+
     padding: 18px 22px;
+
     background: var(--lavanda);
 }
 
+
 .verdict-header h3 {
+
     color: var(--morado-oscuro);
+
     font-size: 15px;
 }
 
+
 .verdict-body {
+
     padding: 20px 22px;
 }
 
+
 .verdict-options {
+
     display: grid;
+
     grid-template-columns: repeat(3,1fr);
+
     gap: 10px;
+
     margin-bottom: 18px;
 }
+
 
 .verdict-option {
     position: relative;
 }
 
+
 .verdict-option input {
+
     position: absolute;
+
     opacity: 0;
 }
 
+
 .verdict-option label {
+
     display: block;
+
     height: 100%;
 
     padding: 14px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 11px;
 
     cursor: pointer;
 
     color: var(--texto-secundario);
+
     font-size: 11.5px;
     font-weight: 700;
+
     text-align: center;
 }
 
+
 .verdict-option input:checked + label {
+
     border-color: var(--morado);
+
     background: var(--lavanda);
+
     color: var(--morado-oscuro);
 }
 
+
 .verdict-fields {
+
     display: grid;
+
     grid-template-columns: repeat(3,1fr);
+
     gap: 10px;
 }
 
+
 .verdict-field label {
+
     display: block;
+
     margin-bottom: 5px;
 
     color: var(--morado-oscuro);
+
     font-size: 11px;
     font-weight: 800;
 }
 
+
 .verdict-field textarea {
+
     width: 100%;
+
     min-height: 105px;
 
     padding: 11px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 10px;
 
     resize: vertical;
 
     color: var(--texto-secundario);
+
     font-size: 11.5px;
 }
 
 
 /* ==========================================================
-   QUÉ HACER CON HALLAZGOS
+   AJUSTES
 ========================================================== */
 
 .action-grid {
+
     display: grid;
+
     grid-template-columns: repeat(3,1fr);
+
     gap: 15px;
 }
 
+
 .action-card {
+
     padding: 23px;
 
     border-radius: 15px;
@@ -1264,21 +1773,26 @@ input {
     background: var(--lavanda);
 }
 
+
 .action-card:nth-child(2) {
     background: var(--amarillo-palido);
 }
+
 
 .action-card:nth-child(3) {
     background: var(--verde-claro);
 }
 
+
 .action-card .action-number {
+
     display: inline-flex;
 
     width: 34px;
     height: 34px;
 
     align-items: center;
+
     justify-content: center;
 
     margin-bottom: 11px;
@@ -1288,19 +1802,26 @@ input {
     background: var(--morado);
 
     color: white;
+
     font-size: 11px;
     font-weight: 800;
 }
 
+
 .action-card h3 {
+
     margin-bottom: 6px;
 
     color: var(--morado-oscuro);
+
     font-size: 14px;
 }
 
+
 .action-card p {
+
     color: var(--texto-secundario);
+
     font-size: 12px;
 }
 
@@ -1310,25 +1831,34 @@ input {
 ========================================================== */
 
 .download-card {
+
     display: grid;
+
     grid-template-columns: 55px 1fr auto;
+
     gap: 18px;
+
     align-items: center;
 
     padding: 23px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 16px;
 
     background: white;
 }
 
+
 .download-icon {
+
     width: 52px;
     height: 52px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 13px;
@@ -1336,24 +1866,35 @@ input {
     background: var(--verde-claro);
 
     color: var(--verde);
+
     font-size: 23px;
 }
 
+
 .download-card h3 {
+
     margin-bottom: 3px;
 
     color: var(--morado-oscuro);
+
     font-size: 15px;
 }
 
+
 .download-card p {
+
     color: var(--gris);
+
     font-size: 12px;
 }
 
+
 .download-btn {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     padding: 11px 15px;
@@ -1374,26 +1915,36 @@ input {
 ========================================================== */
 
 .resource {
+
     display: flex;
+
     align-items: center;
+
     gap: 17px;
 
     margin-bottom: 13px;
+
     padding: 20px;
 
     border: 1px solid var(--gris-borde);
+
     border-radius: 14px;
 
     background: white;
 }
 
+
 .resource-icon {
+
     width: 48px;
     height: 48px;
+
     flex: 0 0 48px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 12px;
@@ -1401,23 +1952,33 @@ input {
     background: var(--morado);
 
     color: var(--amarillo);
+
     font-size: 18px;
 }
 
+
 .resource h3 {
+
     margin-bottom: 2px;
 
     color: var(--morado-oscuro);
+
     font-size: 15px;
 }
 
+
 .resource p {
+
     color: var(--gris);
+
     font-size: 12.5px;
 }
 
+
 .resource a {
+
     color: var(--morado);
+
     font-weight: 800;
 }
 
@@ -1427,18 +1988,27 @@ input {
 ========================================================== */
 
 .module-navigation {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 15px;
 
     margin-top: 38px;
 }
 
+
 .btn {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 9px;
 
     padding: 12px 18px;
@@ -1446,25 +2016,35 @@ input {
     border-radius: 10px;
 
     font-size: 12px;
+
     font-weight: 800;
 
     transition: .2s ease;
 }
 
+
 .btn-outline {
+
     border: 1px solid var(--gris-borde);
+
     background: white;
+
     color: var(--morado);
 }
+
 
 .btn-outline:hover {
     background: var(--lavanda);
 }
 
+
 .btn-primary {
+
     background: var(--amarillo);
+
     color: var(--morado-profundo);
 }
+
 
 .btn-primary:hover {
     transform: translateY(-2px);
@@ -1476,9 +2056,11 @@ input {
 ========================================================== */
 
 footer {
+
     margin-top: 10px;
 
     background:
+
         linear-gradient(
             120deg,
             var(--morado-profundo),
@@ -1488,58 +2070,89 @@ footer {
     color: white;
 }
 
+
 .footer-inner {
+
     max-width: 1300px;
+
     margin: auto;
+
     padding: 30px 28px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 25px;
 }
 
+
 .footer-brand {
+
     display: flex;
+
     align-items: center;
+
     gap: 14px;
 }
 
+
 .footer-logo-box {
+
     width: 58px;
     height: 58px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     padding: 4px;
 
     border-radius: 10px;
+
     background: white;
 }
 
+
 .footer-logo {
+
     width: 100%;
     height: 100%;
+
     object-fit: contain;
+
     border-radius: 6px;
 }
 
+
 .footer-brand strong {
+
     display: block;
+
     font-size: 14px;
 }
 
+
 .footer-brand small {
+
     display: block;
+
     color: rgba(255,255,255,.70);
+
     font-size: 10px;
 }
 
+
 .footer-info {
+
     text-align: right;
+
     color: rgba(255,255,255,.76);
+
     font-size: 10px;
 }
 
@@ -1551,29 +2164,39 @@ footer {
 @media(max-width: 980px) {
 
     .module-layout {
+
         display: block;
+
         padding: 0;
     }
 
     .side-nav {
+
         position: sticky;
+
         top: 76px;
+
         z-index: 900;
 
         background: white;
+
         border-bottom: 1px solid var(--gris-borde);
     }
 
     .side-nav-inner {
+
         position: static;
+
         display: flex;
 
         margin: 0;
+
         padding: 8px 16px;
 
         overflow-x: auto;
 
         border: none;
+
         border-radius: 0;
 
         box-shadow: 0 4px 12px rgba(0,0,0,.06);
@@ -1584,8 +2207,11 @@ footer {
     }
 
     .side-nav-links {
+
         display: flex;
+
         align-items: center;
+
         gap: 6px;
 
         padding: 0;
@@ -1594,12 +2220,15 @@ footer {
     }
 
     .side-nav a {
+
         flex: 0 0 auto;
 
         margin: 0;
+
         padding: 8px 10px;
 
         border: 1px solid var(--gris-borde);
+
         border-radius: 25px;
 
         background: white;
@@ -1614,7 +2243,9 @@ footer {
 @media(max-width: 860px) {
 
     .nav-container {
+
         flex-direction: column;
+
         align-items: flex-start;
 
         padding-top: 11px;
@@ -1628,41 +2259,52 @@ footer {
     .document-grid,
     .review-grid,
     .verdict-fields {
+
         grid-template-columns: 1fr;
     }
 
     .anatomy-grid,
     .action-grid {
+
         grid-template-columns: repeat(2,1fr);
     }
 
     .ra-formula {
+
         grid-template-columns: repeat(2,1fr);
     }
 
     .results-grid {
+
         grid-template-columns: repeat(2,1fr);
     }
 
     .verdict-options {
+
         grid-template-columns: 1fr;
     }
 
     .criterion-controls {
+
         grid-template-columns: 1fr;
     }
 
     .download-card {
+
         grid-template-columns: 55px 1fr;
     }
 
     .download-btn {
+
         grid-column: 1 / -1;
+
         justify-content: center;
     }
 
     .footer-inner {
+
         flex-direction: column;
+
         align-items: flex-start;
     }
 
@@ -1675,12 +2317,15 @@ footer {
 @media(max-width: 560px) {
 
     .brand-logo {
+
         width: 44px;
         height: 44px;
+
         flex-basis: 44px;
     }
 
     .hero-content {
+
         padding: 45px 22px 47px;
     }
 
@@ -1696,20 +2341,25 @@ footer {
     .action-grid,
     .ra-formula,
     .results-grid {
+
         grid-template-columns: 1fr;
     }
 
     .step,
     .key-box {
+
         grid-template-columns: 1fr;
     }
 
     .instrument-intro {
+
         flex-direction: column;
+
         align-items: flex-start;
     }
 
     .module-navigation {
+
         flex-direction: column;
     }
 
@@ -1734,7 +2384,8 @@ footer {
 
 <div class="nav-container">
 
-    <a href="index.html" class="brand">
+    <a href="index.html"
+       class="brand">
 
         <img
             src="assets/logofca.jpeg"
@@ -1757,17 +2408,30 @@ footer {
 
     <nav class="nav-links">
 
-        <a href="index.html">Inicio</a>
+        <a href="index.html">
+            Inicio
+        </a>
 
-        <a href="modulo1.html">Módulo 1</a>
+        <a href="modulo1.html">
+            Módulo 1
+        </a>
 
-        <a href="modulo2.html">Módulo 2</a>
+        <a href="modulo2.html"
+           class="active">
+            Módulo 2
+        </a>
 
-        <a href="modulo3.html" class="active">Módulo 3</a>
+        <a href="modulo3.html">
+            Módulo 3
+        </a>
 
-        <a href="modulo4.html">Módulo 4</a>
+        <a href="modulo4.html">
+            Módulo 4
+        </a>
 
-        <a href="modulo5.html">Módulo 5</a>
+        <a href="modulo5.html">
+            Módulo 5
+        </a>
 
     </nav>
 
@@ -1786,8 +2450,11 @@ footer {
 <div class="hero-content">
 
     <div class="hero-decoration">
+
         <div class="deco-purple"></div>
+
         <div class="deco-yellow"></div>
+
     </div>
 
 
@@ -1812,7 +2479,7 @@ footer {
 
 
     <div class="module-label">
-        Módulo 3
+        Módulo 2
     </div>
 
 
@@ -1823,10 +2490,11 @@ footer {
 
     <p>
 
-        Guía práctica para revisar la pertinencia, coherencia y
-        articulación de los componentes de un programa analítico,
-        desde su propósito y resultados de aprendizaje hasta
-        las evidencias y evaluación.
+        Guía práctica para revisar la pertinencia,
+        coherencia y articulación de los componentes
+        de un programa analítico, desde su propósito
+        y resultados de aprendizaje hasta las evidencias
+        y evaluación.
 
     </p>
 
@@ -1864,58 +2532,101 @@ footer {
     <div class="side-nav-links">
 
         <a href="#que-es">
+
             <i class="fa-regular fa-circle-question"></i>
+
             Qué es
+
         </a>
+
 
         <a href="#antes">
+
             <i class="fa-solid fa-folder-open"></i>
+
             Antes de revisar
+
         </a>
+
 
         <a href="#anatomia">
+
             <i class="fa-solid fa-layer-group"></i>
+
             Anatomía
+
         </a>
+
 
         <a href="#congruencia">
+
             <i class="fa-solid fa-link"></i>
+
             Congruencia
+
         </a>
+
 
         <a href="#pasos">
+
             <i class="fa-solid fa-list-ol"></i>
+
             Paso a paso
+
         </a>
+
 
         <a href="#resultados">
+
             <i class="fa-solid fa-bullseye"></i>
+
             Resultados
+
         </a>
+
 
         <a href="#componentes">
+
             <i class="fa-solid fa-magnifying-glass"></i>
+
             Componentes
+
         </a>
+
 
         <a href="#instrumento">
+
             <i class="fa-solid fa-list-check"></i>
+
             Lista de cotejo
+
         </a>
+
 
         <a href="#ajustes">
+
             <i class="fa-solid fa-screwdriver-wrench"></i>
+
             Ajustes
+
         </a>
+
 
         <a href="#formatos">
+
             <i class="fa-solid fa-download"></i>
+
             Formatos
+
         </a>
 
+
         <a href="#recursos">
+
             <i class="fa-solid fa-book"></i>
+
             Recursos
+
         </a>
 
     </div>
@@ -1938,7 +2649,8 @@ footer {
      SECCIÓN 1
 ======================================================== -->
 
-<section class="section" id="que-es">
+<section class="section"
+         id="que-es">
 
     <div class="section-label">
         Sección 1
@@ -1969,7 +2681,9 @@ footer {
     <div class="key-box">
 
         <div class="key-icon">
+
             <i class="fa-solid fa-link"></i>
+
         </div>
 
         <div>
@@ -1998,7 +2712,8 @@ footer {
      SECCIÓN 2
 ======================================================== -->
 
-<section class="section" id="antes">
+<section class="section"
+         id="antes">
 
     <div class="section-label">
         Sección 2
@@ -2009,7 +2724,9 @@ footer {
     </h2>
 
     <div class="section-subtitle">
+
         Reúne el contexto académico del programa
+
     </div>
 
     <p class="section-intro">
@@ -2027,7 +2744,9 @@ footer {
         <div class="document-card">
 
             <div class="document-icon">
+
                 <i class="fa-solid fa-file-lines"></i>
+
             </div>
 
             <div>
@@ -2037,8 +2756,11 @@ footer {
                 </strong>
 
                 <p>
+
                     Es el punto de partida para identificar
-                    qué se conserva, qué se actualiza y qué requiere ajuste.
+                    qué se conserva, qué se actualiza
+                    y qué requiere ajuste.
+
                 </p>
 
             </div>
@@ -2049,7 +2771,9 @@ footer {
         <div class="document-card">
 
             <div class="document-icon">
+
                 <i class="fa-solid fa-graduation-cap"></i>
+
             </div>
 
             <div>
@@ -2059,9 +2783,12 @@ footer {
                 </strong>
 
                 <p>
-                    Permite ubicar la asignatura, semestre,
-                    créditos, antecedentes y relación con otras
-                    unidades de aprendizaje.
+
+                    Permite ubicar la asignatura,
+                    semestre, créditos, antecedentes
+                    y relación con otras unidades
+                    de aprendizaje.
+
                 </p>
 
             </div>
@@ -2072,7 +2799,9 @@ footer {
         <div class="document-card">
 
             <div class="document-icon">
+
                 <i class="fa-solid fa-user-graduate"></i>
+
             </div>
 
             <div>
@@ -2082,8 +2811,11 @@ footer {
                 </strong>
 
                 <p>
-                    Ayuda a verificar a qué formación profesional
-                    contribuye la unidad de aprendizaje.
+
+                    Ayuda a verificar a qué formación
+                    profesional contribuye
+                    la unidad de aprendizaje.
+
                 </p>
 
             </div>
@@ -2094,7 +2826,9 @@ footer {
         <div class="document-card">
 
             <div class="document-icon">
+
                 <i class="fa-solid fa-cubes"></i>
+
             </div>
 
             <div>
@@ -2104,14 +2838,17 @@ footer {
                 </strong>
 
                 <p>
-                    Proporciona el marco institucional para
-                    interpretar principios, dominios, ejes
-                    y orientación formativa.
+
+                    Proporciona el marco institucional
+                    para interpretar principios,
+                    dominios, ejes y orientación formativa.
+
                 </p>
 
             </div>
 
         </div>
+
 
     </div>
 
@@ -2123,7 +2860,8 @@ footer {
      SECCIÓN 3
 ======================================================== -->
 
-<section class="section" id="anatomia">
+<section class="section"
+         id="anatomia">
 
     <div class="section-label">
         Sección 3
@@ -2134,7 +2872,9 @@ footer {
     </h2>
 
     <div class="section-subtitle">
+
         Identifica qué función cumple cada componente
+
     </div>
 
 
@@ -2143,7 +2883,9 @@ footer {
 
         <div class="anatomy-card">
 
-            <span class="anatomy-number">01</span>
+            <span class="anatomy-number">
+                01
+            </span>
 
             <i class="fa-solid fa-compass"></i>
 
@@ -2152,8 +2894,11 @@ footer {
             </h3>
 
             <p>
-                Expresa para qué contribuye la unidad de
-                aprendizaje en la formación del estudiante.
+
+                Expresa para qué contribuye
+                la unidad de aprendizaje
+                en la formación del estudiante.
+
             </p>
 
         </div>
@@ -2161,7 +2906,9 @@ footer {
 
         <div class="anatomy-card">
 
-            <span class="anatomy-number">02</span>
+            <span class="anatomy-number">
+                02
+            </span>
 
             <i class="fa-solid fa-diagram-project"></i>
 
@@ -2170,8 +2917,11 @@ footer {
             </h3>
 
             <p>
-                Establecen los referentes formativos
-                con los que se articula la asignatura.
+
+                Establecen los referentes
+                formativos con los que se articula
+                la asignatura.
+
             </p>
 
         </div>
@@ -2179,7 +2929,9 @@ footer {
 
         <div class="anatomy-card">
 
-            <span class="anatomy-number">03</span>
+            <span class="anatomy-number">
+                03
+            </span>
 
             <i class="fa-solid fa-bullseye"></i>
 
@@ -2188,8 +2940,11 @@ footer {
             </h3>
 
             <p>
-                Expresan aquello que el estudiante deberá
-                demostrar al avanzar en el curso.
+
+                Expresan aquello que el estudiante
+                deberá demostrar al avanzar
+                en el curso.
+
             </p>
 
         </div>
@@ -2197,7 +2952,9 @@ footer {
 
         <div class="anatomy-card">
 
-            <span class="anatomy-number">04</span>
+            <span class="anatomy-number">
+                04
+            </span>
 
             <i class="fa-solid fa-book-open"></i>
 
@@ -2206,8 +2963,10 @@ footer {
             </h3>
 
             <p>
+
                 Proporcionan los saberes necesarios
                 para alcanzar los resultados previstos.
+
             </p>
 
         </div>
@@ -2215,7 +2974,9 @@ footer {
 
         <div class="anatomy-card">
 
-            <span class="anatomy-number">05</span>
+            <span class="anatomy-number">
+                05
+            </span>
 
             <i class="fa-solid fa-person-chalkboard"></i>
 
@@ -2224,8 +2985,11 @@ footer {
             </h3>
 
             <p>
-                Definen las experiencias mediante las cuales
-                el estudiante desarrolla el aprendizaje.
+
+                Definen las experiencias mediante
+                las cuales el estudiante
+                desarrolla el aprendizaje.
+
             </p>
 
         </div>
@@ -2233,7 +2997,9 @@ footer {
 
         <div class="anatomy-card">
 
-            <span class="anatomy-number">06</span>
+            <span class="anatomy-number">
+                06
+            </span>
 
             <i class="fa-solid fa-file-circle-check"></i>
 
@@ -2242,8 +3008,10 @@ footer {
             </h3>
 
             <p>
-                Permiten demostrar y valorar el nivel
-                de logro alcanzado.
+
+                Permiten demostrar
+                y valorar el nivel de logro alcanzado.
+
             </p>
 
         </div>
@@ -2259,7 +3027,8 @@ footer {
      SECCIÓN 4
 ======================================================== -->
 
-<section class="section" id="congruencia">
+<section class="section"
+         id="congruencia">
 
     <div class="section-label">
         Sección 4
@@ -2270,13 +3039,17 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        El programa funciona como un sistema, no como una suma de apartados
+
+        El programa funciona como un sistema,
+        no como una suma de apartados
+
     </div>
 
     <p class="section-intro">
 
         Durante la revisión, sigue la cadena completa.
-        Cada componente debe justificar y sostener al siguiente.
+        Cada componente debe justificar
+        y sostener al siguiente.
 
     </p>
 
@@ -2290,8 +3063,11 @@ footer {
             </h3>
 
             <p>
-                Lee el programa horizontalmente y pregunta
-                si existe continuidad entre cada elemento.
+
+                Lee el programa horizontalmente
+                y pregunta si existe continuidad
+                entre cada elemento.
+
             </p>
 
         </div>
@@ -2299,49 +3075,75 @@ footer {
 
         <div class="congruence-flow">
 
+
             <div class="flow-item">
-                Competencias<br>y dominios
+
+                Competencias<br>
+                y dominios
+
             </div>
+
 
             <div class="flow-arrow">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
 
+
             <div class="flow-item">
-                Resultados de<br>aprendizaje
+
+                Resultados de<br>
+                aprendizaje
+
             </div>
+
 
             <div class="flow-arrow">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
 
+
             <div class="flow-item">
+
                 Contenidos
+
             </div>
+
 
             <div class="flow-arrow">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
 
+
             <div class="flow-item">
+
                 Estrategias
+
             </div>
+
 
             <div class="flow-arrow">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
 
+
             <div class="flow-item">
+
                 Evidencias
+
             </div>
+
 
             <div class="flow-arrow">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
 
+
             <div class="flow-item">
+
                 Evaluación
+
             </div>
+
 
         </div>
 
@@ -2351,7 +3153,9 @@ footer {
     <div class="key-box">
 
         <div class="key-icon">
+
             <i class="fa-solid fa-magnifying-glass"></i>
+
         </div>
 
         <div>
@@ -2362,10 +3166,10 @@ footer {
 
             <p>
 
-                Si el estudiante realiza las estrategias propuestas
-                y produce las evidencias establecidas,
-                <strong>¿podremos afirmar que alcanzó los resultados
-                de aprendizaje previstos?</strong>
+                Si el estudiante realiza las estrategias
+                propuestas y produce las evidencias establecidas,
+                <strong>¿podremos afirmar que alcanzó
+                los resultados de aprendizaje previstos?</strong>
 
             </p>
 
@@ -2381,7 +3185,8 @@ footer {
      SECCIÓN 5
 ======================================================== -->
 
-<section class="section" id="pasos">
+<section class="section"
+         id="pasos">
 
     <div class="section-label">
         Sección 5
@@ -2392,7 +3197,10 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        Una secuencia práctica para la revisión individual o colegiada
+
+        Una secuencia práctica
+        para la revisión individual o colegiada
+
     </div>
 
 
@@ -2401,7 +3209,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">1</div>
+            <div class="step-number">
+                1
+            </div>
 
             <div>
 
@@ -2410,13 +3220,19 @@ footer {
                 </h3>
 
                 <p>
-                    Revisa semestre, créditos, antecedentes,
-                    perfil de egreso y relación con otras asignaturas.
+
+                    Revisa semestre, créditos,
+                    antecedentes, perfil de egreso
+                    y relación con otras asignaturas.
+
                 </p>
 
                 <div class="step-question">
-                    Pregunta: ¿qué función cumple esta asignatura
+
+                    Pregunta:
+                    ¿qué función cumple esta asignatura
                     dentro de la trayectoria del estudiante?
+
                 </div>
 
             </div>
@@ -2426,7 +3242,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">2</div>
+            <div class="step-number">
+                2
+            </div>
 
             <div>
 
@@ -2435,13 +3253,19 @@ footer {
                 </h3>
 
                 <p>
-                    Comprueba que propósito, competencias y dominios
-                    correspondan al alcance real de la asignatura.
+
+                    Comprueba que propósito,
+                    competencias y dominios correspondan
+                    al alcance real de la asignatura.
+
                 </p>
 
                 <div class="step-question">
-                    Evita asignar a una sola materia una contribución
-                    formativa imposible de desarrollar en un semestre.
+
+                    Evita asignar a una sola materia
+                    una contribución formativa imposible
+                    de desarrollar en un semestre.
+
                 </div>
 
             </div>
@@ -2451,7 +3275,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">3</div>
+            <div class="step-number">
+                3
+            </div>
 
             <div>
 
@@ -2460,8 +3286,11 @@ footer {
                 </h3>
 
                 <p>
+
                     Verifica que expresen actuaciones observables,
-                    sean comprensibles y tengan un nivel adecuado.
+                    sean comprensibles
+                    y tengan un nivel adecuado.
+
                 </p>
 
             </div>
@@ -2471,7 +3300,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">4</div>
+            <div class="step-number">
+                4
+            </div>
 
             <div>
 
@@ -2480,8 +3311,11 @@ footer {
                 </h3>
 
                 <p>
-                    Determina si son pertinentes, actuales,
-                    suficientes y factibles para el tiempo disponible.
+
+                    Determina si son pertinentes,
+                    actuales, suficientes y factibles
+                    para el tiempo disponible.
+
                 </p>
 
             </div>
@@ -2491,7 +3325,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">5</div>
+            <div class="step-number">
+                5
+            </div>
 
             <div>
 
@@ -2500,8 +3336,11 @@ footer {
                 </h3>
 
                 <p>
-                    Comprueba que las actividades permitan desarrollar
-                    aquello que posteriormente se solicitará demostrar.
+
+                    Comprueba que las actividades
+                    permitan desarrollar aquello
+                    que posteriormente se solicitará demostrar.
+
                 </p>
 
             </div>
@@ -2511,7 +3350,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">6</div>
+            <div class="step-number">
+                6
+            </div>
 
             <div>
 
@@ -2520,9 +3361,11 @@ footer {
                 </h3>
 
                 <p>
-                    Revisa criterios, instrumentos, momentos
-                    y ponderaciones para determinar si permiten
-                    valorar los resultados previstos.
+
+                    Revisa criterios, instrumentos,
+                    momentos y ponderaciones para determinar
+                    si permiten valorar los resultados previstos.
+
                 </p>
 
             </div>
@@ -2532,7 +3375,9 @@ footer {
 
         <div class="step">
 
-            <div class="step-number">7</div>
+            <div class="step-number">
+                7
+            </div>
 
             <div>
 
@@ -2541,13 +3386,18 @@ footer {
                 </h3>
 
                 <p>
-                    Finalmente, revisa el programa como una sola
-                    propuesta y no como apartados independientes.
+
+                    Finalmente, revisa el programa
+                    como una sola propuesta
+                    y no como apartados independientes.
+
                 </p>
 
                 <div class="step-question">
-                    Utiliza la lista de cotejo de este módulo
-                    para documentar la revisión.
+
+                    Utiliza la lista de cotejo
+                    de este módulo para documentar la revisión.
+
                 </div>
 
             </div>
@@ -2565,7 +3415,8 @@ footer {
      SECCIÓN 6
 ======================================================== -->
 
-<section class="section" id="resultados">
+<section class="section"
+         id="resultados">
 
     <div class="section-label">
         Sección 6
@@ -2576,19 +3427,24 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        Redacta lo que el estudiante deberá ser capaz de demostrar
+
+        Redacta lo que el estudiante
+        deberá ser capaz de demostrar
+
     </div>
 
     <p class="section-intro">
 
         Un resultado de aprendizaje debe permitir comprender
-        qué actuación se espera del estudiante y orientar
-        posteriormente la selección de actividades y evidencias.
+        qué actuación se espera del estudiante
+        y orientar posteriormente la selección
+        de actividades y evidencias.
 
     </p>
 
 
     <div class="ra-formula">
+
 
         <div class="ra-part">
 
@@ -2641,6 +3497,7 @@ footer {
 
         </div>
 
+
     </div>
 
 
@@ -2654,25 +3511,34 @@ footer {
 
         </div>
 
+
         <div class="example-content">
 
             <p>
 
-                Una formulación como <strong>“Conocer los principales
-                indicadores económicos”</strong> dificulta determinar
-                qué actuación deberá demostrar el estudiante.
+                Una formulación como
+                <strong>
+                    “Conocer los principales indicadores económicos”
+                </strong>
+                dificulta determinar qué actuación
+                deberá demostrar el estudiante.
 
             </p>
 
 
             <div class="good">
 
-                <strong>Mayor precisión:</strong><br>
+                <strong>
+                    Mayor precisión:
+                </strong>
 
-                Analiza el comportamiento de los principales
-                indicadores macroeconómicos para interpretar
-                la situación económica de un país utilizando
-                información estadística pertinente.
+                <br>
+
+                Analiza el comportamiento
+                de los principales indicadores macroeconómicos
+                para interpretar la situación económica
+                de un país utilizando información
+                estadística pertinente.
 
             </div>
 
@@ -2688,7 +3554,8 @@ footer {
      SECCIÓN 7
 ======================================================== -->
 
-<section class="section" id="componentes">
+<section class="section"
+         id="componentes">
 
     <div class="section-label">
         Sección 7
@@ -2699,7 +3566,10 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        No preguntes solamente si están presentes; pregunta si son congruentes
+
+        No preguntes solamente si están presentes;
+        pregunta si son congruentes
+
     </div>
 
 
@@ -2715,13 +3585,19 @@ footer {
             </h3>
 
             <p>
-                Deben ser pertinentes, actuales, organizados
-                de manera lógica y suficientes para sostener
+
+                Deben ser pertinentes,
+                actuales, organizados de manera lógica
+                y suficientes para sostener
                 los resultados de aprendizaje.
+
             </p>
 
             <div class="review-question">
-                ¿Cada contenido tiene una función clara dentro del aprendizaje?
+
+                ¿Cada contenido tiene una función clara
+                dentro del aprendizaje?
+
             </div>
 
         </div>
@@ -2736,12 +3612,18 @@ footer {
             </h3>
 
             <p>
-                Deben propiciar actuaciones coherentes con
-                lo que posteriormente se espera que el estudiante demuestre.
+
+                Deben propiciar actuaciones coherentes
+                con lo que posteriormente se espera
+                que el estudiante demuestre.
+
             </p>
 
             <div class="review-question">
-                ¿El estudiante practica aquello por lo que será evaluado?
+
+                ¿El estudiante practica aquello
+                por lo que será evaluado?
+
             </div>
 
         </div>
@@ -2756,13 +3638,19 @@ footer {
             </h3>
 
             <p>
-                Deben hacer observable el aprendizaje mediante
-                productos, desempeños, soluciones, análisis
-                u otras demostraciones pertinentes.
+
+                Deben hacer observable el aprendizaje
+                mediante productos, desempeños,
+                soluciones, análisis u otras
+                demostraciones pertinentes.
+
             </p>
 
             <div class="review-question">
-                ¿La evidencia permite observar realmente el resultado?
+
+                ¿La evidencia permite observar
+                realmente el resultado?
+
             </div>
 
         </div>
@@ -2777,16 +3665,23 @@ footer {
             </h3>
 
             <p>
-                Los criterios e instrumentos deben permitir
-                valorar la calidad del desempeño y comunicar
+
+                Los criterios e instrumentos
+                deben permitir valorar la calidad
+                del desempeño y comunicar
                 con claridad qué se espera.
+
             </p>
 
             <div class="review-question">
-                ¿El instrumento mide aquello que el programa declara importante?
+
+                ¿El instrumento mide aquello
+                que el programa declara importante?
+
             </div>
 
         </div>
+
 
     </div>
 
@@ -2795,10 +3690,11 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 8 · INSTRUMENTO
+     SECCIÓN 8
 ======================================================== -->
 
-<section class="section" id="instrumento">
+<section class="section"
+         id="instrumento">
 
     <div class="section-label">
         Sección 8
@@ -2809,7 +3705,10 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        Registra el nivel de cumplimiento y documenta los ajustes necesarios
+
+        Registra el nivel de cumplimiento
+        y documenta los ajustes necesarios
+
     </div>
 
 
@@ -2823,26 +3722,33 @@ footer {
 
             <p>
 
-                Selecciona una valoración para cada criterio.
-                Las observaciones son opcionales y pueden utilizarse
-                para documentar acuerdos o recomendaciones.
+                Selecciona una valoración
+                para cada criterio.
+                Las observaciones son opcionales
+                y pueden utilizarse para documentar
+                acuerdos o recomendaciones.
 
             </p>
 
         </div>
 
+
         <div class="instrument-count">
+
             34 criterios
+
         </div>
 
     </div>
+
 
 
     <!-- GRUPO 1 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 1. Propósito y formación · 5 criterios
@@ -2851,6 +3757,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -2863,11 +3770,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 2 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 2. Contenidos · 5 criterios
@@ -2876,6 +3785,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -2888,11 +3798,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 3 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 3. Resultados de aprendizaje · 4 criterios
@@ -2901,6 +3813,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -2913,11 +3826,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 4 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 4. Estrategias de aprendizaje · 5 criterios
@@ -2926,6 +3841,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -2938,11 +3854,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 5 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 5. Evidencias de aprendizaje · 3 criterios
@@ -2951,6 +3869,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -2963,11 +3882,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 6 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 6. Criterios de desempeño · 2 criterios
@@ -2976,6 +3897,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -2988,11 +3910,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 7 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 7. Evaluación · 5 criterios
@@ -3001,6 +3925,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -3013,11 +3938,13 @@ footer {
     </div>
 
 
+
     <!-- GRUPO 8 -->
 
     <div class="check-group">
 
-        <button class="check-group-title" type="button">
+        <button class="check-group-title"
+                type="button">
 
             <span>
                 8. Congruencia integral · 5 criterios
@@ -3026,6 +3953,7 @@ footer {
             <i class="fa-solid fa-chevron-down"></i>
 
         </button>
+
 
         <div class="check-group-content">
 
@@ -3122,8 +4050,8 @@ footer {
         <div class="result-message"
              id="resultMessage">
 
-            Inicia la revisión seleccionando una valoración
-            para cada criterio.
+            Inicia la revisión seleccionando
+            una valoración para cada criterio.
 
         </div>
 
@@ -3159,7 +4087,9 @@ footer {
                     >
 
                     <label for="d1">
+
                         Procede sin ajustes relevantes
+
                     </label>
 
                 </div>
@@ -3174,7 +4104,9 @@ footer {
                     >
 
                     <label for="d2">
+
                         Procede con ajustes
+
                     </label>
 
                 </div>
@@ -3189,7 +4121,9 @@ footer {
                     >
 
                     <label for="d3">
+
                         Requiere revisión antes de su aprobación
+
                     </label>
 
                 </div>
@@ -3254,7 +4188,8 @@ footer {
      SECCIÓN 9
 ======================================================== -->
 
-<section class="section" id="ajustes">
+<section class="section"
+         id="ajustes">
 
     <div class="section-label">
         Sección 9
@@ -3265,7 +4200,9 @@ footer {
     </h2>
 
     <div class="section-subtitle">
+
         La revisión debe conducir a acuerdos concretos
+
     </div>
 
 
@@ -3283,10 +4220,12 @@ footer {
             </h3>
 
             <p>
+
                 Señala con precisión qué relación
                 o componente presenta la inconsistencia.
-                Evita observaciones generales como
-                “hay que mejorar el programa”.
+                Evita observaciones generales
+                como “hay que mejorar el programa”.
+
             </p>
 
         </div>
@@ -3303,10 +4242,13 @@ footer {
             </h3>
 
             <p>
+
                 Formula el ajuste esperado:
-                modificar un resultado, reorganizar contenidos,
-                sustituir una evidencia o precisar
-                un criterio de evaluación.
+                modificar un resultado,
+                reorganizar contenidos,
+                sustituir una evidencia
+                o precisar un criterio de evaluación.
+
             </p>
 
         </div>
@@ -3323,9 +4265,12 @@ footer {
             </h3>
 
             <p>
-                Registra responsables, acuerdos
-                y aspectos que deberán verificarse
-                antes de considerar concluida la revisión.
+
+                Registra responsables,
+                acuerdos y aspectos que deberán
+                verificarse antes de considerar
+                concluida la revisión.
+
             </p>
 
         </div>
@@ -3341,7 +4286,8 @@ footer {
      SECCIÓN 10
 ======================================================== -->
 
-<section class="section" id="formatos">
+<section class="section"
+         id="formatos">
 
     <div class="section-label">
         Sección 10
@@ -3352,14 +4298,19 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        Utiliza el instrumento fuera de la página cuando lo requieras
+
+        Utiliza el instrumento fuera de la página
+        cuando lo requieras
+
     </div>
 
 
     <div class="download-card">
 
         <div class="download-icon">
+
             <i class="fa-solid fa-file-excel"></i>
+
         </div>
 
         <div>
@@ -3369,12 +4320,15 @@ footer {
             </h3>
 
             <p>
+
                 Versión en Excel con 34 criterios,
                 escala de valoración, observaciones,
                 resultados y dictamen colegiado.
+
             </p>
 
         </div>
+
 
         <a
             href="assets/Lista_cotejo_programa_analitico_propuesta.xlsx"
@@ -3394,7 +4348,9 @@ footer {
     <div class="key-box">
 
         <div class="key-icon">
+
             <i class="fa-solid fa-circle-info"></i>
+
         </div>
 
         <div>
@@ -3405,11 +4361,14 @@ footer {
 
             <p>
 
-                La información registrada en la lista interactiva
-                de esta página <strong>permanece únicamente en el
-                navegador mientras se utiliza el módulo</strong>.
+                La información registrada
+                en la lista interactiva de esta página
+                <strong>
+                    permanece únicamente en el navegador
+                    mientras se utiliza el módulo
+                </strong>.
                 Para documentar formalmente la revisión,
-                utiliza el formato descargable correspondiente.
+                utiliza el formato descargable.
 
             </p>
 
@@ -3425,7 +4384,8 @@ footer {
      SECCIÓN 11
 ======================================================== -->
 
-<section class="section" id="recursos">
+<section class="section"
+         id="recursos">
 
     <div class="section-label">
         Sección 11
@@ -3436,14 +4396,19 @@ footer {
     </h2>
 
     <div class="section-subtitle">
-        Consulta otros apartados cuando necesites revisar fundamentos relacionados
+
+        Consulta otros apartados
+        cuando necesites revisar fundamentos relacionados
+
     </div>
 
 
     <div class="resource">
 
         <div class="resource-icon">
+
             <i class="fa-solid fa-cubes"></i>
+
         </div>
 
         <div>
@@ -3453,10 +4418,15 @@ footer {
             </h3>
 
             <p>
-                Consulta los principios, formación,
-                Auto-Socio-Ecoformación, ejes y ambientes
-                de aprendizaje en el
-                <a href="modulo1.html">Módulo 1</a>.
+
+                Consulta los principios,
+                formación, Auto-Socio-Ecoformación,
+                ejes y ambientes de aprendizaje
+                en el
+                <a href="modulo1.html">
+                    Módulo 1
+                </a>.
+
             </p>
 
         </div>
@@ -3467,19 +4437,27 @@ footer {
     <div class="resource">
 
         <div class="resource-icon">
+
             <i class="fa-solid fa-pen-ruler"></i>
+
         </div>
 
         <div>
 
             <h3>
-                Diseño de material didáctico
+                Material didáctico y Moodle
             </h3>
 
             <p>
-                Consulta criterios para seleccionar,
-                diseñar y revisar recursos de aprendizaje
-                en el <a href="modulo2.html">Módulo 2</a>.
+
+                Una vez revisado el programa,
+                consulta criterios para seleccionar,
+                diseñar y organizar materiales didácticos
+                y Moodle en el
+                <a href="modulo3.html">
+                    Módulo 3
+                </a>.
+
             </p>
 
         </div>
@@ -3490,7 +4468,9 @@ footer {
     <div class="resource">
 
         <div class="resource-icon">
+
             <i class="fa-solid fa-calendar-days"></i>
+
         </div>
 
         <div>
@@ -3500,9 +4480,15 @@ footer {
             </h3>
 
             <p>
-                Una vez revisado el programa analítico,
+
+                Después de revisar el programa analítico
+                y los recursos didácticos,
                 continúa con su concreción semestral
-                en el <a href="modulo4.html">Módulo 4</a>.
+                en el
+                <a href="modulo4.html">
+                    Módulo 4
+                </a>.
+
             </p>
 
         </div>
@@ -3513,20 +4499,20 @@ footer {
 
     <div class="module-navigation">
 
-        <a href="modulo2.html"
+        <a href="modulo1.html"
            class="btn btn-outline">
 
             <i class="fa-solid fa-arrow-left"></i>
 
-            Volver al Módulo 2
+            Volver al Módulo 1
 
         </a>
 
 
-        <a href="modulo4.html"
+        <a href="modulo3.html"
            class="btn btn-primary">
 
-            Continuar al Módulo 4
+            Continuar al Módulo 3
 
             <i class="fa-solid fa-arrow-right"></i>
 
@@ -3602,441 +4588,495 @@ footer {
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
 
-    /* ======================================================
-       CRITERIOS DEL INSTRUMENTO
-    ====================================================== */
+        /* ==================================================
+           CRITERIOS DEL INSTRUMENTO
+        ================================================== */
 
-    const criteria = [
+        const criteria = [
 
-        "El propósito de la unidad de aprendizaje expresa con claridad su contribución a la formación del estudiante.",
+            "El propósito de la unidad de aprendizaje expresa con claridad su contribución a la formación del estudiante.",
 
-        "El propósito guarda congruencia con las competencias, dominios o resultados formativos establecidos para la unidad de aprendizaje.",
+            "El propósito guarda congruencia con las competencias, dominios o resultados formativos establecidos para la unidad de aprendizaje.",
 
-        "Las competencias y dominios seleccionados son pertinentes para la naturaleza y nivel de la asignatura.",
+            "Las competencias y dominios seleccionados son pertinentes para la naturaleza y nivel de la asignatura.",
 
-        "El alcance de las competencias y dominios es factible de desarrollar durante el periodo académico.",
+            "El alcance de las competencias y dominios es factible de desarrollar durante el periodo académico.",
 
-        "El programa hace visible su relación con los principios, ejes o elementos formativos del Modelo Educativo UACH que resulten pertinentes.",
+            "El programa hace visible su relación con los principios, ejes o elementos formativos del Modelo Educativo UACH que resulten pertinentes.",
 
+            "Los contenidos contribuyen al desarrollo de los resultados de aprendizaje y de los dominios establecidos.",
 
-        "Los contenidos contribuyen al desarrollo de los resultados de aprendizaje y de los dominios establecidos.",
+            "Los contenidos son pertinentes para el campo disciplinar y profesional de la asignatura.",
 
-        "Los contenidos son pertinentes para el campo disciplinar y profesional de la asignatura.",
+            "Los contenidos se encuentran actualizados y vinculados, cuando corresponde, con problemas o situaciones del contexto.",
 
-        "Los contenidos se encuentran actualizados y vinculados, cuando corresponde, con problemas o situaciones del contexto.",
+            "La secuencia de contenidos presenta una progresión lógica y adecuada para el aprendizaje.",
 
-        "La secuencia de contenidos presenta una progresión lógica y adecuada para el aprendizaje.",
+            "La cantidad y profundidad de los contenidos son factibles de abordar durante el semestre.",
 
-        "La cantidad y profundidad de los contenidos son factibles de abordar durante el semestre.",
+            "Los resultados de aprendizaje se relacionan claramente con las competencias y dominios que se pretende desarrollar.",
 
+            "Cada resultado expresa de manera clara una actuación observable o demostrable por parte del estudiante.",
 
-        "Los resultados de aprendizaje se relacionan claramente con las competencias y dominios que se pretende desarrollar.",
+            "Los resultados de aprendizaje presentan un nivel de complejidad adecuado para la asignatura y el momento formativo del estudiante.",
 
-        "Cada resultado expresa de manera clara una actuación observable o demostrable por parte del estudiante.",
+            "Existe correspondencia entre los resultados de aprendizaje y los contenidos previstos.",
 
-        "Los resultados de aprendizaje presentan un nivel de complejidad adecuado para la asignatura y el momento formativo del estudiante.",
+            "Las estrategias propuestas son congruentes con los resultados de aprendizaje que se pretende alcanzar.",
 
-        "Existe correspondencia entre los resultados de aprendizaje y los contenidos previstos.",
+            "Las estrategias promueven la participación activa del estudiante en su proceso de aprendizaje.",
 
+            "Cuando resulta pertinente, las estrategias permiten analizar, resolver o intervenir problemas y situaciones del contexto.",
 
-        "Las estrategias propuestas son congruentes con los resultados de aprendizaje que se pretende alcanzar.",
+            "El programa contempla oportunidades para el aprendizaje autónomo, colaborativo o situado de acuerdo con la naturaleza de la asignatura.",
 
-        "Las estrategias promueven la participación activa del estudiante en su proceso de aprendizaje.",
+            "Las estrategias propuestas son factibles considerando tiempo, modalidad, recursos y características del curso.",
 
-        "Cuando resulta pertinente, las estrategias permiten analizar, resolver o intervenir problemas y situaciones del contexto.",
+            "Las evidencias permiten demostrar de manera observable el logro de los resultados de aprendizaje.",
 
-        "El programa contempla oportunidades para el aprendizaje autónomo, colaborativo o situado de acuerdo con la naturaleza de la asignatura.",
+            "Existe correspondencia entre lo que se espera que el estudiante aprenda y el producto, actuación o desempeño solicitado.",
 
-        "Las estrategias propuestas son factibles considerando tiempo, modalidad, recursos y características del curso.",
+            "Las evidencias permiten valorar progresivamente el aprendizaje y no únicamente el resultado final.",
 
+            "Se especifican características o criterios claros para determinar la calidad esperada de las evidencias.",
 
-        "Las evidencias permiten demostrar de manera observable el logro de los resultados de aprendizaje.",
+            "Los criterios de desempeño son congruentes con el resultado de aprendizaje que se pretende valorar.",
 
-        "Existe correspondencia entre lo que se espera que el estudiante aprenda y el producto, actuación o desempeño solicitado.",
+            "Los procedimientos e instrumentos de evaluación permiten valorar los resultados de aprendizaje establecidos.",
 
-        "Las evidencias permiten valorar progresivamente el aprendizaje y no únicamente el resultado final.",
+            "Existe congruencia entre estrategias de aprendizaje, evidencias, criterios e instrumentos de evaluación.",
 
+            "El programa contempla momentos de evaluación diagnóstica, formativa y sumativa cuando son pertinentes.",
 
-        "Se especifican características o criterios claros para determinar la calidad esperada de las evidencias.",
+            "Se especifica de manera clara cómo se integra la evaluación y la ponderación de las evidencias.",
 
-        "Los criterios de desempeño son congruentes con el resultado de aprendizaje que se pretende valorar.",
+            "Cuando resulta pertinente, se incorporan procesos de autoevaluación, coevaluación o heteroevaluación.",
 
+            "Existe una secuencia coherente entre competencias/dominios, resultados de aprendizaje, contenidos, estrategias, evidencias y evaluación.",
 
-        "Los procedimientos e instrumentos de evaluación permiten valorar los resultados de aprendizaje establecidos.",
+            "La carga de trabajo prevista es razonable y consistente con el tiempo y créditos de la unidad de aprendizaje.",
 
-        "Existe congruencia entre estrategias de aprendizaje, evidencias, criterios e instrumentos de evaluación.",
+            "El programa puede implementarse en la modalidad y ambientes de aprendizaje previstos.",
 
-        "El programa contempla momentos de evaluación diagnóstica, formativa y sumativa cuando son pertinentes.",
+            "El programa utiliza terminología consistente a lo largo de sus diferentes apartados.",
 
-        "Se especifica de manera clara cómo se integra la evaluación y la ponderación de las evidencias.",
+            "En conjunto, el programa proporciona al docente información suficiente para orientar la planeación de la asignatura y la elaboración del syllabus."
 
-        "Cuando resulta pertinente, se incorporan procesos de autoevaluación, coevaluación o heteroevaluación.",
+        ];
 
 
-        "Existe una secuencia coherente entre competencias/dominios, resultados de aprendizaje, contenidos, estrategias, evidencias y evaluación.",
 
-        "La carga de trabajo prevista es razonable y consistente con el tiempo y créditos de la unidad de aprendizaje.",
+        /* ==================================================
+           GENERAR CRITERIOS
+        ================================================== */
 
-        "El programa puede implementarse en la modalidad y ambientes de aprendizaje previstos.",
+        document
+            .querySelectorAll(
+                ".criteria-placeholder"
+            )
+            .forEach(
+                function (placeholder) {
 
-        "El programa utiliza terminología consistente a lo largo de sus diferentes apartados.",
 
-        "En conjunto, el programa proporciona al docente información suficiente para orientar la planeación de la asignatura y la elaboración del syllabus."
+                    const start =
+                        parseInt(
+                            placeholder.dataset.start
+                        );
 
-    ];
 
+                    const end =
+                        parseInt(
+                            placeholder.dataset.end
+                        );
 
 
-    /* ======================================================
-       GENERAR CRITERIOS
-    ====================================================== */
+                    for (
+                        let i = start;
+                        i <= end;
+                        i++
+                    ) {
 
-    document
-        .querySelectorAll(".criteria-placeholder")
-        .forEach(function (placeholder) {
 
-            const start =
-                parseInt(
-                    placeholder.dataset.start
-                );
+                        const criterion =
+                            document.createElement(
+                                "div"
+                            );
 
-            const end =
-                parseInt(
-                    placeholder.dataset.end
-                );
 
+                        criterion.className =
+                            "criterion";
 
-            for (
-                let i = start;
-                i <= end;
-                i++
-            ) {
 
-                const criterion =
-                    document.createElement("div");
+                        criterion.innerHTML = `
 
-                criterion.className =
-                    "criterion";
+                            <div class="criterion-text">
 
+                                <span class="criterion-number">
+                                    ${i}
+                                </span>
 
-                criterion.innerHTML = `
+                                ${criteria[i - 1]}
 
-                    <div class="criterion-text">
+                            </div>
 
-                        <span class="criterion-number">
-                            ${i}
-                        </span>
 
-                        ${criteria[i - 1]}
+                            <div class="criterion-controls">
 
-                    </div>
+                                <select
+                                    class="criterion-rating"
+                                    aria-label="Valoración del criterio ${i}"
+                                >
 
+                                    <option value="">
+                                        Seleccionar valoración
+                                    </option>
 
-                    <div class="criterion-controls">
+                                    <option value="cumple">
+                                        Cumple
+                                    </option>
 
-                        <select
-                            class="criterion-rating"
-                            aria-label="Valoración del criterio ${i}"
-                        >
+                                    <option value="parcial">
+                                        Cumple parcialmente
+                                    </option>
 
-                            <option value="">
-                                Seleccionar valoración
-                            </option>
+                                    <option value="ajuste">
+                                        Requiere ajuste
+                                    </option>
 
-                            <option value="cumple">
-                                Cumple
-                            </option>
+                                    <option value="na">
+                                        No aplica
+                                    </option>
 
-                            <option value="parcial">
-                                Cumple parcialmente
-                            </option>
+                                </select>
 
-                            <option value="ajuste">
-                                Requiere ajuste
-                            </option>
 
-                            <option value="na">
-                                No aplica
-                            </option>
+                                <textarea
+                                    aria-label="Observaciones del criterio ${i}"
+                                    placeholder="Observaciones / aspectos a mejorar"
+                                ></textarea>
 
-                        </select>
+                            </div>
 
+                        `;
 
-                        <textarea
-                            aria-label="Observaciones del criterio ${i}"
-                            placeholder="Observaciones / aspectos a mejorar"
-                        ></textarea>
 
-                    </div>
+                        placeholder.appendChild(
+                            criterion
+                        );
 
-                `;
-
-
-                placeholder.appendChild(
-                    criterion
-                );
-
-            }
-
-        });
-
-
-
-    /* ======================================================
-       ACORDEONES
-    ====================================================== */
-
-    document
-        .querySelectorAll(".check-group-title")
-        .forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    button
-                        .parentElement
-                        .classList
-                        .toggle("closed");
+                    }
 
                 }
             );
 
-        });
+
+
+        /* ==================================================
+           ACORDEONES
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".check-group-title"
+            )
+            .forEach(
+                function (button) {
+
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+
+                            button
+                                .parentElement
+                                .classList
+                                .toggle(
+                                    "closed"
+                                );
+
+                        }
+                    );
+
+                }
+            );
 
 
 
-    /* ======================================================
-       RESULTADOS
-    ====================================================== */
+        /* ==================================================
+           RESULTADOS
+        ================================================== */
 
-    const ratingSelects =
-        document.querySelectorAll(
-            ".criterion-rating"
-        );
-
-
-    const reviewedCount =
-        document.getElementById(
-            "reviewedCount"
-        );
-
-    const cumpleCount =
-        document.getElementById(
-            "cumpleCount"
-        );
-
-    const partialCount =
-        document.getElementById(
-            "partialCount"
-        );
-
-    const adjustCount =
-        document.getElementById(
-            "adjustCount"
-        );
-
-    const naCount =
-        document.getElementById(
-            "naCount"
-        );
-
-    const resultMessage =
-        document.getElementById(
-            "resultMessage"
-        );
+        const ratingSelects =
+            document.querySelectorAll(
+                ".criterion-rating"
+            );
 
 
-    function updateResults() {
+        const reviewedCount =
+            document.getElementById(
+                "reviewedCount"
+            );
 
-        let reviewed = 0;
-        let cumple = 0;
-        let parcial = 0;
-        let ajuste = 0;
-        let na = 0;
+
+        const cumpleCount =
+            document.getElementById(
+                "cumpleCount"
+            );
+
+
+        const partialCount =
+            document.getElementById(
+                "partialCount"
+            );
+
+
+        const adjustCount =
+            document.getElementById(
+                "adjustCount"
+            );
+
+
+        const naCount =
+            document.getElementById(
+                "naCount"
+            );
+
+
+        const resultMessage =
+            document.getElementById(
+                "resultMessage"
+            );
+
+
+        function updateResults() {
+
+
+            let reviewed = 0;
+            let cumple = 0;
+            let parcial = 0;
+            let ajuste = 0;
+            let na = 0;
+
+
+            ratingSelects.forEach(
+                function (select) {
+
+
+                    const value =
+                        select.value;
+
+
+                    if (value !== "") {
+                        reviewed++;
+                    }
+
+
+                    if (value === "cumple") {
+                        cumple++;
+                    }
+
+
+                    if (value === "parcial") {
+                        parcial++;
+                    }
+
+
+                    if (value === "ajuste") {
+                        ajuste++;
+                    }
+
+
+                    if (value === "na") {
+                        na++;
+                    }
+
+                }
+            );
+
+
+            reviewedCount.textContent =
+                reviewed;
+
+
+            cumpleCount.textContent =
+                cumple;
+
+
+            partialCount.textContent =
+                parcial;
+
+
+            adjustCount.textContent =
+                ajuste;
+
+
+            naCount.textContent =
+                na;
+
+
+            if (reviewed === 0) {
+
+
+                resultMessage.textContent =
+                    "Inicia la revisión seleccionando una valoración para cada criterio.";
+
+
+            }
+
+            else if (reviewed < 34) {
+
+
+                resultMessage.textContent =
+                    "Has revisado " +
+                    reviewed +
+                    " de 34 criterios. Completa el instrumento para realizar una valoración integral.";
+
+
+            }
+
+            else if (ajuste > 0) {
+
+
+                resultMessage.textContent =
+                    "Revisión completa. Se identificaron " +
+                    ajuste +
+                    " criterios que requieren ajuste y " +
+                    parcial +
+                    " que cumplen parcialmente. Utiliza las observaciones para establecer prioridades y acuerdos.";
+
+
+            }
+
+            else if (parcial > 0) {
+
+
+                resultMessage.textContent =
+                    "Revisión completa. No se identificaron criterios que requieran ajuste, aunque existen " +
+                    parcial +
+                    " criterios que pueden fortalecerse.";
+
+
+            }
+
+            else {
+
+
+                resultMessage.textContent =
+                    "Revisión completa. Los criterios aplicables fueron valorados como cumplidos. Realiza una lectura colegiada final antes de emitir el dictamen.";
+
+
+            }
+
+        }
 
 
         ratingSelects.forEach(
             function (select) {
 
-                const value =
-                    select.value;
 
-                if (value !== "") {
-                    reviewed++;
-                }
-
-                if (value === "cumple") {
-                    cumple++;
-                }
-
-                if (value === "parcial") {
-                    parcial++;
-                }
-
-                if (value === "ajuste") {
-                    ajuste++;
-                }
-
-                if (value === "na") {
-                    na++;
-                }
-
-            }
-        );
-
-
-        reviewedCount.textContent =
-            reviewed;
-
-        cumpleCount.textContent =
-            cumple;
-
-        partialCount.textContent =
-            parcial;
-
-        adjustCount.textContent =
-            ajuste;
-
-        naCount.textContent =
-            na;
-
-
-        if (reviewed === 0) {
-
-            resultMessage.textContent =
-                "Inicia la revisión seleccionando una valoración para cada criterio.";
-
-        }
-
-        else if (reviewed < 34) {
-
-            resultMessage.textContent =
-                "Has revisado " +
-                reviewed +
-                " de 34 criterios. Completa el instrumento para realizar una valoración integral.";
-
-        }
-
-        else if (ajuste > 0) {
-
-            resultMessage.textContent =
-                "Revisión completa. Se identificaron " +
-                ajuste +
-                " criterios que requieren ajuste y " +
-                parcial +
-                " que cumplen parcialmente. Utiliza las observaciones para establecer prioridades y acuerdos.";
-
-        }
-
-        else if (parcial > 0) {
-
-            resultMessage.textContent =
-                "Revisión completa. No se identificaron criterios que requieran ajuste, aunque existen " +
-                parcial +
-                " criterios que pueden fortalecerse.";
-
-        }
-
-        else {
-
-            resultMessage.textContent =
-                "Revisión completa. Los criterios aplicables fueron valorados como cumplidos. Realiza una lectura colegiada final antes de emitir el dictamen.";
-
-        }
-
-    }
-
-
-    ratingSelects.forEach(
-        function (select) {
-
-            select.addEventListener(
-                "change",
-                updateResults
-            );
-
-        }
-    );
-
-
-
-    /* ======================================================
-       NAVEGACIÓN LATERAL ACTIVA
-    ====================================================== */
-
-    const sections =
-        document.querySelectorAll(
-            ".module-content section[id]"
-        );
-
-    const navLinks =
-        document.querySelectorAll(
-            ".side-nav a[href^='#']"
-        );
-
-
-    function updateActiveSection() {
-
-        let current = "";
-
-        sections.forEach(
-            function (section) {
-
-                const rect =
-                    section.getBoundingClientRect();
-
-                if (rect.top <= 190) {
-
-                    current =
-                        section.getAttribute(
-                            "id"
-                        );
-
-                }
-
-            }
-        );
-
-
-        navLinks.forEach(
-            function (link) {
-
-                link.classList.remove(
-                    "active-section"
+                select.addEventListener(
+                    "change",
+                    updateResults
                 );
 
-                if (
-                    link.getAttribute("href") ===
-                    "#" + current
-                ) {
+            }
+        );
 
-                    link.classList.add(
+
+
+        /* ==================================================
+           NAVEGACIÓN LATERAL ACTIVA
+        ================================================== */
+
+        const sections =
+            document.querySelectorAll(
+                ".module-content section[id]"
+            );
+
+
+        const navLinks =
+            document.querySelectorAll(
+                ".side-nav a[href^='#']"
+            );
+
+
+        function updateActiveSection() {
+
+
+            let current = "";
+
+
+            sections.forEach(
+                function (section) {
+
+
+                    const rect =
+                        section.getBoundingClientRect();
+
+
+                    if (rect.top <= 190) {
+
+
+                        current =
+                            section.getAttribute(
+                                "id"
+                            );
+
+                    }
+
+                }
+            );
+
+
+            navLinks.forEach(
+                function (link) {
+
+
+                    link.classList.remove(
                         "active-section"
                     );
 
-                }
 
+                    if (
+                        link.getAttribute(
+                            "href"
+                        ) ===
+                        "#" + current
+                    ) {
+
+
+                        link.classList.add(
+                            "active-section"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateActiveSection,
+            {
+                passive: true
             }
         );
 
+
+        updateActiveSection();
+
+
     }
-
-
-    window.addEventListener(
-        "scroll",
-        updateActiveSection,
-        { passive: true }
-    );
-
-
-    updateActiveSection();
-
-
-});
+);
 
 </script>
 
