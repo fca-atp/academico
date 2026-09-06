@@ -21,22 +21,21 @@
 
 /* ==========================================================
    IDENTIDAD VISUAL
-   Inspirada en morado, amarillo y blanco
 ========================================================== */
 
 :root {
 
-    --morado: #6f2c91;
-    --morado-oscuro: #4d1768;
-    --morado-profundo: #38104d;
-    --morado-medio: #8250a0;
+    --morado: #71358f;
+    --morado-oscuro: #52216b;
+    --morado-profundo: #3b154d;
+    --morado-medio: #8a58a4;
 
-    --lavanda: #f4eef8;
-    --lavanda-2: #ebe0f2;
+    --lavanda: #f5f0f8;
+    --lavanda-2: #e9def0;
 
-    --amarillo: #f5b51b;
-    --amarillo-claro: #fff3cf;
-    --amarillo-palido: #fff9e9;
+    --amarillo: #f6b719;
+    --amarillo-claro: #fff2c8;
+    --amarillo-palido: #fff9e8;
 
     --blanco: #ffffff;
 
@@ -50,7 +49,6 @@
 
     --sombra:
         0 10px 30px rgba(67,35,80,.09);
-
 }
 
 
@@ -69,24 +67,15 @@ html {
 }
 
 body {
-
     font-family: "Inter", Arial, sans-serif;
-
     color: var(--texto);
     background: var(--blanco);
-
     line-height: 1.65;
-
 }
 
 a {
     text-decoration: none;
     color: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -97,41 +86,30 @@ a {
 .navbar {
 
     position: sticky;
-
     top: 0;
-
     z-index: 1200;
 
-    background:
-        rgba(255,255,255,.97);
+    background: rgba(255,255,255,.97);
 
-    border-bottom:
-        1px solid var(--gris-borde);
+    border-bottom: 1px solid var(--gris-borde);
 
-    backdrop-filter:
-        blur(12px);
-
+    backdrop-filter: blur(12px);
 }
 
 .nav-container {
 
     max-width: 1320px;
-
-    min-height: 72px;
+    min-height: 76px;
 
     margin: auto;
 
-    padding:
-        0 28px;
+    padding: 0 28px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
-
 }
 
 
@@ -140,105 +118,37 @@ a {
 .brand {
 
     display: flex;
-
     align-items: center;
 
     gap: 13px;
 
     white-space: nowrap;
-
-}
-
-.brand-symbol {
-
-    width: 45px;
-    height: 45px;
-
-    position: relative;
-
-    flex:
-        0 0 45px;
-
 }
 
 
-/* símbolo geométrico inspirado en la gama institucional */
+/* LOGOTIPO REAL FCA */
 
-.brand-symbol .purple-v {
+.brand-logo {
 
-    position: absolute;
+    width: 50px;
+    height: 50px;
 
-    width: 14px;
-    height: 39px;
+    flex: 0 0 50px;
 
-    left: 16px;
-    top: 1px;
+    object-fit: contain;
 
-    background:
-        var(--morado);
-
+    border-radius: 9px;
 }
 
-.brand-symbol .purple-h {
-
-    position: absolute;
-
-    width: 39px;
-    height: 14px;
-
-    left: 4px;
-    top: 14px;
-
-    background:
-        var(--morado);
-
-}
-
-.brand-symbol .yellow-v {
-
-    position: absolute;
-
-    width: 10px;
-    height: 28px;
-
-    left: 18px;
-    top: 15px;
-
-    background:
-        var(--amarillo);
-
-    z-index: 2;
-
-}
-
-.brand-symbol .yellow-h {
-
-    position: absolute;
-
-    width: 29px;
-    height: 10px;
-
-    left: 2px;
-    top: 15px;
-
-    background:
-        var(--amarillo);
-
-    z-index: 3;
-
-}
 
 .brand-text {
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
     font-size: 16px;
-
     font-weight: 800;
 
     line-height: 1.15;
-
 }
 
 .brand-text small {
@@ -250,66 +160,49 @@ a {
     color: var(--gris);
 
     font-size: 9px;
-
     font-weight: 500;
 
     letter-spacing: .15px;
-
 }
 
 
-/* navegación */
+/* NAVEGACIÓN */
 
 .nav-links {
 
     display: flex;
-
     align-items: center;
-
     justify-content: flex-end;
 
     gap: 5px;
 
     flex-wrap: wrap;
-
 }
 
 .nav-links a {
 
-    padding:
-        8px 11px;
+    padding: 8px 11px;
 
     border-radius: 9px;
 
     color: #514b59;
 
     font-size: 12px;
-
     font-weight: 700;
 
-    transition:
-        .2s ease;
-
+    transition: .2s ease;
 }
 
 .nav-links a:hover {
 
-    background:
-        var(--lavanda);
-
-    color:
-        var(--morado);
-
+    background: var(--lavanda);
+    color: var(--morado);
 }
 
 .nav-links a.active {
 
-    background:
-        var(--amarillo);
-
-    color:
-        var(--morado-profundo);
-
+    background: var(--amarillo);
+    color: var(--morado-profundo);
 }
 
 
@@ -320,10 +213,14 @@ a {
 .hero {
 
     position: relative;
-
     overflow: hidden;
 
     background:
+        radial-gradient(
+            circle at 86% 15%,
+            rgba(246,183,25,.13),
+            transparent 22%
+        ),
         linear-gradient(
             120deg,
             #ffffff 0%,
@@ -331,9 +228,7 @@ a {
             #faf6fc 100%
         );
 
-    border-bottom:
-        1px solid var(--gris-borde);
-
+    border-bottom: 1px solid var(--gris-borde);
 }
 
 .hero::after {
@@ -350,41 +245,84 @@ a {
 
     border-radius: 50%;
 
-    background:
-        rgba(111,44,145,.055);
-
+    background: rgba(113,53,143,.055);
 }
 
 .hero-content {
 
     position: relative;
-
     z-index: 2;
 
     max-width: 1130px;
 
     margin: auto;
 
-    padding:
-        72px 24px 68px;
-
+    padding: 68px 24px 65px;
 }
 
 
-/* decoración superior */
+/* IDENTIFICACIÓN INSTITUCIONAL */
+
+.hero-institution {
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 25px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+}
+
+.hero-institution img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+}
+
+.hero-institution-text {
+
+    line-height: 1.35;
+}
+
+.hero-institution-text span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: .4px;
+}
+
+
+/* DECORACIÓN */
 
 .hero-decoration {
 
     position: absolute;
 
-    right: 40px;
-    top: 40px;
+    right: 45px;
+    top: 50px;
 
     width: 130px;
     height: 130px;
 
-    opacity: .9;
-
+    opacity: .8;
 }
 
 .deco-purple {
@@ -397,12 +335,9 @@ a {
     right: 0;
     top: 0;
 
-    background:
-        var(--morado);
+    background: var(--morado);
 
-    border-radius:
-        12px 0 12px 12px;
-
+    border-radius: 12px 0 12px 12px;
 }
 
 .deco-yellow {
@@ -415,32 +350,25 @@ a {
     right: 38px;
     top: 38px;
 
-    background:
-        var(--amarillo);
+    background: var(--amarillo);
 
-    border-radius:
-        0 14px 14px 14px;
-
+    border-radius: 0 14px 14px 14px;
 }
 
 
 .module-label {
 
     display: inline-flex;
-
     align-items: center;
 
     gap: 8px;
 
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 
-    color:
-        var(--morado);
+    color: var(--morado);
 
     font-size: 14px;
-
     font-weight: 800;
-
 }
 
 .module-label::before {
@@ -452,10 +380,9 @@ a {
 
     border-radius: 10px;
 
-    background:
-        var(--amarillo);
-
+    background: var(--amarillo);
 }
+
 
 .hero h1 {
 
@@ -463,37 +390,29 @@ a {
 
     margin-bottom: 15px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-family:
-        "Playfair Display", serif;
+    font-family: "Playfair Display", serif;
 
-    font-size:
-        clamp(42px,6vw,67px);
-
+    font-size: clamp(42px,6vw,67px);
     font-weight: 800;
 
     line-height: 1.05;
-
 }
 
 .hero p {
 
     max-width: 760px;
 
-    color:
-        var(--texto-secundario);
+    color: var(--texto-secundario);
 
     font-size: 18px;
-
     line-height: 1.65;
-
 }
 
 
 /* ==========================================================
-   DISEÑO GENERAL DEL MÓDULO
+   ESTRUCTURA GENERAL
 ========================================================== */
 
 .module-layout {
@@ -502,16 +421,13 @@ a {
 
     margin: auto;
 
-    padding:
-        0 28px;
+    padding: 0 28px;
 
     display: grid;
 
-    grid-template-columns:
-        250px minmax(0, 1fr);
+    grid-template-columns: 250px minmax(0, 1fr);
 
     gap: 42px;
-
 }
 
 
@@ -520,45 +436,36 @@ a {
 ========================================================== */
 
 .side-nav {
-
     position: relative;
-
 }
 
 .side-nav-inner {
 
     position: sticky;
-
-    top: 94px;
+    top: 98px;
 
     margin-top: 42px;
     margin-bottom: 45px;
 
     overflow: hidden;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
     border-radius: 17px;
 
-    background:
-        var(--blanco);
+    background: var(--blanco);
 
-    box-shadow:
-        var(--sombra);
-
+    box-shadow: var(--sombra);
 }
 
 .side-nav-title {
 
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 
-    padding:
-        17px 17px;
+    padding: 17px;
 
     background:
         linear-gradient(
@@ -567,94 +474,66 @@ a {
             var(--morado-oscuro)
         );
 
-    color:
-        white;
+    color: white;
 
     font-size: 12px;
-
     font-weight: 800;
 
     letter-spacing: .4px;
 
     text-transform: uppercase;
-
 }
 
 .side-nav-title i {
-
-    color:
-        var(--amarillo);
-
+    color: var(--amarillo);
 }
-
-
-/* enlaces */
 
 .side-nav-links {
 
-    padding:
-        8px 8px 12px;
-
+    padding: 8px 8px 12px;
 }
 
 .side-nav a {
 
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 
-    padding:
-        10px 11px;
+    padding: 10px 11px;
 
-    margin:
-        2px 0;
+    margin: 2px 0;
 
     border-radius: 9px;
 
-    color:
-        #625d68;
+    color: #625d68;
 
     font-size: 11.5px;
-
     font-weight: 600;
 
     line-height: 1.35;
 
-    transition:
-        .18s ease;
-
+    transition: .18s ease;
 }
 
 .side-nav a i {
 
     width: 18px;
 
-    flex:
-        0 0 18px;
+    flex: 0 0 18px;
 
     text-align: center;
 
-    color:
-        var(--morado);
+    color: var(--morado);
 
     font-size: 13px;
-
 }
 
 .side-nav a:hover {
 
-    background:
-        var(--lavanda);
-
-    color:
-        var(--morado-oscuro);
-
+    background: var(--lavanda);
+    color: var(--morado-oscuro);
 }
-
-
-/* sección visible */
 
 .side-nav a.active-section {
 
@@ -665,82 +544,9 @@ a {
             #fff9e9
         );
 
-    color:
-        var(--morado-profundo);
+    color: var(--morado-profundo);
 
     font-weight: 800;
-
-}
-
-.side-nav a.active-section i {
-
-    color:
-        var(--morado);
-
-}
-
-
-/* referencia rápida */
-
-.sidebar-note {
-
-    margin:
-        8px 12px 15px;
-
-    padding:
-        18px;
-
-    border-radius:
-        12px;
-
-    background:
-        var(--lavanda);
-
-}
-
-.sidebar-note blockquote {
-
-    color:
-        var(--morado-oscuro);
-
-    font-family:
-        "Playfair Display", serif;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    line-height: 1.4;
-
-}
-
-.sidebar-note-line {
-
-    width: 34px;
-    height: 4px;
-
-    margin:
-        13px 0 9px;
-
-    border-radius:
-        3px;
-
-    background:
-        var(--amarillo);
-
-}
-
-.sidebar-note small {
-
-    color:
-        var(--gris);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
 }
 
 
@@ -749,56 +555,39 @@ a {
 ========================================================== */
 
 .module-content {
-
     min-width: 0;
-
 }
 
 .section {
 
-    padding:
-        67px 0;
+    padding: 67px 0;
 
-    scroll-margin-top:
-        95px;
+    scroll-margin-top: 95px;
 
-    border-bottom:
-        1px solid #eeeaf0;
-
+    border-bottom: 1px solid #eeeaf0;
 }
 
 .section:last-child {
-
     border-bottom: none;
-
 }
 
 .section-label {
 
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 
-    margin-bottom:
-        7px;
+    margin-bottom: 7px;
 
-    color:
-        #716b77;
+    color: #716b77;
 
-    font-size:
-        10px;
+    font-size: 10px;
+    font-weight: 800;
 
-    font-weight:
-        800;
+    letter-spacing: 2px;
 
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
+    text-transform: uppercase;
 }
 
 .section-label::before {
@@ -810,62 +599,43 @@ a {
 
     border-radius: 10px;
 
-    background:
-        var(--amarillo);
-
+    background: var(--amarillo);
 }
 
 .section h2 {
 
     max-width: 830px;
 
-    margin-bottom:
-        9px;
+    margin-bottom: 9px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        clamp(27px,3vw,36px);
+    font-size: clamp(27px,3vw,36px);
 
-    line-height:
-        1.2;
-
+    line-height: 1.2;
 }
 
 .section-subtitle {
 
-    max-width:
-        830px;
+    max-width: 830px;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
-    color:
-        #4d4853;
+    color: #4d4853;
 
-    font-size:
-        18px;
-
-    font-weight:
-        500;
-
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .section-intro {
 
-    max-width:
-        850px;
+    max-width: 850px;
 
-    margin-bottom:
-        29px;
+    margin-bottom: 29px;
 
-    color:
-        var(--texto-secundario);
+    color: var(--texto-secundario);
 
-    font-size:
-        14.5px;
-
+    font-size: 14.5px;
 }
 
 
@@ -875,58 +645,41 @@ a {
 
 .intro-text {
 
-    max-width:
-        860px;
-
+    max-width: 860px;
 }
 
 .intro-text p {
 
-    margin-bottom:
-        16px;
+    margin-bottom: 16px;
 
-    color:
-        var(--texto-secundario);
+    color: var(--texto-secundario);
 
-    font-size:
-        14.5px;
-
+    font-size: 14.5px;
 }
 
 .intro-text strong {
 
-    color:
-        var(--morado-oscuro);
-
+    color: var(--morado-oscuro);
 }
 
-
-/* bloque 2024 */
 
 .year-box {
 
     display: grid;
 
-    grid-template-columns:
-        60px 1fr;
+    grid-template-columns: 60px 1fr;
 
-    gap:
-        20px;
+    gap: 20px;
 
-    align-items:
-        center;
+    align-items: center;
 
-    margin-top:
-        28px;
+    margin-top: 28px;
 
-    padding:
-        24px 27px;
+    padding: 24px 27px;
 
-    border-left:
-        5px solid var(--amarillo);
+    border-left: 5px solid var(--amarillo);
 
-    border-radius:
-        0 16px 16px 0;
+    border-radius: 0 16px 16px 0;
 
     background:
         linear-gradient(
@@ -934,61 +687,40 @@ a {
             var(--amarillo-palido),
             #fffdfa
         );
-
 }
 
 .year-icon {
 
-    width:
-        55px;
+    width: 55px;
+    height: 55px;
 
-    height:
-        55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    border-radius: 14px;
 
-    align-items:
-        center;
+    background: var(--amarillo);
 
-    justify-content:
-        center;
+    color: var(--morado-profundo);
 
-    border-radius:
-        14px;
-
-    background:
-        var(--amarillo);
-
-    color:
-        var(--morado-profundo);
-
-    font-size:
-        22px;
-
+    font-size: 22px;
 }
 
 .year-box h3 {
 
-    margin-bottom:
-        4px;
+    margin-bottom: 4px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        17px;
-
+    font-size: 17px;
 }
 
 .year-box p {
 
-    color:
-        var(--texto-secundario);
+    color: var(--texto-secundario);
 
-    font-size:
-        13.5px;
-
+    font-size: 13.5px;
 }
 
 
@@ -998,44 +730,22 @@ a {
 
 .model-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        18px;
-
+    gap: 18px;
 }
 
 .model-card {
 
-    position:
-        relative;
+    min-height: 235px;
 
-    min-height:
-        235px;
+    padding: 26px 24px;
 
-    padding:
-        26px 24px;
+    border: 1px solid var(--gris-borde);
 
-    overflow:
-        hidden;
-
-    border:
-        1px solid var(--gris-borde);
-
-    border-radius:
-        17px;
-
-    background:
-        var(--blanco);
-
-}
-
-.model-card:nth-child(1),
-.model-card:nth-child(3) {
+    border-radius: 17px;
 
     background:
         linear-gradient(
@@ -1043,7 +753,6 @@ a {
             #ffffff,
             var(--lavanda)
         );
-
 }
 
 .model-card:nth-child(2) {
@@ -1054,257 +763,174 @@ a {
             #ffffff,
             var(--amarillo-claro)
         );
-
 }
 
 .model-icon {
 
-    width:
-        47px;
+    width: 47px;
+    height: 47px;
 
-    height:
-        47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    margin-bottom: 16px;
 
-    align-items:
-        center;
+    border-radius: 13px;
 
-    justify-content:
-        center;
+    background: rgba(111,44,145,.09);
 
-    margin-bottom:
-        16px;
+    color: var(--morado);
 
-    border-radius:
-        13px;
-
-    background:
-        rgba(111,44,145,.09);
-
-    color:
-        var(--morado);
-
-    font-size:
-        21px;
-
+    font-size: 21px;
 }
 
-.model-card:nth-child(2)
-.model-icon {
+.model-card:nth-child(2) .model-icon {
 
-    background:
-        rgba(245,181,27,.18);
+    background: rgba(245,181,27,.18);
 
-    color:
-        #bb7f00;
-
+    color: #bb7f00;
 }
 
 .model-card h3 {
 
-    margin-bottom:
-        4px;
+    margin-bottom: 4px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        17px;
-
+    font-size: 17px;
 }
 
 .model-question {
 
-    margin-bottom:
-        11px;
+    margin-bottom: 11px;
 
-    color:
-        #47414d;
+    color: #47414d;
 
-    font-size:
-        13px;
-
-    font-weight:
-        700;
-
+    font-size: 13px;
+    font-weight: 700;
 }
 
 .model-card p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 
 /* ==========================================================
-   CAJA DE IDEA CLAVE
+   CAJA CLAVE
 ========================================================== */
 
 .key-box {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        55px 1fr;
+    grid-template-columns: 55px 1fr;
 
-    gap:
-        18px;
+    gap: 18px;
 
-    align-items:
-        center;
+    align-items: center;
 
-    margin-top:
-        25px;
+    margin-top: 25px;
 
-    padding:
-        22px 25px;
+    padding: 22px 25px;
 
-    border-left:
-        5px solid var(--amarillo);
+    border-left: 5px solid var(--amarillo);
 
-    border-radius:
-        0 15px 15px 0;
+    border-radius: 0 15px 15px 0;
 
-    background:
-        var(--amarillo-palido);
-
+    background: var(--amarillo-palido);
 }
 
 .key-icon {
 
-    color:
-        var(--amarillo);
+    color: var(--amarillo);
 
-    font-size:
-        35px;
+    font-size: 35px;
 
-    text-align:
-        center;
-
+    text-align: center;
 }
 
 .key-box h3 {
 
-    margin-bottom:
-        4px;
+    margin-bottom: 4px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        15px;
-
+    font-size: 15px;
 }
 
 .key-box p {
 
-    color:
-        var(--texto-secundario);
+    color: var(--texto-secundario);
 
-    font-size:
-        13.5px;
-
+    font-size: 13.5px;
 }
 
 
 /* ==========================================================
-   GLOCAL
+   TARJETAS DE INFORMACIÓN
 ========================================================== */
 
 .two-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
 
-    gap:
-        19px;
-
+    gap: 19px;
 }
 
 .info-card {
 
-    padding:
-        27px;
+    padding: 27px;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    border-radius:
-        17px;
+    border-radius: 17px;
 
-    background:
-        white;
+    background: white;
 
     box-shadow:
         0 4px 16px rgba(68,47,75,.04);
-
 }
 
 .info-card-icon {
 
-    width:
-        48px;
+    width: 48px;
+    height: 48px;
 
-    height:
-        48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    margin-bottom: 15px;
 
-    align-items:
-        center;
+    border-radius: 13px;
 
-    justify-content:
-        center;
+    background: var(--lavanda);
 
-    margin-bottom:
-        15px;
+    color: var(--morado);
 
-    border-radius:
-        13px;
-
-    background:
-        var(--lavanda);
-
-    color:
-        var(--morado);
-
-    font-size:
-        20px;
-
+    font-size: 20px;
 }
 
 .info-card h3 {
 
-    margin-bottom:
-        8px;
+    margin-bottom: 8px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        17px;
-
+    font-size: 17px;
 }
 
 .info-card p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        13.5px;
-
+    font-size: 13.5px;
 }
 
 
@@ -1314,226 +940,151 @@ a {
 
 .sas-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        18px;
-
+    gap: 18px;
 }
 
 .sas-card {
 
-    padding:
-        26px;
+    padding: 26px;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    border-top:
-        5px solid var(--morado);
+    border-top: 5px solid var(--morado);
 
-    border-radius:
-        15px;
+    border-radius: 15px;
 
-    background:
-        white;
-
+    background: white;
 }
 
 .sas-card:nth-child(2) {
-
-    border-top-color:
-        var(--amarillo);
-
+    border-top-color: var(--amarillo);
 }
 
 .sas-card:nth-child(3) {
-
-    border-top-color:
-        var(--morado-medio);
-
+    border-top-color: var(--morado-medio);
 }
 
 .sas-word {
 
-    margin-bottom:
-        5px;
+    margin-bottom: 5px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        25px;
-
-    font-weight:
-        800;
-
+    font-size: 25px;
+    font-weight: 800;
 }
 
 .sas-question {
 
-    margin-bottom:
-        10px;
+    margin-bottom: 10px;
 
-    color:
-        #4f4955;
+    color: #4f4955;
 
-    font-size:
-        13px;
-
-    font-weight:
-        700;
-
+    font-size: 13px;
+    font-weight: 700;
 }
 
 .sas-card p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 .example-small {
 
-    margin-top:
-        15px;
+    margin-top: 15px;
 
-    padding-top:
-        13px;
+    padding-top: 13px;
 
-    border-top:
-        1px solid #eee;
+    border-top: 1px solid #eee;
 
-    color:
-        #56505c;
+    color: #56505c;
 
-    font-size:
-        12.5px;
-
+    font-size: 12.5px;
 }
 
 
 /* ==========================================================
-   TARJETAS PRINCIPIOS
+   TARJETAS
 ========================================================== */
 
 .cards {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
 
-    gap:
-        17px;
-
+    gap: 17px;
 }
 
 .card {
 
-    padding:
-        25px;
+    padding: 25px;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    border-radius:
-        16px;
+    border-radius: 16px;
 
-    background:
-        white;
+    background: white;
 
-    transition:
-        .2s ease;
-
+    transition: .2s ease;
 }
 
 .card:hover {
 
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
-    box-shadow:
-        var(--sombra);
-
+    box-shadow: var(--sombra);
 }
 
 .card-icon {
 
-    width:
-        44px;
+    width: 44px;
+    height: 44px;
 
-    height:
-        44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    margin-bottom: 14px;
 
-    align-items:
-        center;
+    border-radius: 12px;
 
-    justify-content:
-        center;
+    background: var(--lavanda);
 
-    margin-bottom:
-        14px;
-
-    border-radius:
-        12px;
-
-    background:
-        var(--lavanda);
-
-    color:
-        var(--morado);
-
+    color: var(--morado);
 }
 
 .card h3 {
 
-    margin-bottom:
-        7px;
+    margin-bottom: 7px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        16px;
-
+    font-size: 16px;
 }
 
 .card p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 .card .practice {
 
-    margin-top:
-        13px;
+    margin-top: 13px;
 
-    padding-top:
-        11px;
+    padding-top: 11px;
 
-    border-top:
-        1px solid #eee;
+    border-top: 1px solid #eee;
 
-    color:
-        #514b57;
-
+    color: #514b57;
 }
 
 
@@ -1543,110 +1094,71 @@ a {
 
 .ase-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        18px;
-
+    gap: 18px;
 }
 
 .ase-card {
 
-    padding:
-        26px 22px;
+    padding: 26px 22px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    border-radius:
-        17px;
+    border-radius: 17px;
 
-    background:
-        white;
-
+    background: white;
 }
 
 .ase-circle {
 
-    width:
-        70px;
+    width: 70px;
+    height: 70px;
 
-    height:
-        70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    margin: 0 auto 15px;
 
-    align-items:
-        center;
+    border-radius: 50%;
 
-    justify-content:
-        center;
+    background: var(--morado);
 
-    margin:
-        0 auto 15px;
+    color: white;
 
-    border-radius:
-        50%;
-
-    background:
-        var(--morado);
-
-    color:
-        white;
-
-    font-size:
-        14px;
-
-    font-weight:
-        800;
-
+    font-size: 14px;
+    font-weight: 800;
 }
 
-.ase-card:nth-child(2)
-.ase-circle {
+.ase-card:nth-child(2) .ase-circle {
 
-    background:
-        var(--amarillo);
+    background: var(--amarillo);
 
-    color:
-        var(--morado-profundo);
-
+    color: var(--morado-profundo);
 }
 
-.ase-card:nth-child(3)
-.ase-circle {
+.ase-card:nth-child(3) .ase-circle {
 
-    background:
-        var(--morado-medio);
-
+    background: var(--morado-medio);
 }
 
 .ase-card h3 {
 
-    margin-bottom:
-        7px;
+    margin-bottom: 7px;
 
-    color:
-        var(--morado-oscuro);
-
+    color: var(--morado-oscuro);
 }
 
 .ase-card p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 
@@ -1656,109 +1168,73 @@ a {
 
 .tags {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-wrap:
-        wrap;
+    flex-wrap: wrap;
 
-    gap:
-        9px;
+    gap: 9px;
 
-    margin:
-        22px 0 28px;
-
+    margin: 22px 0 28px;
 }
 
 .tag {
 
-    padding:
-        9px 14px;
+    padding: 9px 14px;
 
-    border:
-        1px solid var(--lavanda-2);
+    border: 1px solid var(--lavanda-2);
 
-    border-radius:
-        30px;
+    border-radius: 30px;
 
-    background:
-        var(--lavanda);
+    background: var(--lavanda);
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        12px;
-
-    font-weight:
-        700;
-
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .compare-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
 
-    gap:
-        18px;
-
+    gap: 18px;
 }
 
 .compare-card {
 
-    padding:
-        25px;
+    padding: 25px;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    border-radius:
-        16px;
+    border-radius: 16px;
 
-    background:
-        white;
-
+    background: white;
 }
 
 .compare-card.bad {
-
-    border-top:
-        5px solid #aaa;
-
+    border-top: 5px solid #aaa;
 }
 
 .compare-card.good {
-
-    border-top:
-        5px solid var(--amarillo);
-
+    border-top: 5px solid var(--amarillo);
 }
 
 .compare-card h3 {
 
-    margin-bottom:
-        10px;
+    margin-bottom: 10px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        16px;
-
+    font-size: 16px;
 }
 
 .compare-card p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 
@@ -1768,74 +1244,54 @@ a {
 
 .environment-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns: repeat(4,1fr);
 
-    gap:
-        13px;
-
+    gap: 13px;
 }
 
 .environment-item {
 
-    padding:
-        22px 12px;
+    padding: 22px 12px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    border-radius:
-        15px;
+    border-radius: 15px;
 
-    background:
-        white;
-
+    background: white;
 }
 
 .environment-item i {
 
-    margin-bottom:
-        10px;
+    margin-bottom: 10px;
 
-    color:
-        var(--morado);
+    color: var(--morado);
 
-    font-size:
-        22px;
-
+    font-size: 22px;
 }
 
 .environment-item strong {
 
-    display:
-        block;
+    display: block;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        12px;
-
+    font-size: 12px;
 }
 
 
 /* ==========================================================
-   APLICACIÓN DOCENTE
+   APLICACIÓN
 ========================================================== */
 
 .case-box {
 
-    padding:
-        30px;
+    padding: 30px;
 
-    border-radius:
-        20px;
+    border-radius: 20px;
 
     background:
         linear-gradient(
@@ -1844,87 +1300,63 @@ a {
             var(--morado)
         );
 
-    color:
-        white;
-
+    color: white;
 }
 
 .case-box > h3 {
 
-    margin-bottom:
-        7px;
+    margin-bottom: 7px;
 
-    font-size:
-        23px;
-
+    font-size: 23px;
 }
 
 .case-intro {
 
-    margin-bottom:
-        22px;
+    margin-bottom: 22px;
 
-    color:
-        rgba(255,255,255,.78);
+    color: rgba(255,255,255,.78);
 
-    font-size:
-        13.5px;
-
+    font-size: 13.5px;
 }
 
 .case-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
 
-    gap:
-        12px;
-
+    gap: 12px;
 }
 
 .case-item {
 
-    padding:
-        17px;
+    padding: 17px;
 
     border:
         1px solid rgba(255,255,255,.14);
 
-    border-radius:
-        13px;
+    border-radius: 13px;
 
     background:
         rgba(255,255,255,.08);
-
 }
 
 .case-item strong {
 
-    display:
-        block;
+    display: block;
 
-    margin-bottom:
-        4px;
+    margin-bottom: 4px;
 
-    color:
-        var(--amarillo);
+    color: var(--amarillo);
 
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 .case-item p {
 
-    color:
-        rgba(255,255,255,.83);
+    color: rgba(255,255,255,.83);
 
-    font-size:
-        12.5px;
-
+    font-size: 12.5px;
 }
 
 
@@ -1934,40 +1366,27 @@ a {
 
 .summary-grid {
 
-    display:
-        grid;
+    display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap:
-        11px;
-
+    gap: 11px;
 }
 
 .summary-item {
 
-    padding:
-        14px 15px;
+    padding: 14px 15px;
 
-    border-left:
-        4px solid var(--amarillo);
+    border-left: 4px solid var(--amarillo);
 
-    border-radius:
-        8px;
+    border-radius: 8px;
 
-    background:
-        var(--lavanda);
+    background: var(--lavanda);
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        12px;
-
-    font-weight:
-        700;
-
+    font-size: 12px;
+    font-weight: 700;
 }
 
 
@@ -1977,87 +1396,56 @@ a {
 
 .resource {
 
-    display:
-        flex;
+    display: flex;
+    align-items: center;
 
-    align-items:
-        center;
+    gap: 17px;
 
-    gap:
-        17px;
+    margin-bottom: 13px;
 
-    margin-bottom:
-        13px;
+    padding: 20px;
 
-    padding:
-        20px;
+    border: 1px solid var(--gris-borde);
 
-    border:
-        1px solid var(--gris-borde);
+    border-radius: 14px;
 
-    border-radius:
-        14px;
-
-    background:
-        white;
-
+    background: white;
 }
 
 .resource-icon {
 
-    width:
-        48px;
+    width: 48px;
+    height: 48px;
 
-    height:
-        48px;
+    flex: 0 0 48px;
 
-    flex:
-        0 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    border-radius: 12px;
 
-    align-items:
-        center;
+    background: var(--morado);
 
-    justify-content:
-        center;
+    color: var(--amarillo);
 
-    border-radius:
-        12px;
-
-    background:
-        var(--morado);
-
-    color:
-        var(--amarillo);
-
-    font-size:
-        18px;
-
+    font-size: 18px;
 }
 
 .resource h3 {
 
-    margin-bottom:
-        2px;
+    margin-bottom: 2px;
 
-    color:
-        var(--morado-oscuro);
+    color: var(--morado-oscuro);
 
-    font-size:
-        15px;
-
+    font-size: 15px;
 }
 
 .resource p {
 
-    color:
-        var(--gris);
+    color: var(--gris);
 
-    font-size:
-        12.5px;
-
+    font-size: 12.5px;
 }
 
 
@@ -2067,103 +1455,69 @@ a {
 
 .module-navigation {
 
-    display:
-        flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    align-items:
-        center;
+    gap: 15px;
 
-    justify-content:
-        space-between;
-
-    gap:
-        15px;
-
-    margin-top:
-        38px;
-
+    margin-top: 38px;
 }
 
 .btn {
 
-    display:
-        inline-flex;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    align-items:
-        center;
+    gap: 9px;
 
-    justify-content:
-        center;
+    padding: 12px 18px;
 
-    gap:
-        9px;
+    border-radius: 10px;
 
-    padding:
-        12px 18px;
+    font-size: 12px;
+    font-weight: 800;
 
-    border-radius:
-        10px;
-
-    font-size:
-        12px;
-
-    font-weight:
-        800;
-
-    transition:
-        .2s ease;
-
+    transition: .2s ease;
 }
 
 .btn-outline {
 
-    border:
-        1px solid var(--gris-borde);
+    border: 1px solid var(--gris-borde);
 
-    background:
-        white;
+    background: white;
 
-    color:
-        var(--morado);
-
+    color: var(--morado);
 }
 
 .btn-outline:hover {
-
-    background:
-        var(--lavanda);
-
+    background: var(--lavanda);
 }
 
 .btn-primary {
 
-    background:
-        var(--amarillo);
+    background: var(--amarillo);
 
-    color:
-        var(--morado-profundo);
-
+    color: var(--morado-profundo);
 }
 
 .btn-primary:hover {
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 
     box-shadow:
         0 6px 18px rgba(245,181,27,.28);
-
 }
 
 
 /* ==========================================================
-   FOOTER
+   FOOTER CON LOGOTIPO
 ========================================================== */
 
 footer {
 
-    margin-top:
-        10px;
+    margin-top: 10px;
 
     background:
         linear-gradient(
@@ -2172,90 +1526,83 @@ footer {
             var(--morado)
         );
 
-    color:
-        white;
-
+    color: white;
 }
 
 .footer-inner {
 
-    max-width:
-        1300px;
+    max-width: 1300px;
 
-    margin:
-        auto;
+    margin: auto;
 
-    padding:
-        28px;
+    padding: 30px 28px;
 
-    display:
-        flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        25px;
-
+    gap: 25px;
 }
 
 .footer-brand {
 
-    display:
-        flex;
+    display: flex;
+    align-items: center;
 
-    align-items:
-        center;
-
-    gap:
-        12px;
-
+    gap: 14px;
 }
 
-.footer-icon {
+.footer-logo-box {
 
-    color:
-        var(--amarillo);
+    width: 58px;
+    height: 58px;
 
-    font-size:
-        27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    padding: 4px;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+.footer-logo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 6px;
 }
 
 .footer-brand strong {
 
-    display:
-        block;
+    display: block;
 
-    font-size:
-        13px;
-
+    font-size: 14px;
 }
 
 .footer-brand small {
 
-    color:
-        rgba(255,255,255,.65);
+    display: block;
 
-    font-size:
-        9px;
+    margin-top: 2px;
 
+    color: rgba(255,255,255,.70);
+
+    font-size: 10px;
 }
 
 .footer-info {
 
-    text-align:
-        right;
+    text-align: right;
 
-    color:
-        rgba(255,255,255,.76);
+    color: rgba(255,255,255,.76);
 
-    font-size:
-        10px;
-
+    font-size: 10px;
 }
 
 
@@ -2267,130 +1614,91 @@ footer {
 
     .module-layout {
 
-        display:
-            block;
+        display: block;
 
-        padding:
-            0;
-
+        padding: 0;
     }
 
     .side-nav {
 
-        position:
-            sticky;
+        position: sticky;
 
-        top:
-            70px;
+        top: 76px;
 
-        z-index:
-            900;
+        z-index: 900;
 
-        background:
-            white;
+        background: white;
 
         border-bottom:
             1px solid var(--gris-borde);
-
     }
 
     .side-nav-inner {
 
-        position:
-            static;
+        position: static;
 
-        display:
-            flex;
+        display: flex;
 
-        align-items:
-            center;
+        align-items: center;
 
-        margin:
-            0;
+        margin: 0;
 
-        padding:
-            8px 16px;
+        padding: 8px 16px;
 
-        overflow-x:
-            auto;
+        overflow-x: auto;
 
-        border:
-            none;
+        border: none;
 
-        border-radius:
-            0;
+        border-radius: 0;
 
         box-shadow:
             0 4px 12px rgba(0,0,0,.06);
-
     }
 
-    .side-nav-title,
-    .sidebar-note {
-
-        display:
-            none;
-
+    .side-nav-title {
+        display: none;
     }
 
     .side-nav-links {
 
-        display:
-            flex;
+        display: flex;
 
-        align-items:
-            center;
+        align-items: center;
 
-        gap:
-            6px;
+        gap: 6px;
 
-        padding:
-            0;
+        padding: 0;
 
-        white-space:
-            nowrap;
-
+        white-space: nowrap;
     }
 
     .side-nav a {
 
-        flex:
-            0 0 auto;
+        flex: 0 0 auto;
 
-        margin:
-            0;
+        margin: 0;
 
-        padding:
-            8px 10px;
+        padding: 8px 10px;
 
         border:
             1px solid var(--gris-borde);
 
-        border-radius:
-            25px;
+        border-radius: 25px;
 
-        background:
-            white;
-
+        background: white;
     }
 
     .side-nav a.active-section {
 
-        border-color:
-            var(--amarillo);
+        border-color: var(--amarillo);
 
-        background:
-            var(--amarillo-claro);
-
+        background: var(--amarillo-claro);
     }
 
     .module-content {
 
-        padding:
-            0 25px;
-
+        padding: 0 25px;
     }
-
 }
 
 
@@ -2398,35 +1706,23 @@ footer {
 
     .nav-container {
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            flex-start;
+        align-items: flex-start;
 
-        padding-top:
-            11px;
-
-        padding-bottom:
-            11px;
-
+        padding-top: 11px;
+        padding-bottom: 11px;
     }
 
     .nav-links {
-
-        width:
-            100%;
-
+        width: 100%;
     }
 
     .hero-decoration {
 
-        opacity:
-            .25;
+        opacity: .18;
 
-        right:
-            10px;
-
+        right: 10px;
     }
 
     .model-grid,
@@ -2434,9 +1730,7 @@ footer {
     .ase-grid,
     .summary-grid {
 
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
 
     .two-grid,
@@ -2444,90 +1738,71 @@ footer {
     .compare-grid,
     .case-grid {
 
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
 
     .environment-grid {
 
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns: repeat(2,1fr);
     }
 
     .footer-inner {
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            flex-start;
-
+        align-items: flex-start;
     }
 
     .footer-info {
-
-        text-align:
-            left;
-
+        text-align: left;
     }
-
 }
 
 
 @media(max-width: 560px) {
 
+    .brand-logo {
+
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
     .hero-content {
 
-        padding:
-            52px 22px 47px;
+        padding: 45px 22px 47px;
+    }
 
+    .hero-institution {
+
+        margin-bottom: 20px;
     }
 
     .hero h1 {
-
-        font-size:
-            39px;
-
+        font-size: 39px;
     }
 
     .hero p {
-
-        font-size:
-            16px;
-
+        font-size: 16px;
     }
 
     .environment-grid {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
 
     .year-box,
     .key-box {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
 
     .module-navigation {
-
-        flex-direction:
-            column;
-
+        flex-direction: column;
     }
 
     .btn {
-
-        width:
-            100%;
-
+        width: 100%;
     }
-
 }
 
 </style>
@@ -2550,17 +1825,11 @@ footer {
     <a href="index.html"
        class="brand">
 
-
-        <div class="brand-symbol">
-
-            <span class="purple-v"></span>
-            <span class="purple-h"></span>
-
-            <span class="yellow-v"></span>
-            <span class="yellow-h"></span>
-
-        </div>
-
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo de la Facultad de Contaduría y Administración"
+            class="brand-logo"
+        >
 
         <div class="brand-text">
 
@@ -2571,7 +1840,6 @@ footer {
             </small>
 
         </div>
-
 
     </a>
 
@@ -2605,7 +1873,6 @@ footer {
 
     </nav>
 
-
 </div>
 
 </header>
@@ -2624,8 +1891,27 @@ footer {
     <div class="hero-decoration">
 
         <div class="deco-purple"></div>
-
         <div class="deco-yellow"></div>
+
+    </div>
+
+
+    <div class="hero-institution">
+
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo FCA"
+        >
+
+        <div class="hero-institution-text">
+
+            Facultad de Contaduría y Administración
+
+            <span>
+                Universidad Autónoma de Chihuahua
+            </span>
+
+        </div>
 
     </div>
 
@@ -2795,24 +2081,6 @@ footer {
     </div>
 
 
-    <div class="sidebar-note">
-
-        <blockquote>
-
-            Formación integral para comprender
-            y transformar nuestro entorno.
-
-        </blockquote>
-
-        <div class="sidebar-note-line"></div>
-
-        <small>
-            UACH
-        </small>
-
-    </div>
-
-
 </div>
 
 </aside>
@@ -2872,9 +2140,8 @@ footer {
 
             La versión que se toma como referencia en este espacio
             corresponde al <strong>Modelo Educativo UACH 2024</strong>.
-            Esta formulación no debe entenderse como un punto de partida
-            aislado, sino como parte de la trayectoria de la propia
-            Universidad y de su adaptación a las condiciones
+            Esta formulación debe comprenderse como parte de la trayectoria
+            de la propia Universidad y de su adaptación a las condiciones
             contemporáneas de la educación superior.
 
         </p>
@@ -2924,7 +2191,7 @@ footer {
         <div>
 
             <h3>
-                ¿Por qué hablamos del Modelo UACH 2024?
+                Modelo Educativo UACH 2024
             </h3>
 
             <p>
@@ -2932,9 +2199,9 @@ footer {
                 En este sitio se utiliza como referencia el Modelo Educativo
                 UACH 2024, que recupera la trayectoria institucional
                 y sitúa la formación universitaria frente a un contexto
-                contemporáneo caracterizado por la interacción entre
-                lo local y lo global, la transformación tecnológica
-                y nuevos desafíos sociales y profesionales.
+                caracterizado por la interacción entre lo local y lo global,
+                la transformación tecnológica y nuevos desafíos sociales
+                y profesionales.
 
             </p>
 
@@ -2989,25 +2256,19 @@ footer {
 
         <div class="model-card">
 
-
             <div class="model-icon">
 
                 <i class="fa-solid fa-book-open"></i>
 
             </div>
 
-
             <h3>
                 Modelo Educativo
             </h3>
 
-
             <div class="model-question">
-
                 ¿Qué formación buscamos?
-
             </div>
-
 
             <p>
 
@@ -3017,13 +2278,11 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="model-card">
-
 
             <div class="model-icon">
 
@@ -3031,18 +2290,13 @@ footer {
 
             </div>
 
-
             <h3>
                 Modelo Académico
             </h3>
 
-
             <div class="model-question">
-
                 ¿Cómo organizamos esa formación?
-
             </div>
-
 
             <p>
 
@@ -3053,13 +2307,11 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="model-card">
-
 
             <div class="model-icon">
 
@@ -3067,18 +2319,13 @@ footer {
 
             </div>
 
-
             <h3>
                 Modelo Pedagógico
             </h3>
 
-
             <div class="model-question">
-
                 ¿Cómo lo llevamos a la práctica?
-
             </div>
-
 
             <p>
 
@@ -3089,7 +2336,6 @@ footer {
 
             </p>
 
-
         </div>
 
 
@@ -3099,13 +2345,11 @@ footer {
 
     <div class="key-box">
 
-
         <div class="key-icon">
 
             <i class="fa-solid fa-bullseye"></i>
 
         </div>
-
 
         <div>
 
@@ -3125,7 +2369,6 @@ footer {
             </p>
 
         </div>
-
 
     </div>
 
@@ -3175,18 +2418,15 @@ footer {
 
         <div class="info-card">
 
-
             <div class="info-card-icon">
 
                 <i class="fa-solid fa-earth-americas"></i>
 
             </div>
 
-
             <h3>
                 Glocalidad
             </h3>
-
 
             <p>
 
@@ -3196,13 +2436,11 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="info-card">
-
 
             <div class="info-card-icon">
 
@@ -3210,11 +2448,9 @@ footer {
 
             </div>
 
-
             <h3>
                 Transdisciplinariedad
             </h3>
-
 
             <p>
 
@@ -3226,7 +2462,6 @@ footer {
 
             </p>
 
-
         </div>
 
 
@@ -3236,13 +2471,11 @@ footer {
 
     <div class="key-box">
 
-
         <div class="key-icon">
 
             <i class="fa-solid fa-location-dot"></i>
 
         </div>
-
 
         <div>
 
@@ -3262,7 +2495,6 @@ footer {
             </p>
 
         </div>
-
 
     </div>
 
@@ -3313,18 +2545,13 @@ footer {
 
         <div class="sas-card">
 
-
             <div class="sas-word">
                 Saber
             </div>
 
-
             <div class="sas-question">
-
                 ¿Qué necesita comprender?
-
             </div>
-
 
             <p>
 
@@ -3335,7 +2562,6 @@ footer {
 
             </p>
 
-
             <div class="example-small">
 
                 <strong>Ejemplo:</strong>
@@ -3344,25 +2570,19 @@ footer {
 
             </div>
 
-
         </div>
 
 
 
         <div class="sas-card">
 
-
             <div class="sas-word">
                 Actuar
             </div>
 
-
             <div class="sas-question">
-
                 ¿Qué debe ser capaz de hacer?
-
             </div>
-
 
             <p>
 
@@ -3371,7 +2591,6 @@ footer {
                 los conocimientos que ha desarrollado.
 
             </p>
-
 
             <div class="example-small">
 
@@ -3382,25 +2601,19 @@ footer {
 
             </div>
 
-
         </div>
 
 
 
         <div class="sas-card">
 
-
             <div class="sas-word">
                 Ser
             </div>
 
-
             <div class="sas-question">
-
                 ¿Cómo se posiciona frente a lo que hace?
-
             </div>
-
 
             <p>
 
@@ -3411,7 +2624,6 @@ footer {
 
             </p>
 
-
             <div class="example-small">
 
                 <strong>Ejemplo:</strong>
@@ -3419,7 +2631,6 @@ footer {
                 objetivo y profesional.
 
             </div>
-
 
         </div>
 
@@ -3430,13 +2641,11 @@ footer {
 
     <div class="key-box">
 
-
         <div class="key-icon">
 
             <i class="fa-regular fa-lightbulb"></i>
 
         </div>
-
 
         <div>
 
@@ -3455,7 +2664,6 @@ footer {
             </p>
 
         </div>
-
 
     </div>
 
@@ -3504,18 +2712,13 @@ footer {
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-person"></i>
-
             </div>
-
 
             <h3>
                 Humanismo
             </h3>
-
 
             <p>
 
@@ -3523,7 +2726,6 @@ footer {
                 como referencia central del proceso educativo.
 
             </p>
-
 
             <p class="practice">
 
@@ -3534,25 +2736,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-people-group"></i>
-
             </div>
-
 
             <h3>
                 Interculturalidades
             </h3>
-
 
             <p>
 
@@ -3562,7 +2758,6 @@ footer {
 
             </p>
 
-
             <p class="practice">
 
                 <strong>En la práctica:</strong>
@@ -3571,25 +2766,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-scale-balanced"></i>
-
             </div>
-
 
             <h3>
                 Inclusión, equidad social y de género
             </h3>
-
 
             <p>
 
@@ -3598,7 +2787,6 @@ footer {
                 y el aprendizaje.
 
             </p>
-
 
             <p class="practice">
 
@@ -3609,25 +2797,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-seedling"></i>
-
             </div>
-
 
             <h3>
                 Buen vivir
             </h3>
-
 
             <p>
 
@@ -3637,7 +2819,6 @@ footer {
 
             </p>
 
-
             <p class="practice">
 
                 <strong>En la práctica:</strong>
@@ -3646,7 +2827,6 @@ footer {
                 profesionales.
 
             </p>
-
 
         </div>
 
@@ -3698,18 +2878,13 @@ footer {
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-hand-holding-heart"></i>
-
             </div>
-
 
             <h3>
                 Responsabilidad social y sostenibilidad
             </h3>
-
 
             <p>
 
@@ -3719,25 +2894,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-diagram-project"></i>
-
             </div>
-
 
             <h3>
                 Inter y transdisciplinariedad
             </h3>
-
 
             <p>
 
@@ -3748,25 +2917,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-rocket"></i>
-
             </div>
-
 
             <h3>
                 Emprendimiento
             </h3>
-
 
             <p>
 
@@ -3776,25 +2939,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-regular fa-lightbulb"></i>
-
             </div>
-
 
             <h3>
                 Innovación
             </h3>
-
 
             <p>
 
@@ -3804,25 +2961,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="card">
 
-
             <div class="card-icon">
-
                 <i class="fa-solid fa-laptop-code"></i>
-
             </div>
-
 
             <h3>
                 Transformación digital
             </h3>
-
 
             <p>
 
@@ -3832,7 +2983,6 @@ footer {
 
             </p>
 
-
             <p class="practice">
 
                 <strong>No equivale sólo a usar una plataforma:</strong>
@@ -3841,7 +2991,6 @@ footer {
                 y herramientas profesionales.
 
             </p>
-
 
         </div>
 
@@ -3894,16 +3043,13 @@ footer {
 
         <div class="ase-card">
 
-
             <div class="ase-circle">
                 AUTO
             </div>
 
-
             <h3>
                 Autoformación
             </h3>
-
 
             <p>
 
@@ -3913,23 +3059,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="ase-card">
 
-
             <div class="ase-circle">
                 SOCIO
             </div>
 
-
             <h3>
                 Socioformación
             </h3>
-
 
             <p>
 
@@ -3939,23 +3081,19 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="ase-card">
 
-
             <div class="ase-circle">
                 ECO
             </div>
 
-
             <h3>
                 Ecoformación
             </h3>
-
 
             <p>
 
@@ -3964,7 +3102,6 @@ footer {
                 y las condiciones reales del contexto.
 
             </p>
-
 
         </div>
 
@@ -3975,13 +3112,9 @@ footer {
 
     <div class="key-box">
 
-
         <div class="key-icon">
-
             <i class="fa-solid fa-arrows-rotate"></i>
-
         </div>
-
 
         <div>
 
@@ -4001,7 +3134,6 @@ footer {
             </p>
 
         </div>
-
 
     </div>
 
@@ -4048,33 +3180,19 @@ footer {
 
     <div class="tags">
 
-        <span class="tag">
-            Responsabilidad social
-        </span>
+        <span class="tag">Responsabilidad social</span>
 
-        <span class="tag">
-            Equidad social y de género
-        </span>
+        <span class="tag">Equidad social y de género</span>
 
-        <span class="tag">
-            Inclusión
-        </span>
+        <span class="tag">Inclusión</span>
 
-        <span class="tag">
-            Excelencia
-        </span>
+        <span class="tag">Excelencia</span>
 
-        <span class="tag">
-            Vanguardia
-        </span>
+        <span class="tag">Vanguardia</span>
 
-        <span class="tag">
-            Innovación social
-        </span>
+        <span class="tag">Innovación social</span>
 
-        <span class="tag">
-            Interculturalidad
-        </span>
+        <span class="tag">Interculturalidad</span>
 
     </div>
 
@@ -4085,7 +3203,6 @@ footer {
 
         <div class="compare-card bad">
 
-
             <h3>
 
                 <i class="fa-solid fa-circle-xmark"></i>
@@ -4093,7 +3210,6 @@ footer {
                 Incorporar un tema aislado
 
             </h3>
-
 
             <p>
 
@@ -4104,13 +3220,11 @@ footer {
 
             </p>
 
-
         </div>
 
 
 
         <div class="compare-card good">
-
 
             <h3>
 
@@ -4120,7 +3234,6 @@ footer {
 
             </h3>
 
-
             <p>
 
                 A lo largo del curso, diferentes actividades
@@ -4129,7 +3242,6 @@ footer {
                 o ambientales de sus decisiones.
 
             </p>
-
 
         </div>
 
@@ -4142,7 +3254,7 @@ footer {
 
 
 <!-- ========================================================
-     AMBIENTES DE APRENDIZAJE
+     AMBIENTES
 ======================================================== -->
 
 <section class="section"
@@ -4184,9 +3296,7 @@ footer {
 
             <i class="fa-solid fa-chalkboard-user"></i>
 
-            <strong>
-                Aula
-            </strong>
+            <strong>Aula</strong>
 
         </div>
 
@@ -4195,9 +3305,7 @@ footer {
 
             <i class="fa-solid fa-laptop"></i>
 
-            <strong>
-                Entornos digitales
-            </strong>
+            <strong>Entornos digitales</strong>
 
         </div>
 
@@ -4206,9 +3314,7 @@ footer {
 
             <i class="fa-solid fa-building"></i>
 
-            <strong>
-                Organizaciones
-            </strong>
+            <strong>Organizaciones</strong>
 
         </div>
 
@@ -4217,9 +3323,7 @@ footer {
 
             <i class="fa-solid fa-users"></i>
 
-            <strong>
-                Comunidad
-            </strong>
+            <strong>Comunidad</strong>
 
         </div>
 
@@ -4228,9 +3332,7 @@ footer {
 
             <i class="fa-solid fa-user"></i>
 
-            <strong>
-                Trabajo autónomo
-            </strong>
+            <strong>Trabajo autónomo</strong>
 
         </div>
 
@@ -4239,9 +3341,7 @@ footer {
 
             <i class="fa-solid fa-people-group"></i>
 
-            <strong>
-                Trabajo colaborativo
-            </strong>
+            <strong>Trabajo colaborativo</strong>
 
         </div>
 
@@ -4250,9 +3350,7 @@ footer {
 
             <i class="fa-solid fa-vr-cardboard"></i>
 
-            <strong>
-                Simulación
-            </strong>
+            <strong>Simulación</strong>
 
         </div>
 
@@ -4261,9 +3359,7 @@ footer {
 
             <i class="fa-solid fa-location-dot"></i>
 
-            <strong>
-                Contextos reales
-            </strong>
+            <strong>Contextos reales</strong>
 
         </div>
 
@@ -4335,9 +3431,7 @@ footer {
 
             <div class="case-item">
 
-                <strong>
-                    Saber
-                </strong>
+                <strong>Saber</strong>
 
                 <p>
 
@@ -4352,9 +3446,7 @@ footer {
 
             <div class="case-item">
 
-                <strong>
-                    Actuar
-                </strong>
+                <strong>Actuar</strong>
 
                 <p>
 
@@ -4369,9 +3461,7 @@ footer {
 
             <div class="case-item">
 
-                <strong>
-                    Ser
-                </strong>
+                <strong>Ser</strong>
 
                 <p>
 
@@ -4387,9 +3477,7 @@ footer {
 
             <div class="case-item">
 
-                <strong>
-                    Glocalidad
-                </strong>
+                <strong>Glocalidad</strong>
 
                 <p>
 
@@ -4405,9 +3493,7 @@ footer {
 
             <div class="case-item">
 
-                <strong>
-                    Transformación digital
-                </strong>
+                <strong>Transformación digital</strong>
 
                 <p>
 
@@ -4423,9 +3509,7 @@ footer {
 
             <div class="case-item">
 
-                <strong>
-                    Experiencia de aprendizaje
-                </strong>
+                <strong>Experiencia de aprendizaje</strong>
 
                 <p>
 
@@ -4487,66 +3571,53 @@ footer {
 
     <div class="summary-grid">
 
-
         <div class="summary-item">
             Modelo Educativo
         </div>
-
 
         <div class="summary-item">
             Modelo Académico
         </div>
 
-
         <div class="summary-item">
             Modelo Pedagógico
         </div>
-
 
         <div class="summary-item">
             Glocalidad
         </div>
 
-
         <div class="summary-item">
             Transdisciplinariedad
         </div>
-
 
         <div class="summary-item">
             Saber · Actuar · Ser
         </div>
 
-
         <div class="summary-item">
             Principios filosóficos
         </div>
-
 
         <div class="summary-item">
             Formación universitaria
         </div>
 
-
         <div class="summary-item">
             Auto-Socio-Ecoformación
         </div>
-
 
         <div class="summary-item">
             Ejes estructurales
         </div>
 
-
         <div class="summary-item">
             Ejes transversales
         </div>
 
-
         <div class="summary-item">
             Ambientes de aprendizaje
         </div>
-
 
     </div>
 
@@ -4582,10 +3653,9 @@ footer {
 
     <p class="section-intro">
 
-        Esta sección puede concentrar los documentos
-        y materiales que permitan al docente profundizar
-        en los conceptos presentados de manera sintética
-        a lo largo del módulo.
+        Esta sección concentra materiales que permiten
+        profundizar en los conceptos presentados de manera
+        sintética a lo largo del módulo.
 
     </p>
 
@@ -4593,13 +3663,11 @@ footer {
 
     <div class="resource">
 
-
         <div class="resource-icon">
 
             <i class="fa-solid fa-file-powerpoint"></i>
 
         </div>
-
 
         <div>
 
@@ -4616,20 +3684,17 @@ footer {
 
         </div>
 
-
     </div>
 
 
 
     <div class="resource">
 
-
         <div class="resource-icon">
 
             <i class="fa-solid fa-book"></i>
 
         </div>
-
 
         <div>
 
@@ -4647,20 +3712,17 @@ footer {
 
         </div>
 
-
     </div>
 
 
 
     <div class="resource">
 
-
         <div class="resource-icon">
 
             <i class="fa-solid fa-people-group"></i>
 
         </div>
-
 
         <div>
 
@@ -4678,20 +3740,17 @@ footer {
 
         </div>
 
-
     </div>
 
 
 
     <div class="resource">
 
-
         <div class="resource-icon">
 
             <i class="fa-solid fa-share-nodes"></i>
 
         </div>
-
 
         <div>
 
@@ -4708,7 +3767,6 @@ footer {
             </p>
 
         </div>
-
 
     </div>
 
@@ -4762,9 +3820,13 @@ footer {
     <div class="footer-brand">
 
 
-        <div class="footer-icon">
+        <div class="footer-logo-box">
 
-            <i class="fa-solid fa-graduation-cap"></i>
+            <img
+                src="assets/logofca.jpeg"
+                alt="Logotipo de la Facultad de Contaduría y Administración"
+                class="footer-logo"
+            >
 
         </div>
 
@@ -4772,11 +3834,11 @@ footer {
         <div>
 
             <strong>
-                FCA · UACH
+                Facultad de Contaduría y Administración
             </strong>
 
             <small>
-                Formación y Acompañamiento Académico
+                Universidad Autónoma de Chihuahua
             </small>
 
         </div>
@@ -4788,9 +3850,9 @@ footer {
 
     <div class="footer-info">
 
-        Universidad Autónoma de Chihuahua<br>
+        Formación y Acompañamiento Académico<br>
 
-        Facultad de Contaduría y Administración
+        Asesoría Técnica Pedagógica · FCA-UACH
 
     </div>
 
@@ -4803,7 +3865,7 @@ footer {
 
 <!-- ========================================================
      JAVASCRIPT
-     RESALTA LA SECCIÓN ACTIVA DEL PANEL
+     RESALTA LA SECCIÓN ACTIVA
 ======================================================== -->
 
 <script>
@@ -4833,9 +3895,7 @@ document.addEventListener(
                     const rect =
                         section.getBoundingClientRect();
 
-                    if (
-                        rect.top <= 190
-                    ) {
+                    if (rect.top <= 190) {
 
                         current =
                             section.getAttribute("id");
@@ -4878,31 +3938,6 @@ document.addEventListener(
 
 
         updateActiveSection();
-
-
-        navLinks.forEach(
-            link => {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navLinks.forEach(
-                            item =>
-                                item.classList.remove(
-                                    "active-section"
-                                )
-                        );
-
-                        this.classList.add(
-                            "active-section"
-                        );
-
-                    }
-                );
-
-            }
-        );
 
     }
 );
