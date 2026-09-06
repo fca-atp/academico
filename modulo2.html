@@ -53,8 +53,7 @@
     --rojo: #b84a4a;
     --rojo-claro: #fff1f1;
 
-    --sombra:
-        0 10px 30px rgba(67,35,80,.09);
+    --sombra: 0 10px 30px rgba(67,35,80,.09);
 }
 
 
@@ -330,7 +329,6 @@ input {
 
 
 .hero-institution-text {
-
     line-height: 1.35;
 }
 
@@ -563,7 +561,7 @@ input {
 
     gap: 10px;
 
-    padding: 10px 11px;
+    padding: 9px 11px;
 
     margin: 2px 0;
 
@@ -571,11 +569,11 @@ input {
 
     color: #625d68;
 
-    font-size: 11.5px;
+    font-size: 11px;
 
     font-weight: 600;
 
-    line-height: 1.35;
+    line-height: 1.3;
 
     transition: .18s ease;
 }
@@ -768,83 +766,7 @@ input {
 
 
 /* ==========================================================
-   TARJETAS
-========================================================== */
-
-.cards {
-
-    display: grid;
-
-    grid-template-columns: repeat(2,1fr);
-
-    gap: 17px;
-}
-
-
-.card {
-
-    padding: 25px;
-
-    border: 1px solid var(--gris-borde);
-
-    border-radius: 16px;
-
-    background: white;
-
-    transition: .2s ease;
-}
-
-
-.card:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow: var(--sombra);
-}
-
-
-.card-icon {
-
-    width: 44px;
-
-    height: 44px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 14px;
-
-    border-radius: 12px;
-
-    background: var(--lavanda);
-
-    color: var(--morado);
-}
-
-
-.card h3 {
-
-    margin-bottom: 7px;
-
-    color: var(--morado-oscuro);
-
-    font-size: 16px;
-}
-
-
-.card p {
-
-    color: var(--gris);
-
-    font-size: 13px;
-}
-
-
-/* ==========================================================
-   ANTES DE COMENZAR
+   PREGUNTAS PREVIAS
 ========================================================== */
 
 .question-grid {
@@ -982,6 +904,347 @@ input {
 
 
 /* ==========================================================
+   MOODLE
+========================================================== */
+
+.moodle-main {
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+
+.moodle-header {
+
+    padding: 28px 28px 20px;
+}
+
+
+.moodle-header i {
+
+    margin-bottom: 14px;
+
+    color: var(--amarillo);
+
+    font-size: 29px;
+}
+
+
+.moodle-header h3 {
+
+    margin-bottom: 7px;
+
+    font-size: 21px;
+}
+
+
+.moodle-header p {
+
+    max-width: 800px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 13.5px;
+}
+
+
+.moodle-week {
+
+    padding: 25px;
+
+    background: white;
+
+    color: var(--texto);
+}
+
+
+.moodle-week-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+.moodle-week-number {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.moodle-week-title h4 {
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+}
+
+
+.moodle-structure {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+}
+
+
+.moodle-item {
+
+    position: relative;
+
+    padding: 23px 20px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 15px;
+
+    background: var(--gris-fondo);
+}
+
+
+.moodle-item-number {
+
+    display: inline-flex;
+
+    width: 30px;
+
+    height: 30px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 9px;
+
+    background: var(--morado);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.moodle-item:nth-child(2) .moodle-item-number {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+
+.moodle-item:nth-child(3) .moodle-item-number {
+
+    background: var(--verde);
+}
+
+
+.moodle-item h3 {
+
+    margin-bottom: 6px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 14px;
+}
+
+
+.moodle-item p {
+
+    color: var(--gris);
+
+    font-size: 12px;
+}
+
+
+.moodle-examples {
+
+    margin-top: 9px;
+
+    color: var(--morado);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   EJEMPLO DE SEMANA MOODLE
+========================================================== */
+
+.week-example {
+
+    margin-top: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+}
+
+
+.week-example-header {
+
+    padding: 18px 22px;
+
+    background: var(--lavanda);
+}
+
+
+.week-example-header strong {
+
+    display: block;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
+}
+
+
+.week-example-header span {
+
+    color: var(--gris);
+
+    font-size: 11.5px;
+}
+
+
+.week-example-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.week-example-item {
+
+    padding: 20px;
+
+    border-top: 1px solid var(--gris-borde);
+}
+
+
+.week-example-item + .week-example-item {
+
+    border-left: 1px solid var(--gris-borde);
+}
+
+
+.week-example-item strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--morado);
+
+    font-size: 12px;
+}
+
+
+.week-example-item p {
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   CHECKLIST MOODLE
+========================================================== */
+
+.moodle-check {
+
+    margin-top: 22px;
+
+    padding: 22px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 16px;
+
+    background: var(--amarillo-palido);
+}
+
+
+.moodle-check h3 {
+
+    margin-bottom: 13px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
+}
+
+
+.moodle-check-row {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 8px 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 12.5px;
+}
+
+
+.moodle-check-row i {
+
+    margin-top: 4px;
+
+    color: var(--verde);
+}
+
+
+/* ==========================================================
    CRITERIOS
 ========================================================== */
 
@@ -1036,7 +1299,7 @@ input {
 
 
 /* ==========================================================
-   PASO A PASO
+   PASOS
 ========================================================== */
 
 .steps {
@@ -1306,7 +1569,7 @@ input {
 
 
 /* ==========================================================
-   ERRORES FRECUENTES
+   ERRORES
 ========================================================== */
 
 .error-list {
@@ -1378,7 +1641,7 @@ input {
 
 
 /* ==========================================================
-   CHECKLIST
+   CHECKLIST GENERAL
 ========================================================== */
 
 .checklist-box {
@@ -1920,7 +2183,6 @@ footer {
         width: 100%;
     }
 
-    .cards,
     .question-grid,
     .criteria-grid,
     .ai-grid,
@@ -1929,9 +2191,16 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .material-grid {
+    .material-grid,
+    .moodle-structure,
+    .week-example-grid {
 
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .week-example-item + .week-example-item {
+
+        border-left: none;
     }
 
     .example-grid {
@@ -1940,6 +2209,7 @@ footer {
     }
 
     .example-item:nth-child(odd) {
+
         border-right: none;
     }
 
@@ -1980,10 +2250,6 @@ footer {
         font-size: 16px;
     }
 
-    .material-grid {
-        grid-template-columns: 1fr;
-    }
-
     .step {
 
         grid-template-columns: 1fr;
@@ -2002,6 +2268,7 @@ footer {
     }
 
     .module-navigation {
+
         flex-direction: column;
     }
 
@@ -2132,9 +2399,10 @@ footer {
 
     <p>
 
-        Guía práctica para seleccionar, adaptar, crear y revisar
-        materiales que apoyen de manera clara, pertinente
-        y congruente los resultados de aprendizaje.
+        Guía práctica para seleccionar, adaptar, crear,
+        organizar y revisar materiales didácticos y recursos
+        en plataforma Moodle que apoyen de manera clara,
+        pertinente y congruente los resultados de aprendizaje.
 
     </p>
 
@@ -2180,6 +2448,7 @@ footer {
 
         </a>
 
+
         <a href="#antes">
 
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -2187,6 +2456,7 @@ footer {
             Antes de comenzar
 
         </a>
+
 
         <a href="#tipos">
 
@@ -2196,6 +2466,16 @@ footer {
 
         </a>
 
+
+        <a href="#moodle">
+
+            <i class="fa-solid fa-laptop"></i>
+
+            Plataforma Moodle
+
+        </a>
+
+
         <a href="#criterios">
 
             <i class="fa-solid fa-check-double"></i>
@@ -2203,6 +2483,7 @@ footer {
             Criterios
 
         </a>
+
 
         <a href="#pasos">
 
@@ -2212,6 +2493,7 @@ footer {
 
         </a>
 
+
         <a href="#ia">
 
             <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -2219,6 +2501,7 @@ footer {
             Uso de IA
 
         </a>
+
 
         <a href="#ejemplo">
 
@@ -2228,6 +2511,7 @@ footer {
 
         </a>
 
+
         <a href="#errores">
 
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -2235,6 +2519,7 @@ footer {
             Errores frecuentes
 
         </a>
+
 
         <a href="#lista">
 
@@ -2244,6 +2529,7 @@ footer {
 
         </a>
 
+
         <a href="#plantillas">
 
             <i class="fa-regular fa-folder-open"></i>
@@ -2251,6 +2537,7 @@ footer {
             Plantillas
 
         </a>
+
 
         <a href="#recursos">
 
@@ -2305,9 +2592,11 @@ footer {
     <p class="section-intro">
 
         Puede ser un texto, presentación, video, infografía,
-        ejercicio, caso, guía, simulación o recurso digital.
-        Su valor no depende únicamente de su apariencia,
-        sino de la función que cumple dentro del aprendizaje.
+        ejercicio, caso, guía, simulación, actividad,
+        recurso digital o un conjunto organizado de recursos
+        dentro de una plataforma educativa como Moodle.
+        Su valor depende de la función que cumple dentro
+        del proceso de aprendizaje.
 
     </p>
 
@@ -2363,7 +2652,7 @@ footer {
 
     <div class="section-subtitle">
 
-        Cuatro preguntas antes de abrir PowerPoint, Canva, Word o cualquier otra herramienta
+        Cuatro preguntas antes de abrir Moodle, PowerPoint, Canva, Word o cualquier otra herramienta
 
     </div>
 
@@ -2371,7 +2660,7 @@ footer {
     <p class="section-intro">
 
         El diseño comienza con el aprendizaje esperado,
-        no con la elección del formato.
+        no con la herramienta que se utilizará.
 
     </p>
 
@@ -2467,9 +2756,9 @@ footer {
 
                 <p>
 
-                    No todo requiere una presentación o video.
-                    Seleccione el formato más sencillo
-                    que resuelva la necesidad.
+                    Selecciona el material o actividad
+                    que cumpla la función de aprendizaje
+                    sin añadir complejidad innecesaria.
 
                 </p>
 
@@ -2515,6 +2804,25 @@ footer {
 
         <div class="material-card">
 
+            <i class="fa-solid fa-laptop"></i>
+
+            <h3>
+                Plataforma Moodle
+            </h3>
+
+            <p>
+
+                Organiza por semanas contenidos,
+                recursos, instrucciones, actividades
+                y evidencias del curso.
+
+            </p>
+
+        </div>
+
+
+        <div class="material-card">
+
             <i class="fa-solid fa-file-lines"></i>
 
             <h3>
@@ -2524,8 +2832,8 @@ footer {
             <p>
 
                 Para explicar conceptos, proporcionar
-                instrucciones, procedimientos o lecturas
-                estructuradas.
+                instrucciones, procedimientos
+                o lecturas estructuradas.
 
             </p>
 
@@ -2543,8 +2851,8 @@ footer {
             <p>
 
                 Para organizar y apoyar visualmente
-                una explicación, exposición
-                o secuencia de contenidos.
+                una explicación o secuencia
+                de contenidos.
 
             </p>
 
@@ -2581,8 +2889,8 @@ footer {
             <p>
 
                 Para sintetizar relaciones,
-                procesos, conceptos o información
-                que conviene visualizar.
+                procesos, conceptos
+                o información relevante.
 
             </p>
 
@@ -2594,33 +2902,14 @@ footer {
             <i class="fa-solid fa-puzzle-piece"></i>
 
             <h3>
-                Caso o ejercicio
+                Caso, ejercicio o actividad
             </h3>
 
             <p>
 
                 Permite aplicar conceptos,
-                resolver problemas y tomar
-                decisiones.
-
-            </p>
-
-        </div>
-
-
-        <div class="material-card">
-
-            <i class="fa-solid fa-laptop"></i>
-
-            <h3>
-                Recurso interactivo
-            </h3>
-
-            <p>
-
-                Cuestionarios, simulaciones,
-                herramientas digitales u otros
-                recursos con participación activa.
+                resolver problemas,
+                discutir y tomar decisiones.
 
             </p>
 
@@ -2635,7 +2924,364 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 4
+     SECCIÓN 4 · MOODLE
+======================================================== -->
+
+<section class="section"
+         id="moodle">
+
+
+    <div class="section-label">
+        Sección 4
+    </div>
+
+
+    <h2>
+        Plataforma Moodle
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        El principal espacio para organizar el material didáctico de la asignatura
+
+    </div>
+
+
+    <p class="section-intro">
+
+        Moodle permite integrar en un mismo espacio
+        la explicación de los temas, recursos de apoyo,
+        instrucciones y actividades de aprendizaje.
+        La organización semanal facilita que el estudiante
+        identifique con claridad qué debe estudiar,
+        qué materiales debe consultar y qué actividad
+        debe realizar.
+
+    </p>
+
+
+    <div class="moodle-main">
+
+
+        <div class="moodle-header">
+
+            <i class="fa-solid fa-laptop"></i>
+
+            <h3>
+                Estructura mínima de cada semana
+            </h3>
+
+            <p>
+
+                Cada semana disponible en la plataforma
+                deberá contener al menos tres componentes:
+                una explicación del tema, material complementario
+                y una actividad de aprendizaje.
+
+            </p>
+
+        </div>
+
+
+        <div class="moodle-week">
+
+
+            <div class="moodle-week-title">
+
+                <div class="moodle-week-number">
+                    SEM
+                </div>
+
+                <h4>
+                    Estructura semanal mínima
+                </h4>
+
+            </div>
+
+
+            <div class="moodle-structure">
+
+
+                <div class="moodle-item">
+
+                    <div class="moodle-item-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Explicación del tema
+                    </h3>
+
+                    <p>
+
+                        Introduce al estudiante en el contenido
+                        de la semana y señala qué debe comprender,
+                        revisar o desarrollar.
+
+                    </p>
+
+                    <div class="moodle-examples">
+
+                        Puede incluir texto introductorio,
+                        explicación docente, instrucciones
+                        u objetivos de la semana.
+
+                    </div>
+
+                </div>
+
+
+                <div class="moodle-item">
+
+                    <div class="moodle-item-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Material complementario
+                    </h3>
+
+                    <p>
+
+                        Proporciona los recursos necesarios
+                        para estudiar, ampliar o comprender
+                        el contenido.
+
+                    </p>
+
+                    <div class="moodle-examples">
+
+                        Presentación · video · lectura ·
+                        artículo · infografía · capítulo ·
+                        enlace · recurso interactivo.
+
+                    </div>
+
+                </div>
+
+
+                <div class="moodle-item">
+
+                    <div class="moodle-item-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Al menos una actividad
+                    </h3>
+
+                    <p>
+
+                        Permite que el estudiante utilice,
+                        practique o demuestre
+                        el aprendizaje de la semana.
+
+                    </p>
+
+                    <div class="moodle-examples">
+
+                        Tarea · examen · foro · ejercicio ·
+                        caso · cuestionario · práctica ·
+                        proyecto · participación.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="key-box">
+
+        <div class="key-icon">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                La semana debe tener una secuencia comprensible
+            </h3>
+
+            <p>
+
+                El estudiante debería poder ingresar a Moodle
+                y reconocer inmediatamente:
+                <strong>qué aprenderá → qué debe consultar →
+                qué debe realizar.</strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- EJEMPLO MOODLE -->
+
+    <div class="week-example">
+
+
+        <div class="week-example-header">
+
+            <strong>
+                Ejemplo · Semana 5: Política fiscal y monetaria
+            </strong>
+
+            <span>
+                Ejemplo de organización de una semana dentro de Moodle
+            </span>
+
+        </div>
+
+
+        <div class="week-example-grid">
+
+
+            <div class="week-example-item">
+
+                <strong>
+                    1. Explicación
+                </strong>
+
+                <p>
+
+                    Introducción breve sobre las diferencias
+                    entre política fiscal y política monetaria,
+                    sus objetivos e instrumentos principales.
+
+                </p>
+
+            </div>
+
+
+            <div class="week-example-item">
+
+                <strong>
+                    2. Material complementario
+                </strong>
+
+                <p>
+
+                    Presentación de clase, capítulo de lectura
+                    y video explicativo sobre instrumentos
+                    de política económica.
+
+                </p>
+
+            </div>
+
+
+            <div class="week-example-item">
+
+                <strong>
+                    3. Actividad
+                </strong>
+
+                <p>
+
+                    Foro de discusión en el que el estudiante
+                    analiza un caso real de aplicación
+                    de política fiscal o monetaria.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="moodle-check">
+
+        <h3>
+            Revisión rápida de cada semana
+        </h3>
+
+
+        <div class="moodle-check-row">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+                ¿La semana explica claramente el tema
+                y lo que se espera que aprenda el estudiante?
+            </span>
+
+        </div>
+
+
+        <div class="moodle-check-row">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+                ¿Incluye al menos un material complementario
+                pertinente y accesible?
+            </span>
+
+        </div>
+
+
+        <div class="moodle-check-row">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+                ¿Contiene al menos una actividad
+                relacionada con el aprendizaje de la semana?
+            </span>
+
+        </div>
+
+
+        <div class="moodle-check-row">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+                ¿Las instrucciones permiten saber
+                qué hacer, cómo hacerlo y cuándo entregarlo?
+            </span>
+
+        </div>
+
+
+        <div class="moodle-check-row">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+                ¿Los enlaces, archivos y recursos
+                funcionan correctamente?
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     SECCIÓN 5
 ======================================================== -->
 
 <section class="section"
@@ -2643,7 +3289,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 4
+        Sección 5
     </div>
 
 
@@ -2734,8 +3380,8 @@ footer {
 
             <p>
 
-                Datos, ejemplos, normas
-                y referencias siguen siendo vigentes.
+                Datos, ejemplos, normas,
+                recursos y referencias siguen vigentes.
 
             </p>
 
@@ -2766,7 +3412,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 5
+     SECCIÓN 6
 ======================================================== -->
 
 <section class="section"
@@ -2774,7 +3420,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 5
+        Sección 6
     </div>
 
 
@@ -2844,13 +3490,6 @@ footer {
 
                 </p>
 
-                <div class="step-action">
-
-                    Pregunta:
-                    ¿qué necesita el estudiante para avanzar?
-
-                </div>
-
             </div>
 
         </div>
@@ -2870,18 +3509,11 @@ footer {
 
                 <p>
 
-                    Elige texto, presentación, video,
-                    caso, infografía, ejercicio
+                    Elige Moodle, texto, presentación,
+                    video, caso, infografía, ejercicio
                     o recurso interactivo.
 
                 </p>
-
-                <div class="step-action">
-
-                    Criterio:
-                    utiliza el formato más simple que cumpla la función.
-
-                </div>
 
             </div>
 
@@ -2903,17 +3535,10 @@ footer {
                 <p>
 
                     Define qué información es indispensable,
-                    qué ejemplos incluirás y en qué orden
-                    debe presentarse.
+                    qué ejemplos incluirás
+                    y en qué orden debe presentarse.
 
                 </p>
-
-                <div class="step-action">
-
-                    Elimina aquello que no contribuya
-                    directamente al aprendizaje.
-
-                </div>
 
             </div>
 
@@ -2936,7 +3561,8 @@ footer {
 
                     Utiliza una estructura clara,
                     jerarquía visual, lenguaje adecuado,
-                    ejemplos y apoyos gráficos cuando aporten valor.
+                    ejemplos y apoyos gráficos
+                    cuando aporten valor.
 
                 </p>
 
@@ -2954,6 +3580,32 @@ footer {
             <div>
 
                 <h3>
+                    Integra el recurso en Moodle
+                </h3>
+
+                <p>
+
+                    Ubica el material dentro de la semana
+                    correspondiente y verifica que forme parte
+                    de una secuencia con explicación,
+                    recursos y actividad.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                7
+            </div>
+
+            <div>
+
+                <h3>
                     Revisa antes de publicar
                 </h3>
 
@@ -2961,16 +3613,9 @@ footer {
 
                     Comprueba contenido, ortografía,
                     funcionamiento de enlaces, legibilidad,
-                    accesibilidad y congruencia con el aprendizaje.
+                    accesibilidad y congruencia.
 
                 </p>
-
-                <div class="step-action">
-
-                    Utiliza la lista de cotejo incluida
-                    en este módulo.
-
-                </div>
 
             </div>
 
@@ -2985,7 +3630,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 6
+     SECCIÓN 7
 ======================================================== -->
 
 <section class="section"
@@ -2993,7 +3638,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 6
+        Sección 7
     </div>
 
 
@@ -3004,7 +3649,7 @@ footer {
 
     <div class="section-subtitle">
 
-        Úsela para acelerar tareas, no para sustituir la decisión académica
+        Utilízala para apoyar el diseño, no para sustituir la decisión académica
 
     </div>
 
@@ -3023,9 +3668,10 @@ footer {
             <p>
 
                 Las herramientas de IA pueden apoyar
-                distintas etapas del diseño. El docente
-                sigue siendo responsable de revisar,
-                contextualizar y validar el resultado.
+                distintas etapas del diseño.
+                El docente sigue siendo responsable
+                de revisar, contextualizar y validar
+                el resultado.
 
             </p>
 
@@ -3043,9 +3689,10 @@ footer {
 
                 <p>
 
-                    Proponer esquemas iniciales,
+                    Proponer esquemas,
                     secuencias o apartados
-                    para una guía o presentación.
+                    para una guía, presentación
+                    o semana de Moodle.
 
                 </p>
 
@@ -3062,7 +3709,7 @@ footer {
 
                     Reformular explicaciones,
                     instrucciones o conceptos
-                    que resulten demasiado complejos.
+                    demasiado complejos.
 
                 </p>
 
@@ -3079,7 +3726,7 @@ footer {
 
                     Generar casos hipotéticos,
                     preguntas, escenarios
-                    o ejercicios para posteriormente revisarlos.
+                    o ejercicios para revisión docente.
 
                 </p>
 
@@ -3125,7 +3772,7 @@ footer {
 
             <p>
 
-                Verifique datos, conceptos, referencias,
+                Verifica datos, conceptos, referencias,
                 nivel académico y congruencia con el programa.
                 <strong>La generación automática no equivale
                 a validación académica.</strong>
@@ -3142,7 +3789,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 7
+     SECCIÓN 8
 ======================================================== -->
 
 <section class="section"
@@ -3150,7 +3797,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 7
+        Sección 8
     </div>
 
 
@@ -3239,15 +3886,15 @@ footer {
             <div class="example-item">
 
                 <strong>
-                    Aplicación
+                    Aplicación en Moodle
                 </strong>
 
                 <p>
 
-                    Posteriormente se presenta un caso
-                    de una economía en recesión
-                    para que el estudiante analice
-                    posibles efectos de la medida.
+                    La infografía se integra como material
+                    complementario y posteriormente
+                    se presenta un caso para análisis
+                    mediante una tarea o foro.
 
                 </p>
 
@@ -3265,7 +3912,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 8
+     SECCIÓN 9
 ======================================================== -->
 
 <section class="section"
@@ -3273,7 +3920,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 8
+        Sección 9
     </div>
 
 
@@ -3295,9 +3942,57 @@ footer {
         <div class="error-item">
 
             <div class="error-icon">
-
                 <i class="fa-solid fa-xmark"></i>
+            </div>
 
+            <div>
+
+                <strong>
+                    Utilizar Moodle únicamente como repositorio de archivos
+                </strong>
+
+                <p>
+
+                    Subir presentaciones o documentos sin explicación
+                    ni actividad dificulta que el estudiante
+                    comprenda la lógica de aprendizaje de la semana.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Publicar semanas sin actividad
+                </strong>
+
+                <p>
+
+                    Cada semana debe incluir al menos una oportunidad
+                    para practicar, aplicar o demostrar
+                    el aprendizaje.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="error-item">
+
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
             </div>
 
             <div>
@@ -3308,8 +4003,8 @@ footer {
 
                 <p>
 
-                    La herramienta o formato termina determinando
-                    el material en lugar del objetivo académico.
+                    La herramienta termina determinando el material
+                    en lugar del objetivo académico.
 
                 </p>
 
@@ -3321,9 +4016,7 @@ footer {
         <div class="error-item">
 
             <div class="error-icon">
-
                 <i class="fa-solid fa-xmark"></i>
-
             </div>
 
             <div>
@@ -3334,8 +4027,8 @@ footer {
 
                 <p>
 
-                    Incluir demasiado texto, datos o elementos
-                    visuales dificulta identificar lo esencial.
+                    Incluir demasiado texto, datos o recursos
+                    dificulta identificar lo esencial.
 
                 </p>
 
@@ -3347,62 +4040,7 @@ footer {
         <div class="error-item">
 
             <div class="error-icon">
-
                 <i class="fa-solid fa-xmark"></i>
-
-            </div>
-
-            <div>
-
-                <strong>
-                    Confundir atractivo visual con calidad didáctica
-                </strong>
-
-                <p>
-
-                    Un diseño atractivo no compensa instrucciones
-                    confusas o contenido poco pertinente.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="error-item">
-
-            <div class="error-icon">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </div>
-
-            <div>
-
-                <strong>
-                    Utilizar ejemplos descontextualizados
-                </strong>
-
-                <p>
-
-                    El material pierde valor cuando los casos
-                    no corresponden al nivel o realidad
-                    profesional del estudiante.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="error-item">
-
-            <div class="error-icon">
-
-                <i class="fa-solid fa-xmark"></i>
-
             </div>
 
             <div>
@@ -3432,7 +4070,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 9
+     SECCIÓN 10
 ======================================================== -->
 
 <section class="section"
@@ -3440,7 +4078,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 9
+        Sección 10
     </div>
 
 
@@ -3468,7 +4106,7 @@ footer {
             <div class="progress"
                  id="progress">
 
-                0 de 10 criterios
+                0 de 13 criterios
 
             </div>
 
@@ -3600,8 +4238,8 @@ footer {
 
                 <label for="c8">
 
-                    Imágenes, gráficos o elementos visuales
-                    cumplen una función y no son únicamente decorativos.
+                    Los enlaces, archivos
+                    y recursos funcionan correctamente.
 
                 </label>
 
@@ -3616,8 +4254,8 @@ footer {
 
                 <label for="c9">
 
-                    Los enlaces, archivos
-                    y recursos utilizados funcionan correctamente.
+                    Cada semana de Moodle contiene
+                    una explicación clara del tema.
 
                 </label>
 
@@ -3631,6 +4269,54 @@ footer {
                        class="check">
 
                 <label for="c10">
+
+                    Cada semana incluye al menos
+                    un material complementario.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c11"
+                       class="check">
+
+                <label for="c11">
+
+                    Cada semana contiene al menos
+                    una actividad de aprendizaje.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c12"
+                       class="check">
+
+                <label for="c12">
+
+                    Existe congruencia entre explicación,
+                    recursos y actividad de la semana.
+
+                </label>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <input type="checkbox"
+                       id="c13"
+                       class="check">
+
+                <label for="c13">
 
                     Revisé ortografía, datos,
                     referencias y presentación final.
@@ -3659,7 +4345,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 10
+     SECCIÓN 11
 ======================================================== -->
 
 <section class="section"
@@ -3667,7 +4353,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 10
+        Sección 11
     </div>
 
 
@@ -3678,7 +4364,7 @@ footer {
 
     <div class="section-subtitle">
 
-        Recursos que pueden integrarse progresivamente a este espacio
+        Recursos para facilitar el diseño y revisión del material
 
     </div>
 
@@ -3713,6 +4399,30 @@ footer {
 
             <div class="template-icon">
 
+                <i class="fa-solid fa-laptop"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Guía de organización de Moodle
+                </h3>
+
+                <p>
+                    Estructura semanal: explicación,
+                    material complementario y actividad.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="template">
+
+            <div class="template-icon">
+
                 <i class="fa-solid fa-file-pen"></i>
 
             </div>
@@ -3725,29 +4435,6 @@ footer {
 
                 <p>
                     Resultado, propósito, formato y contenido.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="template">
-
-            <div class="template-icon">
-
-                <i class="fa-solid fa-display"></i>
-
-            </div>
-
-            <div>
-
-                <h3>
-                    Plantilla de presentación
-                </h3>
-
-                <p>
-                    Estructura institucional para apoyo docente.
                 </p>
 
             </div>
@@ -3786,7 +4473,7 @@ footer {
 
 
 <!-- ========================================================
-     SECCIÓN 11
+     SECCIÓN 12
 ======================================================== -->
 
 <section class="section"
@@ -3794,7 +4481,7 @@ footer {
 
 
     <div class="section-label">
-        Sección 11
+        Sección 12
     </div>
 
 
@@ -3826,9 +4513,37 @@ footer {
 
             <p>
 
-                Consulte el Módulo 1 para revisar
+                Consulta el Módulo 1 para revisar
                 los fundamentos institucionales
                 que orientan el diseño de experiencias de aprendizaje.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="resource">
+
+        <div class="resource-icon">
+
+            <i class="fa-solid fa-laptop"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Plataforma Moodle
+            </h3>
+
+            <p>
+
+                Utiliza Moodle como espacio para organizar
+                semanalmente la explicación del tema,
+                materiales complementarios
+                y actividades de aprendizaje.
 
             </p>
 
@@ -3853,7 +4568,7 @@ footer {
 
             <p>
 
-                Considere legibilidad, contraste,
+                Considera legibilidad, contraste,
                 organización, formatos y alternativas
                 que faciliten el acceso al contenido.
 
@@ -3880,9 +4595,9 @@ footer {
 
             <p>
 
-                Utilice herramientas tecnológicas
-                como apoyo al diseño, manteniendo
-                siempre la revisión académica del contenido.
+                Utiliza herramientas tecnológicas
+                como apoyo al diseño,
+                manteniendo siempre la revisión académica.
 
             </p>
 
@@ -3993,14 +4708,15 @@ document.addEventListener(
     function () {
 
 
-        /* ================================================
+        /* ==================================================
            NAVEGACIÓN LATERAL
-        ================================================ */
+        ================================================== */
 
         const sections =
             document.querySelectorAll(
                 ".module-content section[id]"
             );
+
 
         const navLinks =
             document.querySelectorAll(
@@ -4012,11 +4728,13 @@ document.addEventListener(
 
             let current = "";
 
+
             sections.forEach(
-                section => {
+                function (section) {
 
                     const rect =
                         section.getBoundingClientRect();
+
 
                     if (rect.top <= 190) {
 
@@ -4030,11 +4748,12 @@ document.addEventListener(
 
 
             navLinks.forEach(
-                link => {
+                function (link) {
 
                     link.classList.remove(
                         "active-section"
                     );
+
 
                     if (
                         link.getAttribute("href") ===
@@ -4064,15 +4783,17 @@ document.addEventListener(
 
 
 
-        /* ================================================
+        /* ==================================================
            LISTA DE COTEJO
-        ================================================ */
+        ================================================== */
 
         const checks =
             document.querySelectorAll(".check");
 
+
         const progress =
             document.getElementById("progress");
+
 
         const result =
             document.getElementById("check-result");
@@ -4083,6 +4804,7 @@ document.addEventListener(
             const total =
                 checks.length;
 
+
             const checked =
                 document.querySelectorAll(
                     ".check:checked"
@@ -4090,8 +4812,10 @@ document.addEventListener(
 
 
             progress.textContent =
-                checked + " de " +
-                total + " criterios";
+                checked +
+                " de " +
+                total +
+                " criterios";
 
 
             if (checked === 0) {
@@ -4101,31 +4825,31 @@ document.addEventListener(
 
             }
 
-            else if (checked <= 5) {
+            else if (checked <= 6) {
 
                 result.textContent =
                     "El material requiere revisión antes de utilizarse.";
 
             }
 
-            else if (checked <= 8) {
+            else if (checked <= 10) {
 
                 result.textContent =
                     "El material presenta una base adecuada. Revisa los criterios pendientes.";
 
             }
 
-            else if (checked === 9) {
+            else if (checked < total) {
 
                 result.textContent =
-                    "El material cumple casi todos los criterios. Revisa el punto pendiente.";
+                    "El material está prácticamente listo. Revisa los criterios pendientes.";
 
             }
 
             else {
 
                 result.textContent =
-                    "El material cumple los criterios básicos de revisión y está listo para una valoración final.";
+                    "El material cumple los criterios básicos de revisión. Realiza una valoración final antes de publicarlo.";
 
             }
 
@@ -4133,7 +4857,7 @@ document.addEventListener(
 
 
         checks.forEach(
-            check => {
+            function (check) {
 
                 check.addEventListener(
                     "change",
