@@ -1,1382 +1,2369 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Capacitación para Presidentes de Academia | FCA-UACH</title>
-
-    <meta name="description"
-          content="Curso para Presidentes de Academia de la FCA-UACH sobre Modelo Educativo, planeación, diseño didáctico, programas y syllabus.">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
-          rel="stylesheet">
-
-    <!-- Iconos -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <style>
-
-        /* =========================
-           VARIABLES
-        ========================== */
-
-        :root {
-            --guinda: #7a1f35;
-            --guinda-oscuro: #551425;
-            --guinda-claro: #a44760;
-
-            --dorado: #d2a84a;
-            --dorado-claro: #f4e7c5;
-
-            --blanco: #ffffff;
-            --crema: #faf8f5;
-            --gris-claro: #f2f3f5;
-            --gris: #667085;
-            --grafito: #24262b;
-
-            --sombra: 0 10px 35px rgba(45, 32, 37, 0.10);
-            --radio: 18px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Inter", Arial, sans-serif;
-            background: var(--blanco);
-            color: var(--grafito);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-
-        /* =========================
-           NAVEGACIÓN
-        ========================== */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            min-height: 72px;
-            padding: 0 24px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--guinda);
-            font-weight: 800;
-        }
-
-        .brand-mark {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: var(--guinda);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        .brand small {
-            display: block;
-            color: var(--gris);
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: .4px;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .nav-menu a {
-            transition: .2s;
-        }
-
-        .nav-menu a:hover {
-            color: var(--guinda);
-        }
-
-        .btn-nav {
-            padding: 10px 18px;
-            color: white !important;
-            background: var(--guinda);
-            border-radius: 10px;
-        }
-
-        .btn-nav:hover {
-            background: var(--guinda-oscuro);
-        }
-
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-
-            background:
-                radial-gradient(circle at 85% 20%, rgba(210,168,74,.25), transparent 24%),
-                radial-gradient(circle at 15% 80%, rgba(122,31,53,.10), transparent 28%),
-                linear-gradient(135deg, #ffffff 0%, #fbf7f8 55%, #f6edef 100%);
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            border: 70px solid rgba(122,31,53,.04);
-            border-radius: 50%;
-            right: -160px;
-            bottom: -170px;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 90px 24px 80px;
-
-            display: grid;
-            grid-template-columns: 1.25fr .75fr;
-            gap: 60px;
-            align-items: center;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 7px 13px;
-            border-radius: 50px;
-
-            background: var(--dorado-claro);
-            color: #795b16;
-
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            color: var(--guinda-oscuro);
-            font-size: clamp(42px, 6vw, 70px);
-            line-height: 1.05;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 span {
-            color: var(--guinda);
-        }
-
-        .hero-description {
-            font-size: 18px;
-            max-width: 750px;
-            color: #555b65;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-weight: 700;
-            transition: .25s;
-        }
-
-        .btn-primary {
-            background: var(--guinda);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--guinda-oscuro);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--guinda);
-            border: 1px solid #dccbd0;
-        }
-
-        .btn-secondary:hover {
-            box-shadow: var(--sombra);
-            transform: translateY(-2px);
-        }
-
-
-        /* TARJETA HERO */
-
-        .hero-card {
-            background: rgba(255,255,255,.92);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: var(--sombra);
-            border: 1px solid rgba(122,31,53,.10);
-        }
-
-        .hero-card-icon {
-            width: 58px;
-            height: 58px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 16px;
-            background: var(--guinda);
-            color: white;
-            font-size: 24px;
-
-            margin-bottom: 20px;
-        }
-
-        .hero-card h3 {
-            color: var(--guinda);
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .hero-card p {
-            color: var(--gris);
-            font-size: 14px;
-            margin-bottom: 22px;
-        }
-
-        .hero-stat {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .stat {
-            text-align: center;
-            background: var(--crema);
-            border-radius: 12px;
-            padding: 14px 8px;
-        }
-
-        .stat strong {
-            display: block;
-            color: var(--guinda);
-            font-size: 21px;
-        }
-
-        .stat span {
-            font-size: 11px;
-            color: var(--gris);
-        }
-
-
-        /* =========================
-           SECCIONES
-        ========================== */
-
-        .section {
-            padding: 80px 24px;
-        }
-
-        .section-alt {
-            background: var(--crema);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-heading {
-            max-width: 760px;
-            margin-bottom: 45px;
-        }
-
-        .section-label {
-            color: var(--guinda);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 1.3px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(30px, 4vw, 45px);
-            color: var(--guinda-oscuro);
-            margin-bottom: 12px;
-        }
-
-        .section-heading p {
-            color: var(--gris);
-            font-size: 16px;
-        }
-
-
-        /* =========================
-           MÓDULOS
-        ========================== */
-
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-
-        .module-card {
-            position: relative;
-            background: white;
-            padding: 28px 22px;
-            border-radius: var(--radio);
-            border: 1px solid #ece5e7;
-            transition: .3s;
-            overflow: hidden;
-        }
-
-        .module-card::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 5px;
-            left: 0;
-            top: 0;
-            background: var(--guinda);
-        }
-
-        .module-card:hover {
-            transform: translateY(-7px);
-            box-shadow: var(--sombra);
-            border-color: transparent;
-        }
-
-        .module-number {
-            font-size: 12px;
-            color: var(--gris);
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 18px;
-        }
-
-        .module-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 13px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #f6edef;
-            color: var(--guinda);
-
-            font-size: 20px;
-            margin-bottom: 18px;
-        }
-
-        .module-card:nth-child(2) .module-icon,
-        .module-card:nth-child(4) .module-icon {
-            background: var(--dorado-claro);
-            color: #8a681c;
-        }
-
-        .module-card h3 {
-            color: var(--guinda-oscuro);
-            font-size: 17px;
-            margin-bottom: 10px;
-        }
-
-        .module-card p {
-            color: var(--gris);
-            font-size: 13px;
-            min-height: 82px;
-        }
-
-        .module-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            margin-top: 16px;
-            color: var(--guinda);
-            font-size: 13px;
-            font-weight: 800;
-        }
-
-
-        /* =========================
-           PROPÓSITO
-        ========================== */
-
-        .purpose-grid {
-            display: grid;
-            grid-template-columns: .85fr 1.15fr;
-            gap: 55px;
-            align-items: center;
-        }
-
-        .purpose-visual {
-            min-height: 390px;
-
-            border-radius: 28px;
-            background:
-                linear-gradient(145deg, rgba(85,20,37,.95), rgba(122,31,53,.84)),
-                url("assets/img/fca.jpg") center/cover;
-
-            padding: 38px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-
-            color: white;
-            box-shadow: var(--sombra);
-        }
-
-        .purpose-visual i {
-            color: var(--dorado);
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .purpose-visual h3 {
-            font-size: 27px;
-            line-height: 1.2;
-        }
-
-        .purpose-list {
-            display: grid;
-            gap: 18px;
-        }
-
-        .purpose-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .purpose-item .check {
-            flex: 0 0 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--dorado-claro);
-            color: #886516;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .purpose-item h4 {
-            color: var(--guinda);
-            margin-bottom: 4px;
-        }
-
-        .purpose-item p {
-            color: var(--gris);
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           METODOLOGÍA
-        ========================== */
-
-        .method-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .method-card {
-            padding: 27px;
-            border-radius: var(--radio);
-            background: white;
-            border: 1px solid #e9e9e9;
-        }
-
-        .method-card i {
-            font-size: 25px;
-            color: var(--guinda);
-            margin-bottom: 17px;
-        }
-
-        .method-card h3 {
-            font-size: 16px;
-            margin-bottom: 7px;
-        }
-
-        .method-card p {
-            color: var(--gris);
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           RESPONSABLES
-        ========================== */
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .person-card {
-            background: white;
-            border-radius: var(--radio);
-            padding: 26px;
-            border: 1px solid #ece5e7;
-            transition: .25s;
-        }
-
-        .person-card:hover {
-            box-shadow: var(--sombra);
-        }
-
-        .person-avatar {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            background: var(--guinda);
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 19px;
-            margin-bottom: 17px;
-        }
-
-        .person-card h3 {
-            color: var(--guinda-oscuro);
-            font-size: 16px;
-        }
-
-        .person-card p {
-            font-size: 13px;
-            color: var(--gris);
-        }
-
-        .person-card.special {
-            background: var(--guinda);
-            color: white;
-            border: none;
-        }
-
-        .person-card.special h3,
-        .person-card.special p {
-            color: white;
-        }
-
-        .person-card.special .person-avatar {
-            background: white;
-            color: var(--guinda);
-        }
-
-
-        /* =========================
-           CTA
-        ========================== */
-
-        .cta {
-            padding: 35px;
-            border-radius: 25px;
-            background:
-                linear-gradient(120deg, var(--guinda-oscuro), var(--guinda));
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .cta h2 {
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-
-        .cta p {
-            color: rgba(255,255,255,.78);
-        }
-
-        .cta a {
-            flex-shrink: 0;
-            padding: 13px 22px;
-            border-radius: 12px;
-            background: white;
-            color: var(--guinda);
-            font-weight: 800;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            margin-top: 80px;
-            background: #321019;
-            color: white;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 24px;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .footer-title {
-            font-weight: 800;
-        }
-
-        .footer-text {
-            color: rgba(255,255,255,.65);
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        .footer-icon {
-            color: var(--dorado);
-            font-size: 26px;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================== */
-
-        @media (max-width: 1000px) {
-
-            .hero-container,
-            .purpose-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .modules-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .method-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .nav-menu {
-                display: none;
-            }
-        }
-
-
-        @media (max-width: 620px) {
-
-            .hero-container {
-                padding-top: 60px;
-            }
-
-            .modules-grid,
-            .method-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-stat {
-                grid-template-columns: 1fr;
-            }
-
-            .cta {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .module-card p {
-                min-height: auto;
-            }
-        }
-
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formación y Acompañamiento Académico | FCA-UACH</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<style>
+
+/* ==========================================================
+   IDENTIDAD VISUAL
+========================================================== */
+
+:root {
+
+    --morado: #71358f;
+    --morado-oscuro: #52216b;
+    --morado-profundo: #3b154d;
+    --morado-medio: #8a58a4;
+
+    --lavanda: #f5f0f8;
+    --lavanda-2: #e9def0;
+
+    --amarillo: #f6b719;
+    --amarillo-claro: #fff2c8;
+    --amarillo-palido: #fff9e8;
+
+    --blanco: #ffffff;
+
+    --gris-fondo: #fafafa;
+    --gris-claro: #f3f3f5;
+    --gris-borde: #e6e2e8;
+    --gris: #667085;
+
+    --texto: #292532;
+    --texto-secundario: #5d5864;
+
+    --sombra:
+        0 10px 30px rgba(67,35,80,.09);
+}
+
+
+/* ==========================================================
+   GENERAL
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Inter", Arial, sans-serif;
+
+    color: var(--texto);
+
+    background: var(--blanco);
+
+    line-height: 1.65;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ==========================================================
+   MENÚ SUPERIOR
+========================================================== */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1200;
+
+    background: rgba(255,255,255,.97);
+
+    border-bottom: 1px solid var(--gris-borde);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.nav-container {
+
+    max-width: 1320px;
+
+    min-height: 76px;
+
+    margin: auto;
+
+    padding: 0 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* MARCA */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    white-space: nowrap;
+}
+
+
+.brand-logo {
+
+    width: 50px;
+
+    height: 50px;
+
+    flex: 0 0 50px;
+
+    object-fit: contain;
+
+    border-radius: 9px;
+}
+
+
+.brand-text {
+
+    color: var(--morado-oscuro);
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+.brand-text small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--gris);
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: .15px;
+}
+
+
+/* NAVEGACIÓN */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+}
+
+
+.nav-links a {
+
+    padding: 8px 11px;
+
+    border-radius: 9px;
+
+    color: #514b59;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+
+.nav-links a:hover {
+
+    background: var(--lavanda);
+
+    color: var(--morado);
+}
+
+
+.nav-links a.active {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--gris-borde);
+
+    background:
+
+        radial-gradient(
+            circle at 88% 22%,
+            rgba(246,183,25,.18),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 76% 70%,
+            rgba(113,53,143,.09),
+            transparent 26%
+        ),
+
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #ffffff 56%,
+            #faf6fc 100%
+        );
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    right: -180px;
+
+    top: -190px;
+
+    border-radius: 50%;
+
+    background: rgba(113,53,143,.055);
+}
+
+
+.hero-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 78px 28px 82px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0,1fr) 320px;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* CONTENIDO HERO */
+
+.hero-institution {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 26px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+}
+
+
+.hero-institution img {
+
+    width: 45px;
+
+    height: 45px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+
+.hero-institution-text {
+    line-height: 1.35;
+}
+
+
+.hero-institution-text span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .4px;
+}
+
+
+.hero-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+    color: var(--morado);
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.hero-label::before {
+
+    content: "";
+
+    width: 34px;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+}
+
+
+.hero h1 {
+
+    max-width: 770px;
+
+    margin-bottom: 19px;
+
+    color: var(--morado-oscuro);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,6vw,68px);
+
+    font-weight: 800;
+
+    line-height: 1.04;
+}
+
+
+.hero-description {
+
+    max-width: 760px;
+
+    margin-bottom: 29px;
+
+    color: var(--texto-secundario);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    flex-wrap: wrap;
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+
+    position: relative;
+
+    min-height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.visual-card {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 270px;
+
+    padding: 28px 25px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.96);
+
+    box-shadow:
+        0 24px 55px rgba(67,35,80,.13);
+}
+
+
+.visual-logo {
+
+    width: 85px;
+
+    height: 85px;
+
+    display: block;
+
+    margin: 0 auto 21px;
+
+    object-fit: contain;
+
+    border-radius: 14px;
+}
+
+
+.visual-card strong {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    text-align: center;
+
+    color: var(--morado-oscuro);
+
+    font-size: 18px;
+}
+
+
+.visual-card p {
+
+    text-align: center;
+
+    color: var(--gris);
+
+    font-size: 12.5px;
+}
+
+
+.visual-dot-purple {
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 110px;
+
+    top: 6px;
+
+    right: 0;
+
+    border-radius: 28px;
+
+    background: var(--morado);
+
+    transform: rotate(12deg);
+}
+
+
+.visual-dot-yellow {
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    left: 0;
+
+    bottom: 0;
+
+    border-radius: 50%;
+
+    background: var(--amarillo);
+}
+
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 19px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: .2s ease;
+}
+
+
+.btn-primary {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+
+.btn-primary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(246,183,25,.27);
+}
+
+
+.btn-outline {
+
+    border: 1px solid var(--gris-borde);
+
+    background: white;
+
+    color: var(--morado);
+}
+
+
+.btn-outline:hover {
+
+    background: var(--lavanda);
+}
+
+
+/* ==========================================================
+   ESTRUCTURA DE SECCIONES
+========================================================== */
+
+.section {
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 76px 28px;
+}
+
+
+.section-header {
+
+    max-width: 810px;
+
+    margin-bottom: 38px;
+}
+
+
+.section-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+
+    color: #716b77;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.section-label::before {
+
+    content: "";
+
+    width: 29px;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+}
+
+
+.section h2 {
+
+    margin-bottom: 11px;
+
+    color: var(--morado-oscuro);
+
+    font-size: clamp(28px,3vw,38px);
+
+    line-height: 1.18;
+}
+
+
+.section-intro {
+
+    color: var(--texto-secundario);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   ¿QUÉ NECESITAS HACER?
+========================================================== */
+
+.action-section {
+
+    background: var(--gris-fondo);
+
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+
+.action-inner {
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 76px 28px;
+}
+
+
+.module-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(6,1fr);
+
+    gap: 18px;
+}
+
+
+.module-card {
+
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 25px 23px 22px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 19px;
+
+    background: white;
+
+    transition: .22s ease;
+}
+
+
+.module-card:nth-child(1),
+.module-card:nth-child(2),
+.module-card:nth-child(3) {
+
+    grid-column: span 2;
+}
+
+
+.module-card:nth-child(4),
+.module-card:nth-child(5) {
+
+    grid-column: span 3;
+}
+
+
+.module-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--lavanda-2);
+
+    box-shadow: var(--sombra);
+}
+
+
+.module-number {
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 18px;
+
+    color: rgba(113,53,143,.08);
+
+    font-size: 54px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.module-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 19px;
+
+    border-radius: 14px;
+
+    background: var(--lavanda);
+
+    color: var(--morado);
+
+    font-size: 21px;
+}
+
+
+.module-card:nth-child(even) .module-icon {
+
+    background: var(--amarillo-claro);
+
+    color: #ac7300;
+}
+
+
+.module-card h3 {
+
+    max-width: 260px;
+
+    margin-bottom: 10px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 17px;
+
+    line-height: 1.3;
+}
+
+
+.module-card p {
+
+    margin-bottom: 22px;
+
+    color: var(--gris);
+
+    font-size: 12.8px;
+
+    line-height: 1.55;
+}
+
+
+.module-link {
+
+    position: absolute;
+
+    left: 23px;
+
+    bottom: 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--morado);
+
+    font-size: 11.5px;
+
+    font-weight: 800;
+}
+
+
+.module-link i {
+
+    transition: .2s ease;
+}
+
+
+.module-card:hover .module-link i {
+
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   PROPÓSITO
+========================================================== */
+
+.purpose-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.25fr .75fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+.purpose-text p {
+
+    margin-bottom: 16px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14.5px;
+}
+
+
+.purpose-box {
+
+    padding: 30px;
+
+    border-left: 5px solid var(--amarillo);
+
+    border-radius: 0 20px 20px 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--amarillo-palido),
+            #fffdfa
+        );
+}
+
+
+.purpose-box i {
+
+    margin-bottom: 15px;
+
+    color: var(--amarillo);
+
+    font-size: 30px;
+}
+
+
+.purpose-box h3 {
+
+    margin-bottom: 9px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 18px;
+}
+
+
+.purpose-box p {
+
+    color: var(--texto-secundario);
+
+    font-size: 13.5px;
+}
+
+
+/* ==========================================================
+   OFERTA ACADÉMICA
+========================================================== */
+
+.academic-offer {
+
+    padding: 0 28px 76px;
+}
+
+
+.offer-box {
+
+    position: relative;
+
+    max-width: 1124px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    padding: 35px 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+
+.offer-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 190px;
+
+    right: -70px;
+
+    top: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(246,183,25,.18);
+}
+
+
+.offer-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.offer-icon {
+
+    margin-bottom: 11px;
+
+    color: var(--amarillo);
+
+    font-size: 27px;
+}
+
+
+.offer-box h3 {
+
+    margin-bottom: 6px;
+
+    font-size: 22px;
+}
+
+
+.offer-box p {
+
+    max-width: 680px;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 13px;
+}
+
+
+.offer-button {
+
+    position: relative;
+
+    z-index: 2;
+
+    flex: 0 0 auto;
+}
+
+
+/* ==========================================================
+   EQUIPO RESPONSABLE
+========================================================== */
+
+.team-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf8fb,
+            #ffffff
+        );
+
+    border-top: 1px solid var(--gris-borde);
+}
+
+
+.team-inner {
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 76px 28px;
+}
+
+
+.team-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(6,1fr);
+
+    gap: 18px;
+}
+
+
+.team-card {
+
+    padding: 25px 22px;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 17px;
+
+    background: white;
+
+    transition: .2s ease;
+}
+
+
+.team-card:nth-child(1),
+.team-card:nth-child(2),
+.team-card:nth-child(3) {
+
+    grid-column: span 2;
+}
+
+
+.team-card:nth-child(4),
+.team-card:nth-child(5) {
+
+    grid-column: span 3;
+}
+
+
+.team-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--sombra);
+}
+
+
+.initials {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--morado),
+            var(--morado-oscuro)
+        );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.team-card:nth-child(even) .initials {
+
+    background: var(--amarillo);
+
+    color: var(--morado-profundo);
+}
+
+
+.team-card h3 {
+
+    margin-bottom: 5px;
+
+    color: var(--morado-oscuro);
+
+    font-size: 15px;
+
+    line-height: 1.35;
+}
+
+
+.team-role {
+
+    margin-bottom: 15px;
+
+    color: var(--gris);
+
+    font-size: 11.5px;
+
+    font-weight: 600;
+}
+
+
+.team-email {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--morado);
+
+    font-size: 11.5px;
+
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+
+.team-email:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--morado-profundo),
+            var(--morado)
+        );
+
+    color: white;
+}
+
+
+.footer-inner {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 31px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.footer-logo-box {
+
+    width: 58px;
+
+    height: 58px;
+
+    padding: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+.footer-logo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+}
+
+
+.footer-brand strong {
+
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.footer-brand small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 10px;
+}
+
+
+.footer-info {
+
+    text-align: right;
+
+    color: rgba(255,255,255,.76);
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width: 960px) {
+
+    .hero-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .hero-visual {
+
+        min-height: 260px;
+    }
+
+    .purpose-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .module-grid,
+    .team-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .module-card:nth-child(n),
+    .team-card:nth-child(n) {
+
+        grid-column: span 1;
+    }
+}
+
+
+@media(max-width: 860px) {
+
+    .nav-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-top: 11px;
+
+        padding-bottom: 11px;
+    }
+
+    .nav-links {
+
+        width: 100%;
+    }
+
+    .offer-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-info {
+
+        text-align: left;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    .brand-logo {
+
+        width: 44px;
+
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+    .hero-container {
+
+        padding: 50px 22px 58px;
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+    }
+
+    .hero-description {
+
+        font-size: 15.5px;
+    }
+
+    .hero-visual {
+
+        display: none;
+    }
+
+    .action-inner,
+    .section,
+    .team-inner {
+
+        padding-left: 22px;
+
+        padding-right: 22px;
+    }
+
+    .module-grid,
+    .team-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .module-card {
+
+        min-height: 245px;
+    }
+
+    .hero-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .academic-offer {
+
+        padding-left: 22px;
+
+        padding-right: 22px;
+    }
+
+    .offer-box {
+
+        padding: 28px 24px;
+    }
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     NAVEGACIÓN
-===================================================== -->
+<!-- ========================================================
+     MENÚ SUPERIOR
+======================================================== -->
 
 <header class="navbar">
 
-    <div class="nav-container">
+<div class="nav-container">
 
-        <a href="index.html" class="brand">
 
-            <div class="brand-mark">
-                <i class="fa-solid fa-graduation-cap"></i>
-            </div>
+    <a href="index.html"
+       class="brand">
 
-            <div>
-                FCA · UACH
-                <small>FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO</small>
-            </div>
+        <img
+            src="assets/logofca.jpeg"
+            alt="Logotipo de la Facultad de Contaduría y Administración"
+            class="brand-logo"
+        >
 
+        <div class="brand-text">
+
+            FCA · UACH
+
+            <small>
+                FORMACIÓN Y ACOMPAÑAMIENTO ACADÉMICO
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html"
+           class="active">
+            Inicio
         </a>
 
+        <a href="modulo1.html">
+            Módulo 1
+        </a>
 
-        <nav class="nav-menu">
-            <a href="#inicio">Inicio</a>
-            <a href="#modulos">Módulos</a>
-            <a href="#proposito">Propósito</a>
-            <a href="#responsables">Responsables</a>
-            <a href="modulo1.html" class="btn-nav">Comenzar curso</a>
-        </nav>
+        <a href="modulo2.html">
+            Módulo 2
+        </a>
 
-    </div>
+        <a href="modulo3.html">
+            Módulo 3
+        </a>
+
+        <a href="modulo4.html">
+            Módulo 4
+        </a>
+
+        <a href="modulo5.html">
+            Módulo 5
+        </a>
+
+    </nav>
+
+</div>
 
 </header>
 
 
 
-<!-- =====================================================
+<!-- ========================================================
      HERO
-===================================================== -->
+======================================================== -->
 
-<section class="hero" id="inicio">
+<section class="hero">
 
-    <div class="hero-container">
+<div class="hero-container">
 
-        <div>
 
-            <div class="eyebrow">
-                <i class="fa-solid fa-landmark"></i>
+    <div class="hero-main">
+
+
+        <div class="hero-institution">
+
+            <img
+                src="assets/logofca.jpeg"
+                alt="Logotipo FCA"
+            >
+
+            <div class="hero-institution-text">
+
                 Facultad de Contaduría y Administración
-            </div>
 
-            <h1>
-                Capacitación para
-                <span>Presidentes de Academia</span>
-            </h1>
-
-            <p class="hero-description">
-                Un espacio de formación orientado a fortalecer el acompañamiento
-                docente, la planeación académica y la aplicación del Modelo
-                Educativo y Pedagógico de la UACH.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#modulos" class="btn-primary">
-                    Explorar módulos
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
-
-                <a href="#proposito" class="btn-secondary">
-                    Conocer el curso
-                    <i class="fa-regular fa-circle-play"></i>
-                </a>
+                <span>
+                    Universidad Autónoma de Chihuahua
+                </span>
 
             </div>
 
         </div>
 
 
-        <div class="hero-card">
+        <div class="hero-label">
+            Espacio permanente de consulta
+        </div>
 
-            <div class="hero-card-icon">
+
+        <h1>
+            Formación y Acompañamiento Académico
+        </h1>
+
+
+        <p class="hero-description">
+
+            Centro de consulta y autoformación para docentes
+            y Presidentes de Academia de la Facultad de Contaduría
+            y Administración. Aquí encontrará orientaciones,
+            procedimientos, ejemplos, criterios y recursos
+            para apoyar el trabajo académico cotidiano.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a href="#consulta"
+               class="btn btn-primary">
+
                 <i class="fa-solid fa-compass"></i>
-            </div>
 
-            <h3>De los principios a la práctica</h3>
+                ¿Qué necesitas hacer hoy?
 
-            <p>
-                El curso propone una ruta que conecta el Modelo Educativo
-                con los programas, materiales, syllabus y procesos de
-                acompañamiento académico.
-            </p>
+            </a>
 
-            <div class="hero-stat">
 
-                <div class="stat">
-                    <strong>5</strong>
-                    <span>Módulos</span>
-                </div>
+            <a
+                href="https://uach.mx/fca/#Programas-educativos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+            >
 
-                <div class="stat">
-                    <strong>100%</strong>
-                    <span>Aplicado</span>
-                </div>
+                <i class="fa-solid fa-graduation-cap"></i>
 
-                <div class="stat">
-                    <strong>FCA</strong>
-                    <span>UACH</span>
-                </div>
+                Oferta académica FCA
 
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MÓDULOS
-===================================================== -->
-
-<section class="section section-alt" id="modulos">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">Ruta de aprendizaje</div>
-
-            <h2>Cinco módulos para fortalecer el trabajo académico</h2>
-
-            <p>
-                La capacitación avanza desde los fundamentos institucionales
-                hasta su aplicación en la planeación, enseñanza y acompañamiento
-                de las academias.
-            </p>
-
-        </div>
-
-
-        <div class="modules-grid">
-
-
-            <!-- MÓDULO 1 -->
-
-            <article class="module-card">
-
-                <div class="module-number">MÓDULO 01</div>
-
-                <div class="module-icon">
-                    <i class="fa-solid fa-university"></i>
-                </div>
-
-                <h3>Modelo educativo y enseñanza</h3>
-
-                <p>
-                    Fundamentos del Modelo Educativo y Pedagógico UACH,
-                    transversalización y práctica docente.
-                </p>
-
-                <a href="modulo1.html" class="module-link">
-                    Entrar al módulo
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-
-
-            <!-- MÓDULO 2 -->
-
-            <article class="module-card">
-
-                <div class="module-number">MÓDULO 02</div>
-
-                <div class="module-icon">
-                    <i class="fa-solid fa-shapes"></i>
-                </div>
-
-                <h3>Material didáctico</h3>
-
-                <p>
-                    Diseño y selección de recursos pertinentes para favorecer
-                    experiencias de aprendizaje.
-                </p>
-
-                <a href="modulo2.html" class="module-link">
-                    Entrar al módulo
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-
-
-            <!-- MÓDULO 3 -->
-
-            <article class="module-card">
-
-                <div class="module-number">MÓDULO 03</div>
-
-                <div class="module-icon">
-                    <i class="fa-solid fa-file-lines"></i>
-                </div>
-
-                <h3>Programas académicos</h3>
-
-                <p>
-                    Criterios para diseñar, analizar y revisar programas
-                    de asignatura de manera colegiada.
-                </p>
-
-                <a href="modulo3.html" class="module-link">
-                    Entrar al módulo
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-
-
-            <!-- MÓDULO 4 -->
-
-            <article class="module-card">
-
-                <div class="module-number">MÓDULO 04</div>
-
-                <div class="module-icon">
-                    <i class="fa-solid fa-calendar-check"></i>
-                </div>
-
-                <h3>Syllabus</h3>
-
-                <p>
-                    Del programa institucional a una planeación clara,
-                    coherente y comunicable para cada semestre.
-                </p>
-
-                <a href="modulo4.html" class="module-link">
-                    Entrar al módulo
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-
-
-            <!-- MÓDULO 5 -->
-
-            <article class="module-card">
-
-                <div class="module-number">MÓDULO 05</div>
-
-                <div class="module-icon">
-                    <i class="fa-solid fa-people-group"></i>
-                </div>
-
-                <h3>Acompañamiento académico</h3>
-
-                <p>
-                    Herramientas para orientar el trabajo colegiado y promover
-                    procesos de mejora continua.
-                </p>
-
-                <a href="modulo5.html" class="module-link">
-                    Entrar al módulo
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PROPÓSITO
-===================================================== -->
-
-<section class="section" id="proposito">
-
-    <div class="container purpose-grid">
-
-
-        <div class="purpose-visual">
-
-            <i class="fa-solid fa-route"></i>
-
-            <h3>
-                Modelo educativo → planeación →
-                práctica → acompañamiento
-            </h3>
-
-        </div>
-
-
-        <div>
-
-            <div class="section-heading">
-
-                <div class="section-label">Propósito</div>
-
-                <h2>Un curso pensado para la función de las academias</h2>
-
-                <p>
-                    Más que revisar documentos, se busca desarrollar criterios
-                    comunes para orientar la práctica docente.
-                </p>
-
-            </div>
-
-
-            <div class="purpose-list">
-
-
-                <div class="purpose-item">
-
-                    <div class="check">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-
-                    <div>
-                        <h4>Comprender</h4>
-                        <p>
-                            Relacionar el Modelo Educativo y Pedagógico UACH
-                            con la práctica cotidiana.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="purpose-item">
-
-                    <div class="check">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-
-                    <div>
-                        <h4>Revisar</h4>
-                        <p>
-                            Identificar congruencia entre programas, syllabus,
-                            estrategias y evaluación.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="purpose-item">
-
-                    <div class="check">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-
-                    <div>
-                        <h4>Acompañar</h4>
-                        <p>
-                            Promover acuerdos y procesos de mejora mediante
-                            el trabajo colegiado.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     METODOLOGÍA
-===================================================== -->
-
-<section class="section section-alt">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">Metodología</div>
-
-            <h2>Aprender mediante la aplicación</h2>
-
-            <p>
-                Cada módulo combina fundamentos, ejemplos y ejercicios
-                vinculados con situaciones reales del trabajo académico.
-            </p>
-
-        </div>
-
-
-        <div class="method-grid">
-
-
-            <div class="method-card">
-                <i class="fa-solid fa-book-open"></i>
-                <h3>Fundamentos</h3>
-                <p>
-                    Conceptos centrales del Modelo Educativo y Pedagógico.
-                </p>
-            </div>
-
-
-            <div class="method-card">
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-                <h3>Análisis</h3>
-                <p>
-                    Revisión crítica de programas, actividades y planeaciones.
-                </p>
-            </div>
-
-
-            <div class="method-card">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <h3>Aplicación</h3>
-                <p>
-                    Herramientas y criterios transferibles a cada academia.
-                </p>
-            </div>
-
-
-            <div class="method-card">
-                <i class="fa-solid fa-comments"></i>
-                <h3>Trabajo colegiado</h3>
-                <p>
-                    Reflexión, retroalimentación y construcción de acuerdos.
-                </p>
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     RESPONSABLES
-===================================================== -->
-
-<section class="section" id="responsables">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">Equipo responsable</div>
-
-            <h2>Formación y acompañamiento académico</h2>
-
-        </div>
-
-
-        <div class="team-grid">
-
-
-            <div class="person-card">
-
-                <div class="person-avatar">
-                    MP
-                </div>
-
-                <h3>Dra. Marisol Priscila Palafox Bolívar</h3>
-
-                <p>Asesora Técnica Pedagógica</p>
-
-            </div>
-
-
-            <div class="person-card">
-
-                <div class="person-avatar">
-                    EH
-                </div>
-
-                <h3>M.I. Efrén Hernández Arenivas</h3>
-
-                <p>Asesor Técnico Pedagógico</p>
-
-            </div>
-
-
-            <div class="person-card">
-
-                <div class="person-avatar">
-                    OV
-                </div>
-
-                <h3>Dr. Omar Elier Varela Faudoa</h3>
-
-                <p>Asesor Técnico Pedagógico</p>
-
-            </div>
-
-
-            <div class="person-card special">
-
-                <div class="person-avatar">
-                    VB
-                </div>
-
-                <h3>Dra. Viviana Berroterán Martínez</h3>
-
-                <p>Secretaria Académica</p>
-
-            </div>
-
-
-            <div class="person-card special">
-
-                <div class="person-avatar">
-                    CC
-                </div>
-
-                <h3>Dra. Cristina Cabrera Ramos</h3>
-
-                <p>Directora</p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CTA FINAL
-===================================================== -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="cta">
-
-            <div>
-                <h2>Comienza la ruta de formación</h2>
-
-                <p>
-                    Inicia con los fundamentos del Modelo Educativo y
-                    Pedagógico UACH.
-                </p>
-            </div>
-
-            <a href="modulo1.html">
-                Ir al Módulo 1
-                &nbsp;
-                <i class="fa-solid fa-arrow-right"></i>
             </a>
 
         </div>
 
+
     </div>
+
+
+
+    <div class="hero-visual">
+
+
+        <div class="visual-dot-purple"></div>
+
+        <div class="visual-dot-yellow"></div>
+
+
+        <div class="visual-card">
+
+            <img
+                src="assets/logofca.jpeg"
+                alt="Logotipo FCA-UACH"
+                class="visual-logo"
+            >
+
+            <strong>
+                FCA · UACH
+            </strong>
+
+            <p>
+
+                Recursos para comprender, diseñar,
+                revisar y acompañar los procesos
+                académicos de la Facultad.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ========================================================
+     QUÉ NECESITAS HACER
+======================================================== -->
+
+<section class="action-section"
+         id="consulta">
+
+<div class="action-inner">
+
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Consulta rápida
+        </div>
+
+        <h2>
+            ¿Qué necesitas hacer hoy?
+        </h2>
+
+        <p class="section-intro">
+
+            Selecciona la tarea que necesitas realizar.
+            Cada módulo está diseñado para funcionar como
+            una guía de consulta independiente y puede revisarse
+            en cualquier momento.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="module-grid">
+
+
+        <!-- MÓDULO 1 -->
+
+        <a href="modulo1.html"
+           class="module-card">
+
+            <div class="module-number">
+                01
+            </div>
+
+            <div class="module-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <h3>
+                Comprender y aplicar el Modelo Educativo UACH
+            </h3>
+
+            <p>
+
+                Consulta los conceptos fundamentales del Modelo:
+                glocalidad, Saber–Actuar–Ser, principios,
+                Auto-Socio-Ecoformación, ejes y ambientes
+                de aprendizaje.
+
+            </p>
+
+            <span class="module-link">
+
+                Consultar módulo
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <!-- MÓDULO 2 -->
+
+        <a href="modulo2.html"
+           class="module-card">
+
+            <div class="module-number">
+                02
+            </div>
+
+            <div class="module-icon">
+
+                <i class="fa-solid fa-pen-ruler"></i>
+
+            </div>
+
+            <h3>
+                Diseñar o mejorar material didáctico
+            </h3>
+
+            <p>
+
+                Identifica criterios para seleccionar,
+                adaptar, crear y revisar materiales
+                didácticos pertinentes, claros,
+                accesibles y alineados con el aprendizaje.
+
+            </p>
+
+            <span class="module-link">
+
+                Consultar módulo
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <!-- MÓDULO 3 -->
+
+        <a href="modulo3.html"
+           class="module-card">
+
+            <div class="module-number">
+                03
+            </div>
+
+            <div class="module-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+            <h3>
+                Elaborar o revisar un programa académico
+            </h3>
+
+            <p>
+
+                Revisa la congruencia entre propósito,
+                resultados de aprendizaje, contenidos,
+                estrategias, evaluación y perfil
+                de egreso.
+
+            </p>
+
+            <span class="module-link">
+
+                Consultar módulo
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <!-- MÓDULO 4 -->
+
+        <a href="modulo4.html"
+           class="module-card">
+
+            <div class="module-number">
+                04
+            </div>
+
+            <div class="module-icon">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+            <h3>
+                Elaborar o revisar un syllabus
+            </h3>
+
+            <p>
+
+                Convierte el programa académico en una
+                planeación semestral clara: calendario,
+                actividades, evidencias, evaluación,
+                políticas y recursos.
+
+            </p>
+
+            <span class="module-link">
+
+                Consultar módulo
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <!-- MÓDULO 5 -->
+
+        <a href="modulo5.html"
+           class="module-card">
+
+            <div class="module-number">
+                05
+            </div>
+
+            <div class="module-icon">
+
+                <i class="fa-solid fa-people-group"></i>
+
+            </div>
+
+            <h3>
+                Organizar y dar seguimiento al trabajo de academia
+            </h3>
+
+            <p>
+
+                Encuentra orientaciones para reuniones,
+                revisión colegiada, construcción de acuerdos,
+                seguimiento y acompañamiento académico
+                de los docentes.
+
+            </p>
+
+            <span class="module-link">
+
+                Consultar módulo
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     PROPÓSITO DEL ESPACIO
+======================================================== -->
+
+<section class="section"
+         id="proposito">
+
+
+    <div class="purpose-grid">
+
+
+        <div class="purpose-text">
+
+
+            <div class="section-label">
+                Propósito
+            </div>
+
+
+            <h2>
+                Un espacio para consultar cuando sea necesario
+            </h2>
+
+
+            <p>
+
+                Este sitio fue diseñado como un espacio permanente
+                de consulta y autoformación para apoyar a docentes
+                y Presidentes de Academia en tareas relacionadas
+                con la planeación, desarrollo, revisión
+                y acompañamiento de los procesos académicos.
+
+            </p>
+
+
+            <p>
+
+                Su organización permite ingresar directamente
+                al tema que se necesita resolver, sin que sea
+                indispensable recorrer previamente todos los módulos.
+                Los contenidos se encuentran relacionados entre sí,
+                de manera que los conceptos institucionales
+                puedan consultarse nuevamente cuando sea necesario.
+
+            </p>
+
+
+            <p>
+
+                El propósito es concentrar en un mismo lugar
+                orientaciones, procedimientos, ejemplos, formatos,
+                criterios de revisión y recursos institucionales
+                que faciliten el trabajo académico en la Facultad.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="purpose-box">
+
+
+            <i class="fa-solid fa-circle-check"></i>
+
+
+            <h3>
+                Criterio de diseño
+            </h3>
+
+
+            <p>
+
+                Cada recurso debe ayudar al docente
+                o Presidente de Academia a
+                <strong>comprender, elaborar, revisar
+                o resolver una tarea académica concreta.</strong>
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     OFERTA ACADÉMICA
+======================================================== -->
+
+<section class="academic-offer">
+
+
+    <div class="offer-box">
+
+
+        <div class="offer-content">
+
+
+            <div class="offer-icon">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+            </div>
+
+
+            <h3>
+                Consulta la oferta académica de la FCA
+            </h3>
+
+
+            <p>
+
+                Accede al sitio institucional de la Facultad
+                de Contaduría y Administración para consultar
+                sus programas educativos y conocer la oferta
+                académica vigente.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="offer-button">
+
+
+            <a
+                href="https://uach.mx/fca/#Programas-educativos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+
+                Ver programas educativos
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     EQUIPO RESPONSABLE
+======================================================== -->
+
+<section class="team-section"
+         id="equipo">
+
+<div class="team-inner">
+
+
+    <div class="section-header">
+
+
+        <div class="section-label">
+            Equipo responsable
+        </div>
+
+
+        <h2>
+            Formación y acompañamiento académico
+        </h2>
+
+
+        <p class="section-intro">
+
+            Este espacio es desarrollado como apoyo
+            a los procesos académicos de la Facultad
+            de Contaduría y Administración de la
+            Universidad Autónoma de Chihuahua.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="team-grid">
+
+
+        <!-- MARISOL -->
+
+        <div class="team-card">
+
+
+            <div class="initials">
+                MP
+            </div>
+
+
+            <h3>
+                Dra. Marisol Priscila Palafox Bolívar
+            </h3>
+
+
+            <div class="team-role">
+                Asesora Técnica Pedagógica
+            </div>
+
+
+            <a
+                href="mailto:mpalafox@uach.mx"
+                class="team-email"
+            >
+
+                <i class="fa-regular fa-envelope"></i>
+
+                mpalafox@uach.mx
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- EFREN -->
+
+        <div class="team-card">
+
+
+            <div class="initials">
+                EH
+            </div>
+
+
+            <h3>
+                M.I. Efrén Hernández Arenivas
+            </h3>
+
+
+            <div class="team-role">
+                Asesor Técnico Pedagógico
+            </div>
+
+
+            <a
+                href="mailto:earenivas@uach.mx"
+                class="team-email"
+            >
+
+                <i class="fa-regular fa-envelope"></i>
+
+                earenivas@uach.mx
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- OMAR -->
+
+        <div class="team-card">
+
+
+            <div class="initials">
+                OV
+            </div>
+
+
+            <h3>
+                Dr. Omar Elier Varela Faudoa
+            </h3>
+
+
+            <div class="team-role">
+                Asesor Técnico Pedagógico
+            </div>
+
+
+            <a
+                href="mailto:ovarela@uach.mx"
+                class="team-email"
+            >
+
+                <i class="fa-regular fa-envelope"></i>
+
+                ovarela@uach.mx
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- VIVIANA -->
+
+        <div class="team-card">
+
+
+            <div class="initials">
+                VB
+            </div>
+
+
+            <h3>
+                Dra. Viviana Berroterán Martínez
+            </h3>
+
+
+            <div class="team-role">
+                Secretaria Académica
+            </div>
+
+
+            <a
+                href="mailto:vberroteran@uach.mx"
+                class="team-email"
+            >
+
+                <i class="fa-regular fa-envelope"></i>
+
+                vberroteran@uach.mx
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- CRISTINA -->
+
+        <div class="team-card">
+
+
+            <div class="initials">
+                CC
+            </div>
+
+
+            <h3>
+                Dra. Cristina Cabrera Ramos
+            </h3>
+
+
+            <div class="team-role">
+                Directora
+            </div>
+
+
+            <a
+                href="mailto:ccabrera@uach.mx"
+                class="team-email"
+            >
+
+                <i class="fa-regular fa-envelope"></i>
+
+                ccabrera@uach.mx
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
      FOOTER
-===================================================== -->
+======================================================== -->
 
 <footer>
 
-    <div class="footer-container">
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+
+        <div class="footer-logo-box">
+
+            <img
+                src="assets/logofca.jpeg"
+                alt="Logotipo de la Facultad de Contaduría y Administración"
+                class="footer-logo"
+            >
+
+        </div>
+
 
         <div>
 
-            <div class="footer-title">
+            <strong>
                 Facultad de Contaduría y Administración
-            </div>
+            </strong>
 
-            <div class="footer-text">
-                Universidad Autónoma de Chihuahua · Formación y acompañamiento académico
-            </div>
+            <small>
+                Universidad Autónoma de Chihuahua
+            </small>
 
         </div>
 
-        <div class="footer-icon">
-            <i class="fa-solid fa-graduation-cap"></i>
-        </div>
 
     </div>
+
+
+
+    <div class="footer-info">
+
+        Formación y Acompañamiento Académico<br>
+
+        Asesoría Técnica Pedagógica · FCA-UACH
+
+    </div>
+
+
+</div>
 
 </footer>
 
 
 </body>
+
 </html>
